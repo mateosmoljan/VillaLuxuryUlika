@@ -77,20 +77,6 @@ function DataRangeComponent() {
   const getDisabledDates = (): Date[] => {
     const disabledRanges = [
       { startDate: new Date("2024-05-02"), endDate: new Date("2024-11-09") },
-      { startDate: new Date("2024-11-17"), endDate: new Date("2024-11-22") },
-      { startDate: new Date("2025-01-05"), endDate: new Date("2025-01-06") },
-      { startDate: new Date("2025-02-08"), endDate: new Date("2025-02-08") },
-      { startDate: new Date("2025-03-08"), endDate: new Date("2025-03-09") },
-      { startDate: new Date("2025-04-10"), endDate: new Date("2025-04-14") },
-      { startDate: new Date("2025-04-24"), endDate: new Date("2025-04-29") },
-      { startDate: new Date("2025-05-02"), endDate: new Date("2025-05-03") },
-      { startDate: new Date("2025-05-17"), endDate: new Date("2025-06-28") },
-      { startDate: new Date("2025-07-11"), endDate: new Date("2025-07-12") },
-      { startDate: new Date("2025-08-05"), endDate: new Date("2025-08-08") },
-      { startDate: new Date("2025-09-05"), endDate: new Date("2025-09-07") },
-      { startDate: new Date("2025-09-11"), endDate: new Date("2025-09-13") },
-      { startDate: new Date("2025-09-15"), endDate: new Date("2025-09-20") },
-      { startDate: new Date("2025-10-20"), endDate: new Date("2025-10-25") },
     ];
 
     const disabledDates: Date[] = [...disabledDateArray]; // Include dynamically added dates
@@ -178,7 +164,7 @@ function DataRangeComponent() {
                 calendarWidth === "horizontal" ? "horizontal" : "vertical"
               }
               rangeColors={["#B29600"]}
-              disabledDates={getDisabledDates()}
+              // disabledDates={getDisabledDates()}
               dateDisplayFormat="d.M.y"
             />
           </FormControl>

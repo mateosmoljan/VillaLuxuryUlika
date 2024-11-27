@@ -39,7 +39,7 @@ function PhotogalleriesImages({ handleImageClick }: Props) {
             width={546}
             height={364}
             placeholder="blur"
-            className="cursor-pointer object-cover rounded-md block w-full h-full hover:opacity-90"
+            className="overflow-hidden cursor-pointer object-cover rounded-md block w-full h-full hover:opacity-90"
             onClick={() => handleImageClick(index)}
           />
         </motion.div>

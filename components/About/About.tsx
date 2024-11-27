@@ -16,6 +16,7 @@ function About() {
         </h1>
         <div className="pt-10">
           <Markdown>{a("des")}</Markdown>
+          <Markdown>{a("des2")}</Markdown>
           <br />
           <h2 className="font-ExtraBold text-lg">
             <Markdown>{a("the_space.title")}</Markdown>

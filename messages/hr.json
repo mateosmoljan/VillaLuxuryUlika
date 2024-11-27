@@ -1,73 +1,58 @@
 {
   "Titles": {
-    "homepage_title": "Villa Panorama - Istra",
-    "Villa_Panorama": "Kuća za odmor Villa Panorama",
+    "homepage_title": "Kuća Lucia - Istra",
+    "Villa_Panorama": "Holiday Home Lucia",
     "Villa_Map_Location": "Lokacija na karti",
     "Availability_Calendar": "Kalendar dostupnosti",
     "Availability_Appointments_sub": "DOSTUPNI TERMINI",
-    "Price_list": "Cjenik kuće za odmor Villa Panorama",
-    "Photogallery": "Fotogalerija kuće za odmor Villa Panorama, Istra",
-    "Surrondings": "Gajana i okolica",
-    "Surrondings_sub": "GAJANA & ISTRA"
+    "Price_list": "Cjenik Kuća Lucia",
+    "Photogallery": "Fotogalerija Kuća Lucia, Istra",
+    "Surrondings": "Vodnjan i okolica",
+    "Surrondings_sub": "VODNJAN & ISTRA"
   },
   "Buttons": {
-    "Show_Gallery": "Prikaži galeriju"
+    "Show_Gallery": "Pokaži galeriju"
   },
   "Navigation": {
-    "navlinks": [
-      "Villa Panorama",
-      "Cjenik",
-      "Fotogalerija",
-      "Okolica",
-      "Kontakt"
-    ],
+    "navlinks": ["Kuća Lucia", "Cjenik", "Fotogalerija", "Okolica", "Kontakt"],
     "navLinksButton": "Rezerviraj"
   },
-
   "HeaderSwiper": {
     "titles": [
-      "Dobrodošli u Villa Panorama - Istra",
-      "Raj s jacuzzijem",
-      "Rustikalni kamin odmor",
-      "Moderan dizajn i prostrani blagovaonski stol",
-      "Stilski bilijarski stol",
-      "Ugodan ulaz",
-      "Nebo Aqua",
-      "Tihi bazen pod zvijezdama"
+      "Dobrodošli u Kuću Lucia - Istra",
+      "Opustite se i uživajte",
+      "Jacuzzi svjetlost",
+      "Obroci na otvorenom"
     ],
     "descriptions": [
-      "Tihi oaza u vili",
-      "Uživajte u konačnom doživljaju opuštanja dok se opuštate u jacuzziju",
-      "Zagrlite toplinu i šarm tradicionalnog istarskog kamina 'Kažun' u Vili Panorama, gdje se ugodne večeri provode u rustikalnom miru.",
-      "Uživajte u opuštenim okupljanjima na prostranom blagovaonskom stolu",
-      "Opuštajte se uz partiju bilijara na elegantnom bilijarskom stolu",
-      "Elegantan ulaz koji besprijekorno spaja moderan dizajn i gostoljubivu atmosferu i poziva vas na opuštanje u stilu.",
-      "Moderan odmor s privatnim bazenom, uklopljen u zagrljaj prirode",
-      "Tihi bazen pod zvijezdama"
+      "Opustite se uz bazen u potpunom komforu",
+      "Uživanje uz bazen s daškom elegancije.",
+      "Uživajte u luksuzu pod savršenim ambijentom.",
+      "Okupljanje, roštiljanje i uživanje u trenucima sa stilom."
     ],
     "button": "Pročitaj više"
   },
-
   "About": {
     "title": "Pregled",
-    "des": "Predivna **Villa Panorama Istria** okružena **prirodom**. To je idealno mjesto za **odmor** za sve ljubitelje **miru**, **tišine** i **prirode**. Vila od **520 kvadratnih metara** smještena je na parceli od **2500 m2**. Na raspolaganju vam je prekrasan **vrt** i velika **livada** za igru i **zabavu** (**trampolin**, **golovi za nogomet**). Vila je pažljivo **namještena**, s **kvalitetnim namještajem** i velikom pažnjom na detalje. **Tradicionalni** i **moderni elementi** sjedinjuju se kako bi stvorili **zanimljivu** cjelinu.",
+    "des": "Smještena u predgrađu Hrvatske, ova vila inspirirana Toskankom odiše elegancijom. Njena crijepna krov i bujan vrt odražavaju talijanski šarm. Podijeljena u dva apartmana, svaki stvara toplu i gostoljubivu atmosferu.",
+    "des2": "Izvan objekta nalazi se netaknuti bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku s modernim komforom, nudeći mirnu oazu u hrvatskom predgrađu.",
     "the_space": {
       "title": "Prostor",
-      "des": "Ispred vile nalazi se prostrana ljetna kuhinja s kaminom na drva koji služi za objedovanje i zabavu (stolni nogomet, piccado i bilijar). Također postoji radna soba i kupaonica. Osim ljetne kuhinje, tu je i **68 kvadratnih metara bazen s masažnim mlaznicama, vodopadom**. Tradicionalna posebnost je istarski kažun izgrađen u kamenoj stilu. Sastoji se od vatrene jame za postavljanje roštilja ili pečenja za objedovanje. Posebno je atraktivna velika terasa koja se proteže s jedne strane vile s pogledom na more i okolna zelena područja, što je čini idealnim mjestom za objedovanje i odmor.",
-      "des2": "Sastoji se od prostranog dnevnog boravka, potpuno opremljene kuhinje, **7 šarmantnih spavaćih soba s kupaonicama, klima uređajem i TV-om**. Grijanje u svakoj sobi s radijatorima. Sve sobe imaju klima uređaj. Osim vile, tu je i prostor za wellness ( **sauna, jacuzzi, sprave za vježbanje**). Tu je i garaža s **2 parkirna mjesta** i **8 bicikala**. Prostor za parkiranje nudi mogućnost više od desetak parkirnih mjesta."
+      "des": "Na prvom katu ove hrvatske vile, prvi apartman zrači udobnošću i stilom. Sadrži četiri prostrane spavaće sobe, svaka pruža udoban kutak za opuštanje. Dvije dobro opremljene kupaonice jamče udobnost i privatnost. Srce doma je velika kuhinja, dizajnirana za kulinarske užitke i okupljanja. Prekrasna terasa pruža pogled na očaravajuće Brijunske otoke, stvarajući nevjerojatan ambijent za obrok na otvorenom i opuštanje.",
+      "des2": "Nasuprot tome, drugi apartman ističe se modernim dizajnom na nižem katu. S dvije elegantne spavaće sobe nudi suvremeni način života. Prostrana kupaonica i dodatni WC zadovoljavaju praktične potrebe. Prostrani dnevni boravak središnji je dio, pružajući otvoren prostor za zabavu i moderno stanovanje. Ovaj apartman zrači suvremenom i minimalističkom estetikom, stvarajući elegantnu i ugodnu atmosferu za svoje stanare."
     },
     "guest_access": {
       "title": "Pristup gostima",
-      "des": "Jacuzzi, sauna, fitness, bicikli, karaoke, bilijar, stolni nogomet, strelice, trampolin."
+      "des": "Jacuzzi, sauna, bicikli, PS4, trampoline, roštilj."
     },
     "locations": {
-      "title": "Što posjetiti:",
+      "title": "Što vidjeti i posjetiti:",
       "des": [
-        "- Vodeni zabavni park Aquacolors.",
-        "- Istražite prekrasne otoke Nacionalnog parka Brijuni, bogate prirodnom ljepotom i kulturnom baštinom.",
-        "- Otkrijte drevni rimski amfiteatar u Puli, jedan od najbolje sačuvanih rimskih amfiteatara na svijetu.",
-        "- Zaronite u podvodni svijet u Akvariju Pula, smještenom blizu centra grada. Istražite različite morske habitate, promatrajte raznolike morske vrste i saznajte o važnosti očuvanja mora.",
-        "- Doživite uzbudljive tobogane, lijeni rijeke i opuštajuće bazene u aquaparku Istralandia, smještenom blizu Novigrada. Savršeno za obitelji i ljubitelje vode, ovaj aquapark nudi zabavan dan za sve uzraste."
+        "- Vodeni park Aquacolors.",
+        "- Istražite predivne otoke Nacionalnog parka Brijuni, bogate prirodnim ljepotama i kulturnim naslijeđem.",
+        "- Otkrijte drevni rimski amfiteatar u Puli, jedan od najbolje očuvanih rimskih amfiteatara na svijetu.",
+        "- Zaronite u podvodni svijet u pulskom akvariju, smještenom u blizini centra grada. Istražite različite morske ekosustave, promatrajte razne vrste riba i saznajte više o važnosti očuvanja mora.",
+        "- Doživite uzbudljive vodene tobogane, mirne rijeke i opuštajuće bazene u Istralandia Aquaparku kod Novigrada. Savršeno za obitelji i ljubitelje vode, ovaj aquapark nudi zabavan dan za sve uzraste."
       ]
     }
   },
@@ -94,7 +79,7 @@
   "Acommodation": {
     "subtitle": "Smještaj",
     "title": "Nudimo vam 1 Vilu",
-    "card_title": "Villa Panorama",
+    "card_title": "House Lucia",
     "card_des": "Maksimalno 16 osoba",
     "card_des2": "Cijena od",
     "card_des3": "po noći"
@@ -122,13 +107,13 @@
     "button": "Pošalji poruku"
   },
   "Footer": {
-    "year": "©2024 . Villa Panorama - Istra",
+    "year": "©2024 . House Lucia - Istra",
     "rights": "Sva prava pridržana",
     "created_by": "Web stranica od BoostWeb",
     "Discover": {
       "title": "Otkrijte",
       "list": {
-        "Pula": "Pula Info",
+        "Pula": "Vodnjan Info",
         "Guide": "Turistički vodič Istra"
       }
     },
@@ -140,11 +125,11 @@
     "title": ["Kategorizacija", "Kapacitet", "Veličina", "Vrt"]
   },
   "Villa_Description": {
-    "des": "Kamenita luksuzna vila smještena je u Gajani, mirnom mjestu blizu Vodnjana (Dignana). Ova vila s 7 spavaćih soba (svaka sa svojom kupaonicom) savršena je za ljubitelje prirode koji vole opuštajući odmor dalje od gradske buke. Ima mnogo toga za ponuditi svojim gostima.",
+    "des": "Smještena u predgrađu Hrvatske, ova vila inspirirana Toskanom odiše elegancijom. Njen krov od terakote i bujni vrt odražavaju talijanski šarm. Podijeljena u dva apartmana, svaki od njih stvara toplu i dobrodošlicu atmosferu. Ispod vani se nalazi besprijekoran bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku s modernim komforom, nudeći mirnu oazu u hrvatskim predgrađima.",
     "subtitle": "Prostor",
-    "des2": "Ispred vile nalazi se vanjski bazen (68 m2) s mogućnošću zračne masaže i vodopada sa strane bazena. Prostrana trava nudi dječje igralište s trampolinom i nogometnim golovima. Pokraj bazena nalazi se replika stare istarske kuće nazvane \"kazun\", koja nudi sadržaje za roštiljanje. Prekrasna terasa savršeno je mjesto za uživanje u obroku. Još jedno mjesto za objedovanje je ljetna kuhinja, koja se nalazi unutar prostorije za igre s pikadom, biljarom i stolnim nogometom. Soba za ljepotu pored vile nudi saunu, jacuzzi i opremu za vježbanje. Vila ima sustav nadzora koji snima okolicu vile i pruža sigurnost svojim gostima. Vila može primiti 16 osoba. U vili se nalazi 7 spavaćih soba. U 3 spavaće sobe nalaze se bračni kreveti veličine king size, i u svakoj od njih može se smjestiti 2 osobe. U preostalim sobama (njih 4) nalaze se 2 odvojena kreveta. Netko može spavati i na kaučima u dnevnom boravku, ako to želi.",
-    "subtitle2": "Pristup gostiju",
-    "des3": "Gosti mogu pristupiti 7 spavaćih soba, 2 dnevna boravka, 2 kuhinje, 9 kupaonica + odvojeni WC, balkoni, terasa, prostorija za ljepotu, prostorija za igre/ljetna kuhinja, \"kazun\" s sadržajima za roštiljanje, prostorija s perilicom i opremom za glačanje, bazen, travnjak, vrt, dječje igralište i cijelo vanjsko područje (2500 m2)."
+    "des2": "Na prvom katu ove hrvatske vile, prvi apartman odiše udobnošću i stilom. Sadrži četiri prostrane spavaće sobe, od kojih svaka nudi udoban kutak za opuštanje. Dva dobro opremljena kupaonice osiguravaju udobnost i privatnost. Srce doma je velika kuhinja, dizajnirana za kulinarske užitke i okupljanja. Prekrasna terasa pruža pogled na očaravajuće Brijunske otoke, pružajući zadivljujući ambijent za obrok na otvorenom i opuštanje. S druge strane, drugi apartman može se pohvaliti modernim dizajnom na nižoj etaži. S dvije elegantne spavaće sobe, nudi suvremeno iskustvo života. Prostrana kupaonica i dodatni WC zadovoljavaju praktične potrebe. Prostrani dnevni boravak je središnja točka, nudeći prostran i otvoren prostor za zabavu i suvremeni način života. Ovaj apartman zrači suvremenom i minimalističkom estetikom, stvarajući elegantnu i gostoljubivu atmosferu za svoje stanovnike.",
+    "subtitle2": "Pristup gostima",
+    "des3": "Jacuzzi, sauna, bicikli, PS4, trampoline, roštilj."
   },
   "Villa_Features": {
     "title": "Značajke",
@@ -299,12 +284,12 @@
       "span2": "Adresa",
       "span3": "Banka",
       "title3": "Potvrda plaćanja",
-      "des3": "Kada je plaćanje izvršeno, potvrdit ćemo vaše plaćanje i rezervaciju. Opustite se i mirno očekujte svoj odmor u ljeti i uživajte u svojim odmorima u kući za odmor Villa Panorama, Istra - Hrvatska!"
+      "des3": "Kada je plaćanje izvršeno, potvrdit ćemo vaše plaćanje i rezervaciju. Opustite se i mirno očekujte svoj odmor u ljeti i uživajte u svojim odmorima u kući za odmor House Lucia, Istra - Hrvatska!"
     }
   },
   "Environs": {
-    "title": "Gajana & Istra",
-    "des": "Gajana je savršeno mjesto za doživljaj opuštajućeg odmora, ali je također dovoljno blizu svih vrsta aktivnosti ako promijenite mišljenje. Gajana je okružena vinogradima, maslinicima, šumama i mnogim prekrasnim znamenitostima. Možete posjetiti Park Kazun - park s tradicionalnim istarskim kućama od kamena, mjesto s najviše kazuna na jednom mjestu na mediteranskom području. Nacionalni park Brijuni (koji se vidi s vile) i Limski zaljev također se nalaze u ovoj regiji. Budući da je Gajana mjesto okruženo vinogradima i maslinicima, najbolji način da ga doživite je istražiti neke od planinarskih ili biciklističkih ruta kroz područje. Budući da je obala udaljena samo 5 km, možete isprobati ribolov, jedrenje ili ronjenje. Plaže, barovi, restorani i trgovine prehrambenim proizvodima nalaze se u krugu od 5 km.",
+    "title": "Vodnjan & Istra",
+    "des": "Vodnjan je šarmantan grad smješten u srcu Istre, Hrvatska. Poznat po svojoj bogatoj povijesti, srednjovjekovnoj arhitekturi i slikovitim ulicama, nudi uvid u tradicionalni istarski život. Okružen maslinicima, vinogradima i lijepom jadranskom obalom, Vodnjan je također poznat po proizvodnji visokokvalitetnog maslinovog ulja. Obližnje atrakcije uključuju drevni rimski grad Pulu, Nacionalni park Brijuni i zapanjujuće plaže, što ga čini savršenom destinacijom za ljubitelje prirode i povijesti.",
     "button": "Prikaži Kartu",
     "title2": "Kretanje",
     "des2": "Vilu možete doseći automobilom ili taksijem. Parkiranje je besplatno i dostupno na licu mjesta.",

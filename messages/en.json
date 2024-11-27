@@ -1,21 +1,21 @@
 {
   "Titles": {
-    "homepage_title": "Villa Panorama - Istria",
-    "Villa_Panorama": "Holiday Home Villa Panorama",
+    "homepage_title": "House Lucia - Istria",
+    "Villa_Panorama": "Holiday Home Lucia",
     "Villa_Map_Location": "Location on the map",
     "Availability_Calendar": "Availability Calendar",
     "Availability_Appointments_sub": "AVAILABLE APPOINTMENTS",
-    "Price_list": "Price list Villa Panorama",
-    "Photogallery": "Photogallery Villa Panorama, Istra",
-    "Surrondings": "Gajana and surroundings",
-    "Surrondings_sub": "GAJANA & ISTRA"
+    "Price_list": "Price list House Lucia",
+    "Photogallery": "Photogallery House Lucia, Istria",
+    "Surrondings": "Vodnjan and surroundings",
+    "Surrondings_sub": "VODNJAN & ISTRIA"
   },
   "Buttons": {
     "Show_Gallery": "Show Gallery"
   },
   "Navigation": {
     "navlinks": [
-      "Villa Panorama",
+      "House Lucia",
       "Pricelist",
       "Photogallery",
       "Environs",
@@ -26,39 +26,32 @@
 
   "HeaderSwiper": {
     "titles": [
-      "Welcome to Villa Panorama - Istra",
-      "Jacuzzi Paradise",
-      "Rustic Fireplace Retreat",
-      "Modern Design and Spacious Dinning Table",
-      "Stylish Pool Table Retreat",
-      "Welcome Entrance",
-      "Aqua Haven",
-      "Serene Swimming Pool under the Stars"
+      "Welcome to House Lucia - Istria",
+      "Sip & Unwind",
+      "Jacuzzi Glow",
+      "Al Fresco Dining"
     ],
     "descriptions": [
-      "Tranquil Oasis Villa",
-      "Indulge in the ultimate relaxation experience as you unwind in the Jacuzzi",
-      "Embrace the warmth and charm of the traditional Istrian 'Kažun' fireplace at Villa Panorama, where cozy evenings are spent in rustic tranquility.",
-      "Enjoy cozy gatherings around the generously sized dining table",
-      "Unwind with a game of pool on the sleek pool table",
-      "Elegant entrance that seamlessly blends modern design and welcoming ambiance, inviting you to unwind in style.",
-      "A Modern Retreat with Private Pool, Nestled in Nature's Embrace",
-      "Serene Swimming Pool under the Stars"
+      "Relax by the pool in ultimate comfort",
+      "Poolside bliss with a touch of elegance.",
+      "Soak in luxury under the perfect ambiance.",
+      "Gather, grill, and savor moments in style."
     ],
     "button": "Read More"
   },
 
   "About": {
     "title": "Overview",
-    "des": "Beautiful Beautiful **Villa Panorama Istria** surrounded by **nature**. It's an ideal place to **rest** for all lovers of **peace**, **quiet**, and **nature**. Villa of **520m square** is located on a plot of **2500 m2**. You have at your disposal a beautiful **garden** and a large **lawn** for play and **entertainment** (**trampoline**, **football goals**). The villa is carefully **furnished**, with **quality furniture** and great attention to detail. **Traditional** and **modern elements** blend together to form an **interesting** whole.",
+    "des": "Situated in a Croatian suburb, this Tuscany-inspired villa exudes elegance. Its terracotta roof and lush garden reflect Italian charm. Divided into two apartments, each creates a warm and inviting atmosphere.",
+    "des2": "Outside, there is a pristine pool surrounded by a Mediterranean landscape. This villa seamlessly combines timeless aesthetics with modern comfort, offering a peaceful oasis in the Croatian suburbs.",
     "the_space": {
       "title": "The space",
-      "des": "In front of the Villa there is a spacious summer kitchen with a wood-burning fireplace that serves for dining and entertainment (table football, piccado and billiards). Also there is a working room and a bathroom. In addition to the summer kitchen there is a **68 m square swimming pool with air massage facilities, a waterfall** . Traditional speciality is occupied by an Istrian cape built in stone style. It consists of a fire pit for setting a grill or baking for dining. It is especially attractive large terrace that spreads on one side of the villa overlooking the sea and surrounding green areas, which also makes it an ideal place for dining and resting.",
-      "des2": "It consists of a spacious living room, fully equipped kitchen , **7 charming bedrooms with bathrooms, air conditioning and TV**. Heating in every room with radiators. All rooms are air conditioned. In addition to the villa, there is a wellness room ( **sauna ,jacuzzi, exercise equipment**).It is also a garage with **2 parking spaces** and there are **8 bikes**. Parking space offers the possibility of more than a dozen parking spaces."
+      "des": "On the first floor of this Croatian villa, the first apartment exudes comfort and style. It features four spacious bedrooms, each offering a cozy retreat. Two well-equipped bathrooms ensure convenience and privacy. The heart of the home is a large kitchen, designed for culinary delights and gatherings. A beautiful terrace overlooks the enchanting Brijuni Islands, providing a stunning backdrop for outdoor dining and relaxation.",
+      "des2": "In contrast, the second apartment boasts a modern design on the lower level. With two elegant bedrooms, it offers a contemporary living experience. A generously sized bathroom and an additional WC meet practical needs. The expansive living room is the focal point, providing a spacious and open area for entertaining and modern living. This apartment radiates a contemporary and minimalist aesthetic, creating a stylish and inviting atmosphere for its residents."
     },
     "guest_access": {
       "title": "Guest Access",
-      "des": "Jacuzzi, sauna, fitness, bikes, karaoke, billiards, foosball, darts, trampoline."
+      "des": "Jacuzzi, sauna, bikes, ps4, trampoline, barbecue."
     },
     "locations": {
       "title": "What to see and visit:",
@@ -73,7 +66,7 @@
   },
 
   "Distances": {
-    "title": "Distances from Villa Panorama",
+    "title": "Distances from House Lucia",
     "button": "Show Map",
     "place": [
       "Sea",
@@ -92,15 +85,15 @@
   },
   "Acommodation": {
     "subtitle": "ACCOMMODATION",
-    "title": "We offer you 1 Villa",
-    "card_title": "Villa Panorama",
-    "card_des": "Maximum of 16 people",
+    "title": "We offer you 1 House",
+    "card_title": "House Lucia",
+    "card_des": "Maximum of 12 people",
     "card_des2": "Price from",
     "card_des3": "per night"
   },
   "Photogalleries": {
     "subtitle": "PHOTOGALLERIES",
-    "title": "Select photos from Villa Panorama",
+    "title": "Select photos from House Lucia",
     "button": "Show Photogallery"
   },
   "Tourist_Guide": {
@@ -116,17 +109,17 @@
     ]
   },
   "Send_Message": {
-    "des": "Please **send us an** answer if you would like to belong to Villa Panorama in Istria and secure your reservation?",
+    "des": "Please **send us an** answer if you would like to belong to House Lucia in Istria and secure your reservation?",
     "button": "Send Message"
   },
   "Footer": {
-    "year": "©2024 . Villa Panorama - Istria",
+    "year": "©2024 . House Lucia - Istria",
     "rights": "All rights protected",
     "created_by": "Website by BoostWeb",
     "Discover": {
       "title": "Discover",
       "list": {
-        "Pula": "Pula Info",
+        "Pula": "Vodnjan Info",
         "Guide": "Tourist guide Istra"
       }
     },
@@ -138,17 +131,17 @@
     "title": ["Categorization", "Capacity", "Size", "Garden"]
   },
   "Villa_Description": {
-    "des": "Stone Luxury Villa is located in Gajana, a peaceful place near Vodnjan (Dignano). This 7-bedroom villa (with en-suite bathroom in every bedroom) is perfect for nature lovers who like to relax away from the city noise. It has a lot to offer to its guests.",
+    "des": "Situated in a Croatian suburb, this Tuscany-inspired villa exudes elegance. Its terracotta roof and lush garden reflect Italian charm. Divided into two apartments, each creates a warm and inviting atmosphere. Outside, there is a pristine pool surrounded by a Mediterranean landscape. This villa seamlessly combines timeless aesthetics with modern comfort, offering a peaceful oasis in the Croatian suburbs.",
     "subtitle": "The Space",
-    "des2": "There is an outdoor swimming pool (68 m2) with a possibility of an air massage and a water cascade on the side of the pool. Spacious lawn offers a children's playground with a trampoline and football goals. Next to the pool, there is a replica of an old Istrian house called \"kazun\", which offers BBQ facilities. Beautiful terrace is a perfect place to enjoy your meal. Another place for dining is a summer kitchen, which is located within a game room with darts, billiard table and table football. Beauty room next to the villa offers a sauna, jacuzzi and excercising equippment. Villa has a surveillance system, which tapes the villa's surroundings and provides safety to its guests. Villa can accommodate 16 people. There are 7 bedrooms in the villa. 3 bedrooms offer a king size beds, and each of them can fit 2 people. In the rest of the bedrooms (4 of them), there are 2 single beds in each of them. Someone can also sleep on living room sofas, if they wish to.",
+    "des2": "On the first floor of this Croatian villa, the first apartment exudes comfort and style. It features four spacious bedrooms, each offering a cozy retreat. Two well-equipped bathrooms ensure convenience and privacy. The heart of the home is a large kitchen, designed for culinary delights and gatherings. A beautiful terrace overlooks the enchanting Brijuni Islands, providing a stunning backdrop for outdoor dining and relaxation. In contrast, the second apartment boasts a modern design on the lower level. With two elegant bedrooms, it offers a contemporary living experience. A generously sized bathroom and an additional WC meet practical needs. The expansive living room is the focal point, providing a spacious and open area for entertaining and modern living. This apartment radiates a contemporary and minimalist aesthetic, creating a stylish and inviting atmosphere for its residents.",
     "subtitle2": "Guest access",
-    "des3": "Guests can access 7 bedrooms, 2 living rooms, 2 kitchens, 9 bathrooms + a separated toilet, balconies, terrace, beauty room, game room/summer kitchen, \"kazun\" with BBQ facilities, a room with a washing machine and ironing facilities, swimming pool, lawn, garden, children's playground and entire outdoor area (2500 m2)."
+    "des3": "Jacuzzi, sauna, bikes, ps4, trampoline, barbecue."
   },
   "Villa_Features": {
     "title": "Features",
     "title2": "What this place offers",
     "title3": "Bathroom",
-    "title4": "Bedroom and laundry",
+    "title4": "The bedroom and bedding",
     "title5": "Entertainment",
     "title6": "Family",
     "title7": "Heating and cooling",
@@ -290,15 +283,15 @@
       "span2": "Address",
       "span3": "Bank",
       "title3": "Confirmation of payment",
-      "des3": "When payment is done, we will confirm your payment and reservation. Relax and await peacefully you vacation in summer and enjoy in your vacations in holiday home Villa Panorama, Istria - Croatia!"
+      "des3": "When payment is done, we will confirm your payment and reservation. Relax and await peacefully you vacation in summer and enjoy in your vacations in holiday home House Lucia, Istria - Croatia!"
     }
   },
   "Environs": {
-    "title": "Gajana & Istria",
-    "des": "Gajana is a perfect place to experience a relaxing vacation, but it's also close enough to all kinds of activities if you change your mind. Gajana is surrounded by vineyards, olive groves, woods and a lot of beautiful sights. You can visit Kazun Park - a park with traditional Istrian houses made of stone, and it's a place with most kazun's located in one place in the Mediterranean area. <br /> National Park Brijuni (which is visible from the villa) and Limski zaljev (Channel of Lim) are also located in this region. Since Gajana is a place surrounded by vineyards and olive groves, the best way to experience it is to take some of hiking or cycling routes through the area. Since the coast is only 5 km away, you can try fishing, sailing or diving activities. Beach, bars, restaurants and grocery shops can be found in 5 km range.",
+    "title": "Vodnjan & Istria",
+    "des": "Vodnjan is a charming town located in the heart of Istria, Croatia. Known for its rich history, medieval architecture, and picturesque streets, it offers a glimpse into traditional Istrian life. Surrounded by olive groves, vineyards, and the beautiful Adriatic coast, Vodnjan is also famous for its high-quality olive oil production. Nearby attractions include the ancient Roman town of Pula, the Brijuni Islands National Park, and stunning beaches, making it a perfect destination for nature lovers and history enthusiasts alike.",
     "button": "Show Map",
     "title2": "Getting around",
-    "des2": "You can reach the villa by car or taxi. Parking is free and available on site.",
+    "des2": "You can reach the house by car or taxi. Parking is free and available on site.",
     "subtitle": "Attractions nearby"
   },
   "PriceTable": {

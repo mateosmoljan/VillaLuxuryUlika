@@ -35,8 +35,8 @@ function HolidayHome() {
         onChange={handleChange}
         placeholder="Holiday home"
       >
-        <MenuItem value={"Villa Panorama"} className="!pl-4">
-          Villa Panorama
+        <MenuItem value={"House Lucia"} className="!pl-4">
+          House Lucia
         </MenuItem>
       </Select>
     </FormControl>

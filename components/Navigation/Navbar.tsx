@@ -67,8 +67,8 @@ const Navbar = () => {
             className="object-contain"
           />
           <p className="font-arbutus font-black text-2xl text-yellow">
-            <span className="text-dark_blue_black">Villa</span>
-            Panorama
+            <span className="text-dark_blue_black">House</span>
+            Lucia
           </p>
         </Link>
 

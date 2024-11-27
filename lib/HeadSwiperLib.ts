@@ -1,13 +1,9 @@
 import { StaticImageData } from "next/image";
 
-import one from "@/public/assets/images/outside/27.jpg";
-import two from "@/public/assets/images/inside/2.jpg";
-import three from "@/public/assets/images/inside/5.jpg";
-import four from "@/public/assets/images/inside/8.jpg";
-import five from "@/public/assets/images/inside/17.jpg";
-import six from "@/public/assets/images/outside/20.jpg";
-import seven from "@/public/assets/images/outside/15.jpg";
-import eight from "@/public/assets/images/outside/1.jpg";
+import one from "@/public/assets/images/i/42.jpg";
+import two from "@/public/assets/images/i/45.jpg";
+import three from "@/public/assets/images/i/49.jpg";
+import four from "@/public/assets/images/i/36.jpg";
 
 type LocationData = {
   src: StaticImageData;
@@ -28,14 +24,11 @@ import itData from "@/messages/it.json";
 
 // Define image data
 const imageData: LocationData[] = [
-  { src: one, alt: "Draw Well Villa Panorama Istra" },
-  { src: two, alt: "Jacuzzi Villa Panorama Istra" },
-  { src: three, alt: "Fireplace Villa Panorama Istra" },
-  { src: four, alt: "Dinning table Villa Panorama Istra" },
-  { src: five, alt: "Pool Table Villa Panorama Istra" },
-  { src: six, alt: "Entrance" },
-  { src: seven, alt: "Swimming Pool Villa Panorama Istra" },
-  { src: eight, alt: "Swimming Pool at night Villa Panorama Istra" },
+  { src: one, alt: "House Lucia at night" },
+  { src: two, alt: "House Lucia" },
+  { src: three, alt: "Jacuzzi House Lucia" },
+  { src: four, alt: "Dinning table House Lucia" },
+
   // Define other image data similarly
 ];
 

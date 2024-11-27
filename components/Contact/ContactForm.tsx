@@ -37,8 +37,8 @@ function ContactForm() {
     }, 10000);
     if (form.current) {
       emailjs
-        .sendForm("service_q0fv0h8", "template_bla7yqh", form.current, {
-          publicKey: "QslYBLVV8d39BKjwl",
+        .sendForm("service_7lt7x8t", "template_fqkbbue", form.current, {
+          publicKey: "w4GRin0lJkXnSBtSu",
         })
         .then(
           () => {
@@ -84,7 +84,7 @@ function ContactForm() {
               }}
               name="user_email"
               type="email"
-              label="Email:"
+              label="Email"
               size="small"
               style={{
                 border: isValidEmail ? "" : "1px solid red",
@@ -101,6 +101,7 @@ function ContactForm() {
               {ContactData.data[0].phone}
             </InputLabel>
             <MuiTelInput
+              name="phone"
               id="outlined-required"
               value={value}
               required

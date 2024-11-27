@@ -33,7 +33,7 @@ function Footer() {
           <ul className="space-y-4 !text-white">
             <li>
               <Link
-                href="https://www.pulainfo.hr/"
+                href="https://www.vodnjanski.info/"
                 target="_blank"
                 className="!text-white underline hover:!text-yellow"
               >
@@ -56,10 +56,10 @@ function Footer() {
             {t("Contact_Us.title")}
           </h2>
           <ul className="space-y-4">
-            <li>Alen Smoljan</li>
-            <li>Tršičani 43, 52215, Vodnjan</li>
+            <li>Sabina Smoljan</li>
+            <li>Antonio Smareglia 50, Vodnjan</li>
             {/* <li>+(385) 98 263 136</li> */}
-            <li>villpanoramaistria@gmail.com</li>
+            <li>houseluciainfo@gmail.com</li>
           </ul>
         </div>
       </div>

@@ -1,85 +1,55 @@
 import { StaticImageData } from "next/image";
 
-import image1 from "@/public/assets/images/outside/1.jpg";
-import image2 from "@/public/assets/images/inside/1.jpg";
-import image3 from "@/public/assets/images/inside/2.jpg";
-import image4 from "@/public/assets/images/inside/3.jpg";
-import image5 from "@/public/assets/images/inside/4.jpg";
-import image6 from "@/public/assets/images/inside/5.jpg";
-import image7 from "@/public/assets/images/inside/6.jpg";
-import image8 from "@/public/assets/images/inside/7.jpg";
-import image9 from "@/public/assets/images/inside/8.jpg";
-import image10 from "@/public/assets/images/inside/9.jpg";
-import image11 from "@/public/assets/images/inside/10.jpg";
-import image12 from "@/public/assets/images/inside/11.jpg";
-import image13 from "@/public/assets/images/inside/12.jpg";
-import image14 from "@/public/assets/images/inside/13.jpg";
-import image15 from "@/public/assets/images/inside/14.jpg";
-import image16 from "@/public/assets/images/inside/15.jpg";
-import image17 from "@/public/assets/images/inside/16.jpg";
-import image18 from "@/public/assets/images/inside/17.jpg";
-import image19 from "@/public/assets/images/inside/18.jpg";
-import image20 from "@/public/assets/images/inside/19.jpg";
-import image21 from "@/public/assets/images/inside/20.jpg";
-import image22 from "@/public/assets/images/inside/21.jpg";
-import image23 from "@/public/assets/images/inside/22.jpg";
-import image24 from "@/public/assets/images/inside/23.jpg";
-import image25 from "@/public/assets/images/inside/24.jpg";
-
-import image26 from "@/public/assets/images/inside/room-five/1.jpg";
-import image27 from "@/public/assets/images/inside/room-five/2.jpg";
-import image28 from "@/public/assets/images/inside/room-five/3.jpg";
-import image29 from "@/public/assets/images/inside/room-five/4.jpg";
-import image30 from "@/public/assets/images/inside/room-five/5.jpg";
-import image31 from "@/public/assets/images/inside/room-four/1.jpg";
-import image32 from "@/public/assets/images/inside/room-four/2.jpg";
-import image33 from "@/public/assets/images/inside/room-four/3.jpg";
-import image34 from "@/public/assets/images/inside/room-four/4.jpg";
-import image35 from "@/public/assets/images/inside/room-four/5.jpg";
-import image36 from "@/public/assets/images/inside/room-one/1.jpg";
-import image37 from "@/public/assets/images/inside/room-one/2.jpg";
-import image38 from "@/public/assets/images/inside/room-one/3.jpg";
-import image39 from "@/public/assets/images/inside/room-seven/1.jpg";
-import image40 from "@/public/assets/images/inside/room-seven/2.jpg";
-import image41 from "@/public/assets/images/inside/room-seven/3.jpg";
-import image42 from "@/public/assets/images/inside/room-six/1.jpg";
-import image43 from "@/public/assets/images/inside/room-six/2.jpg";
-import image44 from "@/public/assets/images/inside/room-six/3.jpg";
-import image45 from "@/public/assets/images/inside/room-six/4.jpg";
-import image46 from "@/public/assets/images/inside/room-six/5.jpg";
-import image47 from "@/public/assets/images/inside/room-three/1.jpg";
-import image48 from "@/public/assets/images/inside/room-three/2.jpg";
-import image49 from "@/public/assets/images/inside/room-three/3.jpg";
-import image50 from "@/public/assets/images/inside/room-two/1.jpg";
-import image51 from "@/public/assets/images/inside/room-two/2.jpg";
-
-import image53 from "@/public/assets/images/outside/1.jpg";
-import image54 from "@/public/assets/images/outside/2.jpg";
-import image55 from "@/public/assets/images/outside/3.jpg";
-import image56 from "@/public/assets/images/outside/4.jpg";
-import image57 from "@/public/assets/images/outside/5.jpg";
-import image58 from "@/public/assets/images/outside/6.jpg";
-import image59 from "@/public/assets/images/outside/7.jpg";
-import image60 from "@/public/assets/images/outside/8.jpg";
-import image61 from "@/public/assets/images/outside/9.jpg";
-import image62 from "@/public/assets/images/outside/10.jpg";
-import image63 from "@/public/assets/images/outside/11.jpg";
-import image64 from "@/public/assets/images/outside/12.jpg";
-import image65 from "@/public/assets/images/outside/13.jpg";
-import image66 from "@/public/assets/images/outside/14.jpg";
-import image67 from "@/public/assets/images/outside/15.jpg";
-import image68 from "@/public/assets/images/outside/16.jpg";
-import image69 from "@/public/assets/images/outside/17.jpg";
-import image70 from "@/public/assets/images/outside/18.jpg";
-import image71 from "@/public/assets/images/outside/19.jpg";
-import image72 from "@/public/assets/images/outside/20.jpg";
-import image73 from "@/public/assets/images/outside/21.jpg";
-import image74 from "@/public/assets/images/outside/22.jpg";
-import image75 from "@/public/assets/images/outside/23.jpg";
-import image76 from "@/public/assets/images/outside/24.jpg";
-import image77 from "@/public/assets/images/outside/25.jpg";
-import image78 from "@/public/assets/images/outside/26.jpg";
-import image79 from "@/public/assets/images/outside/27.jpg";
+import i1 from "@/public/assets/images/i/1.jpg";
+import i2 from "@/public/assets/images/i/2.jpg";
+import i3 from "@/public/assets/images/i/3.jpg";
+import i4 from "@/public/assets/images/i/4.jpg";
+import i5 from "@/public/assets/images/i/5.jpg";
+import i6 from "@/public/assets/images/i/6.jpg";
+import i7 from "@/public/assets/images/i/7.jpg";
+import i8 from "@/public/assets/images/i/8.jpg";
+import i9 from "@/public/assets/images/i/9.jpg";
+import i10 from "@/public/assets/images/i/10.jpg";
+import i11 from "@/public/assets/images/i/11.jpg";
+import i12 from "@/public/assets/images/i/12.jpg";
+import i13 from "@/public/assets/images/i/13.jpg";
+import i14 from "@/public/assets/images/i/14.jpg";
+import i15 from "@/public/assets/images/i/15.jpg";
+import i16 from "@/public/assets/images/i/16.jpg";
+import i17 from "@/public/assets/images/i/17.jpg";
+import i18 from "@/public/assets/images/i/18.jpg";
+import i19 from "@/public/assets/images/i/19.jpg";
+import i20 from "@/public/assets/images/i/20.jpg";
+import i21 from "@/public/assets/images/i/21.jpg";
+import i22 from "@/public/assets/images/i/22.jpg";
+import i23 from "@/public/assets/images/i/23.jpg";
+import i24 from "@/public/assets/images/i/24.jpg";
+import i25 from "@/public/assets/images/i/25.jpg";
+import i26 from "@/public/assets/images/i/26.jpg";
+import i27 from "@/public/assets/images/i/27.jpg";
+import i28 from "@/public/assets/images/i/28.jpg";
+import i29 from "@/public/assets/images/i/29.jpg";
+import i30 from "@/public/assets/images/i/30.jpg";
+import i31 from "@/public/assets/images/i/31.jpg";
+import i32 from "@/public/assets/images/i/32.jpg";
+import i33 from "@/public/assets/images/i/33.jpg";
+import i34 from "@/public/assets/images/i/34.jpg";
+import i35 from "@/public/assets/images/i/35.jpg";
+import i36 from "@/public/assets/images/i/36.jpg";
+import i37 from "@/public/assets/images/i/37.jpg";
+import i38 from "@/public/assets/images/i/38.jpg";
+import i39 from "@/public/assets/images/i/39.jpg";
+import i40 from "@/public/assets/images/i/40.jpg";
+import i41 from "@/public/assets/images/i/41.jpg";
+import i42 from "@/public/assets/images/i/42.jpg";
+import i43 from "@/public/assets/images/i/43.jpg";
+import i44 from "@/public/assets/images/i/44.jpg";
+import i45 from "@/public/assets/images/i/45.jpg";
+import i46 from "@/public/assets/images/i/46.jpg";
+import i47 from "@/public/assets/images/i/47.jpg";
+import i48 from "@/public/assets/images/i/48.jpg";
+import i49 from "@/public/assets/images/i/49.jpg";
+import i50 from "@/public/assets/images/i/50.jpg";
 
 type LocationData = {
   src: StaticImageData;
@@ -92,83 +62,55 @@ type DataObject = {
 
 export const PropertyGalleryLib: DataObject = {
   images: [
-    { src: image1, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image2, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image3, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image4, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image5, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image6, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image7, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image8, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image9, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image10, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image11, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image12, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image13, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image14, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image15, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image16, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image17, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image18, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image19, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image20, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image21, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image22, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image23, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image24, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image25, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image26, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image27, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image28, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image29, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image30, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image31, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image32, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image33, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image34, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image35, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image36, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image37, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image38, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image39, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image40, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image41, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image42, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image43, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image44, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image45, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image46, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image47, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image48, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image49, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image50, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image51, alt: "Jacuzzi Villa Panorama Istra" },
-    { src: image53, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image54, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image55, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image56, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image57, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image58, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image59, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image60, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image61, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image62, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image63, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image64, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image65, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image66, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image67, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image68, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image69, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image70, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image71, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image72, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image73, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image74, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image75, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image76, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image77, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image78, alt: "Jacuzzi Archives Panorama Istra" },
-    { src: image79, alt: "Jacuzzi Archives Panorama Istra" },
+    { src: i1, alt: `House Lucia image ${i1}` },
+    { src: i2, alt: `House Lucia image ${i2}` },
+    { src: i3, alt: `House Lucia image ${i3}` },
+    { src: i4, alt: `House Lucia image ${i4}` },
+    { src: i5, alt: `House Lucia image ${i5}` },
+    { src: i6, alt: `House Lucia image ${i6}` },
+    { src: i7, alt: `House Lucia image ${i7}` },
+    { src: i8, alt: `House Lucia image ${i8}` },
+    { src: i9, alt: `House Lucia image ${i9}` },
+    { src: i10, alt: `House Lucia image ${i10}` },
+    { src: i11, alt: `House Lucia image ${i11}` },
+    { src: i12, alt: `House Lucia image ${i12}` },
+    { src: i13, alt: `House Lucia image ${i13}` },
+    { src: i14, alt: `House Lucia image ${i14}` },
+    { src: i15, alt: `House Lucia image ${i15}` },
+    { src: i16, alt: `House Lucia image ${i16}` },
+    { src: i17, alt: `House Lucia image ${i17}` },
+    { src: i18, alt: `House Lucia image ${i18}` },
+    { src: i19, alt: `House Lucia image ${i19}` },
+    { src: i20, alt: `House Lucia image ${i20}` },
+    { src: i21, alt: `House Lucia image ${i21}` },
+    { src: i22, alt: `House Lucia image ${i22}` },
+    { src: i23, alt: `House Lucia image ${i23}` },
+    { src: i24, alt: `House Lucia image ${i24}` },
+    { src: i25, alt: `House Lucia image ${i25}` },
+    { src: i26, alt: `House Lucia image ${i26}` },
+    { src: i27, alt: `House Lucia image ${i27}` },
+    { src: i28, alt: `House Lucia image ${i28}` },
+    { src: i29, alt: `House Lucia image ${i29}` },
+    { src: i30, alt: `House Lucia image ${i30}` },
+    { src: i31, alt: `House Lucia image ${i31}` },
+    { src: i32, alt: `House Lucia image ${i32}` },
+    { src: i33, alt: `House Lucia image ${i33}` },
+    { src: i34, alt: `House Lucia image ${i34}` },
+    { src: i35, alt: `House Lucia image ${i35}` },
+    { src: i36, alt: `House Lucia image ${i36}` },
+    { src: i37, alt: `House Lucia image ${i37}` },
+    { src: i38, alt: `House Lucia image ${i38}` },
+    { src: i39, alt: `House Lucia image ${i39}` },
+    { src: i40, alt: `House Lucia image ${i39}` },
+    { src: i41, alt: `House Lucia image ${i41}` },
+    { src: i42, alt: `House Lucia image ${i42}` },
+    { src: i43, alt: `House Lucia image ${i43}` },
+    { src: i44, alt: `House Lucia image ${i44}` },
+    { src: i45, alt: `House Lucia image ${i45}` },
+    { src: i46, alt: `House Lucia image ${i46}` },
+    { src: i47, alt: `House Lucia image ${i47}` },
+    { src: i48, alt: `House Lucia image ${i48}` },
+    { src: i49, alt: `House Lucia image ${i49}` },
+    { src: i50, alt: `House Lucia image ${i50}` },
   ],
 };

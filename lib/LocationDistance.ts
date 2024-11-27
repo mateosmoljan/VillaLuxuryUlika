@@ -16,18 +16,18 @@ import hrData from "@/messages/hr.json";
 import itData from "@/messages/it.json";
 
 export const Distances: LocationData[] = [
-  { distance: 10 },
-  { distance: 10 },
-  { distance: 6 },
-  { distance: 5 },
-  { distance: 6 },
   { distance: 7 },
   { distance: 7 },
-  { distance: 6 },
-  { distance: 7.5 },
-  { distance: 6 },
-  { distance: 7 },
-  { distance: 20 },
+  { distance: 0.5 },
+  { distance: 1 },
+  { distance: 1.2 },
+  { distance: 2.1 },
+  { distance: 2.1 },
+  { distance: 1.5 },
+  { distance: 2.6 },
+  { distance: 1.5 },
+  { distance: 0.7 },
+  { distance: 17.9 },
 ];
 
 const replaceDistances = (

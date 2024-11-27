@@ -40,7 +40,7 @@ function Pricelist() {
             <PaymentConditions />
           </div>
         </div>
-        <div className="py-10 container">
+        {/* <div className="py-10 container">
           <h2 className="text-pink font-semibold uppercase mb-2 tracking-widest">
             {TitleData.data[0].subtitle}
           </h2>
@@ -50,7 +50,7 @@ function Pricelist() {
           <div className="pt-2">
             <AvailabilityCalendar />
           </div>
-        </div>
+        </div> */}
         <div className="py-10 bg-gray-100">
           <div className="container">
             <h2 className="text-pink font-semibold uppercase mb-2 tracking-widest">
