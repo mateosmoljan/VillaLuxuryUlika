@@ -1,12 +1,12 @@
 {
   "Titles": {
-    "homepage_title": "Kuća Lucia - Istra",
+    "homepage_title": "House Lucia - Istra",
     "Villa_Panorama": "Holiday Home Lucia",
     "Villa_Map_Location": "Lokacija na karti",
     "Availability_Calendar": "Kalendar dostupnosti",
     "Availability_Appointments_sub": "DOSTUPNI TERMINI",
-    "Price_list": "Cjenik Kuća Lucia",
-    "Photogallery": "Fotogalerija Kuća Lucia, Istra",
+    "Price_list": "Cjenik House Lucia",
+    "Photogallery": "Fotogalerija House Lucia, Istra",
     "Surrondings": "Vodnjan i okolica",
     "Surrondings_sub": "VODNJAN & ISTRA"
   },
@@ -14,7 +14,7 @@
     "Show_Gallery": "Pokaži galeriju"
   },
   "Navigation": {
-    "navlinks": ["Kuća Lucia", "Cjenik", "Fotogalerija", "Okolica", "Kontakt"],
+    "navlinks": ["House Lucia", "Cjenik", "Fotogalerija", "Okolica", "Kontakt"],
     "navLinksButton": "Rezerviraj"
   },
   "HeaderSwiper": {

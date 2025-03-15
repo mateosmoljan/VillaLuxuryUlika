@@ -1,12 +1,12 @@
 {
   "Titles": {
-    "homepage_title": "Casa Lucia - Istria",
+    "homepage_title": "House Lucia - Istria",
     "Villa_Panorama": "Casa Vacanze Lucia",
     "Villa_Map_Location": "Posizione sulla mappa",
     "Availability_Calendar": "Calendario disponibilità",
     "Availability_Appointments_sub": "APPUNTAMENTI DISPONIBILI",
-    "Price_list": "Listino prezzi Casa Lucia",
-    "Photogallery": "Galleria fotografica Casa Lucia, Istria",
+    "Price_list": "Listino prezzi House Lucia",
+    "Photogallery": "Galleria fotografica House Lucia, Istria",
     "Surrondings": "Vodnjan e dintorni",
     "Surrondings_sub": "VODNJAN & ISTRIA"
   },
@@ -15,7 +15,7 @@
   },
   "Navigation": {
     "navlinks": [
-      "Casa Lucia",
+      "House Lucia",
       "Listino prezzi",
       "Galleria fotografica",
       "Dintorni",
@@ -25,7 +25,7 @@
   },
   "HeaderSwiper": {
     "titles": [
-      "Benvenuti a Casa Lucia - Istria",
+      "Benvenuti a House Lucia - Istria",
       "Gusta & Rilassati",
       "Luce del Jacuzzi",
       "Cene all'aperto"
