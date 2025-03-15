@@ -31,8 +31,7 @@ function PaymentConditions() {
         <ul>
           <li>Cash (upon arrival) </li>
           <li>Bank Transfer (Internet Banking)</li>
-          <li>Paypal</li>
-          <li>Credit and Debit Cards (Visa, MasterCard ...)</li>
+          <li>Revolut</li>
         </ul>
       </div>
     </div>

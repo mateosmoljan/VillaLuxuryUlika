@@ -17,7 +17,7 @@ const linksData: LinksData[] = [
   { path: "/house-lucia" },
   { path: "/pricelist" },
   { path: "/photogallery" },
-  { path: "/environs" },
+  { path: "/surroundings" },
   { path: "/contact" },
 
   // Define other image data similarly

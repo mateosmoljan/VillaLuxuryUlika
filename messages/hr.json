@@ -58,7 +58,7 @@
   },
 
   "Distances": {
-    "title": "Udaljenosti od Ville Panorama",
+    "title": "Udaljenosti od House Lucia",
     "button": "Prikaži Mapu",
     "place": [
       "More",
@@ -87,7 +87,7 @@
 
   "Photogalleries": {
     "subtitle": "Fotogalerije",
-    "title": "Odaberite fotografije iz Ville Panorama",
+    "title": "Odaberite fotografije iz House Lucia",
     "button": "Prikaži fotogaleriju"
   },
   "Tourist_Guide": {
@@ -103,7 +103,7 @@
     ]
   },
   "Send_Message": {
-    "des": "Molimo vas **Pošaljite nam** odgovor ako želite pripadati Vili Panorama u Istri i osigurati svoju rezervaciju?",
+    "des": "Molimo vas **Pošaljite nam** odgovor ako želite pripadati House Lucia u Istri i osigurati svoju rezervaciju?",
     "button": "Pošalji poruku"
   },
   "Footer": {
