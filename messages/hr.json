@@ -19,9 +19,9 @@
   },
   "HeaderSwiper": {
     "titles": [
-      "Dobrodošli u Kuću Lucia - Istra",
+      "Dobrodošli u House Lucia - Istra",
       "Opustite se i uživajte",
-      "Jacuzzi svjetlost",
+      "Sjaj jacuzzija",
       "Obroci na otvorenom"
     ],
     "descriptions": [
@@ -34,12 +34,12 @@
   },
   "About": {
     "title": "Pregled",
-    "des": "Smještena u predgrađu Hrvatske, ova vila inspirirana Toskankom odiše elegancijom. Njena crijepna krov i bujan vrt odražavaju talijanski šarm. Podijeljena u dva apartmana, svaki stvara toplu i gostoljubivu atmosferu.",
-    "des2": "Izvan objekta nalazi se netaknuti bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku s modernim komforom, nudeći mirnu oazu u hrvatskom predgrađu.",
+    "des": "Smještena u hrvatskom predgrađu, ova toskanski nadahnuta vila odiše elegancijom. Terakota krov i bujni vrt odražavaju talijanski šarm. Vila je podijeljena na dva stana, a svaki od njih stvara topao i privlačan ambijent.",
+    "des2": "Vani se nalazi privatni bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku sa suvremenom udobnošću, pružajući mirnu oazu.",
     "the_space": {
       "title": "Prostor",
-      "des": "Na prvom katu ove hrvatske vile, prvi apartman zrači udobnošću i stilom. Sadrži četiri prostrane spavaće sobe, svaka pruža udoban kutak za opuštanje. Dvije dobro opremljene kupaonice jamče udobnost i privatnost. Srce doma je velika kuhinja, dizajnirana za kulinarske užitke i okupljanja. Prekrasna terasa pruža pogled na očaravajuće Brijunske otoke, stvarajući nevjerojatan ambijent za obrok na otvorenom i opuštanje.",
-      "des2": "Nasuprot tome, drugi apartman ističe se modernim dizajnom na nižem katu. S dvije elegantne spavaće sobe nudi suvremeni način života. Prostrana kupaonica i dodatni WC zadovoljavaju praktične potrebe. Prostrani dnevni boravak središnji je dio, pružajući otvoren prostor za zabavu i moderno stanovanje. Ovaj apartman zrači suvremenom i minimalističkom estetikom, stvarajući elegantnu i ugodnu atmosferu za svoje stanare."
+      "des": "Na prvom katu ove hrvatske vile, prvi stan odiše udobnošću i stilom. U njemu se nalaze četiri prostrane spavaće sobe, od kojih svaka pruža ugodno utočište. Dvije dobro opremljene kupaonice osiguravaju praktičnost i privatnost. Srce stana je velika kuhinja, savršeno opremljena za kulinarske užitke i obiteljska okupljanja. Prekrasna terasa s pogledom na očaravajuće otoke Brijune pruža predivnu pozadinu za objedovanje i opuštanje na otvorenom.",
+      "des2": "S druge strane, drugi stan, smješten u prizemlju, ističe se modernim dizajnom. S dvije elegantne spavaće sobe, ovaj stan nudi suvremeni životni stil. Kupaonica velikodušnih dimenzija i dodatni WC zadovoljavaju sve praktične potrebe. Ogroman dnevni boravak predstavlja srž stana, pružajući prostran i otvoren prostor za zabavu i moderan život. Ovaj stan odiše suvremenom i minimalističkom estetikom, stvarajući elegantnu i privlačnu atmosferu za svoje stanovnike."
     },
     "guest_access": {
       "title": "Pristup gostima",
@@ -189,7 +189,7 @@
         "Besplatno parkiralište na posjedu",
         "Bazen",
         "Dopušteno ostavljanje prtljage",
-        "Pušenje dopušteno",
+        "Zabranjeno pušenje",
         "Dopušteni dugoročni boravci",
         "Domaćin vas dočekuje",
         "Detektor dima",

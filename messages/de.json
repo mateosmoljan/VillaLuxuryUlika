@@ -40,12 +40,12 @@
   },
   "About": {
     "title": "Überblick",
-    "des": "Dieses in einem Vorort Kroatiens gelegene, von der Toskana inspirierte Anwesen strahlt Eleganz aus. Das Terrakotta-Dach und der üppige Garten spiegeln den italienischen Charme wider. Aufgeteilt in zwei Apartments, schafft jedes eine warme und einladende Atmosphäre.",
-    "des2": "Draußen gibt es einen unberührten Pool, umgeben von einer mediterranen Landschaft. Diese Villa kombiniert nahtlos zeitlose Ästhetik mit modernem Komfort und bietet eine friedliche Oase im kroatischen Vorort.",
+    "des": "Dieses in einem Vorort Kroatiens gelegene, von der Toskana inspirierte Anwesen strahlt Eleganz aus.",
+    "des2": "Das Terrakotta-Dach und der üppige Garten spiegeln den italienischen Charme wider. Aufgeteilt in zwei Wohnungen, schafft jede eine warme und einladende Atmosphäre. Draußen befindet sich ein unberührter Pool, umgeben von einer mediterranen Landschaft. Diese Villa vereint nahtlos zeitlose Ästhetik mit modernem Komfort und bietet eine friedliche Oase im kroatischen Vorort.",
     "the_space": {
       "title": "Der Raum",
-      "des": "Im ersten Stock dieser kroatischen Villa strahlt das erste Apartment Komfort und Stil aus. Es verfügt über vier geräumige Schlafzimmer, die jeweils einen gemütlichen Rückzugsort bieten. Zwei gut ausgestattete Badezimmer sorgen für Komfort und Privatsphäre. Das Herz des Hauses ist eine große Küche, die für kulinarische Genüsse und Zusammenkünfte konzipiert wurde. Eine wunderschöne Terrasse bietet einen Blick auf die bezaubernden Brijuni-Inseln und dient als atemberaubende Kulisse für Mahlzeiten im Freien und Entspannung.",
-      "des2": "Das zweite Apartment zeichnet sich durch ein modernes Design im unteren Stockwerk aus. Mit zwei eleganten Schlafzimmern bietet es ein zeitgenössisches Wohnerlebnis. Ein großzügig geschnittenes Badezimmer und ein zusätzliches WC erfüllen praktische Bedürfnisse. Das weitläufige Wohnzimmer ist der Mittelpunkt und bietet einen offenen Raum für Unterhaltung und modernes Wohnen. Dieses Apartment strahlt eine zeitgenössische und minimalistische Ästhetik aus und schafft eine stilvolle und einladende Atmosphäre für die Bewohner."
+      "des": "Im ersten Stock dieser kroatischen Villa strahlt die erste Wohnung Komfort und Stil aus. Sie verfügt über vier geräumige Schlafzimmer, von denen jedes einen gemütlichen Rückzugsort bietet. Zwei gut ausgestattete Badezimmer sorgen für Komfort und Privatsphäre. Das Herz der Wohnung ist eine große Küche, die für kulinarische Genüsse und gesellige Zusammenkünfte konzipiert wurde. Eine wunderschöne Terrasse mit Blick auf die bezaubernden Brijuni-Inseln bietet eine atemberaubende Kulisse für Mahlzeiten im Freien und Entspannung.",
+      "des2": "Die zweite Wohnung im unteren Stockwerk besticht durch modernes Design. Mit zwei eleganten Schlafzimmern bietet sie ein zeitgenössisches Wohnerlebnis. Ein großzügig geschnittenes Badezimmer und ein zusätzliches WC erfüllen alle praktischen Bedürfnisse. Das weitläufige Wohnzimmer bildet den Mittelpunkt und bietet einen offenen Raum für Unterhaltung und modernes Wohnen. Diese Wohnung strahlt eine zeitgenössische und minimalistische Ästhetik aus und schafft eine stilvolle und einladende Atmosphäre für ihre Bewohner."
     },
     "guest_access": {
       "title": "Zugang für Gäste",
@@ -194,7 +194,7 @@
         "Kostenlose Parkplätze auf dem Gelände",
         "Pool",
         "Gepäckaufbewahrung erlaubt",
-        "Rauchen erlaubt",
+        "Rauchen verboten",
         "Langzeitaufenthalte erlaubt",
         "Host begrüßt Sie",
         "Rauchmelder",

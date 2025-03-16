@@ -40,12 +40,12 @@
   },
   "About": {
     "title": "Panoramica",
-    "des": "Situata in un sobborgo croato, questa villa ispirata alla Toscana emana eleganza. Il suo tetto in terracotta e il giardino lussureggiante riflettono il fascino italiano. Divisa in due appartamenti, ciascuno crea un'atmosfera calda e accogliente.",
-    "des2": "All'esterno, c'è una piscina immacolata circondata da un paesaggio mediterraneo. Questa villa combina senza soluzione di continuità l'estetica senza tempo con il comfort moderno, offrendo un'oasi di pace nei sobborghi croati.",
+    "des": "Situata in un sobborgo croato, questa villa ispirata alla Toscana emana eleganza. Il tetto in terracotta e il giardino lussureggiante riflettono il fascino italiano. Divisa in due appartamenti, ciascuno di essi crea un'atmosfera calda e accogliente.",
+    "des2": "All'esterno, si trova una piscina immacolata circondata da un paesaggio mediterraneo. Questa villa combina perfettamente un'estetica senza tempo con il comfort moderno, offrendo un'oasi di pace nei sobborghi croati.",
     "the_space": {
       "title": "Lo spazio",
-      "des": "Al primo piano di questa villa croata, il primo appartamento emana comfort e stile. Dispone di quattro camere da letto spaziose, ognuna delle quali offre un rifugio accogliente. Due bagni ben attrezzati garantiscono comfort e privacy. Il cuore della casa è una grande cucina, progettata per piaceri culinari e riunioni. Una splendida terrazza si affaccia sulle incantevoli isole Brijuni, creando un'atmosfera mozzafiato per cene all'aperto e relax.",
-      "des2": "In contrasto, il secondo appartamento vanta un design moderno al piano inferiore. Con due camere eleganti, offre un'esperienza di vita contemporanea. Un bagno di dimensioni generose e un ulteriore WC soddisfano le esigenze pratiche. Il soggiorno spazioso è il punto focale, offrendo un'area ampia e aperta per intrattenimento e vita moderna. Questo appartamento emana un'estetica contemporanea e minimalista, creando un'atmosfera elegante e invitante per i suoi residenti."
+      "des": "Al primo piano di questa villa croata, il primo appartamento emana comfort e stile. Dispone di quattro camere da letto spaziose, ognuna delle quali offre un rifugio accogliente. Due bagni ben attrezzati garantiscono comfort e privacy. Il cuore della casa è una grande cucina, progettata per piaceri culinari e momenti di convivialità. Una splendida terrazza si affaccia sulle incantevoli isole Brioni, creando uno scenario mozzafiato per cene all'aperto e momenti di relax.",
+      "des2": "Al piano inferiore, il secondo appartamento si distingue per un design moderno. Con due eleganti camere da letto, offre un'esperienza di vita contemporanea. Un bagno di dimensioni generose e un ulteriore WC soddisfano tutte le esigenze pratiche. L'ampio soggiorno è il punto focale, offrendo uno spazio aperto e luminoso per intrattenere gli ospiti e vivere in modo moderno. Questo appartamento emana un'estetica contemporanea e minimalista, creando un'atmosfera elegante e accogliente per i suoi residenti."
     },
     "guest_access": {
       "title": "Accesso agli ospiti",
@@ -193,7 +193,7 @@
         "Parcheggio gratuito in loco",
         "Piscina",
         "Consentito il deposito bagagli",
-        "Consentito fumare",
+        "Vietato fumare",
         "Soggiorni a lungo termine consentiti",
         "Accoglienza da parte dell'host",
         "Allarme antincendio",
