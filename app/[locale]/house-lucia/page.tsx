@@ -14,7 +14,7 @@ import { getPaymentConditionsData } from "@/lib/paymentConditions";
 import { getPricelistData } from "@/lib/pricelist";
 import { getTitleData } from "@/lib/title";
 import { getVilla_DescriptionData } from "@/lib/Villa_Description";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Markdown from "react-markdown";
@@ -29,6 +29,7 @@ function VillaPanorama() {
   const FeaturesTitleData = getFeaturesTitleData(localeActive);
   const PricelistData = getPricelistData(localeActive);
   const PaymentConditionsData = getPaymentConditionsData(localeActive);
+  const p = useTranslations("Pricelist.list");
 
   function handleClose() {
     setShowFeatures(false);
@@ -133,10 +134,18 @@ function VillaPanorama() {
               <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
                 {PricelistData.data[0].title}
               </h2>
-              <PriceTable />
+              {/* <PriceTable />
               <p className="text-grey1 text-sm mt-4">
                 {PricelistData.data[0].subtitle}
-              </p>
+              </p> */}
+              <p className="pt-2 pb-5">{p("des")}</p>
+              <ul className="list-none gap-2 flex flex-col">
+                <li>✅ {p("inner_list.item1")}</li>
+                <li>✅ {p("inner_list.item2")}</li>
+                <li>✅ {p("inner_list.item3")}</li>
+                <li>✅ {p("inner_list.item4")}</li>
+              </ul>
+              <p className="pt-5">{p("des2")}🌿✨</p>
             </div>
             <hr />
             <div className="py-10">
