@@ -252,7 +252,17 @@
   },
   "Pricelist": {
     "title": "Pricelist",
-    "subtitle": "*The price refers to the period of 1 nights in Euros"
+    "subtitle": "*The price refers to the period of 1 nights in Euros",
+    "list": {
+      "des": "The price of your private getaway depends on the season, length of stay, and number of guests. We offer flexible options to help you find the perfect arrangement for your needs.",
+      "inner_list": {
+        "item1": "Price per night: From 190 € (depending on the season)",
+        "item2": "Discounts for longer stays: Special rates for weekly and monthly bookings",
+        "item3": "Minimum stay: 2 nights",
+        "item4": "Included in the price: Tourist tax, final cleaning, Wi-Fi, parking, bed linen, and towels"
+      },
+      "des2": "For the exact price and availability, feel free to contact us! Book in advance and secure a perfect vacation in complete privacy."
+    }
   },
   "Payment_conditions": {
     "subtitle": "TERMS & CONDITIONS",

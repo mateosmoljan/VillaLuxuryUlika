@@ -250,7 +250,17 @@
   },
   "Pricelist": {
     "title": "Listino prezzi",
-    "subtitle": "*Il prezzo si riferisce al periodo di 1 notti in Euro"
+    "subtitle": "*Il prezzo si riferisce al periodo di 1 notti in Euro",
+    "list": {
+      "des": "Il prezzo della vostra vacanza privata dipende dalla stagione, dalla durata del soggiorno e dal numero di ospiti. Offriamo opzioni flessibili per aiutarvi a trovare la soluzione perfetta per le vostre esigenze.",
+      "inner_list": {
+        "item1": "Prezzo per notte: A partire da 190 € (a seconda della stagione)",
+        "item2": "Sconti per soggiorni più lunghi: Tariffe speciali per prenotazioni settimanali e mensili",
+        "item3": "Soggiorno minimo: 2 notti",
+        "item4": "Incluso nel prezzo: Tassa di soggiorno, pulizia finale, Wi-Fi, parcheggio, biancheria da letto e asciugamani"
+      },
+      "des2": "Per conoscere il prezzo esatto e la disponibilità, non esitate a contattarci! Prenotate in anticipo per assicurarvi una vacanza perfetta in totale privacy."
+    }
   },
   "Payment_conditions": {
     "subtitle": "TERMINI E CONDIZIONI",

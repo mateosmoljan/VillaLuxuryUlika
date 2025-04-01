@@ -247,7 +247,17 @@
   },
   "Pricelist": {
     "title": "Cjenik",
-    "subtitle": "*Cijena se odnosi na period od 1 noćenja u eurima"
+    "subtitle": "*Cijena se odnosi na period od 1 noćenja u eurima",
+    "list": {
+      "des": "Cijena vašeg privatnog odmora ovisi o sezoni, duljini boravka i broju gostiju. Nudimo fleksibilne opcije kako biste mogli pronaći idealan aranžman koji odgovara vašim potrebama.",
+      "inner_list": {
+        "item1": "Cijena po noćenju: Već od 190 € (ovisno o sezoni)",
+        "item2": "Popusti za duži boravak: Posebne cijene za tjedne i mjesečne rezervacije",
+        "item3": "Minimalan boravak: 2 noćenja",
+        "item4": "Uključeno u cijenu: Boravišna pristojba, završno čišćenje, Wi-Fi, parking, posteljina i ručnici"
+      },
+      "des2": "Za točnu cijenu i dostupnost, slobodno nas kontaktirajte! Rezervirajte na vrijeme i osigurajte si savršen odmor u potpunoj privatnosti."
+    }
   },
   "Payment_conditions": {
     "subtitle": "UVJETI PLAĆANJA I REZERVACIJE",

@@ -15,6 +15,7 @@ function Pricelist() {
   const TitleData = getTitleData(localeActive);
   const PricelistData = getPricelistData(localeActive);
   const PaymentConditionsData = getPaymentConditionsData(localeActive);
+  const p = useTranslations("Pricelist.list");
   const t = useTranslations("How_Reserve");
   return (
     <section className="pt-16 md:pt-14">
@@ -24,10 +25,19 @@ function Pricelist() {
           <h2 className="font-ExtraBold text-center text-4xl text-dark_blue_black mb-12 tracking-wider">
             {TitleData.data[0].title4}
           </h2>
-          <PriceTable />
+          {/* <PriceTable />
           <p className="text-grey1 text-sm mt-4">
             {PricelistData.data[0].subtitle}
-          </p>
+          </p> */}
+
+          <p className="pt-2 pb-5">{p("des")}</p>
+          <ul className="list-none gap-2 flex flex-col">
+            <li>✅ {p("inner_list.item1")}</li>
+            <li>✅ {p("inner_list.item2")}</li>
+            <li>✅ {p("inner_list.item3")}</li>
+            <li>✅ {p("inner_list.item4")}</li>
+          </ul>
+          <p className="pt-5">{p("des2")}🌿✨</p>
         </div>
         <div className="py-10 bg-gray-100">
           <div className="container">
