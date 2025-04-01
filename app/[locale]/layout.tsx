@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Accommodation House Lucia - Istria",
     description:
       "Welcome to House Lucia, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-    url: "https://villapanoramaistria.com",
+    url: "https://houselucia.hr",
   },
   twitter: {
     card: "summary_large_image",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Welcome to House Lucia, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
     images: [
       {
-        url: "https://www.villapanoramaistria.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F27.92c57344.jpg&w=3840&q=75",
+        url: "https://www.houselucia.hr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F42.07efe036.jpg&w=1920&q=75",
         alt: "House Lucia",
       },
     ],
