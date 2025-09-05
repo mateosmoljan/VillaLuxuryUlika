@@ -9,10 +9,10 @@ function PaymentConditions() {
   return (
     <div>
       <div className="flex flex-col gap-5 mb-5">
-        <p>{PaymentConditionsData.data[0].des}</p>
-        {/* <p>
+        {/* <p>{PaymentConditionsData.data[0].des}</p> */}
+        <p>
           <Markdown>{PaymentConditionsData.data[0].des2}</Markdown>
-        </p> */}
+        </p>
         <p>
           <Markdown>{PaymentConditionsData.data[0].des3}</Markdown>
         </p>
