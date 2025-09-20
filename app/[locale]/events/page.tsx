@@ -29,9 +29,9 @@ const EventPackages = () => {
     a.raw("packages");
 
   return (
-    <section className="pt-16 md:pt-14 min-h-screen mb-36 px-4">
+    <section className="pt-16 md:pt-14 min-h-screen mb-36 ">
       <NavPath />
-      <div className="max-w-6xl mx-auto  mt-12 mb-10">
+      <div className="max-w-6xl mx-auto  mt-12 mb-10 px-4">
         <h2 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
           {a("title")}
         </h2>
