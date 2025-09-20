@@ -19,7 +19,7 @@
       "Listino prezzi",
       "Galleria fotografica",
       "Dintorni",
-      "🎉Eventi",
+      "Eventi",
       "Contatti"
     ],
     "navLinksButton": "Prenota"
@@ -362,28 +362,34 @@
     "next": "Avanti"
   },
   "Events": {
-    "title": "Pacchetti per eventi",
-    "subtitle": "Scegli il pacchetto perfetto per il tuo evento speciale. Goditi decorazioni, un giro in auto d'epoca e momenti indimenticabili.",
+    "title": "I nostri pacchetti per celebrazioni indimenticabili",
+    "subtitle": "Vuoi aggiungere un tocco speciale al tuo evento e creare ricordi che dureranno per sempre? Abbiamo preparato tre pacchetti accuratamente studiati per soddisfare diverse esigenze e occasioni – dalle decorazioni semplici ed eleganti a esperienze uniche che lasciano il segno.",
     "button": "Richiedi un preventivo",
     "package_title": "Evento di 1 notte",
     "p4_title": "Eventi più grandi",
     "p4_des": "Trasforma la tua occasione speciale in un’esperienza indimenticabile! La nostra casa con ampio spazio esterno è la cornice perfetta per ospitare eventi di grande portata in un’atmosfera unica. Grazie alla possibilità di installare tende, creiamo un ambiente su misura per matrimoni, feste private o eventi aziendali. In collaborazione con il nostro partner di fiducia VISAEM, offriamo soluzioni eleganti e professionali per le tensostrutture, garantendo un evento impeccabile e ricco di emozioni.",
     "packages": [
       {
-        "title": "Basic",
-        "details": ["Decorazione - 1 ghirlanda"],
+        "title": "PACCHETTO BASE",
+        "details": [
+          "Perfetto per chi apprezza la semplicità con un tocco di eleganza. La nostra ghirlanda decorativa, curata nei minimi dettagli, valorizzerà lo spazio e creerà un’atmosfera raffinata per qualsiasi occasione.",
+          "Ideale per: feste più piccole, incontri intimi o eventi in cui desideri esaltare la bellezza dei dettagli."
+        ],
         "price": "600€"
       },
       {
-        "title": "Standard",
-        "details": ["Decorazione (ghirlanda + palloncino a elio)"],
+        "title": "PACCHETTO STANDARD",
+        "details": [
+          "Una combinazione di eleganza e allegria! Oltre alla ghirlanda, il pacchetto include palloncini ad elio che aggiungono vivacità e un tocco festoso all’atmosfera. I tuoi ospiti sentiranno l’energia positiva e la festa sarà portata a un livello superiore.",
+          "Ideale per: compleanni, battesimi, eventi aziendali e tutte le occasioni in cui desideri un tocco festivo in più."
+        ],
         "price": "700€"
       },
       {
-        "title": "Premium",
+        "title": "PACCHETTO PREMIUM",
         "details": [
-          "Decorazione",
-          "Decorazione, pittura e giro in auto d'epoca - 1h"
+          "Il nostro pacchetto più esclusivo, creato per chi desidera più di una semplice decorazione – vuole vivere un’esperienza. Oltre all’elegante allestimento, l’offerta include un giro esclusivo in auto d’epoca (fino a 1 ora), durante il quale potrai divertirti e scattare foto con il veicolo.",
+          "Ideale per: anniversari, feste, incontri speciali ed eventi che meritano qualcosa di veramente unico."
         ],
         "price": "900€"
       }

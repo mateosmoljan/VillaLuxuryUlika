@@ -2,10 +2,24 @@ import NavPath from "@/components/NavPath/NavPath";
 import { Link } from "@/navigation";
 import React from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import oldTimer_House from "@/public/assets/images/oldTimer_House.jpg";
 import oldTimer from "@/public/assets/images/oldTimer.jpg";
-import { useTranslations } from "next-intl";
+import whiteTent from "@/public/assets/images/white_tent.jpg";
+import longTables from "@/public/assets/images/long_tables.jpg";
+import roundTables from "@/public/assets/images/round_tables.jpg";
+
+const column1Images = [
+  { src: oldTimer_House, alt: "Vintage Car at House Lucia" },
+  { src: oldTimer, alt: "Vintage Car" },
+];
+
+const column2Images = [{ src: whiteTent, alt: "White Tent" }];
+const column3Images = [
+  { src: roundTables, alt: "Round Tables" },
+  { src: longTables, alt: "Long Tables" },
+];
 
 const EventPackages = () => {
   const a = useTranslations("Events");
@@ -19,7 +33,7 @@ const EventPackages = () => {
       <NavPath />
       <div className="max-w-6xl mx-auto  mt-12 mb-10">
         <h2 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
-          🎉 {a("title")}
+          {a("title")}
         </h2>
         <p className="text-gray-600 mb-12 text-center">{a("subtitle")}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -83,17 +97,51 @@ const EventPackages = () => {
             </div>
           </div>
         </div>
-        <section>
-          <div className="flex flex-col md:flex-row gap-6">
-            <div>
-              <Image src={oldTimer} alt="Old Timer" className="rounded-xl" />
+        <section className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* Column 1 */}
+            <div className="flex-1 flex flex-col gap-2">
+              {column1Images.map((image, index) => (
+                <div key={index} className="relative">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="rounded-lg w-full h-auto object-cover"
+                    width={500} // Adjust based on your largest image width
+                    height={300} // Adjust based on your largest image height
+                  />
+                </div>
+              ))}
             </div>
-            <div>
-              <Image
-                src={oldTimer_House}
-                alt="Old Timer"
-                className="rounded-xl"
-              />
+
+            {/* Column 2 */}
+            <div className="flex-1 flex flex-col gap-2">
+              {column2Images.map((image, index) => (
+                <div key={index} className="relative">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="rounded-lg w-full h-auto object-cover"
+                    width={500}
+                    height={300}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Column 3 */}
+            <div className="flex-1 flex flex-col gap-2">
+              {column3Images.map((image, index) => (
+                <div key={index} className="relative">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="rounded-lg w-full h-auto object-cover"
+                    width={500}
+                    height={300}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -19,7 +19,7 @@
       "Pricelist",
       "Photogallery",
       "Surroundings",
-      "🎉Events",
+      "Events",
       "Contact"
     ],
     "navLinksButton": "Book"
@@ -356,28 +356,34 @@
     "next": "Next"
   },
   "Events": {
-    "title": "Event Packages",
-    "subtitle": "Choose the perfect package for your special event. Enjoy decorations, a ride in a vintage car, and unforgettable moments.",
+    "title": "Our Packages for Unforgettable Celebrations",
+    "subtitle": "Would you like to add a special charm to your event and create memories that will last a lifetime? We have prepared three carefully designed packages to suit different wishes and occasions – from elegant, simple decorations to unique experiences that leave a lasting impression.",
     "button": "Request a Quote",
     "package_title": "1 Night Event",
     "p4_title": "Bigger events",
     "p4_des": "Turn your special occasion into an unforgettable experience! Our house with its spacious location is the perfect setting for hosting larger events in a unique atmosphere. With plenty of room for tents, we can create a tailor-made venue for weddings, family celebrations, or corporate gatherings. In collaboration with our trusted partner VISAEM, we provide elegant and professional tent solutions, ensuring every detail is taken care of for a flawless and memorable event.",
     "packages": [
       {
-        "title": "Basic",
-        "details": ["Decoration - 1 garland"],
+        "title": "BASIC PACKAGE",
+        "details": [
+          "Perfect for those who appreciate simplicity with a touch of elegance. Our carefully crafted decorative garland will enhance your space and create a refined atmosphere for any occasion.",
+          "Ideal for: smaller celebrations, intimate gatherings, or events where you want to highlight beauty in details."
+        ],
         "price": "600€"
       },
       {
-        "title": "Standard",
-        "details": ["Decoration (garland + helium balloon)"],
+        "title": "STANDARD PACKAGE",
+        "details": [
+          "A combination of elegance and joy! In addition to the garland, this package includes helium balloons that bring playfulness and a festive touch to the atmosphere. Your guests will feel the positive energy, and the entire event will be lifted to the next level.",
+          "Ideal for: birthdays, christenings, corporate events, and all occasions where you want an extra festive flair."
+        ],
         "price": "700€"
       },
       {
-        "title": "Premium",
+        "title": "PREMIUM PACKAGE",
         "details": [
-          "Decoration",
-          "Decoration, Painting and driving with a vintage car - 1h"
+          "Our most exclusive package, created for those who want more than just decoration – they want an experience. Along with elegant decoration, this offer includes an exclusive retro oldtimer ride (up to 1 hour), during which you can enjoy and take photos with the car.",
+          "Ideal for: anniversaries, celebrations, special gatherings, and events that deserve something truly different."
         ],
         "price": "900€"
       }

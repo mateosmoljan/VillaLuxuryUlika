@@ -19,7 +19,7 @@
       "Cjenik",
       "Fotogalerija",
       "Okolica",
-      "🎉Događaji",
+      "Događaji",
       "Kontakt"
     ],
     "navLinksButton": "Rezerviraj"
@@ -363,28 +363,34 @@
     "next": "Dalje"
   },
   "Events": {
-    "title": "Paketi za evente",
-    "subtitle": "Odaberite savršen paket za vaš poseban događaj. Uživajte u dekoraciji, vožnji s oldtimerom i nezaboravnim trenucima.",
+    "title": "Naši paketi za nezaboravne proslave",
+    "subtitle": "Želite li svom događaju dodati poseban šarm i stvoriti uspomene koje će se pamtiti? Pripremili smo tri pažljivo osmišljena paketa koji odgovaraju različitim željama i prigodama – od elegantnih i jednostavnih dekoracija, do jedinstvenih iskustava koja ostavljaju bez daha.",
     "button": "Zatraži ponudu",
     "package_title": "1 noć event",
     "p4_title": "Veći eventi",
     "p4_des": "U mogućnosti smo ponuditi najam kuće s pripadajućom lokacijom koja je idealna za organizaciju većih događanja. Na raspolaganju je dovoljno prostora za postavljanje šatora, što omogućava fleksibilnost u prilagodbi ambijenta različitim prigodama – od obiteljskih proslava do poslovnih evenata. Postavljanje šatora moguće je realizirati u suradnji s VISAEM, pouzdanim partnerom za profesionalne šatorske konstrukcije i prateću opremu, čime osiguravamo kvalitetnu i sigurnu izvedbu svakog događanja.",
     "packages": [
       {
-        "title": "Osnovni",
-        "details": ["Dekoracija - 1 girlanda"],
+        "title": "OSNOVNI PAKET",
+        "details": [
+          "Za sve one koji cijene jednostavnost s daškom elegancije. Naša pažljivo izrađena dekorativna girlanda uljepšat će vaš prostor i stvoriti profinjenu atmosferu za svaku prigodu.",
+          "Idealno za: manje proslave, intimna okupljanja ili događaje gdje želite naglasiti ljepotu u detaljima."
+        ],
         "price": "600€"
       },
       {
-        "title": "Standardni",
-        "details": ["Dekoracija (girlanda + helij balon)"],
+        "title": "STANDARDNI PAKET",
+        "details": [
+          "Za sve one koji cijene jednostavnost s daškom elegancije. Naša pažljivo izrađena dekorativna girlanda uljepšat će vaš prostor i stvoriti profinjenu atmosferu za svaku prigodu.",
+          "Idealno za: rođendane, krštenja, korporativne proslave i sve događaje gdje želite dodatnu dozu svečanosti."
+        ],
         "price": "700€"
       },
       {
-        "title": "Premium",
+        "title": "PREMIUM PAKET",
         "details": [
-          "Dekoracija",
-          "Dekoracija, slikanje i vožnja s oldtimerom - 1h"
+          "Naš najposebniji paket stvoren je za one koji žele više od dekoracije – žele iskustvo. Osim elegantnog uređenja prostora, u ponudu je uključena i ekskluzivna vožnja retro oldtimerom (do 1 sat), tijekom koje možete uživati i fotografirati se uz automobil.",
+          "Idealno za: obljetnice, proslave, posebna okupljanja i događaje koji zaslužuju nešto drugačije."
         ],
         "price": "900€"
       }

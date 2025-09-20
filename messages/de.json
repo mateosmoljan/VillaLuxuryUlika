@@ -19,7 +19,7 @@
       "Preisliste",
       "Fotogalerie",
       "Umgebung",
-      "🎉Veranstaltungen",
+      "Veranstaltungen",
       "Kontakt"
     ],
     "navLinksButton": "Buchen"
@@ -362,28 +362,34 @@
     "next": "Weiter"
   },
   "Events": {
-    "title": "Veranstaltungspakete",
-    "subtitle": "Wählen Sie das perfekte Paket für Ihre besondere Veranstaltung. Genießen Sie Dekorationen, eine Fahrt in einem Oldtimer und unvergessliche Momente.",
+    "title": "Unsere Pakete für unvergessliche Feiern",
+    "subtitle": "Möchten Sie Ihrer Veranstaltung einen besonderen Charme verleihen und Erinnerungen schaffen, die für immer bleiben? Wir haben drei sorgfältig gestaltete Pakete vorbereitet, die zu unterschiedlichen Wünschen und Anlässen passen – von eleganten, schlichten Dekorationen bis hin zu einzigartigen Erlebnissen, die bleibenden Eindruck hinterlassen.",
     "button": "Angebot anfordern",
     "package_title": "1 Nacht Veranstaltung",
     "p4_title": "Größere Veranstaltungen",
     "p4_des": "Machen Sie Ihr besonderes Ereignis zu einem unvergesslichen Erlebnis! Unser Haus mit dem großzügigen Gelände bietet die perfekte Kulisse für größere Veranstaltungen in einzigartiger Atmosphäre. Dank ausreichend Platz für Zelte verwandeln wir die Location in eine maßgeschneiderte Event-Location – sei es für Hochzeiten, Familienfeiern oder Firmenveranstaltungen. Gemeinsam mit unserem verlässlichen Partner VISAEM sorgen wir für elegante und professionelle Zeltlösungen, damit jedes Detail stimmt und Ihr Event rundum gelingt.",
     "packages": [
       {
-        "title": "Basic",
-        "details": ["Dekoration - 1 Girlande"],
+        "title": "BASISPAKET",
+        "details": [
+          "Perfekt für alle, die Einfachheit mit einem Hauch von Eleganz schätzen. Unsere liebevoll gestaltete Dekorationsgirlande verschönert Ihre Location und schafft eine stilvolle Atmosphäre für jeden Anlass.",
+          "Ideal für: kleinere Feiern, intime Zusammenkünfte oder Veranstaltungen, bei denen Sie die Schönheit im Detail hervorheben möchten."
+        ],
         "price": "600€"
       },
       {
-        "title": "Standard",
-        "details": ["Dekoration (Girlande + Heliumballon)"],
+        "title": "STANDARDPAKET",
+        "details": [
+          "Eine Kombination aus Eleganz und Freude! Neben der Girlande enthält dieses Paket auch Heliumballons, die der Location Verspieltheit und eine festliche Note verleihen. Ihre Gäste werden die besondere Energie spüren, und die gesamte Atmosphäre wird auf ein neues Level gehoben.",
+          "Ideal für: Geburtstage, Taufen, Firmenfeiern und alle Anlässe, bei denen Sie ein zusätzliches festliches Flair wünschen."
+        ],
         "price": "700€"
       },
       {
-        "title": "Premium",
+        "title": "PREMIUMPAKET",
         "details": [
-          "Dekoration",
-          "Dekoration, Malen und Fahren mit einem Oldtimer - 1h"
+          "Unser exklusivstes Paket, geschaffen für alle, die mehr als nur Dekoration möchten – sie wollen ein Erlebnis. Neben einer eleganten Dekoration umfasst das Angebot auch eine exklusive Oldtimer-Fahrt (bis zu 1 Stunde), bei der Sie den Moment genießen und Erinnerungsfotos mit dem Fahrzeug machen können.",
+          "Ideal für: Jubiläen, Feiern, besondere Zusammenkünfte und Veranstaltungen, die etwas Außergewöhnliches verdienen."
         ],
         "price": "900€"
       }
