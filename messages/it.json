@@ -19,6 +19,7 @@
       "Listino prezzi",
       "Galleria fotografica",
       "Dintorni",
+      "🎉Eventi",
       "Contatti"
     ],
     "navLinksButton": "Prenota"
@@ -359,5 +360,33 @@
     "reset": "Ripristina",
     "back": "Indietro",
     "next": "Avanti"
+  },
+  "Events": {
+    "title": "Pacchetti per eventi",
+    "subtitle": "Scegli il pacchetto perfetto per il tuo evento speciale. Goditi decorazioni, un giro in auto d'epoca e momenti indimenticabili.",
+    "button": "Richiedi un preventivo",
+    "package_title": "Evento di 1 notte",
+    "p4_title": "Eventi più grandi",
+    "p4_des": "Trasforma la tua occasione speciale in un’esperienza indimenticabile! La nostra casa con ampio spazio esterno è la cornice perfetta per ospitare eventi di grande portata in un’atmosfera unica. Grazie alla possibilità di installare tende, creiamo un ambiente su misura per matrimoni, feste private o eventi aziendali. In collaborazione con il nostro partner di fiducia VISAEM, offriamo soluzioni eleganti e professionali per le tensostrutture, garantendo un evento impeccabile e ricco di emozioni.",
+    "packages": [
+      {
+        "title": "Basic",
+        "details": ["Decorazione - 1 ghirlanda"],
+        "price": "600€"
+      },
+      {
+        "title": "Standard",
+        "details": ["Decorazione (ghirlanda + palloncino a elio)"],
+        "price": "700€"
+      },
+      {
+        "title": "Premium",
+        "details": [
+          "Decorazione",
+          "Decorazione, pittura e giro in auto d'epoca - 1h"
+        ],
+        "price": "900€"
+      }
+    ]
   }
 }

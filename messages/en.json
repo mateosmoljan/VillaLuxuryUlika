@@ -19,6 +19,7 @@
       "Pricelist",
       "Photogallery",
       "Surroundings",
+      "🎉Events",
       "Contact"
     ],
     "navLinksButton": "Book"
@@ -353,5 +354,33 @@
     "reset": "Reset",
     "back": "Back",
     "next": "Next"
+  },
+  "Events": {
+    "title": "Event Packages",
+    "subtitle": "Choose the perfect package for your special event. Enjoy decorations, a ride in a vintage car, and unforgettable moments.",
+    "button": "Request a Quote",
+    "package_title": "1 Night Event",
+    "p4_title": "Bigger events",
+    "p4_des": "Turn your special occasion into an unforgettable experience! Our house with its spacious location is the perfect setting for hosting larger events in a unique atmosphere. With plenty of room for tents, we can create a tailor-made venue for weddings, family celebrations, or corporate gatherings. In collaboration with our trusted partner VISAEM, we provide elegant and professional tent solutions, ensuring every detail is taken care of for a flawless and memorable event.",
+    "packages": [
+      {
+        "title": "Basic",
+        "details": ["Decoration - 1 garland"],
+        "price": "600€"
+      },
+      {
+        "title": "Standard",
+        "details": ["Decoration (garland + helium balloon)"],
+        "price": "700€"
+      },
+      {
+        "title": "Premium",
+        "details": [
+          "Decoration",
+          "Decoration, Painting and driving with a vintage car - 1h"
+        ],
+        "price": "900€"
+      }
+    ]
   }
 }

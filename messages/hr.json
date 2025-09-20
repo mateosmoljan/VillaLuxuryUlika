@@ -14,7 +14,14 @@
     "Show_Gallery": "Pokaži galeriju"
   },
   "Navigation": {
-    "navlinks": ["House Lucia", "Cjenik", "Fotogalerija", "Okolica", "Kontakt"],
+    "navlinks": [
+      "House Lucia",
+      "Cjenik",
+      "Fotogalerija",
+      "Okolica",
+      "🎉Događaji",
+      "Kontakt"
+    ],
     "navLinksButton": "Rezerviraj"
   },
   "HeaderSwiper": {
@@ -266,7 +273,7 @@
     "des2": "Za osiguranje rezervacije obvezno je platiti 30% od pune cijene unaprijed izravno vlasniku smještaja, a 70% prilikom dolaska u smještajnu jedinicu.",
     "des3": "Depozit je povratni ako je sve u redu: 500 eura.",
     "des4": "Mogućnost besplatnog otkazivanja tjedan dana nakon rezervacije (OSIM U SLUČAJU REZERVACIJA U ZADNJI TRENUTAK, TADA JE ROK 48 SATI). Rezervacija u zadnji trenutak - Rezervacija dva tjedna prije.",
-    "des5": "Posljednjeg dana boravka, gost je dužan napustiti smještaj do 10 sati, kako bi drugi gosti mogli provjeriti od 16 sati.",
+    "des5": "Posljednjeg dana boravka, gost je dužan napustiti smještaj do 09 sati, kako bi drugi gosti mogli pristupiti objektu od 16 sati.",
     "des6": "Napomena: Kućni ljubimci nisu dopušteni na prostoru objekta.",
     "title2": "Načini plaćanja:"
   },
@@ -354,5 +361,33 @@
     "reset": "Resetiraj",
     "back": "Natrag",
     "next": "Dalje"
+  },
+  "Events": {
+    "title": "Paketi za evente",
+    "subtitle": "Odaberite savršen paket za vaš poseban događaj. Uživajte u dekoraciji, vožnji s oldtimerom i nezaboravnim trenucima.",
+    "button": "Zatraži ponudu",
+    "package_title": "1 noć event",
+    "p4_title": "Veći eventi",
+    "p4_des": "U mogućnosti smo ponuditi najam kuće s pripadajućom lokacijom koja je idealna za organizaciju većih događanja. Na raspolaganju je dovoljno prostora za postavljanje šatora, što omogućava fleksibilnost u prilagodbi ambijenta različitim prigodama – od obiteljskih proslava do poslovnih evenata. Postavljanje šatora moguće je realizirati u suradnji s VISAEM, pouzdanim partnerom za profesionalne šatorske konstrukcije i prateću opremu, čime osiguravamo kvalitetnu i sigurnu izvedbu svakog događanja.",
+    "packages": [
+      {
+        "title": "Osnovni",
+        "details": ["Dekoracija - 1 girlanda"],
+        "price": "600€"
+      },
+      {
+        "title": "Standardni",
+        "details": ["Dekoracija (girlanda + helij balon)"],
+        "price": "700€"
+      },
+      {
+        "title": "Premium",
+        "details": [
+          "Dekoracija",
+          "Dekoracija, slikanje i vožnja s oldtimerom - 1h"
+        ],
+        "price": "900€"
+      }
+    ]
   }
 }

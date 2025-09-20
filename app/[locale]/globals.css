@@ -44,7 +44,7 @@ a {
 /* Button */
 
 .btn {
-  @apply flex items-center p-2 bg-yellow rounded-md font-poppins   text-white uppercase text-sm	 px-4 hover:bg-dark_yellow tracking-widest;
+  @apply flex items-center p-2 bg-yellow rounded-md font-poppins transition  text-white uppercase text-sm	 px-4 hover:bg-dark_yellow tracking-widest;
 }
 
 

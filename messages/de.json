@@ -19,6 +19,7 @@
       "Preisliste",
       "Fotogalerie",
       "Umgebung",
+      "🎉Veranstaltungen",
       "Kontakt"
     ],
     "navLinksButton": "Buchen"
@@ -359,5 +360,33 @@
     "reset": "Zurücksetzen",
     "back": "Zurück",
     "next": "Weiter"
+  },
+  "Events": {
+    "title": "Veranstaltungspakete",
+    "subtitle": "Wählen Sie das perfekte Paket für Ihre besondere Veranstaltung. Genießen Sie Dekorationen, eine Fahrt in einem Oldtimer und unvergessliche Momente.",
+    "button": "Angebot anfordern",
+    "package_title": "1 Nacht Veranstaltung",
+    "p4_title": "Größere Veranstaltungen",
+    "p4_des": "Machen Sie Ihr besonderes Ereignis zu einem unvergesslichen Erlebnis! Unser Haus mit dem großzügigen Gelände bietet die perfekte Kulisse für größere Veranstaltungen in einzigartiger Atmosphäre. Dank ausreichend Platz für Zelte verwandeln wir die Location in eine maßgeschneiderte Event-Location – sei es für Hochzeiten, Familienfeiern oder Firmenveranstaltungen. Gemeinsam mit unserem verlässlichen Partner VISAEM sorgen wir für elegante und professionelle Zeltlösungen, damit jedes Detail stimmt und Ihr Event rundum gelingt.",
+    "packages": [
+      {
+        "title": "Basic",
+        "details": ["Dekoration - 1 Girlande"],
+        "price": "600€"
+      },
+      {
+        "title": "Standard",
+        "details": ["Dekoration (Girlande + Heliumballon)"],
+        "price": "700€"
+      },
+      {
+        "title": "Premium",
+        "details": [
+          "Dekoration",
+          "Dekoration, Malen und Fahren mit einem Oldtimer - 1h"
+        ],
+        "price": "900€"
+      }
+    ]
   }
 }

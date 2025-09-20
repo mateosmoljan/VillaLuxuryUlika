@@ -16,14 +16,14 @@ function Footer() {
             <Image src={SSL} alt="ssl Villa Relax" width={200} />
             <p>{t("year")}</p>
             <p>{t("rights")}</p>
-            <p className="">
+            {/* <p className="">
               <a
                 href="https://www.boostweb.io"
                 className="!text-white hover:!text-yellow"
               >
                 {t("created_by")}
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="w-full h-full relative pl-5 sm:pl-0 sm:w-3/5 lg:w-auto">
@@ -60,6 +60,23 @@ function Footer() {
             <li>Antonio Smareglia 50, Vodnjan</li>
             {/* <li>+(385) 98 263 136</li> */}
             <li>houseluciainfo@gmail.com</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="font-bold uppercase text-xl pb-5">
+            {t("Contact_Us.title")}
+          </h2>
+          <ul className="space-y-4">
+            <li>
+              <a href="https://www.facebook.com/share/1ChpqK9FBc/?mibextid=wwXIfr">
+                ⓕ Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/houseluciavodnjan?igsh=MWZ1b2dsbnRyY2d2bg%3D%3D&utm_source=qr">
+                🅾 Instagram
+              </a>
+            </li>
           </ul>
         </div>
       </div>
