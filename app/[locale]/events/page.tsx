@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import oldTimer_House from "@/public/assets/images/oldTimer_House.jpg";
 import oldTimer from "@/public/assets/images/oldTimer.jpg";
-import ShowcaseGalleryEvents from "@/components/Gallery/Events";
 import { useTranslations } from "next-intl";
 
 const EventPackages = () => {
@@ -19,7 +18,7 @@ const EventPackages = () => {
     <section className="pt-16 md:pt-14 min-h-screen mb-36 px-4">
       <NavPath />
       <div className="max-w-6xl mx-auto  mt-12 mb-10">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-6 text-center">
+        <h2 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
           🎉 {a("title")}
         </h2>
         <p className="text-gray-600 mb-12 text-center">{a("subtitle")}</p>
@@ -62,7 +61,16 @@ const EventPackages = () => {
               <h3 className="text-xl font-bold text-gray-700 mb-4">
                 {a("p4_title")}
               </h3>
-              <p>{a("p4_des")}</p>
+              <p className="text-gray-600 space-y-2 mb-6">{a("p4_des")}</p>
+              <p className="mt-4">
+                <a
+                  href="https://www.facebook.com/share/1BKZu6AJjK/?mibextid=wwXIfr"
+                  target="_blank"
+                  className="underline text-yellow"
+                >
+                  <b>VISAEM</b>
+                </a>
+              </p>
             </div>
 
             <div className="flex flex-col md:items-end items-center justify-center">
