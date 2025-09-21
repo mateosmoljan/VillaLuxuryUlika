@@ -3,6 +3,7 @@ import { Link } from "@/navigation";
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import Markdown from "react-markdown";
 
 import oldTimer_House from "@/public/assets/images/oldTimer_House.jpg";
 import oldTimer from "@/public/assets/images/oldTimer.jpg";
@@ -35,7 +36,9 @@ const EventPackages = () => {
         <h2 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
           {a("title")}
         </h2>
-        <p className="text-gray-600 mb-12 text-center">{a("subtitle")}</p>
+        <p className="text-gray-600 mb-12 text-center">
+          <Markdown>{a("subtitle")}</Markdown>
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map(
             (
