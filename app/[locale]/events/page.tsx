@@ -61,9 +61,9 @@ const EventPackages = () => {
                 </div>
 
                 <div>
-                  <p className="text-2xl font-semibold text-yellow mb-4 text-center">
+                  {/* <p className="text-2xl font-semibold text-yellow mb-4 text-center">
                     {pkg.price}
-                  </p>
+                  </p> */}
                   <Link href="/contact" className="btn justify-center">
                     {a("button")}
                   </Link>
