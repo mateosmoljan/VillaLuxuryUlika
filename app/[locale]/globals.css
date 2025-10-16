@@ -22,14 +22,13 @@ html {
   box-sizing: border-box;
 }
 
-
 ul {
   list-style: none;
 }
 
 a {
   text-decoration: none;
-  @apply text-yellow
+  @apply text-yellow;
 }
 
 input,
@@ -37,9 +36,8 @@ textarea,
 button,
 select,
 a {
-    -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
 }
-
 
 /* Button */
 
@@ -47,34 +45,29 @@ a {
   @apply flex items-center p-2 bg-yellow rounded-md font-poppins transition  text-white uppercase text-sm	 px-4 hover:bg-dark_yellow tracking-widest;
 }
 
-
 .btn-2 {
   @apply flex items-center p-2 bg-dark_blue_black rounded-md font-poppins text-white tracking-widest px-4 uppercase text-sm  hover:bg-neutral-800;
 }
 
 .btn:focus {
-  box-shadow: 0 0 0 0.2rem rgba(178,
-    150,
-    0, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 107, 178, 0.5);
 }
 
 .btn-2:focus {
-      box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
-
 
 /* Shadow */
 
 .shadow-a {
-  box-shadow: 50px 0px 30px 0px rgba(0, 0, 0, 0.233) inset, -50px 0px 30px 0px rgba(0, 0, 0, 0.233) inset;
+  box-shadow: 50px 0px 30px 0px rgba(0, 0, 0, 0.233) inset,
+    -50px 0px 30px 0px rgba(0, 0, 0, 0.233) inset;
 }
 
 .custom_border {
-      border: 1px solid rgba(0, 0, 0, 0.125);
-      border-radius: 0.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.4rem;
 }
-
-
 
 .head_swiper .swiper-pagination-bullet {
   width: 30px !important;
@@ -92,8 +85,6 @@ a {
   color: #fff;
   background: #000 !important;
 }
-
-
 
 /* Distances */
 @media (max-width: 640px) {
