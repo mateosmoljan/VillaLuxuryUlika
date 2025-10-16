@@ -56,10 +56,10 @@ function Footer() {
             {t("Contact_Us.title")}
           </h2>
           <ul className="space-y-4">
-            <li>Sabina Smoljan</li>
+            <li>Mihovil Smoljan</li>
             <li>Antonio Smareglia 50, Vodnjan</li>
             {/* <li>+(385) 98 263 136</li> */}
-            <li>houseluciainfo@gmail.com</li>
+            <li>villaluxulika@gmail.com</li>
           </ul>
         </div>
         <div>
@@ -68,14 +68,10 @@ function Footer() {
           </h2>
           <ul className="space-y-4">
             <li>
-              <a href="https://www.facebook.com/share/1ChpqK9FBc/?mibextid=wwXIfr">
-                ⓕ Facebook
-              </a>
+              <a href="">ⓕ Facebook</a>
             </li>
             <li>
-              <a href="https://www.instagram.com/houseluciavodnjan?igsh=MWZ1b2dsbnRyY2d2bg%3D%3D&utm_source=qr">
-                🅾 Instagram
-              </a>
+              <a href="">🅾 Instagram</a>
             </li>
           </ul>
         </div>

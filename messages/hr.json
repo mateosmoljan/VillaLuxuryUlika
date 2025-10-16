@@ -1,12 +1,12 @@
 {
   "Titles": {
-    "homepage_title": "House Lucia - Istra",
-    "Villa_Panorama": "Holiday Home Lucia",
+    "homepage_title": "Villa Luxury Ulika - Istra",
+    "Villa_Panorama": "Kuća Za Odmor Villa Luxury Ulika",
     "Villa_Map_Location": "Lokacija na karti",
     "Availability_Calendar": "Kalendar dostupnosti",
     "Availability_Appointments_sub": "DOSTUPNI TERMINI",
-    "Price_list": "Cjenik House Lucia",
-    "Photogallery": "Fotogalerija House Lucia, Istra",
+    "Price_list": "Cjenik Villa Luxury Ulika",
+    "Photogallery": "Fotogalerija Villa Luxury Ulika, Istra",
     "Surrondings": "Vodnjan i okolica",
     "Surrondings_sub": "VODNJAN & ISTRA"
   },
@@ -15,25 +15,24 @@
   },
   "Navigation": {
     "navlinks": [
-      "House Lucia",
+      "Villa Luxury Ulika",
       "Cjenik",
-      "Fotogalerija",
+      "Fotogalerije",
       "Okolica",
-      "Proslave",
       "Kontakt"
     ],
     "navLinksButton": "Rezerviraj"
   },
   "HeaderSwiper": {
     "titles": [
-      "Dobrodošli u House Lucia - Istra",
+      "Dobrodošli u Villa Luxury Ulika - Istra",
       "Opustite se i uživajte",
       "Sjaj jacuzzija",
       "Obroci na otvorenom"
     ],
     "descriptions": [
-      "Opustite se uz bazen u potpunom komforu",
-      "Uživanje uz bazen s daškom elegancije.",
+      "Opustite se u mirnom okruženju.",
+      "Uživanje uz bazen sa elegancijom.",
       "Uživajte u luksuzu pod savršenim ambijentom.",
       "Okupljanje, roštiljanje i uživanje u trenucima sa stilom."
     ],
@@ -41,16 +40,16 @@
   },
   "About": {
     "title": "Pregled",
-    "des": "Smještena u hrvatskom predgrađu, ova toskanski nadahnuta vila odiše elegancijom. Terakota krov i bujni vrt odražavaju talijanski šarm. Vila je podijeljena na dva stana, a svaki od njih stvara topao i privlačan ambijent.",
+    "des": "U samom srcu Istre, na rubu mirnog Vodnjana, smjestila se vila koja diše harmonijom i elegancijom. Okružena maslinama i mirisima mediteranskog bilja, skrivena od pogleda i gradske vreve, postala je utočište za one koji traže odmor u njegovom najčišćem obliku.",
     "des2": "Vani se nalazi privatni bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku sa suvremenom udobnošću, pružajući mirnu oazu.",
     "the_space": {
       "title": "Prostor",
-      "des": "Na prvom katu ove hrvatske vile, prvi stan odiše udobnošću i stilom. U njemu se nalaze četiri prostrane spavaće sobe, od kojih svaka pruža ugodno utočište. Dvije dobro opremljene kupaonice osiguravaju praktičnost i privatnost. Srce stana je velika kuhinja, savršeno opremljena za kulinarske užitke i obiteljska okupljanja. Prekrasna terasa s pogledom na očaravajuće otoke Brijune pruža predivnu pozadinu za objedovanje i opuštanje na otvorenom.",
-      "des2": "S druge strane, drugi stan, smješten u prizemlju, ističe se modernim dizajnom. S dvije elegantne spavaće sobe, ovaj stan nudi suvremeni životni stil. Kupaonica velikodušnih dimenzija i dodatni WC zadovoljavaju sve praktične potrebe. Ogroman dnevni boravak predstavlja srž stana, pružajući prostran i otvoren prostor za zabavu i moderan život. Ovaj stan odiše suvremenom i minimalističkom estetikom, stvarajući elegantnu i privlačnu atmosferu za svoje stanovnike."
+      "des": "Vila ima dušu doma. Tu su garderobe u kojima miriše lavanda, knjižnica u kojoj vrijeme zastaje, dječji kutak prepun osmijeha i šarenih igračaka, i wellness prostor koji grli miris drveta i pare. Sauna i jacuzzi postaju ritual, trenutak potpune tišine i predaha.",
+      "des2": "U vrtu, pod sjenom pergole, dani prolaze sporo. Na stolu svježe voće, čaša istarskog vina i pogled koji se gubi u zelenilu. Uz bazen, suncem ugrijani kamen i zvuk smijeha koji se razliježe prostorom. Navečer, kad se nebo prelije bojama zalaska, miris roštilja ispunjava zrak, a svjetla s terase pretvaraju dvorište u intimno kazalište pod zvijezdama."
     },
     "guest_access": {
       "title": "Pristup gostima",
-      "des": "Jacuzzi, sauna, bicikli, PS4, trampoline, roštilj."
+      "des": "Jacuzzi, Stolni Tenis, Roštilj i još mnogo toga."
     },
     "locations": {
       "title": "Što vidjeti i posjetiti:",
@@ -65,7 +64,7 @@
   },
 
   "Distances": {
-    "title": "Udaljenosti od House Lucia",
+    "title": "Udaljenosti od Villa Luxury Ulika",
     "button": "Prikaži Mapu",
     "place": [
       "More",
@@ -86,15 +85,15 @@
   "Acommodation": {
     "subtitle": "Smještaj",
     "title": "Nudimo vam 1 Vilu",
-    "card_title": "House Lucia",
-    "card_des": "Maksimalno 12 osoba",
+    "card_title": "Villa Luxury Ulika",
+    "card_des": "Maksimalno 8 osoba",
     "card_des2": "Cijena od",
     "card_des3": "po noći"
   },
 
   "Photogalleries": {
     "subtitle": "Fotogalerije",
-    "title": "Odaberite fotografije iz House Lucia",
+    "title": "Odaberite fotografije iz Villa Luxury Ulika",
     "button": "Prikaži fotogaleriju"
   },
   "Tourist_Guide": {
@@ -110,11 +109,11 @@
     ]
   },
   "Send_Message": {
-    "des": "Molimo vas **Pošaljite nam** odgovor ako želite pripadati House Lucia u Istri i osigurati svoju rezervaciju?",
+    "des": "Molimo vas **Pošaljite nam** odgovor ako želite pripadati Villa Luxury Ulika u Istri i osigurati svoju rezervaciju?",
     "button": "Pošalji poruku"
   },
   "Footer": {
-    "year": "©2024 . House Lucia - Istra",
+    "year": "©2024 . Villa Luxury Ulika - Istra",
     "rights": "Sva prava pridržana",
     "created_by": "Web stranica od BoostWeb",
     "Discover": {
@@ -132,11 +131,11 @@
     "title": ["Kategorizacija", "Kapacitet", "Veličina", "Vrt"]
   },
   "Villa_Description": {
-    "des": "Smještena u predgrađu Hrvatske, ova vila inspirirana Toskanom odiše elegancijom. Njen krov od terakote i bujni vrt odražavaju talijanski šarm. Podijeljena u dva apartmana, svaki od njih stvara toplu i dobrodošlicu atmosferu. Ispod vani se nalazi besprijekoran bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku s modernim komforom, nudeći mirnu oazu u hrvatskim predgrađima.",
+    "des": "U samom srcu Istre, na rubu mirnog Vodnjana, smjestila se vila koja diše harmonijom i elegancijom. Okružena maslinama i mirisima mediteranskog bilja, skrivena od pogleda i gradske vreve, postala je utočište za one koji traže odmor u njegovom najčišćem obliku.",
     "subtitle": "Prostor",
-    "des2": "Na prvom katu ove hrvatske vile, prvi apartman odiše udobnošću i stilom. Sadrži četiri prostrane spavaće sobe, od kojih svaka nudi udoban kutak za opuštanje. Dva dobro opremljena kupaonice osiguravaju udobnost i privatnost. Srce doma je velika kuhinja, dizajnirana za kulinarske užitke i okupljanja. Prekrasna terasa pruža pogled na očaravajuće Brijunske otoke, pružajući zadivljujući ambijent za obrok na otvorenom i opuštanje. S druge strane, drugi apartman može se pohvaliti modernim dizajnom na nižoj etaži. S dvije elegantne spavaće sobe, nudi suvremeno iskustvo života. Prostrana kupaonica i dodatni WC zadovoljavaju praktične potrebe. Prostrani dnevni boravak je središnja točka, nudeći prostran i otvoren prostor za zabavu i suvremeni način života. Ovaj apartman zrači suvremenom i minimalističkom estetikom, stvarajući elegantnu i gostoljubivu atmosferu za svoje stanovnike.",
+    "des2": "U njezinu se kamenu i odvažnim tonovima zidova osjeća sklad između suvremenog luksuza i istarskog duha. Iza velikih staklenih stijena prostire se prostor u kojem dan počinje mirisom kave, a završava tišinom koju prekida samo šum vode iz bazena. Četiri sobe, svaka s vlastitim karakterom, pričaju priču o udobnosti, dok se u četiri kupaonice reflektira igra svjetla i kamena.\n\nVani se nalazi privatni bazen okružen mediteranskim krajolikom. Ova vila besprijekorno spaja bezvremensku estetiku sa suvremenom udobnošću, pružajući mirnu oazu.\n\nU vrtu, pod sjenom pergole, dani prolaze sporo. Na stolu svježe voće, čaša istarskog vina i pogled koji se gubi u zelenilu. Uz bazen, suncem ugrijani kamen i zvuk smijeha koji se razliježe prostorom. Navečer, kad se nebo prelije bojama zalaska, miris roštilja ispunjava zrak, a svjetla s terase pretvaraju dvorište u intimno kazalište pod zvijezdama.\n\nOva vila nije samo mjesto za boravak — ona je iskustvo. Prostor u kojem vrijeme teče drugačije, gdje se duh Istre osjeća u svakom detalju, i gdje mir pronalaziš ne tražeći ga.",
     "subtitle2": "Pristup gostima",
-    "des3": "Jacuzzi, sauna, bicikli, PS4, trampoline, roštilj."
+    "des3": "Jacuzzi, Stolni Tenis, Roštilj i još mnogo toga."
   },
   "Villa_Features": {
     "title": "Značajke",
@@ -293,7 +292,7 @@
     "title": "Kako rezervirati",
     "steps": {
       "title": "Pošaljite upit",
-      "des": "Molimo vas da nam pošaljete upit putem obrasca za kontakt, e-pošte ili telefona sa svim potrebnim informacijama i periodom u kojem želite provesti odmor u kući za odmor House Lucia i očekujte brz odgovor putem e-pošte i našu najbolju ponudu.",
+      "des": "Molimo vas da nam pošaljete upit putem obrasca za kontakt, e-pošte ili telefona sa svim potrebnim informacijama i periodom u kojem želite provesti odmor u kući za odmor Villa Luxury Ulika i očekujte brz odgovor putem e-pošte i našu najbolju ponudu.",
       "title2": "Osiguranje rezervacije (plaćanje)",
       "des2": "Za osiguranje rezervacije obvezno je platiti 30% od pune svote unaprijed, a ostatak iznosa na dan dolaska. Nakon što izvršite plaćanje, molimo vas da nam pošaljete obavijest i mi ćemo vam poslati potvrdu plaćanja i rezervacije. Postoje 2 načina plaćanja unaprijed: bankovni transfer i putem PayPal-a (debitne i kreditne kartice).",
       "subtitle": "Bankovni prijenos",
@@ -301,7 +300,7 @@
       "span2": "Adresa",
       "span3": "Banka",
       "title3": "Potvrda plaćanja",
-      "des3": "Kada je plaćanje izvršeno, potvrdit ćemo vaše plaćanje i rezervaciju. Opustite se i mirno očekujte svoj odmor u ljeti i uživajte u svojim odmorima u kući za odmor House Lucia, Istra - Hrvatska!"
+      "des3": "Kada je plaćanje izvršeno, potvrdit ćemo vaše plaćanje i rezervaciju. Opustite se i mirno očekujte svoj odmor u ljeti i uživajte u svojim odmorima u kući za odmor Villa Luxury Ulika, Istra - Hrvatska!"
     }
   },
   "Environs": {

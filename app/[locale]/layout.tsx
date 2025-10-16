@@ -19,44 +19,44 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "House Lucia",
+  title: "Villa Luxury Ulika",
   description:
-    "Welcome to House Lucia, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
+    "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
   icons: {
     icon: "/assets/images/logo.png",
   },
   generator: "Next.js",
-  applicationName: "Accommodation House Lucia",
+  applicationName: "Accommodation Villa Luxury Ulika",
   referrer: "origin-when-cross-origin",
-  keywords: ["Accommodation", "House Lucia", "Istria", "Croatia"],
+  keywords: ["Accommodation", "Villa Luxury Ulika", "Istria", "Croatia"],
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1.0",
   openGraph: {
     type: "website",
-    title: "Accommodation House Lucia - Istria",
+    title: "Accommodation Villa Luxury Ulika - Istria",
     description:
-      "Welcome to House Lucia, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-    url: "https://houselucia.hr",
+      "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
+    url: "https://villaluxulika.com",
   },
   twitter: {
     card: "summary_large_image",
     // site: "@YourTwitterHandle",
-    title: "Accommodation House Lucia - Istria",
+    title: "Accommodation Villa Luxury Ulika - Istria",
     description:
-      "Welcome to House Lucia, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
+      "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
     images: [
       {
-        url: "https://www.houselucia.hr/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F42.07efe036.jpg&w=1920&q=75",
-        alt: "House Lucia",
+        url: "https://www.villaluxulika.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F42.07efe036.jpg&w=1920&q=75",
+        alt: "",
       },
     ],
   },
   authors: [
-    { name: "Boost Web" },
-    { name: "Boost Web", url: "https://boostweb.io" },
+    { name: "Mateo Smoljan" },
+    { name: "Mateo Smoljan", url: "https://boostweb.io" },
   ],
-  creator: "Boost Web",
-  publisher: "Boost Web",
+  creator: "Mateo Smoljan",
+  publisher: "Mateo Smoljan",
   formatDetection: {
     email: false,
     address: false,

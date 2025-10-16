@@ -1,9 +1,9 @@
 import { StaticImageData } from "next/image";
 
-import one from "@/public/assets/images/i/42.jpg";
-import two from "@/public/assets/images/i/45.jpg";
-import three from "@/public/assets/images/i/49.jpg";
-import four from "@/public/assets/images/i/36.jpg";
+import one from "@/public/assets/images/i/105.jpg";
+import two from "@/public/assets/images/i/88.jpg";
+import three from "@/public/assets/images/i/70.jpg";
+import four from "@/public/assets/images/i/107.jpg";
 
 type LocationData = {
   src: StaticImageData;
@@ -24,10 +24,10 @@ import itData from "@/messages/it.json";
 
 // Define image data
 const imageData: LocationData[] = [
-  { src: one, alt: "House Lucia at night" },
-  { src: two, alt: "House Lucia" },
-  { src: three, alt: "Jacuzzi House Lucia" },
-  { src: four, alt: "Dinning table House Lucia" },
+  { src: one, alt: "Villa at night" },
+  { src: two, alt: "Swimming pool" },
+  { src: three, alt: "Jacuzzi" },
+  { src: four, alt: "Outer dining table" },
 
   // Define other image data similarly
 ];

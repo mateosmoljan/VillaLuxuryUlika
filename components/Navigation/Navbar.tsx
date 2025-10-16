@@ -67,8 +67,8 @@ const Navbar = () => {
             className="object-contain"
           />
           <p className="font-arbutus font-black text-2xl text-yellow">
-            <span className="text-dark_blue_black">House</span>
-            Lucia
+            <span className="text-dark_blue_black">Villa</span>
+            Luxury<span className="text-dark_blue_black">Ulika</span>
           </p>
         </Link>
 
@@ -91,9 +91,9 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              <li>
+              {/* <li>
                 <LanguageSwitch />
-              </li>
+              </li> */}
               <li>
                 <Link href="/contact" className="btn">
                   {navigationLinks.NavData[0].button}

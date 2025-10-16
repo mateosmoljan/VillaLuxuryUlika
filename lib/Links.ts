@@ -14,11 +14,11 @@ import hrData from "@/messages/hr.json";
 import itData from "@/messages/it.json";
 
 const linksData: LinksData[] = [
-  { path: "/house-lucia" },
+  { path: "/villa-luxury-ulika" },
   { path: "/pricelist" },
   { path: "/photogallery" },
   { path: "/surroundings" },
-  { path: "/events" },
+  // { path: "/events" },
   { path: "/contact" },
 
   // Define other image data similarly
