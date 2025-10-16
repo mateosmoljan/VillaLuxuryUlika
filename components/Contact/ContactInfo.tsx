@@ -21,16 +21,22 @@ function ContactInfo() {
               Address:{" "}
               <span className="font-Bold">Antonio Smareglia 50, Vodnjan</span>
             </li>
-            {/* <li> */}
-            {/* {ContactData.data[0].mobile} */}
-            {/* Mobile:{" "}
+            <li>
+              {/* {ContactData.data[0].mobile}
+            Mobile:{" "}
               <span className="text-yellow font-Bold">+(385) 98 263 136</span>
-            </li> */}
+            </li>
             <li>
               {/* {ContactData.data[0].email_info} */}
-              Email:{" "}
+              Mobile: <br />
+              <span className="font-Bold text-yellow">+(385) 95 582 4729</span>
+              <br />
+              <span className="font-Bold text-yellow">+(385) 99 873 4770</span>
+              <br />
+              <br />
+              Email: <br />
               <span className="font-Bold text-yellow">
-                villaluxulika@gmail.com
+                villa-ulika-fivestars@gmail.com
               </span>
             </li>
             <li>
