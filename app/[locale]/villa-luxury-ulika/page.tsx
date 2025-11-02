@@ -129,14 +129,14 @@ function VillaPanorama() {
               {showFeatures && <FeaturesComponent handleClose={handleClose} />}
             </div>
             <hr />
-            <div className="py-10">
+            {/* <div className="py-10">
               <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
                 {PricelistData.data[0].title}
               </h2>
-              {/* <PriceTable />
+              <PriceTable />
               <p className="text-grey1 text-sm mt-4">
                 {PricelistData.data[0].subtitle}
-              </p> */}
+              </p>
               <p className="pt-2 pb-5">{PricelistData.data[0].list?.des}</p>
               <ul className="list-none gap-2 flex flex-col">
                 <li>✅ {PricelistData.data[0].list?.items.item1}</li>
@@ -145,7 +145,7 @@ function VillaPanorama() {
                 <li>✅ {PricelistData.data[0].list?.items.item4}</li>
               </ul>
               <p className="pt-5">{PricelistData.data[0].list?.des2}🌿✨</p>
-            </div>
+            </div> */}
             <hr />
             <div className="py-10">
               <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
@@ -169,12 +169,12 @@ function VillaPanorama() {
             </div>
           </div>
         </div>
-        {/* <div className="container py-10 mb-24">
+        <div className="container py-10 mb-24">
           <h2 className="block text-center font-bold text-2xl text-dark_blue_black mb-6">
-            {TitleData.data[0].title3}
+            {PricelistData.data[0].title}
           </h2>
           <AvailabilityCalendar />
-        </div> */}
+        </div>
       </div>
     </section>
   );

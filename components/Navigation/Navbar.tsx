@@ -91,9 +91,9 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              {/* <li>
+              <li>
                 <LanguageSwitch />
-              </li> */}
+              </li>
               <li>
                 <Link href="/contact" className="btn">
                   {navigationLinks.NavData[0].button}

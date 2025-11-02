@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image";
 import one from "@/public/assets/images/i/105.jpg";
 import two from "@/public/assets/images/i/88.jpg";
 import three from "@/public/assets/images/i/70.jpg";
-import four from "@/public/assets/images/i/107.jpg";
+import four from "@/public/assets/images/i/137.jpg";
 
 type LocationData = {
   src: StaticImageData;

@@ -1,204 +1,203 @@
 {
   "Titles": {
-    "homepage_title": "House Lucia - Istria",
-    "Villa_Panorama": "Casa Vacanze Lucia",
-    "Villa_Map_Location": "Posizione sulla mappa",
-    "Availability_Calendar": "Calendario disponibilità",
-    "Availability_Appointments_sub": "APPUNTAMENTI DISPONIBILI",
-    "Price_list": "Listino prezzi House Lucia",
-    "Photogallery": "Galleria fotografica House Lucia, Istria",
-    "Surrondings": "Vodnjan e dintorni",
+    "homepage_title": "Villa Luxury Ulika - Istria",
+    "Villa_Panorama": "Casa Vacanze Villa Luxury Ulika",
+    "Villa_Map_Location": "Posizione sulla Mappa",
+    "Availability_Calendar": "Calendario Disponibilità",
+    "Availability_Appointments_sub": "DATE DISPONIBILI",
+    "Price_list": "Listino Prezzi Villa Luxury Ulika",
+    "Photogallery": "Galleria Fotografica Villa Luxury Ulika, Istria",
+    "Surrondings": "Vodnjan e Dintorni",
     "Surrondings_sub": "VODNJAN & ISTRIA"
   },
   "Buttons": {
-    "Show_Gallery": "Mostra galleria"
+    "Show_Gallery": "Mostra Galleria"
   },
   "Navigation": {
     "navlinks": [
-      "House Lucia",
-      "Listino prezzi",
-      "Galleria fotografica",
+      "Villa Luxury Ulika",
+      "Prezzi",
+      "Galleria Fotografica",
       "Dintorni",
-      "Eventi",
       "Contatti"
     ],
-    "navLinksButton": "Prenota"
+    "navLinksButton": "Prenota Ora"
   },
   "HeaderSwiper": {
     "titles": [
-      "Benvenuti a House Lucia - Istria",
-      "Gusta & Rilassati",
-      "Luce del Jacuzzi",
-      "Cene all'aperto"
+      "Benvenuti a Villa Luxury Ulika - Istria",
+      "Rilassati e Goditi",
+      "Bagno Turco e Jacuzzi",
+      "Cene all'Aperto"
     ],
     "descriptions": [
-      "Rilassati vicino alla piscina nel massimo comfort",
-      "Pace vicino alla piscina con un tocco di eleganza.",
-      "Immergiti nel lusso sotto l'ambiente perfetto.",
-      "Riuniti, griglia e assapora momenti con stile."
+      "Rilassati in un ambiente tranquillo.",
+      "Goditi la piscina con eleganza.",
+      "Vivi il lusso in un'atmosfera perfetta.",
+      "Riunisciti, fai un barbecue e goditi momenti eleganti insieme."
     ],
-    "button": "Scopri di più"
+    "button": "Leggi di Più"
   },
   "About": {
     "title": "Panoramica",
-    "des": "Situata in un sobborgo croato, questa villa ispirata alla Toscana emana eleganza. Il tetto in terracotta e il giardino lussureggiante riflettono il fascino italiano. Divisa in due appartamenti, ciascuno di essi crea un'atmosfera calda e accogliente.",
-    "des2": "All'esterno, si trova una piscina immacolata circondata da un paesaggio mediterraneo. Questa villa combina perfettamente un'estetica senza tempo con il comfort moderno, offrendo un'oasi di pace nei sobborghi croati.",
+    "des": "Nel cuore dell'Istria, ai margini della tranquilla cittadina di Vodnjan, si trova una villa che emana armonia ed eleganza. Circondata da ulivi ed erbe mediterranee, lontana dal trambusto e dal rumore, è diventata un rifugio per chi cerca riposo nella sua forma più pura.",
+    "des2": "All'esterno c'è una piscina privata circondata dal paesaggio mediterraneo. Questa villa combina perfettamente estetica senza tempo e comfort moderno, offrendo un'oasi di serenità.",
     "the_space": {
-      "title": "Lo spazio",
-      "des": "Al primo piano di questa villa croata, il primo appartamento emana comfort e stile. Dispone di quattro camere da letto spaziose, ognuna delle quali offre un rifugio accogliente. Due bagni ben attrezzati garantiscono comfort e privacy. Il cuore della casa è una grande cucina, progettata per piaceri culinari e momenti di convivialità. Una splendida terrazza si affaccia sulle incantevoli isole Brioni, creando uno scenario mozzafiato per cene all'aperto e momenti di relax.",
-      "des2": "Al piano inferiore, il secondo appartamento si distingue per un design moderno. Con due eleganti camere da letto, offre un'esperienza di vita contemporanea. Un bagno di dimensioni generose e un ulteriore WC soddisfano tutte le esigenze pratiche. L'ampio soggiorno è il punto focale, offrendo uno spazio aperto e luminoso per intrattenere gli ospiti e vivere in modo moderno. Questo appartamento emana un'estetica contemporanea e minimalista, creando un'atmosfera elegante e accogliente per i suoi residenti."
+      "title": "Gli Spazi",
+      "des": "La villa ha l'anima di una casa. Ci sono armadi profumati di lavanda, una biblioteca dove il tempo si ferma, un angolo per bambini pieno di sorrisi e giochi colorati, e un'area benessere che abbraccia il profumo del legno e del vapore. La sauna e la jacuzzi diventano un rituale, un momento di completo silenzio e relax.",
+      "des2": "Nel giardino, all'ombra della pergola, le giornate scorrono lentamente. Sul tavolo – frutta fresca, un bicchiere di vino istriano e una vista che si perde nel verde. Accanto alla piscina – pietra riscaldata dal sole e risate che si diffondono nell'ambiente. La sera, quando il cielo si tinge dei colori del tramonto, il profumo del barbecue riempie l'aria e le luci della terrazza trasformano il cortile in un teatro intimo sotto le stelle."
     },
     "guest_access": {
-      "title": "Accesso agli ospiti",
-      "des": "Jacuzzi, sauna, biciclette, PS4, trampoline, barbecue."
+      "title": "Accesso per gli Ospiti",
+      "des": "Jacuzzi, Ping Pong, Barbecue e molto altro."
     },
     "locations": {
-      "title": "Cosa vedere e visitare:",
+      "title": "Cosa Vedere e Visitare:",
       "des": [
-        "- Il parco acquatico Aquacolors.",
-        "- Esplora le bellissime isole del Parco Nazionale di Brijuni, ricche di bellezze naturali e patrimonio culturale.",
-        "- Scopri l'antico anfiteatro romano a Pola, uno dei meglio conservati al mondo.",
-        "- Immergiti nel mondo sottomarino nell'acquario di Pola, situato vicino al centro della città. Esplora vari habitat marini, osserva diverse specie acquatiche e scopri l'importanza della conservazione marina.",
-        "- Vivi entusiasmanti scivoli d'acqua, fiumi tranquilli e piscine rilassanti al parco acquatico Istralandia, vicino a Novigrad. Perfetto per famiglie e appassionati di acqua, questo parco acquatico offre una giornata piena di divertimento per tutte le età."
+        "- Parco Acquatico Aquacolors.",
+        "- Esplora le bellissime isole del Parco Nazionale di Brioni, ricche di bellezze naturali e patrimonio culturale.",
+        "- Scopri l'antico anfiteatro romano di Pola, uno degli anfiteatri romani meglio conservati al mondo.",
+        "- Immergiti nel mondo sottomarino dell'Acquario di Pola, vicino al centro città. Esplora ecosistemi marini diversi, osserva varie specie di pesci e approfondisci la conoscenza della conservazione marina.",
+        "- Vivi emozionanti scivoli d'acqua, fiumi lenti e piscine rilassanti all'Istralandia Aquapark vicino a Novigrad. Perfetto per famiglie e amanti dell'acqua, questo parco acquatico offre divertimento per tutte le età."
       ]
     }
   },
-
   "Distances": {
-    "title": "Distanze dalla House Lucia",
+    "title": "Distanze dalla Villa Luxury Ulika",
     "button": "Mostra Mappa",
     "place": [
       "Mare",
       "Spiaggia",
-      "Negozio di alimentari",
+      "Negozio di Alimentari",
       "Ristorante",
       "Banca / Bancomat",
       "Farmacia",
-      "Ospedale / Pronto soccorso",
-      "Ufficio postale",
-      "Distributore di benzina",
-      "Campi sportivi",
-      "Stazione ferroviaria",
+      "Ospedale / Clinica",
+      "Ufficio Postale",
+      "Stazione di Servizio",
+      "Impianti Sportivi",
+      "Stazione Ferroviaria",
       "Aeroporto"
     ]
   },
   "Acommodation": {
-    "subtitle": "ALLOGGIO",
+    "subtitle": "Alloggio",
     "title": "Offriamo 1 Villa",
-    "card_title": "House Lucia",
-    "card_des": "Massimo di 12 persone",
+    "card_title": "Villa Luxury Ulika",
+    "card_des": "Fino a 8 persone",
     "card_des2": "Prezzo da",
     "card_des3": "a notte"
   },
   "Photogalleries": {
-    "subtitle": "GALLERIE FOTOGRAFICHE",
-    "title": "Seleziona foto da House Lucia",
-    "button": "Mostra Galleria Fotografica"
+    "subtitle": "Gallerie Fotografiche",
+    "title": "Scegli le Foto della Villa Luxury Ulika",
+    "button": "Mostra Galleria"
   },
   "Tourist_Guide": {
     "subtitle": "GUIDA TURISTICA",
-    "title": "Cosa visitare, vedere e fare?",
+    "title": "Cosa Visitare, Vedere e Fare?",
     "image_des": [
       "Il più grande in Croazia",
       "Parco Nazionale",
-      "Parco acquatico",
+      "Parco Acquatico",
       "Eventi",
-      "Parco acquatico",
-      "Tuffi dalla spiaggia/scogliera"
+      "Parco Acquatico",
+      "Salti da scogli o spiaggia"
     ]
   },
   "Send_Message": {
-    "des": "Per favore, **inviateci una** risposta se desiderate appartenere alla House Lucia in Istria e garantire la vostra prenotazione?",
+    "des": "Per favore **inviaci** un messaggio se desideri soggiornare alla Villa Luxury Ulika in Istria e confermare la tua prenotazione.",
     "button": "Invia Messaggio"
   },
   "Footer": {
-    "year": "©2024 . House Lucia - Istria",
+    "year": "©2024 . Villa Luxury Ulika - Istria",
     "rights": "Tutti i diritti riservati",
-    "created_by": "Sito web di BoostWeb",
+    "created_by": "Sito Web di BoostWeb",
     "Discover": {
       "title": "Scopri",
       "list": {
-        "Pula": "Informazioni su Vodnjan",
-        "Guide": "Guida turistica Istra"
+        "Pula": "Info Vodnjan",
+        "Guide": "Guida Turistica Istria"
       }
     },
     "Contact_Us": {
       "title": "Contattaci"
     }
   },
+
   "Categorization": {
     "title": ["Categorizzazione", "Capacità", "Dimensioni", "Giardino"]
   },
   "Villa_Description": {
-    "des": "Situata in un sobborgo croato, questa villa ispirata alla Toscana emana eleganza. Il suo tetto in terracotta e il giardino lussureggiante riflettono il fascino italiano. Divisa in due appartamenti, ciascuno crea un'atmosfera calda e accogliente. All'esterno c'è una piscina immacolata circondata da un paesaggio mediterraneo. Questa villa combina senza soluzione di continuità estetica senza tempo con comfort moderni, offrendo un'oasi di pace nei sobborghi croati.",
-    "subtitle": "Lo Spazio",
-    "des2": "Al primo piano di questa villa croata, il primo appartamento emana comfort e stile. Dispone di quattro camere da letto spaziose, ognuna delle quali offre un rifugio accogliente. Due bagni ben attrezzati garantiscono comodità e privacy. Il cuore della casa è una grande cucina, progettata per piaceri culinari e riunioni. Una splendida terrazza si affaccia sulle incantevoli Isole Brijuni, offrendo uno scenario mozzafiato per cene all'aperto e relax. Al contrario, il secondo appartamento vanta un design moderno al piano inferiore. Con due eleganti camere da letto, offre un'esperienza di vita contemporanea. Un ampio bagno e un WC aggiuntivo soddisfano le esigenze pratiche. Il soggiorno spazioso è il punto focale, offrendo un'area ampia e aperta per l'intrattenimento e la vita moderna. Questo appartamento irradia un'estetica contemporanea e minimalista, creando un'atmosfera elegante e accogliente per i suoi residenti.",
-    "subtitle2": "Accesso degli ospiti",
-    "des3": "Jacuzzi, sauna, biciclette, PS4, trampolino, barbecue."
+    "des": "Nel cuore dell'Istria, ai margini della tranquilla cittadina di Vodnjan, si trova una villa che emana armonia ed eleganza. Circondata da ulivi ed erbe mediterranee, lontana dal trambusto e dal rumore, è diventata un rifugio per chi cerca riposo nella sua forma più pura.",
+    "subtitle": "Gli Spazi",
+    "des2": "Nei toni della pietra e delle pareti audaci, c'è un'armonia tra il lusso moderno e lo spirito istriano. Dietro grandi pareti di vetro si apre uno spazio dove la giornata inizia con l'aroma del caffè e termina con il delicato suono dell'acqua della piscina. Quattro camere, ognuna con il proprio carattere, raccontano una storia di comfort, mentre quattro bagni riflettono il gioco di luce e pietra.\n\nAll'esterno, c'è una piscina privata circondata dal paesaggio mediterraneo. Questa villa combina perfettamente estetica senza tempo e comfort moderno, offrendo un'oasi di pace.\n\nNel giardino, all'ombra della pergola, le giornate scorrono lentamente. Sul tavolo – frutta fresca, un bicchiere di vino istriano e una vista immersa nel verde. Accanto alla piscina – pietra riscaldata dal sole e risate che riempiono l'ambiente. La sera, quando il cielo si tinge dei colori del tramonto, il profumo del barbecue riempie l'aria e le luci della terrazza trasformano il cortile in un teatro intimo sotto le stelle.\n\nQuesta villa non è solo un luogo in cui soggiornare — è un'esperienza. Uno spazio dove il tempo scorre diversamente, dove lo spirito dell'Istria vive in ogni dettaglio e dove si trova pace senza cercarla.",
+    "subtitle2": "Accesso per gli Ospiti",
+    "des3": "Jacuzzi, Ping Pong, Barbecue e molto altro."
   },
   "Villa_Features": {
     "title": "Caratteristiche",
-    "title2": "Cosa offre questo posto",
+    "title2": "Cosa Offre Questo Luogo",
     "title3": "Bagno",
-    "title4": "Camera da letto e lavanderia",
+    "title4": "Camera da Letto e Lavanderia",
     "title5": "Intrattenimento",
     "title6": "Famiglia",
-    "title7": "Riscaldamento e raffreddamento",
-    "title8": "Sicurezza domestica",
-    "title9": "Internet e ufficio",
-    "title10": "Cucina e sala da pranzo",
-    "title11": "All'aperto",
-    "title12": "Parcheggio e strutture",
+    "title7": "Riscaldamento e Raffreddamento",
+    "title8": "Sicurezza della Casa",
+    "title9": "Internet e Ufficio",
+    "title10": "Cucina e Sala da Pranzo",
+    "title11": "Spazio Esterno",
+    "title12": "Parcheggio e Servizi",
     "title13": "Servizi",
-    "title14": "Non incluso",
-    "button": "Mostra tutte le 43 dotazioni",
+    "title14": "Non Incluso",
+    "button": "Mostra tutte le 43 comodità",
     "card": {
       "title": [
         "Asciugacapelli",
-        "Acqua calda",
+        "Acqua Calda",
         "Lavatrice",
         "Asciugatrice",
         "Essenziali",
         "Appendini",
-        "Lenzuola",
-        "Cuscini e coperte aggiuntivi",
-        "Tende oscuranti",
-        "Ferro da stiro",
-        "TV con cavo standard",
-        "Lettino",
-        "Libri e giocattoli per bambini",
+        "Biancheria da Letto",
+        "Cuscini e Coperte Extra",
+        "Tende Oscuranti",
+        "Ferro da Stiro",
+        "TV con Canali Standard",
+        "Culla",
+        "Libri e Giocattoli per Bambini",
         "Seggiolone",
-        "Protezioni per il camino",
-        "Protezioni per le finestre",
-        "Copriprese",
-        "Cancelletti di sicurezza per bambini",
-        "Protezioni per gli spigoli del tavolo",
-        "Aria condizionata",
-        "Camino interno",
+        "Paraspifferi Camino",
+        "Paraspifferi Finestre",
+        "Copri Prese",
+        "Cancelletti di Sicurezza per Bambini",
+        "Protezione Angoli Tavolo",
+        "Aria Condizionata",
+        "Camino Interno",
         "Riscaldamento",
         "Estintore",
-        "Kit di pronto soccorso",
+        "Kit di Primo Soccorso",
         "Wifi",
         "Cucina",
         "Frigorifero",
-        "Forno a microonde",
-        "Principi di cucina",
-        "Piatti e posate",
+        "Microonde",
+        "Elementi di Base per Cucinare",
+        "Piatti e Posate",
         "Lavastoviglie",
         "Fornello",
         "Forno",
-        "Macchina per il caffè",
-        "Piastra da forno",
-        "Utensili da barbecue",
+        "Macchina del Caffè",
+        "Tappetino Antiscivolo",
+        "Utensili per BBQ",
         "Giardino",
-        "Parcheggio gratuito in loco",
+        "Parcheggio Gratuito in Sede",
         "Piscina",
-        "Consentito il deposito bagagli",
-        "Vietato fumare",
-        "Soggiorni a lungo termine consentiti",
-        "Accoglienza da parte dell'host",
-        "Allarme antincendio",
-        "Allarme di monossido di carbonio"
+        "Deposito Bagagli Consentito",
+        "Vietato Fumare",
+        "Soggiorni Lunghi Consentiti",
+        "Accoglienza Ospiti",
+        "Rilevatore di Fumo",
+        "Rilevatore di Monossido di Carbonio"
       ],
       "des": [
         "",
@@ -226,119 +225,118 @@
         "",
         "",
         "",
-        "Spazio dove gli ospiti possono cucinare i propri pasti",
+        "",
+        "Area dove gli ospiti possono preparare i propri pasti",
         "",
         "",
         "Pentole e padelle, olio, sale e pepe",
-        "Ciotole, bacchette, piatti, tazze, ecc.",
+        "Ciotole, bacchette, piatti, bicchieri, ecc.",
         "",
         "",
         "",
         "",
         "",
-        "Griglia, carbonella, spiedi in bambù/ferrro, ecc.",
-        "Uno spazio aperto nella proprietà solitamente coperto d'erba",
+        "Griglia, carbone, spiedini di bambù/ferro, ecc.",
+        "Spazio esterno aperto, solitamente coperto di erba",
         "",
         "",
-        "Per comodità degli ospiti con arrivo anticipato o partenza tardiva",
+        "Per il comfort degli ospiti durante arrivi anticipati o partenze ritardate",
         "",
-        "Consentito soggiornare per 28 giorni o più",
+        "Soggiorni di 28 giorni o più consentiti",
         "",
-        "Non c'è allarme antincendio nella proprietà.",
-        "Non c'è rilevatore di monossido di carbonio nella proprietà"
+        "Nessun rilevatore di fumo nella proprietà.",
+        "Nessun rilevatore di monossido di carbonio nella proprietà."
       ]
     }
   },
   "Pricelist": {
-    "title": "Listino prezzi",
-    "subtitle": "*Il prezzo si riferisce al periodo di 1 notti in Euro",
+    "title": "Prezzi",
+    "subtitle": "*Prezzo per 1 notte in euro",
     "list": {
-      "des": "Il prezzo della vostra vacanza privata dipende dalla stagione, dalla durata del soggiorno e dal numero di ospiti. Offriamo opzioni flessibili per aiutarvi a trovare la soluzione perfetta per le vostre esigenze.",
+      "des": "Il prezzo della tua vacanza privata dipende dalla stagione, dalla durata del soggiorno e dal numero di ospiti. Offriamo opzioni flessibili per aiutarti a trovare la soluzione ideale secondo le tue esigenze.",
       "inner_list": {
-        "item1": "Prezzo per notte: A partire da 190 € (a seconda della stagione)",
-        "item2": "Sconti per soggiorni più lunghi: Tariffe speciali per prenotazioni settimanali e mensili",
-        "item3": "Soggiorno minimo: 2 notti",
+        "item1": "Prezzo a notte: Da €190 (a seconda della stagione)",
+        "item2": "Sconti per Soggiorni Lunghi: Prezzi speciali per prenotazioni settimanali e mensili",
+        "item3": "Soggiorno Minimo: 3 notti",
         "item4": "Incluso nel prezzo: Tassa di soggiorno, pulizia finale, Wi-Fi, parcheggio, biancheria da letto e asciugamani"
       },
-      "des2": "Per conoscere il prezzo esatto e la disponibilità, non esitate a contattarci! Prenotate in anticipo per assicurarvi una vacanza perfetta in totale privacy."
+      "des2": "Per il prezzo esatto e disponibilità, contattaci! Prenota in anticipo per assicurarti la tua vacanza privata perfetta."
     }
   },
   "Payment_conditions": {
-    "subtitle": "TERMINI E CONDIZIONI",
-    "title": "Condizioni di pagamento e prenotazione",
+    "subtitle": "TERMINI DI PAGAMENTO E PRENOTAZIONE",
+    "title": "Termini di Pagamento e Prenotazione",
     "des": "La tassa di soggiorno non è inclusa nel prezzo!",
-    "des2": "Per garantire la prenotazione è obbligatorio pagare il 30% del prezzo totale in anticipo direttamente al proprietario dell'alloggio e il 70% all'arrivo presso l'unità abitativa.",
-    "des3": "Deposito rimborsabile in caso di tutto a posto: 500 euro.",
-    "des4": "Possibilità di cancellazione gratuita una settimana dopo la prenotazione (ESCLUSO NELLE PRENOTAZIONI LAST MINUTE, IN QUESTO CASO IL TERMINE È DI 48 ORE). Last minute - Prenotazione due settimane prima.",
-    "des5": "L'ultimo giorno del soggiorno, l'ospite è tenuto a lasciare l'alloggio entro le 10:00, in modo che gli altri ospiti possano fare il check-in dalle ore 16:00.",
-    "des6": "Si prega di notare che gli animali domestici non sono ammessi nelle strutture.",
-    "title2": "Metodi di pagamento:"
+    "des2": "Per garantire la prenotazione è richiesto un acconto del 30% dell'importo totale direttamente al proprietario, mentre il restante 70% al momento dell'arrivo.",
+    "des3": "Deposito rimborsabile se tutto è in ordine: €500.",
+    "des4": "Cancellazione gratuita disponibile entro una settimana dalla prenotazione (ECCETTO PER PRENOTAZIONI LAST-MINUTE, IN QUESTO CASO IL TERMINE È DI 48 ORE). Prenotazioni last-minute – due settimane prima dell'arrivo.",
+    "des5": "L'ultimo giorno di soggiorno, gli ospiti devono lasciare l'alloggio entro le 9:00, in modo che altri ospiti possano fare il check-in dalle 16:00.",
+    "des6": "Nota: Gli animali domestici non sono ammessi nella proprietà.",
+    "title2": "Metodi di Pagamento:"
   },
   "Map_Location": {
-    "title": "Posizione sulla mappa"
+    "title": "Posizione sulla Mappa"
   },
   "Availability_Calendar": {
-    "title": "Calendario disponibilità"
+    "title": "Calendario Disponibilità"
   },
   "Villa_BookStay": {
-    "des": "a partire da",
+    "des": "da",
     "des2": "a notte",
-    "button": "Prenota il tuo soggiorno"
+    "button": "Prenota il Tuo Soggiorno"
   },
   "How_Reserve": {
     "subtitle": "PRENOTAZIONE SICURA",
-    "title": "Come posso prenotare",
+    "title": "Come Prenotare",
     "steps": {
-      "title": "Invia una richiesta",
-      "des": "Si prega di inviare una richiesta tramite modulo di contatto, e-mail o telefono con tutte le informazioni richieste e il periodo in cui si desidera trascorrere una vacanza nella casa vacanze House Lucia e aspettarsi una risposta via e-mail rapida e la nostra migliore offerta",
-      "title2": "Garantire la prenotazione (pagamento)",
-      "des2": "Per garantire la prenotazione è obbligatorio pagare il 30% dell'importo totale in anticipo e il resto dell'importo il giorno dell'arrivo. Dopo aver effettuato il pagamento, si prega di inviare una notifica e vi invieremo la conferma del pagamento e della prenotazione. Ci sono 2 opzioni per effettuare il pagamento anticipato: bonifico bancario e tramite PayPal (carte di debito e di credito).",
-      "subtitle": "Bonifico bancario",
-      "span": "Proprietario dell'account",
+      "title": "Invia una Richiesta",
+      "des": "Per favore inviaci una richiesta tramite il modulo di contatto, email o telefono con tutte le informazioni necessarie e il periodo di vacanza preferito. Riceverai una risposta rapida e la nostra migliore offerta.",
+      "title2": "Conferma della Prenotazione (Pagamento)",
+      "des2": "Per confermare la prenotazione, è richiesto un acconto del 30%, mentre il saldo al momento dell'arrivo. Dopo il pagamento, ti preghiamo di informarci e ti invieremo la conferma di prenotazione e pagamento. Sono disponibili due opzioni di pagamento anticipato: bonifico bancario o PayPal (carte di debito e credito).",
+      "subtitle": "Bonifico Bancario",
+      "span": "Intestatario",
       "span2": "Indirizzo",
       "span3": "Banca",
-      "title3": "Conferma del pagamento",
-      "des3": "Quando il pagamento è effettuato, confermeremo il vostro pagamento e la prenotazione. Rilassatevi e attendete pacificamente le vostre vacanze in estate e godetevi le vostre vacanze nella casa vacanze House Lucia, Istria - Croazia!"
+      "title3": "Conferma Pagamento",
+      "des3": "Una volta completato il pagamento, confermeremo la tua prenotazione. Rilassati e goditi la tua vacanza estiva alla Villa Luxury Ulika, Istria – Croazia!"
     }
   },
   "Environs": {
     "title": "Vodnjan & Istria",
-    "des": "Vodnjan è una città affascinante situata nel cuore dell'Istria, in Croazia. Conosciuta per la sua ricca storia, l'architettura medievale e le pittoresche strade, offre uno spunto sulla vita tradizionale istriana. Circondata da uliveti, vigneti e dalla splendida costa adriatica, Vodnjan è anche famosa per la produzione di olio d'oliva di alta qualità. Le attrazioni nelle vicinanze includono la città romana di Pula, il Parco Nazionale delle Isole Brijuni e splendide spiagge, rendendola una destinazione perfetta per gli amanti della natura e gli appassionati di storia.",
-    "button": "Mostra mappa",
-    "title2": "Come spostarsi",
-    "des2": "Potete raggiungere la villa in auto o in taxi. Il parcheggio è gratuito e disponibile in loco.",
-    "subtitle": "Attrazioni nelle vicinanze"
+    "des": "Vodnjan è una città affascinante situata nel cuore dell'Istria, Croazia. Nota per la sua storia ricca, l'architettura medievale e le strade pittoresche, offre uno sguardo alla vita tradizionale istriana. Circondata da uliveti, vigneti e la splendida costa adriatica, Vodnjan è famosa anche per la produzione di olio d'oliva di alta qualità. Le attrazioni vicine includono l'antica città romana di Pola, il Parco Nazionale di Brioni e bellissime spiagge, rendendola una destinazione perfetta per gli amanti della natura e della storia.",
+    "button": "Mostra Mappa",
+    "title2": "Come Muoversi",
+    "des2": "La villa è raggiungibile in auto o taxi. Il parcheggio è gratuito e disponibile in loco.",
+    "subtitle": "Attrazioni Vicine"
   },
-
   "PriceTable": {
     "title": "Periodo",
     "title2": "Prezzo*",
-    "title3": "Persone",
-    "title4": "Soggiorno minimo"
+    "title3": "Ospiti",
+    "title4": "Soggiorno Min."
   },
   "Contact": {
     "title": "Contattaci",
     "Contact_Form": {
-      "name": "Nome",
+      "name": "Nome Completo",
       "email": "Email",
-      "phone": "Telefono",
-      "home": "Casa vacanza",
+      "phone": "Telefono/Mobile",
+      "home": "Casa Vacanze",
       "adults": "Adulti",
       "children": "Bambini",
       "arrival": "Arrivo",
       "departure": "Partenza",
       "message": "Richiesta",
-      "des": "Il contenuto di questo modulo verrà inviato direttamente all'indirizzo e-mail del proprietario dell'alloggio ed è utilizzato esclusivamente per inviare richieste di prenotazione della proprietà elencata.",
-      "button": "Invia richiesta",
-      "sent": "Inviato con successo"
+      "des": "Il contenuto di questo modulo sarà inviato direttamente all'indirizzo email del proprietario dell'alloggio e sarà utilizzato esclusivamente per l'invio di richieste di prenotazione per la proprietà indicata.",
+      "button": "Invia Richiesta",
+      "sent": "Inviato con Successo"
     },
     "Contact_Info": {
-      "contact_person": "persona di contatto",
-      "mobile": "Cellulare",
+      "contact_person": "Persona di Contatto",
+      "mobile": "Mobile",
       "email": "Email",
       "address": "Indirizzo",
-      "we_speak": "Parliamo",
-      "sent": "Inviato con successo"
+      "we_speak": "Parliamo"
     }
   },
   "Calendar": {
@@ -357,42 +355,42 @@
     "booked": "Prenotato",
     "checkIn": "Check-in",
     "checkOut": "Check-out",
-    "reset": "Ripristina",
+    "reset": "Reset",
     "back": "Indietro",
     "next": "Avanti"
   },
   "Events": {
-    "title": "I nostri pacchetti per celebrazioni indimenticabili",
-    "subtitle": "Vuoi aggiungere un tocco speciale al tuo evento e creare ricordi che dureranno per sempre?\n\n Abbiamo preparato tre pacchetti accuratamente studiati per soddisfare diverse esigenze e occasioni – dalle decorazioni semplici ed eleganti a esperienze uniche che lasciano senza fiato. Ogni pacchetto include anche il **noleggio della casa**, offrendo la location perfetta per la tua festa e per vivere momenti indimenticabili.",
-    "button": "Richiedi un preventivo",
-    "package_title": "Evento di 1 notte",
-    "p4_title": "Eventi più grandi",
-    "p4_des": "Trasforma la tua occasione speciale in un’esperienza indimenticabile! La nostra casa con ampio spazio esterno è la cornice perfetta per ospitare eventi di grande portata in un’atmosfera unica. Grazie alla possibilità di installare tende, creiamo un ambiente su misura per matrimoni, feste private o eventi aziendali. In collaborazione con il nostro partner di fiducia VISAEM, offriamo soluzioni eleganti e professionali per le tensostrutture, garantendo un evento impeccabile e ricco di emozioni.",
-    "packages": [
-      {
-        "title": "PACCHETTO BASE",
-        "details": [
-          "Perfetto per chi apprezza la semplicità con un tocco di eleganza. La nostra ghirlanda decorativa, curata nei minimi dettagli, valorizzerà lo spazio e creerà un’atmosfera raffinata per qualsiasi occasione.",
-          "Ideale per: feste più piccole, incontri intimi o eventi in cui desideri esaltare la bellezza dei dettagli."
-        ],
-        "price": "600€"
-      },
-      {
-        "title": "PACCHETTO STANDARD",
-        "details": [
-          "Una combinazione di eleganza e allegria! Oltre alla ghirlanda, il pacchetto include palloncini ad elio che aggiungono vivacità e un tocco festoso all’atmosfera. I tuoi ospiti sentiranno l’energia positiva e la festa sarà portata a un livello superiore.",
-          "Ideale per: compleanni, battesimi, eventi aziendali e tutte le occasioni in cui desideri un tocco festivo in più."
-        ],
-        "price": "700€"
-      },
-      {
-        "title": "PACCHETTO PREMIUM",
-        "details": [
-          "Il nostro pacchetto più esclusivo, creato per chi desidera più di una semplice decorazione – vuole vivere un’esperienza. Oltre all’elegante allestimento, l’offerta include un giro esclusivo in auto d’epoca (fino a 1 ora), durante il quale potrai divertirti e scattare foto con il veicolo.",
-          "Ideale per: anniversari, feste, incontri speciali ed eventi che meritano qualcosa di veramente unico."
-        ],
-        "price": "900€"
-      }
-    ]
-  }
+    "title": "I Nostri Pacchetti per Celebrazioni Indimenticabili",
+    "subtitle": "Vuoi aggiungere un tocco speciale al tuo evento e creare ricordi che durano?\n\nAbbiamo preparato tre pacchetti attentamente progettati per adattarsi a diverse occasioni – dalla semplicità elegante a esperienze uniche che tolgono il fiato. Ogni pacchetto include **noleggio della casa**, garantendo la location perfetta per la tua celebrazione e momenti indimenticabili.",
+    "button": "Richiedi Offerta",
+    "package_title": "Evento di 1 Notte",
+    "p4_title": "Eventi Più Grandi",
+    "p4_des": "Offriamo il noleggio della casa con un'ampia location ideale per organizzare eventi più grandi. C'è spazio sufficiente per l'installazione di tende, fornendo flessibilità per adattare l'ambiente a varie occasion ni e garantire un'esperienza confortevole per tutti gli ospiti."
+  },
+  "packages": [
+    {
+      "title": "PACCHETTO BASE",
+      "details": [
+        "Per chi apprezza la semplicità con un tocco di eleganza. La nostra ghirlanda decorativa attentamente realizzata abbellirà il tuo spazio e creerà un'atmosfera raffinata per ogni occasione.",
+        "Ideale per: piccole celebrazioni, incontri intimi o eventi in cui vuoi mettere in risalto la bellezza nei dettagli."
+      ],
+      "price": "€600"
+    },
+    {
+      "title": "PACCHETTO STANDARD",
+      "details": [
+        "Un mix di eleganza e divertimento! Oltre alla ghirlanda, questo pacchetto include palloncini ad elio che portano allegria e festività all'ambiente. I tuoi ospiti percepiranno l'energia speciale e l'atmosfera sarà elevata a un altro livello.",
+        "Ideale per: compleanni, battesimi, celebrazioni aziendali e qualsiasi evento che meriti un tocco extra di festa."
+      ],
+      "price": "€700"
+    },
+    {
+      "title": "PACCHETTO PREMIUM",
+      "details": [
+        "Il nostro pacchetto più esclusivo è pensato per chi desidera più della semplice decorazione – vuole un'esperienza. Oltre alla decorazione elegante degli spazi, include un esclusivo giro in auto d'epoca retrò (fino a 1 ora) dove potrai goderti l'esperienza e scattare foto con l'auto.",
+        "Ideale per: anniversari, celebrazioni, incontri speciali ed eventi che meritano qualcosa di diverso."
+      ],
+      "price": "€900"
+    }
+  ]
 }

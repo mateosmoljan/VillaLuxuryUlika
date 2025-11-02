@@ -1,13 +1,13 @@
 {
   "Titles": {
-    "homepage_title": "House Lucia - Istria",
-    "Villa_Panorama": "Holiday Home Lucia",
-    "Villa_Map_Location": "Location on the map",
+    "homepage_title": "Villa Luxury Ulika - Istria",
+    "Villa_Panorama": "Holiday Home Villa Luxury Ulika",
+    "Villa_Map_Location": "Map Location",
     "Availability_Calendar": "Availability Calendar",
-    "Availability_Appointments_sub": "AVAILABLE APPOINTMENTS",
-    "Price_list": "Price list House Lucia",
-    "Photogallery": "Photogallery House Lucia, Istria",
-    "Surrondings": "Vodnjan and surroundings",
+    "Availability_Appointments_sub": "AVAILABLE DATES",
+    "Price_list": "Villa Luxury Ulika Price List",
+    "Photogallery": "Photo Gallery Villa Luxury Ulika, Istria",
+    "Surrondings": "Vodnjan and Surroundings",
     "Surrondings_sub": "VODNJAN & ISTRIA"
   },
   "Buttons": {
@@ -15,192 +15,188 @@
   },
   "Navigation": {
     "navlinks": [
-      "House Lucia",
-      "Pricelist",
+      "Villa Luxury Ulika",
+      "Price",
       "Photogallery",
       "Surroundings",
-      "Events",
       "Contact"
     ],
-    "navLinksButton": "Book"
+    "navLinksButton": "Book Now"
   },
-
   "HeaderSwiper": {
     "titles": [
-      "Welcome to House Lucia - Istria",
-      "Sip & Unwind",
+      "Welcome to Villa Luxury Ulika - Istria",
+      "Relax and Enjoy",
       "Jacuzzi Glow",
-      "Al Fresco Dining"
+      "Outdoor Dining"
     ],
     "descriptions": [
-      "Relax by the pool in ultimate comfort",
-      "Poolside bliss with a touch of elegance.",
-      "Soak in luxury under the perfect ambiance.",
-      "Gather, grill, and savor moments in style."
+      "Relax in a peaceful environment.",
+      "Enjoy the pool with elegance.",
+      "Experience luxury in a perfect ambiance.",
+      "Gather, grill, and enjoy stylish moments together."
     ],
     "button": "Read More"
   },
-
   "About": {
     "title": "Overview",
-    "des": "Situated in a Croatian suburb, this Tuscany-inspired villa exudes elegance. Its terracotta roof and lush garden reflect Italian charm. Divided into two apartments, each creates a warm and inviting atmosphere.",
-    "des2": "Outside, there is a pristine pool surrounded by a Mediterranean landscape. This villa seamlessly combines timeless aesthetics with modern comfort, offering a peaceful oasis in the Croatian suburbs.",
+    "des": "In the heart of Istria, on the edge of the peaceful town of Vodnjan, lies a villa that breathes harmony and elegance. Surrounded by olive trees and Mediterranean herbs, hidden from the bustle and noise, it has become a refuge for those seeking rest in its purest form.",
+    "des2": "Outside, there is a private pool surrounded by Mediterranean scenery. This villa seamlessly combines timeless aesthetics with modern comfort, offering a serene oasis.",
     "the_space": {
-      "title": "The space",
-      "des": "On the first floor of this Croatian villa, the first apartment exudes comfort and style. It features four spacious bedrooms, each offering a cozy retreat. Two well-equipped bathrooms ensure convenience and privacy. The heart of the home is a large kitchen, designed for culinary delights and gatherings. A beautiful terrace overlooks the enchanting Brijuni Islands, providing a stunning backdrop for outdoor dining and relaxation.",
-      "des2": "In contrast, the second apartment boasts a modern design on the lower level. With two elegant bedrooms, it offers a contemporary living experience. A generously sized bathroom and an additional WC meet practical needs. The expansive living room is the focal point, providing a spacious and open area for entertaining and modern living. This apartment radiates a contemporary and minimalist aesthetic, creating a stylish and inviting atmosphere for its residents."
+      "title": "The Space",
+      "des": "The villa has the soul of a home. There are wardrobes scented with lavender, a library where time stands still, a children’s corner full of smiles and colorful toys, and a wellness area that embraces the scent of wood and steam. The sauna and jacuzzi become a ritual, a moment of complete silence and relaxation.",
+      "des2": "In the garden, under the shade of the pergola, the days pass slowly. On the table – fresh fruit, a glass of Istrian wine, and a view that disappears into greenery. By the pool – sun-warmed stone and the sound of laughter spreading through the space. In the evening, as the sky fills with sunset colors, the smell of barbecue fills the air, and the terrace lights turn the yard into an intimate theater under the stars."
     },
     "guest_access": {
       "title": "Guest Access",
-      "des": "Jacuzzi, sauna, bikes, ps4, trampoline, barbecue."
+      "des": "Jacuzzi, Table Tennis, Barbecue, and much more."
     },
     "locations": {
-      "title": "What to see and visit:",
+      "title": "What to See and Visit:",
       "des": [
-        "- The Aquacolors water amusement park.",
+        "- Aquacolors Water Park.",
         "- Explore the beautiful islands of Brijuni National Park, rich in natural beauty and cultural heritage.",
-        "- Discover the ancient Roman amphitheater in Pula, one of the best-preserved Roman amphitheaters in the world.",
-        "- Dive into the underwater world at Pula Aquarium, located near the city center. Explore various marine habitats, observe diverse aquatic species, and learn about the importance of marine conservation.",
-        "- Experience thrilling water slides, lazy rivers, and relaxing pools at Istralandia Aquapark, located near Novigrad. Perfect for families and water enthusiasts, this aquapark offers a fun-filled day for all ages."
+        "- Discover the ancient Roman amphitheater in Pula, one of the best-preserved Roman arenas in the world.",
+        "- Dive into the underwater world at Pula Aquarium, located near the city center. Explore diverse marine ecosystems, observe various fish species, and learn more about marine conservation.",
+        "- Experience thrilling water slides, lazy rivers, and relaxing pools at Istralandia Aquapark near Novigrad. Perfect for families and water lovers, this aquapark offers a fun day for all ages."
       ]
     }
   },
-
   "Distances": {
-    "title": "Distances from House Lucia",
+    "title": "Distances from Villa Luxury Ulika",
     "button": "Show Map",
     "place": [
       "Sea",
       "Beach",
-      "Grocery store",
+      "Grocery Store",
       "Restaurant",
       "Bank / ATM",
       "Pharmacy",
-      "Hospital / Infirmary",
-      "Post",
-      "Gas station",
-      "Sports fields",
-      "Railway station",
+      "Hospital / Clinic",
+      "Post Office",
+      "Gas Station",
+      "Sports Grounds",
+      "Train Station",
       "Airport"
     ]
   },
   "Acommodation": {
-    "subtitle": "ACCOMMODATION",
-    "title": "We offer you 1 House",
-    "card_title": "House Lucia",
-    "card_des": "Maximum of 12 people",
+    "subtitle": "Accommodation",
+    "title": "We Offer 1 Villa",
+    "card_title": "Villa Luxury Ulika",
+    "card_des": "Up to 8 people",
     "card_des2": "Price from",
     "card_des3": "per night"
   },
   "Photogalleries": {
-    "subtitle": "PHOTOGALLERIES",
-    "title": "Select photos from House Lucia",
-    "button": "Show Photogallery"
+    "subtitle": "Photo Galleries",
+    "title": "Choose Photos from Villa Luxury Ulika",
+    "button": "Show Gallery"
   },
   "Tourist_Guide": {
     "subtitle": "TOURIST GUIDE",
-    "title": "What to visit, see and do?",
+    "title": "What to Visit, See, and Do?",
     "image_des": [
-      "The biggest in Croatia",
+      "Largest in Croatia",
       "National Park",
-      "Water park",
+      "Water Park",
       "Events",
-      "Water park",
-      "beach/cliff jumping"
+      "Water Park",
+      "Cliff/Beach Jumping"
     ]
   },
   "Send_Message": {
-    "des": "Please **send us an** answer if you would like to belong to House Lucia in Istria and secure your reservation?",
+    "des": "Please **Send Us** a message if you wish to stay at Villa Luxury Ulika in Istria and secure your booking.",
     "button": "Send Message"
   },
   "Footer": {
-    "year": "©2024 . House Lucia - Istria",
-    "rights": "All rights protected",
+    "year": "©2024 . Villa Luxury Ulika - Istria",
+    "rights": "All rights reserved",
     "created_by": "Website by BoostWeb",
     "Discover": {
       "title": "Discover",
       "list": {
         "Pula": "Vodnjan Info",
-        "Guide": "Tourist guide Istra"
+        "Guide": "Istria Tourist Guide"
       }
     },
     "Contact_Us": {
-      "title": "Contact us"
+      "title": "Contact Us"
     }
   },
   "Categorization": {
     "title": ["Categorization", "Capacity", "Size", "Garden"]
   },
   "Villa_Description": {
-    "des": "Situated in a Croatian suburb, this Tuscany-inspired villa exudes elegance. Its terracotta roof and lush garden reflect Italian charm. Divided into two apartments, each creates a warm and inviting atmosphere. Outside, there is a pristine pool surrounded by a Mediterranean landscape. This villa seamlessly combines timeless aesthetics with modern comfort, offering a peaceful oasis in the Croatian suburbs.",
+    "des": "In the heart of Istria, on the edge of the peaceful town of Vodnjan, lies a villa that breathes harmony and elegance. Surrounded by olive trees and Mediterranean herbs, hidden from the bustle and noise, it has become a refuge for those seeking rest in its purest form.",
     "subtitle": "The Space",
-    "des2": "On the first floor of this Croatian villa, the first apartment exudes comfort and style. It features four spacious bedrooms, each offering a cozy retreat. Two well-equipped bathrooms ensure convenience and privacy. The heart of the home is a large kitchen, designed for culinary delights and gatherings. A beautiful terrace overlooks the enchanting Brijuni Islands, providing a stunning backdrop for outdoor dining and relaxation. In contrast, the second apartment boasts a modern design on the lower level. With two elegant bedrooms, it offers a contemporary living experience. A generously sized bathroom and an additional WC meet practical needs. The expansive living room is the focal point, providing a spacious and open area for entertaining and modern living. This apartment radiates a contemporary and minimalist aesthetic, creating a stylish and inviting atmosphere for its residents.",
-    "subtitle2": "Guest access",
-    "des3": "Jacuzzi, sauna, bikes, ps4, trampoline, barbecue."
+    "des2": "In its stone and bold wall tones, there’s a harmony between modern luxury and Istrian spirit. Behind large glass walls spreads a space where the day begins with the aroma of coffee and ends with the gentle sound of pool water. Four rooms, each with its own character, tell a story of comfort, while four bathrooms reflect the play of light and stone.\n\nOutside, there is a private pool surrounded by Mediterranean landscape. This villa flawlessly combines timeless aesthetics with modern comfort, offering a peaceful oasis.\n\nIn the garden, under the pergola’s shade, days pass slowly. On the table – fresh fruit, a glass of Istrian wine, and a view lost in greenery. By the pool – sun-warmed stone and the sound of laughter filling the space. In the evening, as the sky glows with sunset colors, the scent of barbecue fills the air, and terrace lights turn the courtyard into an intimate theater under the stars.\n\nThis villa is not just a place to stay — it’s an experience. A space where time flows differently, where the spirit of Istria lives in every detail, and where you find peace without searching for it.",
+    "subtitle2": "Guest Access",
+    "des3": "Jacuzzi, Table Tennis, Barbecue, and much more."
   },
   "Villa_Features": {
     "title": "Features",
-    "title2": "What this place offers",
+    "title2": "What This Place Offers",
     "title3": "Bathroom",
-    "title4": "The bedroom and bedding",
+    "title4": "Bedroom and Laundry",
     "title5": "Entertainment",
     "title6": "Family",
-    "title7": "Heating and cooling",
-    "title8": "Home safety",
-    "title9": "Internet and office",
-    "title10": "Kitchen and dining",
-    "title11": "Outdoor",
-    "title12": "Parking and facilities",
+    "title7": "Heating and Cooling",
+    "title8": "Home Safety",
+    "title9": "Internet and Office",
+    "title10": "Kitchen and Dining",
+    "title11": "Outdoor Area",
+    "title12": "Parking and Facilities",
     "title13": "Services",
-    "title14": "Not included",
+    "title14": "Not Included",
     "button": "Show all 43 amenities",
     "card": {
       "title": [
-        "Hair dryer",
-        "Hot water",
-        "Washer",
+        "Hair Dryer",
+        "Hot Water",
+        "Washing Machine",
         "Dryer",
         "Essentials",
         "Hangers",
-        "Bed linens",
-        "Extra pillows and blankets",
-        "Room-darkening shades",
+        "Bed Linen",
+        "Extra Pillows and Blankets",
+        "Blackout Curtains",
         "Iron",
-        "TV with standard cable",
-        "Crib",
-        "Children’s books and toys",
-        "High chair",
-        "Fireplace guards",
-        "Window guards",
-        "Outlet covers",
-        "Baby safety gates",
-        "Table corner guards",
-        "Air conditioning",
-        "Indoor fireplace",
+        "TV with Standard Cable",
+        "Baby Crib",
+        "Children’s Books and Toys",
+        "High Chair",
+        "Fireplace Guards",
+        "Window Guards",
+        "Outlet Covers",
+        "Child Safety Gates",
+        "Table Corner Guards",
+        "Air Conditioning",
+        "Indoor Fireplace",
         "Heating",
-        "Fire extinguisher",
-        "First aid kit",
+        "Fire Extinguisher",
+        "First Aid Kit",
         "Wifi",
         "Kitchen",
         "Refrigerator",
         "Microwave",
-        "Cooking basics",
-        "Dishes and silverware",
+        "Cooking Basics",
+        "Dishes and Silverware",
         "Dishwasher",
         "Stove",
         "Oven",
-        "Coffee maker",
-        "Baking sheet",
-        "Barbecue utensils",
+        "Coffee Maker",
+        "Anti-slip Mat",
+        "BBQ Utensils",
         "Backyard",
-        "Free parking on premises",
+        "Free Parking on Premises",
         "Pool",
-        "Luggage dropoff allowed",
-        "No smoking",
-        "Long term stays allowed",
-        "Host greets you",
-        "Smoke alarm",
-        "Carbon monoxide alarm"
+        "Luggage Drop-off Allowed",
+        "No Smoking",
+        "Long-term Stays Allowed",
+        "Host Greets You",
+        "Smoke Detector",
+        "Carbon Monoxide Detector"
       ],
       "des": [
         "",
@@ -228,53 +224,60 @@
         "",
         "",
         "",
-        "Space where guests can cook their own meals",
+        "",
+        "Area where guests can prepare their own meals",
         "",
         "",
-        "Pots and pans, oil, salt and pepper",
+        "Pots and pans, oil, salt, and pepper",
         "Bowls, chopsticks, plates, cups, etc.",
         "",
         "",
         "",
         "",
         "",
-        "Grill, charcoal, bamboo skewers/iron skewers, etc.",
-        "An open space on the property usually covered in grass",
+        "Grill, charcoal, bamboo/iron skewers, etc.",
+        "Open outdoor area usually covered with grass",
         "",
         "",
-        "For guests' convenience when they have early arrival or late departure",
+        "For guest comfort during early arrival or late departure",
         "",
-        "Allow stay for 28 days or more",
+        "Stays of 28 days or longer allowed",
         "",
-        "There is no smoke alarm on the property.",
-        "There is no carbon monoxide detector on the propert"
+        "No smoke detector on the property.",
+        "No carbon monoxide detector on the property."
       ]
     }
   },
   "Pricelist": {
-    "title": "Pricelist",
-    "subtitle": "*The price refers to the period of 1 nights in Euros",
+    "title": "Price",
+    "subtitle": "*Price refers to a period of 1 night in euros",
     "list": {
-      "des": "The price of your private getaway depends on the season, length of stay, and number of guests. We offer flexible options to help you find the perfect arrangement for your needs.",
+      "des": "The price of your private vacation depends on the season, length of stay, and number of guests. We offer flexible options to help you find the ideal arrangement that suits your needs.",
       "inner_list": {
-        "item1": "Price per night: From 190 € (depending on the season)",
-        "item2": "Discounts for longer stays: Special rates for weekly and monthly bookings",
-        "item3": "Minimum stay: 2 nights",
+        "item1": "Price per night: From €190 (depending on the season)",
+        "item2": "Long Stay Discounts: Special prices for weekly and monthly bookings",
+        "item3": "Minimum Stay: 3 nights",
         "item4": "Included in the price: Tourist tax, final cleaning, Wi-Fi, parking, bed linen, and towels"
       },
-      "des2": "For the exact price and availability, feel free to contact us! Book in advance and secure a perfect vacation in complete privacy."
+      "des2": "For the exact price and availability, feel free to contact us! Book early to secure your perfect private vacation."
     }
   },
   "Payment_conditions": {
-    "subtitle": "TERMS & CONDITIONS",
-    "title": "Payment and booking conditions",
+    "subtitle": "PAYMENT AND RESERVATION TERMS",
+    "title": "Payment and Reservation Terms",
     "des": "Tourist tax is not included in the price!",
-    "des2": "For your reservation to be secured it is obligation to pay 30% of full price in advance directly to owner of accommodation and 70% when you come to accommodation unit.",
-    "des3": "Deposit refundable if all is well: 500 euros.",
-    "des4": "Possibility of free cancellation one week after booking (EXCEPT IN LAST MINUTE RESERVATIONS, THEN THE DEADLINE IS 48 HOURS). Last minute - Reservation two weeks before.",
-    "des5": "On the last day of the stay, the guest is obliged to leave the accommodation until 10 am, so the other guests can check in from 4 pm.",
-    "des6": "Kindly note that pets are not permitted on the premises.",
-    "title2": "Payment methods:"
+    "des2": "To secure a reservation, a 30% advance payment of the total amount is required directly to the owner, and the remaining 70% upon arrival.",
+    "des3": "Refundable deposit if everything is in order: €500.",
+    "des4": "Free cancellation available within one week of booking (EXCEPT FOR LAST-MINUTE BOOKINGS, THEN THE DEADLINE IS 48 HOURS). Last-minute booking – two weeks before arrival.",
+    "des5": "On the last day of stay, guests must leave the accommodation by 9:00 AM so other guests can check in from 4:00 PM.",
+    "des6": "Note: Pets are not allowed on the property.",
+    "title2": "Payment Methods:"
+  },
+  "Map_Location": {
+    "title": "Map Location"
+  },
+  "Availability_Calendar": {
+    "title": "Availability Calendar"
   },
   "Villa_BookStay": {
     "des": "from",
@@ -282,53 +285,53 @@
     "button": "Book Your Stay"
   },
   "How_Reserve": {
-    "subtitle": "SECURE RESERVATION",
-    "title": "How do I reserve",
+    "subtitle": "SECURE BOOKING",
+    "title": "How to Book",
     "steps": {
-      "title": "Send us an inquiry",
-      "des": "Please send us inquiry via contact form, email or phone with all required information and period you wish to spend a vacation in holiday home House Lucia and expect fast e-mail answer and our best offer",
-      "title2": "Securing reservation (payment)",
-      "des2": "For your reservation to be secured it is obligation to pay 30% of the full amount in advance and rest of the amount on the day of arrival. After you make payment, please send us notification and we will send you confirmation of payment and booking. There are 2 options to make advance payment: bank transfer and via PayPal (debit and credit cards).",
+      "title": "Send an Inquiry",
+      "des": "Please send us an inquiry via the contact form, email, or phone with all the necessary information and your preferred vacation period. Expect a quick response and our best offer.",
+      "title2": "Reservation Confirmation (Payment)",
+      "des2": "To confirm your booking, a 30% advance payment is required, and the remaining amount upon arrival. After completing the payment, please notify us, and we’ll send you a booking and payment confirmation. There are two advance payment options: bank transfer or PayPal (debit and credit cards).",
       "subtitle": "Bank Transfer",
-      "span": "Account owner",
+      "span": "Account Holder",
       "span2": "Address",
       "span3": "Bank",
-      "title3": "Confirmation of payment",
-      "des3": "When payment is done, we will confirm your payment and reservation. Relax and await peacefully you vacation in summer and enjoy in your vacations in holiday home House Lucia, Istria - Croatia!"
+      "title3": "Payment Confirmation",
+      "des3": "Once payment is completed, we will confirm your reservation. Relax and look forward to your summer vacation at Villa Luxury Ulika, Istria – Croatia!"
     }
   },
   "Environs": {
     "title": "Vodnjan & Istria",
-    "des": "Vodnjan is a charming town located in the heart of Istria, Croatia. Known for its rich history, medieval architecture, and picturesque streets, it offers a glimpse into traditional Istrian life. Surrounded by olive groves, vineyards, and the beautiful Adriatic coast, Vodnjan is also famous for its high-quality olive oil production. Nearby attractions include the ancient Roman town of Pula, the Brijuni Islands National Park, and stunning beaches, making it a perfect destination for nature lovers and history enthusiasts alike.",
+    "des": "Vodnjan is a charming town located in the heart of Istria, Croatia. Known for its rich history, medieval architecture, and picturesque streets, it offers a glimpse into traditional Istrian life. Surrounded by olive groves, vineyards, and the stunning Adriatic coast, Vodnjan is also famous for its high-quality olive oil production. Nearby attractions include the ancient Roman city of Pula, Brijuni National Park, and beautiful beaches, making it a perfect destination for lovers of nature and history.",
     "button": "Show Map",
-    "title2": "Getting around",
-    "des2": "You can reach the house by car or taxi. Parking is free and available on site.",
-    "subtitle": "Attractions nearby"
+    "title2": "Getting Around",
+    "des2": "The villa can be reached by car or taxi. Parking is free and available on-site.",
+    "subtitle": "Nearby Attractions"
   },
   "PriceTable": {
     "title": "Period",
     "title2": "Price*",
-    "title3": "Persons",
+    "title3": "Guests",
     "title4": "Min. Stay"
   },
   "Contact": {
-    "title": "Contact us",
+    "title": "Contact Us",
     "Contact_Form": {
-      "name": "Name",
+      "name": "Full Name",
       "email": "Email",
-      "phone": "Phone",
-      "home": "Holiday home",
+      "phone": "Phone/Mobile",
+      "home": "Holiday Home",
       "adults": "Adults",
       "children": "Children",
       "arrival": "Arrival",
       "departure": "Departure",
       "message": "Inquiry",
-      "des": "The content of this form will be sent directly to the e-mail address of the owner of accommodation and is used exclusively for sending inquiries about booking of listed property.",
+      "des": "The contents of this form will be sent directly to the accommodation owner's email address and are used exclusively for sending booking inquiries for the listed property.",
       "button": "Send Inquiry",
-      "sent": "Successfully sent"
+      "sent": "Successfully Sent"
     },
     "Contact_Info": {
-      "contact_person": "contact person",
+      "contact_person": "Contact Person",
       "mobile": "Mobile",
       "email": "Email",
       "address": "Address",
@@ -349,43 +352,43 @@
     "eleven": "November",
     "twelve": "December",
     "booked": "Booked",
-    "checkIn": "Check In",
-    "checkOut": "Check Out",
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
     "reset": "Reset",
     "back": "Back",
     "next": "Next"
   },
   "Events": {
     "title": "Our Packages for Unforgettable Celebrations",
-    "subtitle": "Would you like to add a special charm to your event and create memories that will last a lifetime?\n\n We have prepared three carefully designed packages to suit different wishes and occasions – from elegant and simple decorations to unique experiences that take your breath away. Each package also includes **the rental of the house**, providing the perfect location for your celebration and the creation of unforgettable moments.",
-    "button": "Request a Quote",
+    "subtitle": "Would you like to add a special charm to your event and create memories that last?\n\nWe’ve prepared three carefully designed packages to suit different occasions – from elegant simplicity to unique experiences that take your breath away. Each package includes **house rental**, ensuring the perfect location for your celebration and unforgettable moments.",
+    "button": "Request Offer",
     "package_title": "1 Night Event",
-    "p4_title": "Bigger events",
-    "p4_des": "Turn your special occasion into an unforgettable experience! Our house with its spacious location is the perfect setting for hosting larger events in a unique atmosphere. With plenty of room for tents, we can create a tailor-made venue for weddings, family celebrations, or corporate gatherings. In collaboration with our trusted partner VISAEM, we provide elegant and professional tent solutions, ensuring every detail is taken care of for a flawless and memorable event.",
+    "p4_title": "Larger Events",
+    "p4_des": "We offer house rental with a spacious location ideal for organizing larger events. There’s enough space for tent installation, providing flexibility to adapt the ambiance for various occasions – from family celebrations to corporate events. Tent setup can be arranged in cooperation with VISAEM, a trusted partner for professional tent structures and equipment, ensuring quality and safety for every event.",
     "packages": [
       {
         "title": "BASIC PACKAGE",
         "details": [
-          "Perfect for those who appreciate simplicity with a touch of elegance. Our carefully crafted decorative garland will enhance your space and create a refined atmosphere for any occasion.",
-          "Ideal for: smaller celebrations, intimate gatherings, or events where you want to highlight beauty in details."
+          "For those who appreciate simplicity with a touch of elegance. Our carefully crafted decorative garland will beautify your space and create a refined atmosphere for any occasion.",
+          "Ideal for: small celebrations, intimate gatherings, or events where you wish to highlight beauty in details."
         ],
-        "price": "600€"
+        "price": "€600"
       },
       {
         "title": "STANDARD PACKAGE",
         "details": [
-          "A combination of elegance and joy! In addition to the garland, this package includes helium balloons that bring playfulness and a festive touch to the atmosphere. Your guests will feel the positive energy, and the entire event will be lifted to the next level.",
-          "Ideal for: birthdays, christenings, corporate events, and all occasions where you want an extra festive flair."
+          "A combination of elegance and fun! In addition to the garland, this package includes helium balloons that bring playfulness and festivity to the atmosphere. Your guests will feel the special energy, and the whole vibe will be lifted to another level.",
+          "Ideal for: birthdays, christenings, corporate celebrations, and any event that deserves an extra touch of festivity."
         ],
-        "price": "700€"
+        "price": "€700"
       },
       {
         "title": "PREMIUM PACKAGE",
         "details": [
-          "Our most exclusive package, created for those who want more than just decoration – they want an experience. Along with elegant decoration, this offer includes an exclusive retro oldtimer ride (up to 1 hour), during which you can enjoy and take photos with the car.",
-          "Ideal for: anniversaries, celebrations, special gatherings, and events that deserve something truly different."
+          "Our most exclusive package is made for those who want more than decoration – they want an experience. In addition to elegant space decoration, it includes an exclusive retro oldtimer ride (up to 1 hour) where you can enjoy and take photos with the car.",
+          "Ideal for: anniversaries, celebrations, special gatherings, and events that deserve something different."
         ],
-        "price": "900€"
+        "price": "€900"
       }
     ]
   }
