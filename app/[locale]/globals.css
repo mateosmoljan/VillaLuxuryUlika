@@ -50,7 +50,7 @@ a {
 }
 
 .btn:focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 107, 178, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(178, 150, 0, 0.5);
 }
 
 .btn-2:focus {

@@ -1,3 +1,4 @@
+import { yellow } from "@mui/material/colors";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -43,11 +44,13 @@ const config: Config = {
       colors: {
         brown: "#3e5975ff",
         darkbrown: "#54422e",
-        yellow: "#008eb9ff",
+        // yellow: "#008eb9ff",
+        yellow: "#c2984c",
         light_blue: "#91D8F7",
         blue: "#0098DA",
         pink: "#cc3bb1",
-        dark_yellow: "#012685ff",
+        // dark_yellow: "#012685ff",
+        dark_yellow: "#857001",
         dark_blue_black: "#343a40",
         grey: "rgba(0, 0, 0, 0.6)",
         grey1: "#495057",

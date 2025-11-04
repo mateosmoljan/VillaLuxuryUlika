@@ -59,17 +59,24 @@ const Navbar = () => {
         } ${visible ? "transleteNavUp" : "transleteNav"}`}
       >
         <Link href="/" className="flex gap-2 items-center">
-          <Image
+          {/* <Image
             src="/assets/images/logo.png"
             alt="logo"
             width={40}
             height={40}
             className="object-contain"
+          /> */}
+          <Image
+            src="/assets/images/logo_full.jpg"
+            width={200}
+            height={49}
+            alt="logo"
+            className="object-contain"
           />
-          <p className="font-arbutus font-black text-2xl text-yellow">
+          {/* <p className="font-arbutus font-black text-2xl text-yellow">
             <span className="text-dark_blue_black">Villa</span>
             Luxury<span className="text-dark_blue_black">Ulika</span>
-          </p>
+          </p> */}
         </Link>
 
         {/* Desktop Navigation */}
