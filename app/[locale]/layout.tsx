@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
     images: [
       {
-        url: "https://www.villaluxulika.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F42.07efe036.jpg&w=1920&q=75",
+        url: "https://www.villaluxulika.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F105.07eb8276.jpg&w=3840&q=75",
         alt: "",
       },
     ],

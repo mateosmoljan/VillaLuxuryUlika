@@ -42,7 +42,7 @@ function Pricelist() {
         </div>
         <div className="py-10 bg-gray-100">
           <div className="container">
-            <h2 className="text-pink font-semibold uppercase mb-2 tracking-widest">
+            <h2 className="text-yellow font-semibold uppercase mb-2 tracking-widest">
               {PaymentConditionsData.data[0].subtitle}
             </h2>
             <h2 className="font-bold text-3xl text-dark_blue_black mb-4">
@@ -64,7 +64,7 @@ function Pricelist() {
         </div> */}
         <div className="py-10 bg-gray-100">
           <div className="container">
-            <h2 className="text-pink font-semibold uppercase mb-2 tracking-widest">
+            <h2 className="text-yellow font-semibold uppercase mb-2 tracking-widest">
               {t("subtitle")}
             </h2>
             <h2 className="block font-bold text-3xl text-dark_blue_black mb-10 ">
