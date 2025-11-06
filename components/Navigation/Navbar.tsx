@@ -67,9 +67,9 @@ const Navbar = () => {
             className="object-contain"
           /> */}
           <Image
-            src="/assets/images/logo_full.jpg"
+            src="/assets/images/logo880x220.png"
             width={200}
-            height={49}
+            height={50}
             alt="logo"
             className="object-contain"
           />
