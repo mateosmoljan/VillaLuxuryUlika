@@ -1,13 +1,17 @@
 import { getPaymentConditionsData } from "@/lib/paymentConditions";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Markdown from "react-markdown";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 
 function PaymentConditions() {
   const localeActive = useLocale();
   const PaymentConditionsData = getPaymentConditionsData(localeActive);
-  const methods = useTranslations("Payment_conditions").raw(
-    "methods"
-  ) as string[];
+  const methods = (
+    { hr, en, de, it }[localeActive] ?? en
+  ).Payment_conditions.methods;
 
   return (
     <div>

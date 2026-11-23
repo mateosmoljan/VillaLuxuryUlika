@@ -15,7 +15,11 @@ import { getPricelistData } from "@/lib/pricelist";
 import { getTitleData } from "@/lib/title";
 import { getVilla_DescriptionData } from "@/lib/Villa_Description";
 import ExpandableDescription from "@/components/About/ExpandableDescription";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Markdown from "react-markdown";
@@ -23,7 +27,9 @@ import Markdown from "react-markdown";
 function VillaPanorama() {
   const [showFeatures, setShowFeatures] = useState<boolean>(false);
   const localeActive = useLocale();
-  const buttons = useTranslations("Buttons");
+  const buttons = (
+    { hr, en, de, it }[localeActive] ?? en
+  ).Buttons;
   const TitleData = getTitleData(localeActive);
   const CategorizationData = getCategorizationData(localeActive);
   const Villa_DescriptionData = getVilla_DescriptionData(localeActive);
@@ -80,8 +86,8 @@ function VillaPanorama() {
             <div className="py-10">
               <ExpandableDescription
                 id="villa-description-more"
-                moreLabel={buttons("Show_more")}
-                lessLabel={buttons("Show_less")}
+                moreLabel={buttons.Show_more}
+                lessLabel={buttons.Show_less}
                 preview={
                   <Markdown>
                     {(Villa_DescriptionData.data[0].des || "").split("\n\n")[0]}
