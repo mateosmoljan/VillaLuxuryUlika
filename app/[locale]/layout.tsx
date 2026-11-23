@@ -1,77 +1,47 @@
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Arbutus_Slab, Poppins } from "next/font/google";
 import Navbar from "@/components/Navigation/Navbar";
 import Footer from "@/components/Footer/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalitics";
-import JsonLd from "@/components/site/JsonLd";
-import { siteUrl } from "@/lib/seo";
+import { buildPageMetadata, getLodgingBusinessJsonLd } from "@/lib/seo";
 
 const arbutus = Arbutus_Slab({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-arbutus",
+  display: "swap",
 });
 
 const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "600"],
   variable: "--font-poppins",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Villa Luxury Ulika",
-  description:
-    "Holiday home Villa Luxury Ulika in Vodnjan, Istria. Four bedrooms, a private pool, a Finnish sauna and a jacuzzi.",
+  ...buildPageMetadata("en", "/"),
   icons: {
     icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.ico" },
       { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: "/apple-touch-icon.png",
   },
-  generator: "Next.js",
-  applicationName: "Accommodation Villa Luxury Ulika",
-  referrer: "origin-when-cross-origin",
-  keywords: ["Accommodation", "Villa Luxury Ulika", "Istria", "Croatia"],
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0",
-  openGraph: {
-    type: "website",
-    title: "Accommodation Villa Luxury Ulika - Istria",
-    description:
-      "Holiday home Villa Luxury Ulika in Vodnjan, Istria. Four bedrooms, a private pool, a Finnish sauna and a jacuzzi.",
-    url: siteUrl,
-    images: [
-      {
-        url: `${siteUrl}/assets/images/i/105.jpg`,
-        alt: "Villa Luxury Ulika",
-      },
-    ],
+  metadataBase: new URL("https://www.villaluxulika.com"),
+  applicationName: "Villa Luxury Ulika",
+  robots: {
+    index: true,
+    follow: true,
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Villa Luxury Ulika – Istria",
-    description:
-      "Holiday home Villa Luxury Ulika in Vodnjan, Istria. Four bedrooms, a private pool, a Finnish sauna and a jacuzzi.",
-    images: [`${siteUrl}/assets/images/i/105.jpg`],
-  },
-  authors: [
-    { name: "Mateo Smoljan" },
-    { name: "Mateo Smoljan", url: "https://boostweb.io" },
-  ],
-  creator: "Mateo Smoljan",
-  publisher: "Mateo Smoljan",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -81,16 +51,21 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const jsonLd = getLodgingBusinessJsonLd(locale);
+
   return (
     <html lang={locale}>
-      <GoogleAnalytics />
       <body
-        className={`${poppins.variable} font-poppins ${arbutus.variable} font-arbutus`}
+        className={`${poppins.variable} font-poppins ${arbutus.variable} font-arbutus min-h-screen flex flex-col`}
       >
-        <JsonLd />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Navbar />
-        {children}
+        <div className="flex-1 flex flex-col">{children}</div>
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );

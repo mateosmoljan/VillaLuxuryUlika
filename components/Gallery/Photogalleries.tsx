@@ -1,10 +1,11 @@
 "use client";
 import { createContext, useContext, useState } from "react";
+import dynamic from "next/dynamic";
 import { TfiGallery } from "react-icons/tfi";
 import { Link } from "@/navigation";
 import { PropertyGalleryLib } from "@/lib/property_gallery";
 import PhotogalleriesImages from "./PhotogalleriesImages";
-import Gallery from "./Gallery";
+const Gallery = dynamic(() => import("./Gallery"), { ssr: false });
 import { getPhotogalleriesData } from "@/lib/photogalleries";
 import { useLocale } from "next-intl";
 
@@ -34,12 +35,12 @@ function Photogalleries() {
     <section className="Photo">
       <div className="container py-10">
         <div className="w-6xl flex flex-col gap-3 pb-10">
-          <h2 className="text-yellow font-semibold uppercase tracking-widest">
+          <h2 className="text-pink font-semibold uppercase tracking-widest">
             {PhotogalleriesData.data[0].subtitle}
           </h2>
-          <h2 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
+          <h1 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
             {PhotogalleriesData.data[0].title}
-          </h2>
+          </h1>
         </div>
         <AppContext.Provider value={{ openIndex, setOpenIndex }}>
           <PhotogalleriesImages handleImageClick={handleImageClick} />

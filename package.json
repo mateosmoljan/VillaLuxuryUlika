@@ -1,5 +1,5 @@
 {
-  "name": "villa-relax",
+  "name": "villa-luxury-ulika",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -19,6 +19,8 @@
     "@mui/material": "^5.15.1",
     "@mui/x-date-pickers": "^6.19.5",
     "@mui/x-date-pickers-pro": "^6.19.5",
+    "@neondatabase/serverless": "^1.2.1",
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.0.0",
     "date-fns": "^3.3.1",
     "dayjs": "^1.11.10",
@@ -36,6 +38,7 @@
     "react-markdown": "^9.0.1",
     "react-slick": "^0.29.0",
     "reactjs-availability-calendar": "^1.1.7",
+    "sharp": "^0.35.5",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.0.5",
     "tailwind-merge": "^2.1.0"

@@ -68,6 +68,7 @@ function FourGallery({ mapButton, range }: Props) {
                       src={image.src}
                       alt={image.alt}
                       placeholder="blur"
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 25vw"
                       className="relative cursor-pointer object-cover h-full rounded-md block w-full hover:opacity-90 aspect-video md:aspect-square"
                       onClick={() =>
                         handleImageClick(index + (range?.start || 0))
@@ -84,7 +85,7 @@ function FourGallery({ mapButton, range }: Props) {
                   className=" btn-2 gap-2 mt-4"
                 >
                   <FaMap />
-                  <span>{EnvironsData.data[0].button}</span>
+                  <span>{EnvironsData.data?.[0]?.button ?? "View map"}</span>
                 </button>
                 {showMap && <GoogleMaps onClose={handleMapClose} />}
               </div>

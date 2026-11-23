@@ -3,14 +3,15 @@ import ShowcaseGallery2 from "@/components/Gallery/ShowcaseGallery2";
 import NavPath from "@/components/NavPath/NavPath";
 import SendMessage from "@/components/SendMessage/SendMessage";
 import { useTranslations } from "next-intl";
-import { pageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export function generateMetadata({
-  params,
+export async function generateMetadata({
+  params: { locale },
 }: {
   params: { locale: string };
-}) {
-  return pageMetadata(params.locale, "photogallery");
+}): Promise<Metadata> {
+  return buildPageMetadata(locale, "/photogallery");
 }
 
 function Photogallery() {

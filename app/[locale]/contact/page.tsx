@@ -3,14 +3,15 @@ import ContactForm from "@/components/Contact/ContactForm";
 import ContactInfo from "@/components/Contact/ContactInfo";
 import NavPath from "@/components/NavPath/NavPath";
 import { useTranslations } from "next-intl";
-import { pageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export function generateMetadata({
-  params,
+export async function generateMetadata({
+  params: { locale },
 }: {
   params: { locale: string };
-}) {
-  return pageMetadata(params.locale, "contact");
+}): Promise<Metadata> {
+  return buildPageMetadata(locale, "/contact");
 }
 
 function Contact() {
