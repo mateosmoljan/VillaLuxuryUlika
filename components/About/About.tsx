@@ -1,9 +1,11 @@
 import { getLocationsData } from "@/lib/LocationToVisit";
 import { useLocale, useTranslations } from "next-intl";
 import Markdown from "react-markdown";
+import ExpandableDescription from "./ExpandableDescription";
 
 function About() {
   const a = useTranslations("About");
+  const b = useTranslations("Buttons");
   const t = useTranslations("Titles");
   const localeActive = useLocale();
   const LocationsData = getLocationsData(localeActive);
@@ -15,18 +17,24 @@ function About() {
           {t("homepage_title")}
         </h1>
         <div className="pt-10">
-          <Markdown>{a("des")}</Markdown>
-          <Markdown>{a("des2")}</Markdown>
-          <br />
-          <h2 className="font-ExtraBold text-lg">
-            <Markdown>{a("the_space.title")}</Markdown>
-          </h2>
-          <Markdown>{a("the_space.des")}</Markdown>
-          <br />
-          <Markdown>{a("the_space.des2")}</Markdown>
-          <br />
-          <h2 className="font-ExtraBold text-lg">{a("guest_access.title")}</h2>
-          <p>{a("guest_access.des")}</p>
+          <ExpandableDescription
+            id="about-description-more"
+            moreLabel={b("Show_more")}
+            lessLabel={b("Show_less")}
+            preview={<Markdown>{a("des")}</Markdown>}
+          >
+            <Markdown>{a("des2")}</Markdown>
+            <br />
+            <h2 className="font-ExtraBold text-lg">
+              <Markdown>{a("the_space.title")}</Markdown>
+            </h2>
+            <Markdown>{a("the_space.des")}</Markdown>
+            <br />
+            <Markdown>{a("the_space.des2")}</Markdown>
+            <br />
+            <h2 className="font-ExtraBold text-lg">{a("guest_access.title")}</h2>
+            <p>{a("guest_access.des")}</p>
+          </ExpandableDescription>
         </div>
         <div className="pt-5">
           <h2 className="font-ExtraBold">{a("locations.title")}</h2>

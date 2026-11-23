@@ -10,11 +10,14 @@ function Footer() {
   return (
     <section className="flex relative justify-center bg-dark_blue_black xl:px-20 pb-10 xl:pb-20 ">
       <FooterSvg />
-      <div className="pt-8 max-w-screen-2xl grid w-full text-white sm:grid-cols-2 gap-y-8 lg:grid-cols-4 place-items-center">
+      <div className="pt-8 max-w-screen-2xl grid w-full text-white sm:grid-cols-2 gap-y-8 lg:grid-cols-3 place-items-center">
         <div className="h-full relative pl-5 sm:pl-0 w-full sm:w-3/5 lg:w-auto">
           <div className="space-y-4 ">
-            <Image src={SSL} alt="ssl Villa Relax" width={200} />
-            <p>{t("year")}</p>
+            <Image src={SSL} alt="SSL" width={200} />
+            <p>
+              ©{new Date().getFullYear()}
+              {t("year").replace(/^©\d{4}/, "")}
+            </p>
             <p>{t("rights")}</p>
             {/* <p className="">
               <a
@@ -57,22 +60,30 @@ function Footer() {
           </h2>
           <ul className="space-y-4">
             <li>Mihovil Smoljan</li>
-            <li>Vodnjan, Istra</li>
-            <li>+(385) 95 582 4729</li>
-            <li>+(385) 99 873 4770</li>
-            <li>villa-ulika-fivestars@gmail.com</li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="font-bold uppercase text-xl pb-5">
-            {t("Contact_Us.title")}
-          </h2>
-          <ul className="space-y-4">
+            <li>Vodnjan</li>
             <li>
-              <a href="">ⓕ Facebook</a>
+              <a
+                href="tel:+385955824729"
+                className="!text-white hover:!text-yellow"
+              >
+                +(385) 95 582 4729
+              </a>
             </li>
             <li>
-              <a href="">🅾 Instagram</a>
+              <a
+                href="tel:+385998734770"
+                className="!text-white hover:!text-yellow"
+              >
+                +(385) 99 873 4770
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:villa-ulika-fivestars@gmail.com"
+                className="!text-white hover:!text-yellow"
+              >
+                villa-ulika-fivestars@gmail.com
+              </a>
             </li>
           </ul>
         </div>

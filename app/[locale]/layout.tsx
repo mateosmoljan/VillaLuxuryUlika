@@ -6,11 +6,14 @@ import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
 import StickyBar from "@/components/site/StickyBar";
 import JsonLd from "@/components/site/JsonLd";
-import { getChrome } from "@/lib/site/chrome";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalitics";
+import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
-import { pageMetadata, siteUrl } from "@/lib/site/seo";
-import { getPublished } from "@/lib/store/publish";
+import { siteUrl } from "@/lib/seo";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 
 const display = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
@@ -37,62 +40,63 @@ export function generateStaticParams() {
   return ["hr", "en", "de", "it"].map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}): Promise<Metadata> {
-  const locale = prepareLocale(params.locale);
-  const { copy } = await getPublished(locale);
-  return {
-    metadataBase: new URL(siteUrl),
-    ...pageMetadata(locale, "", copy.meta.title, copy.meta.description),
-    title: {
-      default: copy.meta.title,
-      template: "%s · Villa Luxury Ulika",
-    },
-    applicationName: "Villa Luxury Ulika",
-    icons: { icon: "/assets/images/logo_fav.jpg" },
-    authors: [{ name: "Mateo Smoljan" }],
-    creator: "Mateo Smoljan",
-    publisher: "Mateo Smoljan",
-    formatDetection: { email: false, address: false, telephone: false },
-  };
-}
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/icon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+};
 
-export default async function RootLayout({
+const packs = { hr, en, de, it };
+
+export default function RootLayout({
   children,
-  params: { locale: localeParam },
+  params: { locale },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const locale = prepareLocale(localeParam);
-  const { copy } = await getPublished(locale);
-  const ui = getChrome(locale);
+  const active = prepareLocale(locale);
+  const messages = packs[active];
+  const ui = getChrome(active);
   const measurementId = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
-
   return (
-    <html lang={locale} className={`${display.variable} ${sans.variable}`}>
+    <html lang={active} className={`${display.variable} ${sans.variable}`}>
       <body className="bg-white pb-20 font-sans text-ink antialiased md:pb-0">
         <a
           href="#content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-olive focus:px-4 focus:py-2 focus:text-paper"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-olive focus:px-4 focus:py-2 focus:text-white"
         >
-          {copy.skip}
+          {ui.menu}
         </a>
+        <JsonLd />
         <Header
-          locale={locale}
-          nav={copy.nav}
-          eyebrow={copy.hero.eyebrow}
-          inquiry={ui.inquiry}
+          locale={active}
+          nav={messages.Navigation.navlinks}
+          eyebrow="Vodnjan · Istra"
+          inquiry={messages.Navigation.navLinksButton}
           menuLabel={ui.menu}
           closeLabel={ui.close}
         />
         <div id="content">{children}</div>
-        <Footer copy={copy} />
-        <StickyBar chrome={ui} phone={copy.contact.phones[0]} email={copy.contact.email} />
-        <JsonLd locale={locale} copy={copy} />
+        <Footer
+          year={messages.Footer.year}
+          rights={messages.Footer.rights}
+          discoverTitle={messages.Footer.Discover.title}
+          vodnjan={messages.Footer.Discover.list.Pula}
+          guide={messages.Footer.Discover.list.Guide}
+          contactTitle={messages.Footer.Contact_Us.title}
+        />
+        <StickyBar
+          chrome={ui}
+          phone={{ display: "+(385) 95 582 4729", href: "tel:+385955824729" }}
+          email="villa-ulika-fivestars@gmail.com"
+        />
         {measurementId ? <GoogleAnalytics /> : null}
       </body>
     </html>

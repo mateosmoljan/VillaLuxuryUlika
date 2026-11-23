@@ -37,9 +37,9 @@ function Photogalleries() {
           <h2 className="text-yellow font-semibold uppercase tracking-widest">
             {PhotogalleriesData.data[0].subtitle}
           </h2>
-          <h1 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
+          <h2 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
             {PhotogalleriesData.data[0].title}
-          </h1>
+          </h2>
         </div>
         <AppContext.Provider value={{ openIndex, setOpenIndex }}>
           <PhotogalleriesImages handleImageClick={handleImageClick} />

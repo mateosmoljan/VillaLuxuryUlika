@@ -43,6 +43,8 @@ export interface IControls {
   prev: () => void;
   initCal: () => void;
   next: () => void;
+  canPrev?: boolean;
+  canNext?: boolean;
 }
 
 export enum Days {

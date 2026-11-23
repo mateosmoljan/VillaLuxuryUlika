@@ -1,37 +1,50 @@
-import TownMap from "@/components/site/TownMap";
-import { getChrome } from "@/lib/site/chrome";
+import IFrameMaps from "@/components/About/iFrameMaps";
+import OwnerDescription from "@/components/site/OwnerDescription";
 import { prepareLocale } from "@/lib/site/locale";
-import { pageMetadata } from "@/lib/site/seo";
-import { getPublished } from "@/lib/store/publish";
+import { pageMetadata } from "@/lib/seo";
+import { Distances } from "@/lib/LocationDistance";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 import type { Metadata } from "next";
-import { Link } from "@/navigation";
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = prepareLocale(params.locale);
-  const { copy } = await getPublished(locale);
-  return pageMetadata(locale, "/surroundings", copy.place.title, copy.place.paragraphs[0]);
+const packs = { hr, en, de, it };
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  prepareLocale(params.locale);
+  return pageMetadata(params.locale, "surroundings");
 }
 
-export default async function PlacePage({ params }: { params: { locale: string } }) {
+export default function SurroundingsPage({ params }: { params: { locale: string } }) {
   const locale = prepareLocale(params.locale);
-  const { copy } = await getPublished(locale);
-  const ui = getChrome(locale);
+  const messages = packs[locale];
+  const places = messages.Distances.place;
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-sm text-ink/60">
-        <Link href="/">{ui.crumbsHome}</Link> · {copy.nav.place}
-      </p>
-      <h1 className="mt-3 max-w-3xl font-display text-5xl text-olive-deep">{copy.place.title}</h1>
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink/80">{ui.surroundingsLead}</p>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        {copy.place.paragraphs.map((paragraph) => (
-          <p key={paragraph} className="rounded-2xl bg-paper p-5 leading-relaxed text-ink/80">{paragraph}</p>
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <h1 className="font-display text-5xl text-olive-deep">{messages.Environs.title}</h1>
+      <div className="mt-6 max-w-3xl">
+        <OwnerDescription id="environs" text={messages.Environs.des} moreLabel={messages.Buttons.Show_more} lessLabel={messages.Buttons.Show_less} />
+      </div>
+      <h2 className="mt-10 font-display text-3xl">{messages.Environs.title2}</h2>
+      <p className="mt-2 max-w-3xl">{messages.Environs.des2}</p>
+      <h2 className="mt-10 font-display text-3xl">{messages.Distances.title}</h2>
+      <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+        {Distances.map((item, index) => (
+          <li key={places[index] ?? index} className="flex justify-between rounded-xl border border-sand px-4 py-3 text-sm">
+            <span>{places[index]}</span>
+            <b>{item.distance} km</b>
+          </li>
         ))}
-        <p className="rounded-2xl border border-sand p-5 text-sm leading-relaxed text-ink/70">{ui.noDistances}</p>
-      </div>
-      <div className="mt-8">
-        <TownMap chrome={ui} />
-      </div>
-    </div>
+      </ul>
+      <h2 className="mt-10 font-display text-3xl">{messages.Environs.subtitle}</h2>
+      <ul className="mt-3 list-disc space-y-2 pl-5">
+        {messages.About.locations.des.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+      <h2 className="mt-10 font-display text-3xl">{messages.Map_Location.title}</h2>
+      <div className="mt-4 h-[420px] overflow-hidden rounded-3xl"><IFrameMaps className="h-full" /></div>
+    </article>
   );
 }

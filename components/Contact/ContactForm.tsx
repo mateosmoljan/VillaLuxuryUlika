@@ -16,6 +16,10 @@ import emailjs from "@emailjs/browser";
 import { MuiTelInput } from "mui-tel-input";
 import "./style.css";
 import { useLocale } from "next-intl";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 import { getContactData } from "@/lib/contact";
 
 function ContactForm() {
@@ -26,6 +30,12 @@ function ContactForm() {
   const [value, setValue] = React.useState("");
   const localeActive = useLocale();
   const ContactData = getContactData(localeActive);
+  const formText = {
+    hr: hr.Contact.Contact_Form,
+    en: en.Contact.Contact_Form,
+    de: de.Contact.Contact_Form,
+    it: it.Contact.Contact_Form,
+  }[localeActive] ?? en.Contact.Contact_Form;
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -70,7 +80,7 @@ function ContactForm() {
               InputLabelProps={{
                 className: "!font-Bold ",
               }}
-              label="Name"
+              label={formText.name}
               size="small"
             />
           </div>
@@ -84,14 +94,14 @@ function ContactForm() {
               }}
               name="user_email"
               type="email"
-              label="Email"
+              label={formText.email}
               size="small"
               style={{
                 border: isValidEmail ? "" : "1px solid red",
               }}
             />
             {!isValidEmail && (
-              <p style={{ color: "red" }}>Please enter a valid email address</p>
+              <p style={{ color: "red" }}>{formText.invalid_email}</p>
             )}
           </div>
         </div>
@@ -132,7 +142,7 @@ function ContactForm() {
               className: "!font-Bold",
             }}
             id="filled-multiline-static"
-            label="Inquiry"
+            label={formText.message}
             className="bg-white w-full !font-Bold"
             multiline
             rows={5}
@@ -142,10 +152,7 @@ function ContactForm() {
           />
         </div>
         <p className="text-xs mb-4 text-grey3">
-          {/* {ContactData.data[0].des} */}
-          The content of this form will be sent directly to the e-mail address
-          of the owner of accommodation and is used exclusively for sending
-          inquiries about booking of listed property.
+          {ContactData.data[0].des}
         </p>
         <div className="px-4">
           <Button
@@ -159,13 +166,11 @@ function ContactForm() {
           >
             {messageSent ? (
               <Alert severity="success" className="">
-                {/* {ContactData.data[0].sent} */}
-                Successfully sent
+                {ContactData.data[0].sent}
               </Alert>
             ) : (
               <>
-                {/* {ContactData.data[0].button} */}
-                Send Inquiry
+                {ContactData.data[0].button}
                 <IoIosSend className="text-2xl" />
               </>
             )}

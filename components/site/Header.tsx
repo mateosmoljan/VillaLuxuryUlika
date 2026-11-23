@@ -1,7 +1,7 @@
 "use client";
 
 import { Link, usePathname } from "@/navigation";
-import type { Copy, Locale } from "@/lib/site/copy";
+import type { Locale } from "@/lib/site/copy";
 import type { Chrome } from "@/lib/site/chrome";
 import { useState } from "react";
 
@@ -21,7 +21,7 @@ export default function Header({
   closeLabel,
 }: {
   locale: Locale;
-  nav: Copy["nav"];
+  nav: string[];
   eyebrow: string;
   inquiry: string;
   menuLabel: string;
@@ -30,16 +30,17 @@ export default function Header({
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const items = [
-    { href: "/villa-luxury-ulika" as const, label: nav.villa },
-    { href: "/photogallery" as const, label: nav.gallery },
-    { href: "/pricelist" as const, label: nav.prices },
-    { href: "/surroundings" as const, label: nav.place },
+    { href: "/villa-luxury-ulika" as const, label: nav[0] },
+    { href: "/photogallery" as const, label: nav[2] },
+    { href: "/pricelist" as const, label: nav[1] },
+    { href: "/surroundings" as const, label: nav[3] },
   ];
 
   return (
     <header className="sticky top-0 z-40 border-b border-sand/80 bg-white/95 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-6">
-        <Link href="/" className="mr-auto min-w-0" onClick={() => setOpen(false)}>
+        <Link href="/" className="mr-auto flex min-w-0 items-center gap-2" onClick={() => setOpen(false)}>
+          <img src="/icon-32.png" alt="" width={32} height={32} className="h-8 w-8" />
           <span className="block font-display text-[1.35rem] leading-none text-olive-deep">Villa Luxury Ulika</span>
           <span className="mt-1 block text-[0.68rem] uppercase tracking-[0.16em] text-ink/55">{eyebrow}</span>
         </Link>

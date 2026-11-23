@@ -1,42 +1,53 @@
 import { Link } from "@/navigation";
-import type { Copy } from "@/lib/site/copy";
 
-export default function Footer({ copy }: { copy: Copy }) {
+export default function Footer({
+  year,
+  rights,
+  discoverTitle,
+  vodnjan,
+  guide,
+  contactTitle,
+}: {
+  year: string;
+  rights: string;
+  discoverTitle: string;
+  vodnjan: string;
+  guide: string;
+  contactTitle: string;
+}) {
   return (
-    <footer className="border-t border-sand bg-olive-deep text-paper">
+    <footer className="border-t border-sand bg-olive-deep text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
         <div>
           <p className="font-display text-2xl">Villa Luxury Ulika</p>
-          <p className="mt-2 text-sm text-paper/80">{copy.footer.place}</p>
+          <p className="mt-2 text-sm text-white/80">
+            ©{new Date().getFullYear()}
+            {year.replace(/^©\d{4}/, "")}
+          </p>
+          <p className="text-sm text-white/80">{rights}</p>
         </div>
         <div className="text-sm leading-7">
-          <p>{copy.contact.person}</p>
-          {copy.contact.phones.map((phone) => (
-            <a key={phone.href} href={phone.href} className="block hover:text-white">
-              {phone.display}
-            </a>
-          ))}
-          <a href={`mailto:${copy.contact.email}`} className="block hover:text-white">
-            {copy.contact.email}
+          <h2 className="font-display text-xl">{discoverTitle}</h2>
+          <a className="block hover:underline" href="https://www.vodnjanski.info/" target="_blank" rel="noreferrer">
+            {vodnjan}
+          </a>
+          <a className="block hover:underline" href="https://www.istra.hr/" target="_blank" rel="noreferrer">
+            {guide}
           </a>
         </div>
         <div className="text-sm leading-7">
-          <Link href="/villa-luxury-ulika" className="block hover:text-white">
-            {copy.nav.villa}
-          </Link>
-          <Link href="/pricelist" className="block hover:text-white">
-            {copy.nav.prices}
-          </Link>
-          <Link href="/photogallery" className="block hover:text-white">
-            {copy.nav.gallery}
-          </Link>
-          <Link href="/contact" className="block hover:text-white">
-            {copy.nav.contact}
+          <h2 className="font-display text-xl">{contactTitle}</h2>
+          <p>Mihovil Smoljan</p>
+          <p>Vodnjan</p>
+          <a className="block hover:underline" href="tel:+385955824729">+(385) 95 582 4729</a>
+          <a className="block hover:underline" href="tel:+385998734770">+(385) 99 873 4770</a>
+          <a className="block hover:underline" href="mailto:villa-ulika-fivestars@gmail.com">
+            villa-ulika-fivestars@gmail.com
+          </a>
+          <Link href="/contact" className="mt-2 inline-block underline">
+            {contactTitle}
           </Link>
         </div>
-      </div>
-      <div className="border-t border-white/10 px-5 py-4 text-center text-xs text-paper/70">
-        © {new Date().getFullYear()} Villa Luxury Ulika. {copy.footer.rights}
       </div>
     </footer>
   );

@@ -1,48 +1,43 @@
-import type { Copy, Locale } from "@/lib/site/copy";
-import { siteUrl } from "@/lib/site/seo";
+import { siteUrl } from "@/lib/seo";
 
-export default function JsonLd({ locale, copy }: { locale: Locale; copy: Copy }) {
-  const amenities = copy.amenities.groups
-    .filter((group) => !group.notIncluded)
-    .flatMap((group) => group.items.map((item) => item.name));
+const address = {
+  "@type": "PostalAddress",
+  addressLocality: "Vodnjan",
+  addressRegion: "Istria",
+  addressCountry: "HR",
+};
 
-  const data = {
-    "@context": "https://schema.org",
-    "@type": ["VacationRental", "LodgingBusiness"],
-    name: "Villa Luxury Ulika",
-    description: copy.meta.description,
-    url: `${siteUrl}/${locale}`,
-    image: [
-      `${siteUrl}/og/villa.jpg`,
-      `${siteUrl}/assets/images/i/76.jpg`,
-      `${siteUrl}/assets/images/i/42.jpg`,
-      `${siteUrl}/assets/images/i/16.jpg`,
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Vodnjan",
-      addressRegion: "Istra",
-      addressCountry: "HR",
+const image = `${siteUrl}/assets/images/i/105.jpg`;
+
+const graph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VacationRental",
+      name: "Villa Luxury Ulika",
+      url: siteUrl,
+      image,
+      address,
+      telephone: "+385955824729",
     },
-    telephone: copy.contact.phones.map((phone) => phone.href.replace("tel:", "")),
-    email: copy.contact.email,
-    numberOfBedrooms: 4,
-    petsAllowed: false,
-    smokingAllowed: false,
-    checkinTime: "16:00",
-    checkoutTime: "09:00",
-    availableLanguage: ["hr", "en", "de", "it"],
-    amenityFeature: amenities.map((name) => ({
-      "@type": "LocationFeatureSpecification",
-      name,
-      value: true,
-    })),
-  };
+    {
+      "@type": "LodgingBusiness",
+      name: "Villa Luxury Ulika",
+      url: siteUrl,
+      image,
+      address,
+      telephone: "+385955824729",
+    },
+  ],
+};
 
+function JsonLd() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graph) }}
     />
   );
 }
+
+export default JsonLd;

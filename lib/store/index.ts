@@ -3,20 +3,20 @@ import fs from "fs";
 import path from "path";
 import { gallery } from "@/lib/site/gallery";
 import { getCopy, isLocale, type Copy, type Locale } from "@/lib/site/copy";
-import { priceMonths } from "@/lib/site/prices";
+import { dailyPrices } from "@/lib/dailyPrices";
 import type { PriceRow, SiteState, StoreMode } from "./types";
 
 export const HERO_DEFAULT = "/assets/images/i/111.jpg";
 const FILE = path.join(process.cwd(), "data", "store.json");
 
 export function seedPrices(): PriceRow[] {
-  return priceMonths.flatMap((month) =>
-    month.days.map((day) => ({
-      date: day.date,
-      price: day.price,
+  return Object.keys(dailyPrices)
+    .sort()
+    .map((date) => ({
+      date,
+      price: dailyPrices[date],
       closed: false,
-    }))
-  );
+    }));
 }
 
 export function allowedImageSrcs(): Set<string> {

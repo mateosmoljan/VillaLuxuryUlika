@@ -6,34 +6,14 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { getPriceTableData } from "@/lib/priceTable";
+import { getPricePeriods } from "@/lib/dailyPrices";
 import { useLocale } from "next-intl";
 
-function createData(
-  period: string,
-  price: number,
-  persons: number,
-  stay: number
-) {
-  return { period, price, persons, stay };
-}
-
-const rows = [
-  createData("02.01. - 08.01.", 190, 12, 7),
-  createData("09.01. - 10.01.", 250, 12, 7),
-  createData("11.01. - 15.01.", 190, 12, 7),
-  createData("16.01. - 17.01.", 250, 12, 7),
-  createData("01.05. - 31.05.", 0, 12, 7),
-  createData("01.06. - 30.06.", 0, 12, 7),
-  createData("01.07. - 31.08.", 0, 12, 7),
-  createData("01.09. - 12.09.", 0, 12, 7),
-  createData("13.09. - 22.09.", 0, 12, 7),
-  createData("23.09. - 30.09.", 0, 12, 7),
-  createData("01.10. - 30.10.", 0, 12, 7),
-  createData("01.11. - 31.11.", 0, 12, 7),
-  createData("01.12. - 22.12.", 0, 12, 7),
-  createData("23.12. - 27.8.", 0, 12, 7),
-  createData("28.12. - 01.01.", 0, 12, 7),
-];
+const rows = getPricePeriods().map((period) => ({
+  period:
+    period.from === period.to ? period.from : `${period.from} - ${period.to}`,
+  price: period.price,
+}));
 
 export default function PriceTable() {
   const localeActive = useLocale();
@@ -88,15 +68,11 @@ export default function PriceTable() {
               <TableCell
                 align="right"
                 className="px-0 !font-Bold !py-2 text-center"
-              >
-                {row.persons}
-              </TableCell>
+              />
               <TableCell
                 align="right"
                 className="px-0 !font-Bold !py-2 text-center"
-              >
-                {row.stay}
-              </TableCell>
+              />
             </TableRow>
           ))}
         </TableBody>

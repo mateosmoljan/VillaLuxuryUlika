@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import dayjs from "dayjs";
 import isBetween from "dayjs/plugin/isBetween";
 import { handleBookings, isValidMonthsOption } from "./Utils";
@@ -6,6 +6,11 @@ import Controls from "./Controls";
 import Year from "./Year";
 import Key from "./Key";
 import { ICalendarPropTypes, IControls, blockedDaysType, IYear } from "./types";
+import {
+  calendarStartMonth,
+  initialCalendarYear,
+  pricedYearRange,
+} from "@/lib/dailyPrices";
 
 dayjs.extend(isBetween);
 
@@ -22,12 +27,13 @@ const Calendar = ({
   const _showNumberOfMonths = isValidMonthsOption(showNumberOfMonths)
     ? showNumberOfMonths
     : totalCalendarMonths;
-  const _year = dayjs().year();
-  const [activeYear, setActiveYear] = useState(_year);
+  const yearBounds = pricedYearRange();
+  const [activeYear, setActiveYear] = useState(() => initialCalendarYear());
   const [bookedDates, setBookedDates] = useState<blockedDaysType>([]);
   const [lateCheckouts, setLateCheckouts] = useState<blockedDaysType>([]);
   const [monthsFrom, setMonthsFrom] = useState(initialMonth);
   const [page, setPage] = useState(initialPage);
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
   const totalPages = totalCalendarMonths / _showNumberOfMonths;
 
@@ -65,9 +71,7 @@ const Calendar = ({
   }, [findActivePage, _showNumberOfMonths]);
 
   const initCal = useCallback(() => {
-    const now = dayjs();
-    const _year = now.year();
-    setActiveYear(_year);
+    setActiveYear(initialCalendarYear());
     if (_showNumberOfMonths !== totalCalendarMonths) findActivePage();
     else resetCalendarYear();
   }, [findActivePage, _showNumberOfMonths]);
@@ -76,6 +80,7 @@ const Calendar = ({
     const isFirstPage = page === 1;
 
     if (isFirstPage) {
+      if (activeYear <= yearBounds.min) return;
       const _previousYear = dayjs(`${activeYear}`).subtract(1, "year").year();
       setActiveYear(_previousYear);
 
@@ -96,11 +101,12 @@ const Calendar = ({
     const nxtPage = page - 1;
     setMonthsFrom(nxtStartingMonth);
     setPage(nxtPage);
-  }, [page, _showNumberOfMonths, monthsFrom, totalPages, activeYear]);
+  }, [page, _showNumberOfMonths, monthsFrom, totalPages, activeYear, yearBounds.min]);
 
   const next = useCallback(() => {
     const isLastPage = page === totalPages;
     if (isLastPage) {
+      if (activeYear >= yearBounds.max) return;
       const _nextYear = dayjs(`${activeYear}`).add(1, "year").year();
       setActiveYear(_nextYear);
       resetCalendarYear();
@@ -111,13 +117,33 @@ const Calendar = ({
     const nxtPage = page + 1;
     setMonthsFrom(nxtStartingMonth);
     setPage(nxtPage);
-  }, [page, totalPages, _showNumberOfMonths, activeYear]);
+  }, [page, totalPages, _showNumberOfMonths, activeYear, yearBounds.max]);
 
   const configControls: IControls = {
     prev,
     next,
     initCal,
+    canPrev: activeYear > yearBounds.min || page > 1,
+    canNext: activeYear < yearBounds.max || page < totalPages,
   };
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const month = calendarStartMonth(activeYear);
+    const target = scroller.querySelector(
+      `[data-month="${month}"]`
+    ) as HTMLElement | null;
+    if (!target) {
+      scroller.scrollTop = 0;
+      return;
+    }
+    const top =
+      target.getBoundingClientRect().top -
+      scroller.getBoundingClientRect().top +
+      scroller.scrollTop;
+    scroller.scrollTop = top;
+  }, [activeYear]);
 
   useEffect(() => {
     const { halfDays, bookedDays } = handleBookings({
@@ -156,9 +182,9 @@ const Calendar = ({
         {!shouldRender.controls && !shouldRender.currentYear ? null : (
           <div className="controlWrap">
             {shouldRender.currentYear && (
-              <h1 className="currentYear" data-testid="currentYear">
+              <p className="currentYear" data-testid="currentYear">
                 {activeYear}
-              </h1>
+              </p>
             )}
 
             {shouldRender.controls && <Controls {...configControls} />}
@@ -166,6 +192,7 @@ const Calendar = ({
         )}
 
         <div
+          ref={scrollerRef}
           className={`overflow-x-hidden overflow-y-scroll my-2  p-4 pt-6 h-[260px] sm:h-[510px]`}
         >
           <Year {...configYear} />

@@ -49,9 +49,9 @@ export default function HeadSwiper() {
                   loading="lazy"
                 />
                 <div className="left-1/20 right-1/20 md:left-auto md:right-auto md:mx-0 md:max-w-2xl z-20 absolute bottom-8 flex items-center justify-center flex-col bg-black bg-opacity-60 rounded-md p-8 gap-3">
-                  <h1 className="text-white font-arbutus text-center text-3xl font-bold">
+                  <h2 className="text-white font-arbutus text-center text-3xl font-bold">
                     {image.title}
-                  </h1>
+                  </h2>
                   <p className="text-white">{image.des}</p>
                   <a href="#about">
                     <button className="btn">

@@ -18,7 +18,8 @@ function ContactInfo() {
           <ul className="flex flex-col gap-3">
             <li>
               {/* {ContactData.data[0].address} */}
-              <span className="font-Bold">Vodnjan, Istra</span>
+              Address:{" "}
+              <span className="font-Bold">Vodnjan</span>
             </li>
             <li>
               {/* {ContactData.data[0].mobile}

@@ -21,7 +21,7 @@ function Children() {
   return (
     <FormControl fullWidth>
       <InputLabel id="demo-simple-select-label" className="!font-Bold">
-        Children
+        {ContactData.data[0].children}
       </InputLabel>
       <Select
         required
@@ -31,7 +31,7 @@ function Children() {
         size="small"
         name="children"
         value={children}
-        label="Children"
+        label={ContactData.data[0].children}
         onChange={handleChange}
       >
         <MenuItem value={1}>0</MenuItem>

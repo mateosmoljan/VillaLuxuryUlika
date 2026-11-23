@@ -2,7 +2,6 @@ import { StaticImageData } from "next/image";
 import hairdryer from "@/public/assets/icons/hairdryer.png";
 import hot_water from "@/public/assets/icons/hot-water.png";
 import washer from "@/public/assets/icons/washer.png";
-import dryer from "@/public/assets/icons/dryer.png";
 import essentials from "@/public/assets/icons/essentials.png";
 import hangers from "@/public/assets/icons/hangers.png";
 import bed_linens from "@/public/assets/icons/bed_linens.png";
@@ -13,11 +12,7 @@ import television from "@/public/assets/icons/television.png";
 import crib from "@/public/assets/icons/crib.png";
 import books_toys from "@/public/assets/icons/books_toys.png";
 import high_chair from "@/public/assets/icons/high-chair.png";
-import fireplace_guard from "@/public/assets/icons/fireplace_guard.png";
-import window_guards from "@/public/assets/icons/window_guards.png";
 import outlet_covers from "@/public/assets/icons/outlet_cover.png";
-import baby_safety_gates from "@/public/assets/icons/baby_safety_gates.png";
-import table_corner_guards from "@/public/assets/icons/table_corner_guards.png";
 import air_conditioner from "@/public/assets/icons/air_conditioner.png";
 import indoor_fireplace from "@/public/assets/icons/indoor_fireplace.png";
 import heating from "@/public/assets/icons/heating.png";
@@ -33,12 +28,10 @@ import dishwasher from "@/public/assets/icons/dishwasher.png";
 import stove from "@/public/assets/icons/stove.png";
 import oven from "@/public/assets/icons/oven.png";
 import coffee_maker from "@/public/assets/icons/coffee_maker.png";
-import sheet from "@/public/assets/icons/sheet.png";
 import grill from "@/public/assets/icons/grill.png";
 import backyard from "@/public/assets/icons/backyard.png";
 import parking from "@/public/assets/icons/parking.png";
 import pool from "@/public/assets/icons/pool.png";
-import luggage from "@/public/assets/icons/luggage.png";
 import smoking from "@/public/assets/icons/smoking.png";
 import long_term_stays from "@/public/assets/icons/long_term_stays.png";
 import key from "@/public/assets/icons/key.png";
@@ -46,7 +39,7 @@ import smoke_detektor from "@/public/assets/icons/smoke-detector.png";
 import carbon from "@/public/assets/icons/carbon.png";
 
 type features = {
-  icon: StaticImageData;
+  icon?: StaticImageData;
   icon_alt: string;
   titles?: string;
   des?: string;
@@ -56,200 +49,89 @@ type DataObject = {
   data: features[];
 };
 
-export const Features: features[] = [
-  // Bathroom
-  {
-    icon: hairdryer,
-    icon_alt: "",
-  },
-  {
-    icon: hot_water,
-    icon_alt: "",
-  },
-  // Bedroom and laundry
-  {
-    icon: washer,
-    icon_alt: "",
-  },
-  {
-    icon: dryer,
-    icon_alt: "",
-  },
-  {
-    icon: essentials,
-    icon_alt: "",
-  },
-  {
-    icon: hangers,
-    icon_alt: "",
-  },
-  {
-    icon: bed_linens,
-    icon_alt: "",
-  },
-  {
-    icon: pillows_blankets,
-    icon_alt: "",
-  },
-  {
-    icon: darkening_shades,
-    icon_alt: "",
-  },
-  {
-    icon: iron,
-    icon_alt: "",
-  },
-  // Entertainment
-  {
-    icon: television,
-    icon_alt: "",
-  },
-  // Family
-  {
-    icon: crib,
-    icon_alt: "",
-  },
-  {
-    icon: books_toys,
-    icon_alt: "",
-  },
-  {
-    icon: high_chair,
-    icon_alt: "",
-  },
-  {
-    icon: fireplace_guard,
-    icon_alt: "",
-  },
-  {
-    icon: window_guards,
-    icon_alt: "",
-  },
-  {
-    icon: outlet_covers,
-    icon_alt: "",
-  },
-  {
-    icon: baby_safety_gates,
-    icon_alt: "",
-  },
-  {
-    icon: table_corner_guards,
-    icon_alt: "",
-  },
-  // Heating and cooling
-  {
-    icon: air_conditioner,
-    icon_alt: "",
-  },
-  {
-    icon: indoor_fireplace,
-    icon_alt: "",
-  },
-  {
-    icon: heating,
-    icon_alt: "",
-  },
-  // Home safety
-  {
-    icon: fire_extinguisher,
-    icon_alt: "",
-  },
-  {
-    icon: aid_kit,
-    icon_alt: "",
-  },
-  // Internet and office
-  {
-    icon: wifi,
-    icon_alt: "",
-  },
-  // Kitchen and dining
-  {
-    icon: kitchen,
-    icon_alt: "",
-  },
-  {
-    icon: refrigerator,
-    icon_alt: "",
-  },
-  {
-    icon: microwave,
-    icon_alt: "",
-  },
-  {
-    icon: cooking_basics,
-    icon_alt: "",
-  },
-  {
-    icon: dishes,
-    icon_alt: "",
-  },
-  {
-    icon: dishwasher,
-    icon_alt: "",
-  },
-  {
-    icon: stove,
-    icon_alt: "",
-  },
-  {
-    icon: oven,
-    icon_alt: "",
-  },
-  {
-    icon: coffee_maker,
-    icon_alt: "",
-  },
-  {
-    icon: sheet,
-    icon_alt: "",
-  },
-  {
-    icon: grill,
-    icon_alt: "",
-  },
-  // Outdoor
-  {
-    icon: backyard,
-    icon_alt: "",
-  },
-  // Parking and facilities
-  {
-    icon: parking,
-    icon_alt: "",
-  },
-  {
-    icon: pool,
-    icon_alt: "",
-  },
-  // Services
-  {
-    icon: luggage,
-    icon_alt: "",
-  },
-  {
-    icon: smoking,
-    icon_alt: "",
-  },
-  {
-    icon: long_term_stays,
-    icon_alt: "",
-  },
-  {
-    icon: key,
-    icon_alt: "",
-  },
-  // Not included
-  {
-    icon: smoke_detektor,
-    icon_alt: "",
-  },
-  {
-    icon: carbon,
-    icon_alt: "",
-  },
+// Same order as Villa_Features.card.title in the locale files.
+const featureIcons: (StaticImageData | undefined)[] = [
+  // Spavaća soba
+  bed_linens,
+  pillows_blankets,
+  hangers,
+  darkening_shades,
+  // Kupaonica
+  hairdryer,
+  hot_water,
+  essentials,
+  // Kuhinja i blagovaonica
+  kitchen,
+  refrigerator,
+  undefined,
+  microwave,
+  cooking_basics,
+  dishes,
+  dishwasher,
+  stove,
+  oven,
+  coffee_maker,
+  undefined,
+  undefined,
+  grill,
+  undefined,
+  // Praonica
+  undefined,
+  undefined,
+  washer,
+  iron,
+  // Zabava
+  television,
+  undefined,
+  books_toys,
+  undefined,
+  // Internet i ured
+  wifi,
+  // Obitelj
+  crib,
+  books_toys,
+  high_chair,
+  dishes,
+  undefined,
+  outlet_covers,
+  // Grijanje i hlađenje
+  air_conditioner,
+  indoor_fireplace,
+  heating,
+  // Vanjski prostor
+  backyard,
+  grill,
+  pool,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  undefined,
+  // Wellness zona
+  undefined,
+  undefined,
+  // Parkiranje i sadržaji
+  parking,
+  undefined,
+  key,
+  // Usluge
+  key,
+  long_term_stays,
+  smoking,
+  // Sigurnost doma
+  fire_extinguisher,
+  aid_kit,
+  undefined,
+  // Nisu uključeni
+  smoke_detektor,
+  carbon,
 ];
+
+export const Features: features[] = featureIcons.map((icon) => ({
+  icon,
+  icon_alt: "",
+}));
 
 import enData from "@/messages/en.json";
 import deData from "@/messages/de.json";
@@ -258,7 +140,6 @@ import itData from "@/messages/it.json";
 
 const replaceFeaturesData = (
   data: features[],
-  icon_alt: string[],
   titles: string[],
   des: string[]
 ) => {
@@ -270,21 +151,17 @@ const replaceFeaturesData = (
   }));
 };
 
-// Define the data object
 export const FeaturesDataEn: DataObject = {
   data: replaceFeaturesData(
     Features,
-    enData.Villa_Features.card.title,
     enData.Villa_Features.card.title,
     enData.Villa_Features.card.des
   ),
 };
 
-// You can also define a separate object for German translations if needed
 export const FeaturesDataDE: DataObject = {
   data: replaceFeaturesData(
     Features,
-    deData.Villa_Features.card.title,
     deData.Villa_Features.card.title,
     deData.Villa_Features.card.des
   ),
@@ -294,7 +171,6 @@ export const FeaturesDataHR: DataObject = {
   data: replaceFeaturesData(
     Features,
     hrData.Villa_Features.card.title,
-    hrData.Villa_Features.card.title,
     hrData.Villa_Features.card.des
   ),
 };
@@ -302,7 +178,6 @@ export const FeaturesDataHR: DataObject = {
 export const FeaturesDataIT: DataObject = {
   data: replaceFeaturesData(
     Features,
-    itData.Villa_Features.card.title,
     itData.Villa_Features.card.title,
     itData.Villa_Features.card.des
   ),
@@ -319,7 +194,6 @@ export const getFeaturesData = (language: string): DataObject => {
     case "it":
       return FeaturesDataIT;
     default:
-      // Return default language if specified language is not found
       return FeaturesDataEn;
   }
 };

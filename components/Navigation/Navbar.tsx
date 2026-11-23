@@ -59,18 +59,11 @@ const Navbar = () => {
         } ${visible ? "transleteNavUp" : "transleteNav"}`}
       >
         <Link href="/" className="flex gap-2 items-center">
-          {/* <Image
-            src="/assets/images/logo.png"
-            alt="logo"
-            width={40}
-            height={40}
-            className="object-contain"
-          /> */}
           <Image
             src="/assets/images/logo880x220.png"
             width={200}
             height={50}
-            alt="logo"
+            alt="Villa Luxury Ulika"
             className="object-contain"
           />
           {/* <p className="font-arbutus font-black text-2xl text-yellow">

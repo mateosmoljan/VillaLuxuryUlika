@@ -1,10 +1,17 @@
 import { getPaymentConditionsData } from "@/lib/paymentConditions";
 import { useLocale } from "next-intl";
 import Markdown from "react-markdown";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 
 function PaymentConditions() {
   const localeActive = useLocale();
   const PaymentConditionsData = getPaymentConditionsData(localeActive);
+  const methods = (
+    { hr, en, de, it }[localeActive] ?? en
+  ).Payment_conditions.methods;
 
   return (
     <div>
@@ -29,10 +36,9 @@ function PaymentConditions() {
       <div>
         <p className="font-titleBold">{PaymentConditionsData.data[0].title2}</p>
         <ul>
-          <li>Cash (upon arrival) </li>
-          <li>Bank Transfer (Internet Banking)</li>
-          <li>Revolut</li>
-          <li>PayPal</li>
+          {methods.map((method) => (
+            <li key={method}>{method}</li>
+          ))}
         </ul>
       </div>
     </div>

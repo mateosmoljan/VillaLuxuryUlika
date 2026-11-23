@@ -62,6 +62,16 @@ a {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 
+.expand-toggle {
+  @apply mt-3 inline-flex cursor-pointer border-0 bg-transparent p-1 font-poppins text-sm text-yellow underline underline-offset-4;
+}
+
+.expand-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(178, 150, 0, 0.5);
+  border-radius: 0.25rem;
+}
+
 /* Shadow */
 
 .shadow-a {
