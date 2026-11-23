@@ -5,15 +5,22 @@ import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { getCalendarData } from "@/lib/Calendar";
 import { useLocale } from "next-intl";
 
-const Controls = ({ prev, initCal, next }: IControls): JSX.Element => {
+const Controls = ({
+  prev,
+  initCal,
+  next,
+  canPrev = true,
+  canNext = true,
+}: IControls): JSX.Element => {
   const localeActive = useLocale();
   const CalendarData = getCalendarData(localeActive);
   return (
     <div className="controls" data-testid="controls">
       <button
-        className="btn back flex gap-1"
+        className="btn back flex gap-1 disabled:cursor-not-allowed disabled:opacity-40"
         onClick={() => prev()}
         data-testid="back"
+        disabled={!canPrev}
       >
         <MdKeyboardDoubleArrowLeft className="text-xl" />
         {CalendarData.data[0].back}
@@ -24,9 +31,10 @@ const Controls = ({ prev, initCal, next }: IControls): JSX.Element => {
       </button>
 
       <button
-        className="btn next flex gap-1"
+        className="btn next flex gap-1 disabled:cursor-not-allowed disabled:opacity-40"
         onClick={() => next()}
         data-testid="next"
+        disabled={!canNext}
       >
         {CalendarData.data[0].next}
         <MdOutlineKeyboardDoubleArrowRight className="text-xl" />

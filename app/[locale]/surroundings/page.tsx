@@ -4,6 +4,15 @@ import SendMessage from "@/components/SendMessage/SendMessage";
 import { getEnvironsData } from "@/lib/environs";
 import { getLocationsData } from "@/lib/LocationToVisit";
 import { useLocale } from "next-intl";
+import { pageMetadata } from "@/lib/seo";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return pageMetadata(params.locale, "surroundings");
+}
 import Image from "next/image";
 
 function Environs() {

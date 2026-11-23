@@ -21,12 +21,12 @@ function Adults() {
   return (
     <FormControl fullWidth>
       <InputLabel id="demo-simple-select-label" className="!font-bold">
-        Adults
+        {ContactData.data[0].adults}
       </InputLabel>
       <Select
         required
         labelId="demo-simple-select-label"
-        label="Adults"
+        label={ContactData.data[0].adults}
         className="w-full bg-white "
         id="demo-simple-select"
         name="adults"

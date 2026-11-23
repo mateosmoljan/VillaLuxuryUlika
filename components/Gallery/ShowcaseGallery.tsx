@@ -6,6 +6,7 @@ import { MdPhotoCamera } from "react-icons/md";
 import { PropertyGalleryLib } from "@/lib/property_gallery";
 import { useLocale } from "next-intl";
 import { getTitleData } from "@/lib/title";
+import { villaPhotoAlt } from "@/lib/photoAlt";
 
 export type AppContextType = {
   openIndexPropertyGallery: boolean;
@@ -38,9 +39,9 @@ function ShowcaseGallery() {
           <h2 className="text-yellow font-semibold uppercase tracking-widest">
             Villa Luxury Ulika
           </h2>
-          <h1 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
+          <h2 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
             Villa Luxury Ulika
-          </h1>
+          </h2>
         </div>
         <AppContext.Provider
           value={{ openIndexPropertyGallery, setOpenIndexPropertyGallery }}
@@ -50,7 +51,7 @@ function ShowcaseGallery() {
               <div className=" rounded-md sm:w-1/2 w-full">
                 <Image
                   src={PropertyGalleryLib.images[0].src}
-                  alt={PropertyGalleryLib.images[0].alt}
+                  alt={villaPhotoAlt(localeActive, 1)}
                   placeholder="blur"
                   className="cursor-pointer object-cover rounded-md block w-full h-full hover:opacity-90"
                   onClick={() => handleImageClick(0)}
@@ -65,7 +66,7 @@ function ShowcaseGallery() {
                 >
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={villaPhotoAlt(localeActive, index + 2)}
                     placeholder="blur"
                     className="relative cursor-pointer object-cover h-full rounded-md block w-full hover:opacity-90"
                     onClick={() => handleImageClick(index + 1)}

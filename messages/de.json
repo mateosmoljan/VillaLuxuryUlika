@@ -311,7 +311,13 @@
     "des4": "Kostenlose Stornierung innerhalb einer Woche nach der Buchung möglich (AUSGENOMMEN LAST-MINUTE-BUCHUNGEN, DANN BETRÄGT DIE FRIST 48 STUNDEN). Last-Minute-Buchung – zwei Wochen vor Anreise.",
     "des5": "Am Abreisetag müssen die Gäste die Unterkunft bis 9:00 Uhr verlassen, damit andere Gäste ab 16:00 Uhr einchecken können.",
     "des6": "Hinweis: Haustiere sind auf dem Grundstück nicht erlaubt.",
-    "title2": "Zahlungsmethoden:"
+    "title2": "Zahlungsmethoden:",
+    "methods": [
+      "Barzahlung (bei Ankunft)",
+      "Banküberweisung (Internet-Banking)",
+      "Revolut",
+      "PayPal"
+    ]
   },
   "Map_Location": {
     "title": "Kartenstandort"
@@ -368,7 +374,8 @@
       "message": "Anfrage",
       "des": "Der Inhalt dieses Formulars wird direkt an die E-Mail-Adresse des Unterkunftseigentümers gesendet und ausschließlich für die Buchungsanfragen der aufgeführten Unterkunft verwendet.",
       "button": "Anfrage senden",
-      "sent": "Erfolgreich gesendet"
+      "sent": "Erfolgreich gesendet",
+      "invalid_email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
     },
     "Contact_Info": {
       "contact_person": "Ansprechpartner",
@@ -431,5 +438,13 @@
         "price": "€900"
       }
     ]
+  },
+  "Breadcrumb": {
+    "villa-luxury-ulika": "Villa Luxury Ulika",
+    "pricelist": "Preisliste",
+    "contact": "Kontakt",
+    "photogallery": "Fotogalerie",
+    "surroundings": "Umgebung",
+    "events": "Feiern"
   }
 }

@@ -3,6 +3,15 @@ import ShowcaseGallery2 from "@/components/Gallery/ShowcaseGallery2";
 import NavPath from "@/components/NavPath/NavPath";
 import SendMessage from "@/components/SendMessage/SendMessage";
 import { useTranslations } from "next-intl";
+import { pageMetadata } from "@/lib/seo";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return pageMetadata(params.locale, "photogallery");
+}
 
 function Photogallery() {
   const t = useTranslations("Titles");
@@ -10,9 +19,9 @@ function Photogallery() {
     <section className="pt-16 md:pt-14">
       <NavPath />
       <div className="">
-        <h2 className="mt-12 font-ExtraBold text-center text-4xl text-dark_blue_black tracking-wider">
+        <h1 className="mt-12 font-ExtraBold text-center text-4xl text-dark_blue_black tracking-wider">
           {t("Photogallery")}
-        </h2>
+        </h1>
         <div>
           <div>
             <ShowcaseGallery />

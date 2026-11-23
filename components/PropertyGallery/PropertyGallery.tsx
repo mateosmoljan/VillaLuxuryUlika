@@ -16,6 +16,8 @@ import { PropertyGalleryLib } from "@/lib/property_gallery";
 import { SwiperNavButtons } from "./SwiperNavButton";
 import Loading from "../Loading/Loading";
 import Gallery from "../Gallery/Gallery";
+import { useLocale } from "next-intl";
+import { villaPhotoAlt } from "@/lib/photoAlt";
 
 export type AppContextType = {
   openGalleryContext: boolean;
@@ -30,6 +32,7 @@ export const AppContext = createContext<AppContextType>({
 export const useGalleryContext = () => useContext(AppContext);
 
 export default function PropertyGallery() {
+  const locale = useLocale();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -68,7 +71,7 @@ export default function PropertyGallery() {
                   <div className="flex items-center justify-center w-full h-full cursor-pointer">
                     <Image
                       src={image.src}
-                      alt={image.alt}
+                      alt={villaPhotoAlt(locale, index + 1)}
                       width={748}
                       height={470}
                       placeholder="blur"
@@ -114,7 +117,7 @@ export default function PropertyGallery() {
                   <div className={`flex items-center justify-center `}>
                     <Image
                       src={image.src}
-                      alt={image.alt}
+                      alt={villaPhotoAlt(locale, index + 1)}
                       width={150}
                       height={100}
                       placeholder="blur"

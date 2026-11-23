@@ -15,6 +15,7 @@ import {
 
 interface LanguageLabel {
   code: string;
+  name: string;
   src: StaticImageData;
 }
 
@@ -33,10 +34,10 @@ function LanguageSwitch() {
   };
 
   const languageLabels: LanguageLabel[] = [
-    { code: "en", src: en_src },
-    { code: "de", src: de_src },
-    { code: "hr", src: hr_src },
-    { code: "it", src: it_src },
+    { code: "en", name: "English", src: en_src },
+    { code: "de", name: "Deutsch", src: de_src },
+    { code: "hr", name: "Hrvatski", src: hr_src },
+    { code: "it", name: "Italiano", src: it_src },
   ];
 
   return (
@@ -55,7 +56,7 @@ function LanguageSwitch() {
             <MenuItem key={label.code} value={label.code}>
               <Image
                 src={label.src}
-                alt={`${label.code} flag`}
+                alt={label.name}
                 width={24}
                 height={24}
               />

@@ -2,7 +2,16 @@ import NavPath from "@/components/NavPath/NavPath";
 import { Link } from "@/navigation";
 import React from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { pageMetadata } from "@/lib/seo";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return pageMetadata(params.locale, "events");
+}
 import Markdown from "react-markdown";
 
 import oldTimer_House from "@/public/assets/images/oldTimer_House.jpg";
@@ -11,19 +20,45 @@ import whiteTent from "@/public/assets/images/white_tent.jpg";
 import longTables from "@/public/assets/images/long_tables.jpg";
 import roundTables from "@/public/assets/images/round_tables.jpg";
 
-const column1Images = [
-  { src: oldTimer_House, alt: "Vintage Car at House Lucia" },
-  { src: oldTimer, alt: "Vintage Car" },
-];
+const column1Images = [{ src: oldTimer_House }, { src: oldTimer }];
+const column2Images = [{ src: whiteTent }];
+const column3Images = [{ src: roundTables }, { src: longTables }];
 
-const column2Images = [{ src: whiteTent, alt: "White Tent" }];
-const column3Images = [
-  { src: roundTables, alt: "Round Tables" },
-  { src: longTables, alt: "Long Tables" },
-];
+const eventAlts: Record<string, string[]> = {
+  hr: [
+    "Oldtimer ispred vile",
+    "Oldtimer",
+    "Bijeli šator",
+    "Okrugli stolovi",
+    "Dugi stolovi",
+  ],
+  en: [
+    "Vintage car in front of the villa",
+    "Vintage car",
+    "White tent",
+    "Round tables",
+    "Long tables",
+  ],
+  de: [
+    "Oldtimer vor der Villa",
+    "Oldtimer",
+    "Weißes Zelt",
+    "Runde Tische",
+    "Lange Tische",
+  ],
+  it: [
+    "Auto d'epoca davanti alla villa",
+    "Auto d'epoca",
+    "Tenda bianca",
+    "Tavoli rotondi",
+    "Tavoli lunghi",
+  ],
+};
 
 const EventPackages = () => {
   const a = useTranslations("Events");
+  const locale = useLocale();
+  const alts = eventAlts[locale] ?? eventAlts.en;
 
   // Use the static packages array defined above
   const packages: { title: string; details: string[]; price: string }[] =
@@ -33,9 +68,9 @@ const EventPackages = () => {
     <section className="pt-16 md:pt-14 min-h-screen mb-36 ">
       <NavPath />
       <div className="max-w-6xl mx-auto  mt-12 mb-10 px-4">
-        <h2 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
+        <h1 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
           {a("title")}
-        </h2>
+        </h1>
         <p className="text-gray-600 mb-12 text-center">
           <Markdown>{a("subtitle")}</Markdown>
         </p>
@@ -108,10 +143,10 @@ const EventPackages = () => {
                 <div key={index} className="relative">
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={alts[index]}
                     className="rounded-lg w-full h-auto object-cover"
-                    width={500} // Adjust based on your largest image width
-                    height={300} // Adjust based on your largest image height
+                    width={500}
+                    height={300}
                   />
                 </div>
               ))}
@@ -123,7 +158,7 @@ const EventPackages = () => {
                 <div key={index} className="relative">
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={alts[2]}
                     className="rounded-lg w-full h-auto object-cover"
                     width={500}
                     height={300}
@@ -138,7 +173,7 @@ const EventPackages = () => {
                 <div key={index} className="relative">
                   <Image
                     src={image.src}
-                    alt={image.alt}
+                    alt={alts[3 + index]}
                     className="rounded-lg w-full h-auto object-cover"
                     width={500}
                     height={300}
