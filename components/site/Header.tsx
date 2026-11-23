@@ -49,6 +49,7 @@ export default function Header({
             <Link
               key={item.href}
               href={item.href}
+              prefetch={false}
               aria-current={pathname === item.href ? "page" : undefined}
               className={`text-sm font-semibold transition motion-reduce:transition-none ${pathname === item.href ? "text-clay" : "text-ink hover:text-olive"}`}
             >
@@ -78,7 +79,7 @@ export default function Header({
             ))}
           </ul>
         </details>
-        <Link href="/contact" className="hidden rounded-full bg-olive px-4 py-2 text-sm font-semibold text-white hover:bg-olive-deep sm:inline-flex">
+        <Link href="/contact" prefetch={false} className="hidden rounded-full bg-olive px-4 py-2 text-sm font-semibold text-white hover:bg-olive-deep sm:inline-flex">
           {inquiry}
         </Link>
         <button
@@ -99,7 +100,7 @@ export default function Header({
       {open && (
         <nav id="site-menu" className="border-t border-sand bg-white px-4 py-3 lg:hidden">
           {items.map((item) => (
-            <Link key={item.href} href={item.href} className="block border-b border-paper py-3 font-semibold" onClick={() => setOpen(false)}>
+            <Link key={item.href} href={item.href} prefetch={false} className="block border-b border-paper py-3 font-semibold" onClick={() => setOpen(false)}>
               {item.label}
             </Link>
           ))}
@@ -110,7 +111,7 @@ export default function Header({
               </Link>
             ))}
           </div>
-          <Link href="/contact" className="mt-1 inline-flex rounded-full bg-olive px-4 py-2 text-sm font-semibold text-white" onClick={() => setOpen(false)}>
+          <Link href="/contact" prefetch={false} className="mt-1 inline-flex rounded-full bg-olive px-4 py-2 text-sm font-semibold text-white" onClick={() => setOpen(false)}>
             {inquiry}
           </Link>
         </nav>

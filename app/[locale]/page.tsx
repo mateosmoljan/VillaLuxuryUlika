@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { Link } from "@/navigation";
 import IFrameMaps from "@/components/About/iFrameMaps";
 import FaqList from "@/components/site/FaqList";
+import HeroDates from "@/components/site/HeroDates";
 import InquiryBand from "@/components/site/InquiryBand";
+import LazyPhotos from "@/components/site/LazyPhotos";
 import OwnerDescription from "@/components/site/OwnerDescription";
-import PhotoGrid from "@/components/site/PhotoGrid";
 import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/seo";
@@ -54,23 +54,43 @@ export default function Home({ params }: { params: { locale: string } }) {
 
   return (
     <>
+      <link
+        rel="preload"
+        as="image"
+        imageSrcSet="/hero/ulika-640.avif 640w, /hero/ulika-828.avif 828w"
+        imageSizes="100vw"
+        type="image/avif"
+        media="(max-width: 767px)"
+        fetchPriority="high"
+      />
+      <link rel="preload" as="image" href="/hero/ulika-1280.avif" type="image/avif" media="(min-width: 768px)" fetchPriority="high" />
       <section className="relative flex min-h-[calc(100svh-4rem)] items-end bg-olive-deep">
-        <Image src="/assets/images/i/105.jpg" alt={villaPhotoAlt(locale, 1)} fill priority sizes="100vw" className="object-cover" />
+        <picture>
+          <source media="(max-width: 767px)" srcSet="/hero/ulika-640.avif 640w, /hero/ulika-828.avif 828w" sizes="100vw" type="image/avif" />
+          <source media="(max-width: 767px)" srcSet="/hero/ulika-640.webp 640w, /hero/ulika-828.webp 828w" sizes="100vw" type="image/webp" />
+          <source srcSet="/hero/ulika-1280.avif" type="image/avif" />
+          <source srcSet="/hero/ulika-1280.webp" type="image/webp" />
+          <img
+            src="/hero/ulika-1280.webp"
+            alt={villaPhotoAlt(locale, 1)}
+            width={1280}
+            height={853}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-ink/10" />
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-8 pt-16 sm:px-6">
           <p className="text-2xl tracking-widest text-white" aria-label={messages.Categorization.title[0]}>⭐⭐⭐⭐⭐</p>
-          <h1 className="mt-3 max-w-[18ch] font-display text-5xl leading-none text-white sm:text-7xl">Villa Luxury Ulika</h1>
+          <h1 className="mt-3 max-w-[18ch] font-display text-5xl font-semibold leading-none text-white sm:text-7xl">Villa Luxury Ulika</h1>
           <p className="mt-4 max-w-2xl text-lg text-white/90">{messages.About.des}</p>
-          <form action={`/${locale}/contact`} className="mt-6 grid max-w-3xl gap-3 rounded-3xl bg-white p-4 text-ink shadow-lg sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+          <form action={`/${locale}/contact`} className="relative mt-6 grid max-w-3xl gap-3 rounded-3xl bg-white p-4 text-ink shadow-lg sm:grid-cols-[1fr_1fr_auto] sm:items-end">
             <p className="text-xs font-semibold uppercase tracking-[0.14em] text-olive sm:col-span-3">{ui.heroSearchTitle}</p>
-            <label className="text-sm font-semibold text-ink/70">
-              {messages.Contact.Contact_Form.arrival}
-              <input name="arrival" type="date" className="mt-1 w-full rounded-xl border border-sand px-3 py-3" />
-            </label>
-            <label className="text-sm font-semibold text-ink/70">
-              {messages.Contact.Contact_Form.departure}
-              <input name="departure" type="date" className="mt-1 w-full rounded-xl border border-sand px-3 py-3" />
-            </label>
+            <HeroDates
+              locale={locale}
+              arrivalLabel={messages.Contact.Contact_Form.arrival}
+              departureLabel={messages.Contact.Contact_Form.departure}
+            />
             <button className="rounded-full bg-olive px-5 py-3 text-sm font-semibold text-white" type="submit">{ui.checkDates}</button>
           </form>
         </div>
@@ -122,7 +142,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <h2 className="font-display text-4xl text-olive-deep">{messages.Titles.Photogallery}</h2>
           <Link href="/photogallery" className="text-sm font-semibold text-olive">{messages.Buttons.Show_Gallery}</Link>
         </div>
-        <PhotoGrid images={shots} chrome={ui} />
+        <LazyPhotos images={shots} chrome={ui} />
       </section>
 
       <section className="bg-olive-deep text-white">

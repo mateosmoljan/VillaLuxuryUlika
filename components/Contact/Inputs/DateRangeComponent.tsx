@@ -4,10 +4,11 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { FaCalendarAlt } from "react-icons/fa";
-import enGB from "date-fns/locale/en-GB";
+import { format } from "date-fns";
 import { FormControl } from "@mui/material";
 import { useLocale } from "next-intl";
 import { getContactData } from "@/lib/contact";
+import { datePattern, pickerLocale } from "@/lib/site/dateLocale";
 
 interface CustomRange {
   startDate: Date | undefined;
@@ -30,6 +31,8 @@ function DataRangeComponent() {
   const [departureDate, setDepartureDate] = useState<string>("");
   const localeActive = useLocale();
   const ContactData = getContactData(localeActive);
+  const locale = pickerLocale(localeActive);
+  const pattern = datePattern(localeActive);
 
   const [calendarWidth, setCalendarWidth] = useState<string>("vertical");
 
@@ -60,12 +63,7 @@ function DataRangeComponent() {
     }
   }, [state]);
 
-  const formatDate = (date: Date): string => {
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}.${month}.${year}`;
-  };
+  const formatDate = (date: Date): string => format(date, pattern, { locale });
 
   // const disabledDates: Date[] = [
   //   new Date("2024-03-12"),
@@ -155,13 +153,12 @@ function DataRangeComponent() {
               ranges={state}
               className="relative bg-white z-20 "
               months={2}
-              locale={enGB}
+              locale={locale}
               direction={
                 calendarWidth === "horizontal" ? "horizontal" : "vertical"
               }
               rangeColors={["#B29600"]}
-              // disabledDates={getDisabledDates()}
-              dateDisplayFormat="d.M.y"
+              dateDisplayFormat={pattern}
             />
           </FormControl>
         </div>

@@ -68,7 +68,7 @@ export default function Footer({
           <a className="block hover:underline" href="mailto:villa-ulika-fivestars@gmail.com">
             villa-ulika-fivestars@gmail.com
           </a>
-          <Link href="/contact" className="mt-2 inline-block underline">
+          <Link href="/contact" prefetch={false} className="mt-2 inline-block underline">
             {contactTitle}
           </Link>
         </div>

@@ -18,6 +18,7 @@ export default function InquiryBand({
         </div>
         <Link
           href="/contact"
+          prefetch={false}
           className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-olive-deep transition hover:bg-paper motion-reduce:transition-none"
         >
           {cta}

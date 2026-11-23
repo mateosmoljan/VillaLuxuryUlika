@@ -17,18 +17,20 @@ import it from "@/messages/it.json";
 
 const display = Cormorant_Garamond({
   subsets: ["latin", "latin-ext"],
-  weight: ["500", "600", "700"],
+  weight: "600",
   display: "swap",
   variable: "--font-display",
   adjustFontFallback: true,
+  preload: true,
 });
 
 const sans = Source_Sans_3({
   subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600"],
   display: "swap",
   variable: "--font-sans",
   adjustFontFallback: true,
+  preload: true,
 });
 
 export const viewport: Viewport = {

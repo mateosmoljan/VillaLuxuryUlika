@@ -18,7 +18,7 @@ export default function StickyBar({
             {chrome.stickyCall}
           </a>
         ) : null}
-        <Link href="/contact" className="rounded-full bg-olive-deep py-3 text-center text-sm font-semibold text-white">
+        <Link href="/contact" prefetch={false} className="rounded-full bg-olive-deep py-3 text-center text-sm font-semibold text-white">
           {chrome.inquiry}
         </Link>
         <a href={`mailto:${email}`} className="rounded-full border border-olive py-3 text-center text-sm font-semibold text-olive">
