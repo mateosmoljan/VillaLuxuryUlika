@@ -111,7 +111,14 @@ function VillaPanorama() {
                         : ""
                     }`}
                   >
-                    <Image src={item.icon} alt={item.icon_alt} />
+                    {item.icon ? (
+                      <Image src={item.icon} alt={item.icon_alt} />
+                    ) : (
+                      <span
+                        className="inline-block w-6 h-6 shrink-0"
+                        aria-hidden="true"
+                      />
+                    )}
                     <li className={`py-4 flex flex-col justify-center`}>
                       {item.titles}
 

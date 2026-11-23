@@ -13,6 +13,8 @@ type TitleData = {
   title12?: string;
   title13?: string;
   title14?: string;
+  title15?: string;
+  title16?: string;
   button?: string;
 };
 
@@ -40,6 +42,8 @@ const createFeaturesTitle = (
   title12?: string,
   title13?: string,
   title14?: string,
+  title15?: string,
+  title16?: string,
   button?: string
 ): TitleData => {
   return {
@@ -57,6 +61,8 @@ const createFeaturesTitle = (
     title12,
     title13,
     title14,
+    title15,
+    title16,
     button,
   };
 };
@@ -79,6 +85,8 @@ export const FeaturesDataEn: DataObject = {
       enData.Villa_Features.title12,
       enData.Villa_Features.title13,
       enData.Villa_Features.title14,
+      enData.Villa_Features.title15,
+      enData.Villa_Features.title16,
       enData.Villa_Features.button
     ),
   ],
@@ -102,6 +110,8 @@ export const FeaturesDataDE: DataObject = {
       deData.Villa_Features.title12,
       deData.Villa_Features.title13,
       deData.Villa_Features.title14,
+      deData.Villa_Features.title15,
+      deData.Villa_Features.title16,
       deData.Villa_Features.button
     ),
   ],
@@ -124,6 +134,8 @@ export const FeaturesDataHR: DataObject = {
       hrData.Villa_Features.title12,
       hrData.Villa_Features.title13,
       hrData.Villa_Features.title14,
+      hrData.Villa_Features.title15,
+      hrData.Villa_Features.title16,
       hrData.Villa_Features.button
     ),
   ],
@@ -146,6 +158,8 @@ export const FeaturesDataIT: DataObject = {
       itData.Villa_Features.title12,
       itData.Villa_Features.title13,
       itData.Villa_Features.title14,
+      itData.Villa_Features.title15,
+      itData.Villa_Features.title16,
       itData.Villa_Features.button
     ),
   ],

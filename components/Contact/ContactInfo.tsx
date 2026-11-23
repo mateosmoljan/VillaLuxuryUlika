@@ -19,7 +19,7 @@ function ContactInfo() {
             <li>
               {/* {ContactData.data[0].address} */}
               Address:{" "}
-              <span className="font-Bold">Antonio Smareglia 50, Vodnjan</span>
+              <span className="font-Bold">Vodnjan</span>
             </li>
             <li>
               {/* {ContactData.data[0].mobile}
