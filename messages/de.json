@@ -11,7 +11,9 @@
     "Surrondings_sub": "VODNJAN & ISTRIEN"
   },
   "Buttons": {
-    "Show_Gallery": "Galerie anzeigen"
+    "Show_Gallery": "Galerie anzeigen",
+    "Show_more": "Mehr anzeigen",
+    "Show_less": "Weniger anzeigen"
   },
   "Navigation": {
     "navlinks": [

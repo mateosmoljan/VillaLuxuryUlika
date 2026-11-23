@@ -11,7 +11,9 @@
     "Surrondings_sub": "VODNJAN & ISTRA"
   },
   "Buttons": {
-    "Show_Gallery": "Pokaži galeriju"
+    "Show_Gallery": "Pokaži galeriju",
+    "Show_more": "Prikaži više",
+    "Show_less": "Prikaži manje"
   },
   "Navigation": {
     "navlinks": [
