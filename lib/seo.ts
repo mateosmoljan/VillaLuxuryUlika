@@ -209,3 +209,37 @@ export const publicPages: SeoPage[] = [
   "surroundings",
   "events",
 ];
+
+export const SITE_URL = siteUrl;
+
+const pathToPage: Record<string, SeoPage> = {
+  "/": "home",
+  "/villa-luxury-ulika": "villa",
+  "/photogallery": "photogallery",
+  "/pricelist": "pricelist",
+  "/surroundings": "surroundings",
+  "/environs": "surroundings",
+  "/contact": "contact",
+  "/events": "events",
+};
+
+export function buildPageMetadata(locale: string, path: string): Metadata {
+  return pageMetadata(locale, pathToPage[path] ?? "home");
+}
+
+export function getLodgingBusinessJsonLd(locale: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    name: "Villa Luxury Ulika",
+    url: `${siteUrl}/${locale}`,
+    image: ogImage,
+    telephone: "+385955824729",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Vodnjan",
+      addressRegion: "Istria",
+      addressCountry: "HR",
+    },
+  };
+}

@@ -36,12 +36,12 @@ function ShowcaseGallery2() {
     <section>
       <div className="container py-10">
         <div className="w-6xl flex flex-col gap-3 pb-10">
-          <h2 className="text-yellow font-semibold uppercase tracking-widest">
+          <h2 className="text-pink font-semibold uppercase tracking-widest">
             {TitleData.data[0].subtitle2}
           </h2>
-          <h2 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
+          <h1 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
             {TitleData.data[0].title5}
-          </h2>
+          </h1>
         </div>
         <AppContext.Provider
           value={{
@@ -56,6 +56,7 @@ function ShowcaseGallery2() {
                   src={TouristImageData[0].src}
                   alt={TouristImageData[0].alt}
                   placeholder="blur"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="cursor-pointer object-cover rounded-md block w-full h-full hover:opacity-90"
                   onClick={() => handleImageClick(0)}
                 />
@@ -71,6 +72,7 @@ function ShowcaseGallery2() {
                     src={image.src}
                     alt={image.alt}
                     placeholder="blur"
+                    sizes="(max-width: 640px) 50vw, 25vw"
                     className="relative cursor-pointer object-cover h-full rounded-md block w-full hover:opacity-90"
                     onClick={() => handleImageClick(index + 1)}
                   />

@@ -6,7 +6,6 @@ import { MdPhotoCamera } from "react-icons/md";
 import { PropertyGalleryLib } from "@/lib/property_gallery";
 import { useLocale } from "next-intl";
 import { getTitleData } from "@/lib/title";
-import { villaPhotoAlt } from "@/lib/photoAlt";
 
 export type AppContextType = {
   openIndexPropertyGallery: boolean;
@@ -37,11 +36,11 @@ function ShowcaseGallery() {
       <div className="container py-10">
         <div className="w-6xl flex flex-col gap-3 pb-10">
           <h2 className="text-yellow font-semibold uppercase tracking-widest">
-            Villa Luxury Ulika
+            Vodnjan · Istra
           </h2>
-          <h2 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
+          <h1 className="font-bold text-2xl sm:text-3xl text-dark_blue_black">
             Villa Luxury Ulika
-          </h2>
+          </h1>
         </div>
         <AppContext.Provider
           value={{ openIndexPropertyGallery, setOpenIndexPropertyGallery }}
@@ -51,8 +50,9 @@ function ShowcaseGallery() {
               <div className=" rounded-md sm:w-1/2 w-full">
                 <Image
                   src={PropertyGalleryLib.images[0].src}
-                  alt={villaPhotoAlt(localeActive, 1)}
+                  alt={PropertyGalleryLib.images[0].alt}
                   placeholder="blur"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="cursor-pointer object-cover rounded-md block w-full h-full hover:opacity-90"
                   onClick={() => handleImageClick(0)}
                 />
@@ -66,8 +66,9 @@ function ShowcaseGallery() {
                 >
                   <Image
                     src={image.src}
-                    alt={villaPhotoAlt(localeActive, index + 2)}
+                    alt={image.alt}
                     placeholder="blur"
+                    sizes="(max-width: 640px) 50vw, 25vw"
                     className="relative cursor-pointer object-cover h-full rounded-md block w-full hover:opacity-90"
                     onClick={() => handleImageClick(index + 1)}
                   />

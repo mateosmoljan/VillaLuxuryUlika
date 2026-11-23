@@ -1,34 +1,35 @@
-import { yellow } from "@mui/material/colors";
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    
     container: {
       padding: {
-        DEFAULT: "15px",
+        DEFAULT: '15px',
       },
       center: true,
-
+      
       screens: {
-        sm: "36rem",
-        md: "42rem",
-        lg: "56rem",
-        xl: "72rem",
+        sm: '36rem',
+        md: '42rem',
+        lg: '56rem',
+        xl: '72rem',
       },
+    
     },
     extend: {
       padding: {
-        "1/10": "10%",
+        '1/10': '10%',
       },
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontWeight: {
         titleBold: "var(--titleBold)",
@@ -39,19 +40,17 @@ const config: Config = {
       },
       fontFamily: {
         poppins: ["var(--font-poppins)"],
-        arbutus: ["var(--font-arbutus)"],
+        arbutus: ["var(--font-arbutus)"]
       },
       colors: {
-        brown: "#3e5975ff",
-        darkbrown: "#54422e",
-        // yellow: "#008eb9ff",
-        yellow: "#c2984c",
-        light_blue: "#91D8F7",
-        blue: "#0098DA",
-        pink: "#cc3bb1",
-        // dark_yellow: "#012685ff",
+        brown: '#3e4a34',
+        darkbrown: "#2b3324",
+        yellow: "#B29600",
+        light_blue: "#e6dccb",
+        blue: "#3e4a34",
+        pink: "#8d5a45",
         dark_yellow: "#857001",
-        dark_blue_black: "#343a40",
+        dark_blue_black: "#2c2824",
         grey: "rgba(0, 0, 0, 0.6)",
         grey1: "#495057",
         grey2: "#e9ecef",
@@ -61,10 +60,12 @@ const config: Config = {
         "1/20": "5%",
       },
       letterSpacing: {
-        widest: ".25em",
-      },
+        widest: '.25em'
+      }
+      
+
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config

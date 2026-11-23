@@ -1,23 +1,24 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { DateRange } from "react-date-range";
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
 import { FaCalendarAlt } from "react-icons/fa";
+import dynamic from "next/dynamic";
 import { format } from "date-fns";
-import enGB from "date-fns/locale/en-GB";
-import hrLocale from "date-fns/locale/hr";
-import deLocale from "date-fns/locale/de";
-import itLocale from "date-fns/locale/it";
-import { FormControl } from "@mui/material";
 import { useLocale } from "next-intl";
-import { getContactData } from "@/lib/contact";
+import { datePattern, pickerLocale } from "@/lib/site/dateLocale";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 
 interface CustomRange {
   startDate: Date | undefined;
   endDate: Date | undefined;
   key: string | undefined;
 }
+
+const DateRangeCalendar = dynamic(() => import("./DateRangeCalendar"), {
+  ssr: false,
+});
 
 function DataRangeComponent() {
   const dateRangeRef = useRef<HTMLDivElement>(null);
@@ -32,21 +33,12 @@ function DataRangeComponent() {
   ]);
   const [arrivalDate, setArrivalDate] = useState<string>("");
   const [departureDate, setDepartureDate] = useState<string>("");
-  const localeActive = useLocale();
-  const ContactData = getContactData(localeActive);
-  const localeBase =
-    { hr: hrLocale, de: deLocale, it: itLocale, en: enGB }[localeActive] ??
-    enGB;
-  const pickerLocale = {
-    ...localeBase,
-    options: { ...localeBase.options, weekStartsOn: 1 as const },
-  };
-  const datePattern =
-    { hr: "d.M.yyyy.", de: "dd.MM.yyyy", it: "dd/MM/yyyy", en: "d.M.yyyy" }[
-      localeActive
-    ] ?? "d.M.yyyy";
 
   const [calendarWidth, setCalendarWidth] = useState<string>("vertical");
+  const localeActive = useLocale();
+  const contact = { hr, en, de, it }[localeActive]?.Contact.Contact_Form ?? en.Contact.Contact_Form;
+  const locale = pickerLocale(localeActive);
+  const pattern = datePattern(localeActive);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -75,8 +67,7 @@ function DataRangeComponent() {
     }
   }, [state]);
 
-  const formatDate = (date: Date): string =>
-    format(date, datePattern, { locale: pickerLocale });
+  const formatDate = (date: Date): string => format(date, pattern, { locale });
 
   // const disabledDates: Date[] = [
   //   new Date("2024-03-12"),
@@ -87,7 +78,7 @@ function DataRangeComponent() {
 
   const getDisabledDates = (): Date[] => {
     const disabledRanges = [
-      { startDate: new Date("2024-05-02"), endDate: new Date("2024-11-09") },
+      { startDate: new Date("2024-05-02"), endDate: new Date("2024-09-16") },
     ];
 
     const disabledDates: Date[] = [...disabledDateArray]; // Include dynamically added dates
@@ -101,10 +92,6 @@ function DataRangeComponent() {
     });
 
     return disabledDates;
-  };
-
-  const addDisabledDate = (newDate: Date) => {
-    setDisabledDateArray((prevDates) => [...prevDates, newDate]);
   };
 
   useEffect(() => {
@@ -137,7 +124,7 @@ function DataRangeComponent() {
           {activateDate ? (
             arrivalDate
           ) : (
-            <span>{ContactData.data[0].arrival}*</span>
+            <span>{contact.arrival}*</span>
           )}
           <FaCalendarAlt />
         </button>
@@ -146,9 +133,7 @@ function DataRangeComponent() {
           onClick={() => setActiveDateRange(!activeDateRange)}
         >
           <span>
-            {activateDate
-              ? departureDate
-              : `${ContactData.data[0].departure}*`}
+            {activateDate ? departureDate : `${contact.departure}*`}
           </span>
           <FaCalendarAlt />
         </button>
@@ -158,22 +143,15 @@ function DataRangeComponent() {
           ref={dateRangeRef}
           className="absolute border-solid border-2 border-grey3 z-20"
         >
-          <FormControl required>
-            <DateRange
-              editableDateInputs={true}
-              onChange={(item) => setState([item.selection as CustomRange])}
-              moveRangeOnFirstSelection={false}
-              ranges={state}
-              className="relative bg-white z-20 "
-              months={2}
-              locale={pickerLocale}
-              direction={
-                calendarWidth === "horizontal" ? "horizontal" : "vertical"
-              }
-              rangeColors={["#B29600"]}
-              dateDisplayFormat={datePattern}
+          <div>
+            <DateRangeCalendar
+              state={state}
+              setState={setState}
+              calendarWidth={calendarWidth}
+              disabledDates={getDisabledDates()}
+              localeCode={localeActive}
             />
-          </FormControl>
+          </div>
         </div>
       )}
       <div>

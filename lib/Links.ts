@@ -18,7 +18,6 @@ const linksData: LinksData[] = [
   { path: "/pricelist" },
   { path: "/photogallery" },
   { path: "/surroundings" },
-  // { path: "/events" },
   { path: "/contact" },
 
   // Define other image data similarly

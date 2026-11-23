@@ -11,9 +11,7 @@ function BookYourStayCard() {
     >
       <p className="font-poppins text-grey font-ExtraBold text-center lg:text-right">
         {BookStayData.data[0].des}{" "}
-        <span className="text-3xl text-yellow">190 €</span>
-        {" / "}
-        <span className="text-3xl text-yellow">250 €</span>{" "}
+        <span className="text-3xl text-yellow">220 €</span>{" "}
         {BookStayData.data[0].des2}
       </p>
       <hr />

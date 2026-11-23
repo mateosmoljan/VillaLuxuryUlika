@@ -2,21 +2,19 @@
 
 import { Link } from "@/navigation";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { FiMenu, FiX } from "react-icons/fi";
 import "./nav.css";
 import { getNavigationLinks } from "@/lib/Links";
 import { usePathname } from "next/navigation";
-import { Divide as Hamburger } from "hamburger-react";
 import LanguageSwitch from "./languageSwitch";
 import { useLocale } from "next-intl";
-import Drawer from "@mui/joy/Drawer";
 
 const Navbar = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
-  const [open, setOpen] = React.useState(false);
-  const navRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const localeActive = useLocale();
 
@@ -30,26 +28,12 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [prevScrollPos]);
 
   const navigationLinks = getNavigationLinks(localeActive);
-
-  const toggleDrawer =
-    (inOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-
-      setOpen(inOpen);
-    };
 
   return (
     <>
@@ -60,19 +44,18 @@ const Navbar = () => {
       >
         <Link href="/" className="flex gap-2 items-center">
           <Image
-            src="/assets/images/logo880x220.png"
-            width={200}
-            height={50}
-            alt="Villa Luxury Ulika"
+            src="/icon-32.png"
+            alt=""
+            width={32}
+            height={32}
+            priority
             className="object-contain"
           />
-          {/* <p className="font-arbutus font-black text-2xl text-yellow">
-            <span className="text-dark_blue_black">Villa</span>
-            Luxury<span className="text-dark_blue_black">Ulika</span>
-          </p> */}
+          <p className="font-arbutus text-xl text-dark_blue_black">
+            Villa Luxury Ulika
+          </p>
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="lg:flex hidden">
           <div className="flex gap-3 md:gap-5">
             <ul className="flex gap-4 items-center">
@@ -104,42 +87,24 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        <div className="lg:hidden flex relative" ref={navRef}>
-          <button className=" z-50">
-            <Hamburger
-              toggled={open}
-              toggle={setOpen}
-              label="Show menu"
-              size={24}
-              color="#343a40"
-              rounded
-            />
+        <div className="lg:hidden flex relative">
+          <button className="z-50 p-2" onClick={() => setOpen((prev) => !prev)}>
+            {open ? <FiX size={24} color="#343a40" /> : <FiMenu size={24} color="#343a40" />}
           </button>
         </div>
       </nav>
-      <Drawer
-        anchor="top"
-        open={open}
-        onClose={toggleDrawer(false)}
-        className=" drawer_custom translate-y-[64px] !z-30"
-      >
-        <div className={`bg-white w-full px-3  py-3 shadow-md`}>
+
+      {open && (
+        <div className="fixed top-16 left-0 right-0 z-30 bg-white w-full px-3 py-3 shadow-md">
           <ul className="flex flex-col gap-4">
             {navigationLinks.NavData.map((item, index) => (
-              <li key={index} className={`flex `}>
+              <li key={index} className="flex">
                 <Link
                   href={item.path}
-                  className={`nav_list ${
-                    pathname === item.path ? "active_nav" : ""
-                  }`}
+                  className={`nav_list ${pathname === item.path ? "active_nav" : ""}`}
                   onClick={() => setOpen(false)}
                 >
-                  <div
-                    className={` ${
-                      pathname === item.path ? "active_nav" : "hover_nav"
-                    }`}
-                  >
+                  <div className={`${pathname === item.path ? "active_nav" : "hover_nav"}`}>
                     {item.titles}
                   </div>
                 </Link>
@@ -156,7 +121,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-      </Drawer>
+      )}
     </>
   );
 };
