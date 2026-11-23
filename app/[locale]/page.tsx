@@ -41,6 +41,14 @@ export default function Home({ params }: { params: { locale: string } }) {
   const shots = [105, 76, 42, 16, 88];
   const lowest = Math.min(...Object.values(dailyPrices).filter((value): value is number => value != null));
   const pool = messages.Villa_Description.des2.split("\n\n").find((part) => part.includes("8 × 4")) ?? "";
+  const rooms = { hr: "4 spavaće sobe", en: "4 bedrooms", de: "4 Schlafzimmer", it: "4 camere da letto" }[locale];
+  const poolChip = `${features.card.title[41]} 8 × 4 m`;
+  const checkTitle = {
+    hr: "Provjerite termin",
+    en: "Check availability",
+    de: "Verfügbarkeit prüfen",
+    it: "Verifica disponibilità",
+  }[locale];
 
   return (
     <main id="main">
@@ -59,13 +67,19 @@ export default function Home({ params }: { params: { locale: string } }) {
           <p className="lead">{messages.About.des}</p>
           <ul className="hf">
             <li>{messages.Acommodation.card_des}</li>
-            <li>4 · {features.title3}</li>
-            <li>8 × 4 m</li>
+            <li>{rooms}</li>
+            <li>{poolChip}</li>
             <li aria-label={messages.Categorization.title[0]}>⭐⭐⭐⭐⭐</li>
           </ul>
           <form className="hs" action={`/${locale}/contact`} method="get">
-            <p className="hs-h">{messages.Contact.Contact_Form.arrival}</p>
-            <Dates locale={locale} arrivalLabel={messages.Contact.Contact_Form.arrival} departureLabel={messages.Contact.Contact_Form.departure} />
+            <p className="hs-h">{checkTitle}</p>
+            <Dates
+              locale={locale}
+              arrivalLabel={messages.Contact.Contact_Form.arrival}
+              departureLabel={messages.Contact.Contact_Form.departure}
+              adultsLabel={messages.Contact.Contact_Form.adults}
+              childrenLabel={messages.Contact.Contact_Form.children}
+            />
             <button className="btn btn-cta btn-lg" type="submit">{messages.Navigation.navLinksButton}</button>
           </form>
         </div>
@@ -73,7 +87,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <div className="wrap">
         <ul className="facts">
           <li><b>8</b><span>{messages.Acommodation.card_des}</span></li>
-          <li><b>4</b><span>{features.title3}</span></li>
+          <li><b>4</b><span>{rooms.replace(/^4\s/, "")}</span></li>
           <li><b>8 × 4 m</b><span>{features.card.title[41]}</span></li>
           <li><b>⭐⭐⭐⭐⭐</b><span>{messages.Categorization.title[0]}</span></li>
         </ul>
