@@ -1,76 +1,44 @@
-import FourGallery from "@/components/Gallery/FourGallery";
-import NavPath from "@/components/NavPath/NavPath";
-import SendMessage from "@/components/SendMessage/SendMessage";
-import { getEnvironsData } from "@/lib/environs";
-import { getLocationsData } from "@/lib/LocationToVisit";
-import { useLocale } from "next-intl";
+import IFrameMaps from "@/components/About/iFrameMaps";
+import { Distances } from "@/lib/LocationDistance";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}) {
+const packs = { hr, en, de, it };
+
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   return pageMetadata(params.locale, "surroundings");
 }
-import Image from "next/image";
 
-function Environs() {
-  const localeActive = useLocale();
-  const LocationsData = getLocationsData(localeActive);
-  const EnvironsData = getEnvironsData(localeActive);
+export default function Area({ params }: { params: { locale: string } }) {
+  const locale = params.locale === "hr" || params.locale === "de" || params.locale === "it" ? params.locale : "en";
+  const messages = packs[locale];
   return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="container">
-        <div>
-          <h1 className="mt-12 flex justify-center text-3xl sm:text-4xl font-ExtraBold text-dark_blue_black tracking-wider">
-            {EnvironsData.data[0].title}
-          </h1>
-        </div>
-        <div>
-          <FourGallery range={{ start: 0, end: 4 }} mapButton={true} />
-        </div>
-        <div>
-          <p className="">
-            <Image
-              src="/assets/images/sun.png"
-              alt="Grb Istre"
-              width={150}
-              height={150}
-              className="aspect-square float-left"
-            />
-            {EnvironsData.data[0].des}
-          </p>
-        </div>
-        <div>
-          <FourGallery range={{ start: 4, end: 8 }} mapButton={false} />
-        </div>
-        <div>
-          <h2 className="font-titleBold text-xl mb-4">
-            {EnvironsData.data[0].title2}
-          </h2>
-          <p>{EnvironsData.data[0].des2}</p>
-          <div>
-            <h3 className="font-semibold">{EnvironsData.data[0].subtitle}</h3>
-            <ul className="list-disc	p-3 pl-8">
-              {LocationsData.locations.map((item, index) => (
-                <li key={index} className="">
-                  {item.placeToVisit} {item.des}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <FourGallery range={{ start: 8, end: 12 }} mapButton={false} />
-          </div>
-          <div className="mb-24">
-            <SendMessage />
-          </div>
-        </div>
-      </div>
-    </section>
+    <main id="main" className="sec wrap">
+      <h1>{messages.Environs.title}</h1>
+      <p style={{ whiteSpace: "pre-wrap" }}>{messages.Environs.des}</p>
+      <h2>{messages.Environs.title2}</h2>
+      <p>{messages.Environs.des2}</p>
+      <h2>{messages.Distances.title}</h2>
+      <ul className="cards">
+        {Distances.map((item, index) => (
+          <li className="card" key={messages.Distances.place[index] ?? index}>
+            <h3>{messages.Distances.place[index]}</h3>
+            <p>{item.distance} km</p>
+          </li>
+        ))}
+      </ul>
+      <h2>{messages.Environs.subtitle}</h2>
+      <ul>
+        {messages.About.locations.des.map((item) => (
+          <li key={item}>{item.replace(/^[-\s]+/, "")}</li>
+        ))}
+      </ul>
+      <h2>{messages.Map_Location.title}</h2>
+      <div style={{ height: 420 }}><IFrameMaps className="h-full" /></div>
+    </main>
   );
 }
-
-export default Environs;
