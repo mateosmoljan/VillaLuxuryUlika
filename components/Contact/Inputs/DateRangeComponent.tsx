@@ -4,7 +4,11 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { FaCalendarAlt } from "react-icons/fa";
+import { format } from "date-fns";
 import enGB from "date-fns/locale/en-GB";
+import hrLocale from "date-fns/locale/hr";
+import deLocale from "date-fns/locale/de";
+import itLocale from "date-fns/locale/it";
 import { FormControl } from "@mui/material";
 import { useLocale } from "next-intl";
 import { getContactData } from "@/lib/contact";
@@ -30,6 +34,17 @@ function DataRangeComponent() {
   const [departureDate, setDepartureDate] = useState<string>("");
   const localeActive = useLocale();
   const ContactData = getContactData(localeActive);
+  const localeBase =
+    { hr: hrLocale, de: deLocale, it: itLocale, en: enGB }[localeActive] ??
+    enGB;
+  const pickerLocale = {
+    ...localeBase,
+    options: { ...localeBase.options, weekStartsOn: 1 as const },
+  };
+  const datePattern =
+    { hr: "d.M.yyyy.", de: "dd.MM.yyyy", it: "dd/MM/yyyy", en: "d.M.yyyy" }[
+      localeActive
+    ] ?? "d.M.yyyy";
 
   const [calendarWidth, setCalendarWidth] = useState<string>("vertical");
 
@@ -60,12 +75,8 @@ function DataRangeComponent() {
     }
   }, [state]);
 
-  const formatDate = (date: Date): string => {
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    return `${day}.${month}.${year}`;
-  };
+  const formatDate = (date: Date): string =>
+    format(date, datePattern, { locale: pickerLocale });
 
   // const disabledDates: Date[] = [
   //   new Date("2024-03-12"),
@@ -155,13 +166,12 @@ function DataRangeComponent() {
               ranges={state}
               className="relative bg-white z-20 "
               months={2}
-              locale={enGB}
+              locale={pickerLocale}
               direction={
                 calendarWidth === "horizontal" ? "horizontal" : "vertical"
               }
               rangeColors={["#B29600"]}
-              // disabledDates={getDisabledDates()}
-              dateDisplayFormat="d.M.y"
+              dateDisplayFormat={datePattern}
             />
           </FormControl>
         </div>
