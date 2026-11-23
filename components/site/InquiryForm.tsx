@@ -4,7 +4,15 @@ import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 import type { Copy } from "@/lib/site/copy";
 
-export default function InquiryForm({ copy }: { copy: Copy }) {
+export default function InquiryForm({
+  copy,
+  arrival,
+  departure,
+}: {
+  copy: Copy;
+  arrival?: string;
+  departure?: string;
+}) {
   const form = copy.contact.form;
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
@@ -45,11 +53,11 @@ export default function InquiryForm({ copy }: { copy: Copy }) {
         <div className="grid grid-cols-2 gap-3">
           <label className="block text-sm text-ink/80">
             {form.arrival}
-            <input name="arrivalDate" type="date" className={field} />
+            <input name="arrivalDate" type="date" defaultValue={arrival} className={field} />
           </label>
           <label className="block text-sm text-ink/80">
             {form.departure}
-            <input name="departureDate" type="date" className={field} />
+            <input name="departureDate" type="date" defaultValue={departure} className={field} />
           </label>
         </div>
       </div>

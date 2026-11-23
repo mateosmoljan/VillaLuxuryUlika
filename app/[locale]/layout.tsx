@@ -4,7 +4,9 @@ import "./globals.css";
 import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import StickyBar from "@/components/site/StickyBar";
 import JsonLd from "@/components/site/JsonLd";
+import { getChrome } from "@/lib/site/chrome";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalitics";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata, siteUrl } from "@/lib/site/seo";
@@ -67,22 +69,29 @@ export default async function RootLayout({
 }) {
   const locale = prepareLocale(localeParam);
   const { copy } = await getPublished(locale);
+  const ui = getChrome(locale);
   const measurementId = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
 
   return (
     <html lang={locale} className={`${display.variable} ${sans.variable}`}>
-      <body className="bg-paper font-sans text-ink antialiased">
+      <body className="bg-white pb-20 font-sans text-ink antialiased md:pb-0">
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-olive focus:px-4 focus:py-2 focus:text-paper"
         >
           {copy.skip}
         </a>
-        <Header locale={locale} nav={copy.nav} eyebrow={copy.hero.eyebrow} />
-        <div id="content" className="pt-16">
-          {children}
-        </div>
+        <Header
+          locale={locale}
+          nav={copy.nav}
+          eyebrow={copy.hero.eyebrow}
+          inquiry={ui.inquiry}
+          menuLabel={ui.menu}
+          closeLabel={ui.close}
+        />
+        <div id="content">{children}</div>
         <Footer copy={copy} />
+        <StickyBar chrome={ui} phone={copy.contact.phones[0]} email={copy.contact.email} />
         <JsonLd locale={locale} copy={copy} />
         {measurementId ? <GoogleAnalytics /> : null}
       </body>

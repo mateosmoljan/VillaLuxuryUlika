@@ -1,5 +1,7 @@
 import Spaces from "@/components/site/Spaces";
 import Amenities from "@/components/site/Amenities";
+import FaqList from "@/components/site/FaqList";
+import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/site/seo";
 import { getPublished } from "@/lib/store/publish";
@@ -14,6 +16,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 export default async function VillaPage({ params }: { params: { locale: string } }) {
   const locale = prepareLocale(params.locale);
   const { copy } = await getPublished(locale);
+  const ui = getChrome(locale);
   return (
     <>
       <header className="mx-auto max-w-6xl px-5 pb-4 pt-12">
@@ -23,6 +26,12 @@ export default async function VillaPage({ params }: { params: { locale: string }
       </header>
       <Spaces copy={copy} />
       <Amenities copy={copy} />
+      <section className="mx-auto max-w-6xl px-5 py-12">
+        <h2 className="font-display text-4xl text-olive-deep">{ui.faqTitle}</h2>
+        <div className="mt-6">
+          <FaqList items={ui.faqs} />
+        </div>
+      </section>
     </>
   );
 }

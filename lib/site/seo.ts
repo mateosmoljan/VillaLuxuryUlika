@@ -49,7 +49,7 @@ export function pageMetadata(
       type: "website",
       images: [
         {
-          url: "/og/villa.jpg",
+          url: `${siteUrl}/og/villa.jpg`,
           width: 1200,
           height: 800,
           alt: copy.meta.ogAlt,
@@ -60,7 +60,7 @@ export function pageMetadata(
       card: "summary_large_image",
       title,
       description,
-      images: ["/og/villa.jpg"],
+      images: [`${siteUrl}/og/villa.jpg`],
     },
     robots: preview
       ? { index: false, follow: false }

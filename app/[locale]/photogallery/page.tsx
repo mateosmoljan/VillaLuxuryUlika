@@ -1,8 +1,10 @@
-import Photo from "@/components/site/Photo";
+import PhotoGrid from "@/components/site/PhotoGrid";
+import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/site/seo";
 import { getPublished } from "@/lib/store/publish";
 import type { Metadata } from "next";
+import { Link } from "@/navigation";
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = prepareLocale(params.locale);
@@ -13,25 +15,18 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 export default async function GalleryPage({ params }: { params: { locale: string } }) {
   const locale = prepareLocale(params.locale);
   const { copy, gallery } = await getPublished(locale);
+  const ui = getChrome(locale);
+  const shots = gallery.map((image) => ({ src: image.src, alt: image.alt[locale] ?? image.alt.en }));
   return (
-    <div className="mx-auto max-w-6xl px-5 py-12">
-      <p className="text-xs uppercase tracking-[0.2em] text-olive">{copy.gallery.kicker}</p>
-      <h1 className="mt-2 font-display text-5xl text-ink">{copy.gallery.title}</h1>
-      <p className="mt-4 max-w-2xl text-ink/80">{copy.gallery.intro}</p>
-      <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {gallery.map((image) => (
-          <li key={image.src}>
-            <a href={image.src} className="block">
-              <Photo
-                src={image.src}
-                alt={image.alt[locale] ?? image.alt.en}
-                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                className="aspect-[3/2] rounded-2xl"
-              />
-            </a>
-          </li>
-        ))}
-      </ul>
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <p className="text-sm text-ink/60">
+        <Link href="/">{ui.crumbsHome}</Link> · {copy.nav.gallery}
+      </p>
+      <h1 className="mt-3 font-display text-5xl text-olive-deep">{copy.gallery.title}</h1>
+      <p className="mt-3 max-w-2xl text-ink/75">{copy.gallery.intro} {ui.enlarge}.</p>
+      <div className="mt-8">
+        <PhotoGrid images={shots} chrome={ui} />
+      </div>
     </div>
   );
 }

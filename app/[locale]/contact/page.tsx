@@ -1,4 +1,6 @@
 import InquiryForm from "@/components/site/InquiryForm";
+import FaqList from "@/components/site/FaqList";
+import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/site/seo";
 import { getPublished } from "@/lib/store/publish";
@@ -10,9 +12,16 @@ export async function generateMetadata({ params }: { params: { locale: string } 
   return pageMetadata(locale, "/contact", copy.contact.title, copy.contact.intro);
 }
 
-export default async function ContactPage({ params }: { params: { locale: string } }) {
+export default async function ContactPage({
+  params,
+  searchParams,
+}: {
+  params: { locale: string };
+  searchParams?: { arrival?: string; departure?: string };
+}) {
   const locale = prepareLocale(params.locale);
   const { copy } = await getPublished(locale);
+  const ui = getChrome(locale);
   return (
     <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
@@ -55,7 +64,13 @@ export default async function ContactPage({ params }: { params: { locale: string
           </div>
         </dl>
       </div>
-      <InquiryForm copy={copy} />
+      <InquiryForm copy={copy} arrival={searchParams?.arrival} departure={searchParams?.departure} />
+      <div className="lg:col-span-2">
+        <h2 className="font-display text-3xl">{ui.faqTitle}</h2>
+        <div className="mt-4">
+          <FaqList items={ui.faqs.slice(3, 7)} />
+        </div>
+      </div>
     </div>
   );
 }
