@@ -2,6 +2,7 @@ import { RxCross2 } from "react-icons/rx";
 import { ImCross } from "react-icons/im";
 import IFrameMaps from "./iFrameMaps";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 interface GoogleMapsProps {
   onClose: () => void;
@@ -9,6 +10,7 @@ interface GoogleMapsProps {
 
 function GoogleMaps({ onClose }: GoogleMapsProps) {
   const mapsRef = useRef<HTMLDivElement>(null);
+  const title = useTranslations("Map_Location");
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -31,7 +33,7 @@ function GoogleMaps({ onClose }: GoogleMapsProps) {
         className="container px-3 flex flex-col h-[75%] bg-white rounded-md transitionMap"
       >
         <div className="flex justify-between py-3">
-          <h1 className="font-bold text-xl">Location of House Lucia</h1>
+          <h2 className="font-bold text-xl">{title("title")}</h2>
           <button onClick={onClose} className="text-xl">
             <RxCross2 />
           </button>

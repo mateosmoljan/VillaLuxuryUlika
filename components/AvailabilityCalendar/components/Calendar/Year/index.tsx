@@ -39,7 +39,12 @@ const Year: React.FC<IYear> = ({
         const daysArr = new Array(totalDays).fill("");
 
         return (
-          <div key={pos} className="month" data-testid="month">
+          <div
+            key={pos}
+            className="month"
+            data-testid="month"
+            data-month={month}
+          >
             <h3 className="monthName">{monthName}</h3>
 
             {/* <div className="content dayOfTheWeek">

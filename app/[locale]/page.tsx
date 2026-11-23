@@ -7,6 +7,15 @@ import SendMessage from "@/components/SendMessage/SendMessage";
 import TouristGuide from "@/components/TouristGuide/TouristGuide";
 import React from "react";
 import NavPath from "@/components/NavPath/NavPath";
+import { pageMetadata } from "@/lib/seo";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return pageMetadata(params.locale, "home");
+}
 
 function Home() {
   return (

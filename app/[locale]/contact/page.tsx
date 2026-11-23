@@ -3,6 +3,15 @@ import ContactForm from "@/components/Contact/ContactForm";
 import ContactInfo from "@/components/Contact/ContactInfo";
 import NavPath from "@/components/NavPath/NavPath";
 import { useTranslations } from "next-intl";
+import { pageMetadata } from "@/lib/seo";
+
+export function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}) {
+  return pageMetadata(params.locale, "contact");
+}
 
 function Contact() {
   const c = useTranslations("Contact");

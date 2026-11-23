@@ -9,6 +9,7 @@ import { SwiperNavButtonsAcommodation } from "./SwiperNavButtonsAcommodation";
 import { PropertyGalleryLib } from "@/lib/property_gallery";
 import { useLocale } from "next-intl";
 import { getAccommodationData } from "@/lib/acommodation";
+import { villaPhotoAlt } from "@/lib/photoAlt";
 
 function PropertyCard() {
   const localeActive = useLocale();
@@ -26,7 +27,7 @@ function PropertyCard() {
             <div className="flex relative items-center justify-center h-full w-full">
               <Image
                 src={image.src}
-                alt={image.alt}
+                alt={villaPhotoAlt(localeActive, index + 1)}
                 width={559}
                 height={240}
                 placeholder="blur"

@@ -29,7 +29,7 @@
     "titles": [
       "Benvenuti a Villa Luxury Ulika - Istria",
       "Rilassati e Goditi",
-      "Bagno Turco e Jacuzzi",
+      "Sauna finlandese e jacuzzi",
       "Cene all'Aperto"
     ],
     "descriptions": [
@@ -311,7 +311,13 @@
     "des4": "Cancellazione gratuita disponibile entro una settimana dalla prenotazione (ECCETTO PER PRENOTAZIONI LAST-MINUTE, IN QUESTO CASO IL TERMINE È DI 48 ORE). Prenotazioni last-minute – due settimane prima dell'arrivo.",
     "des5": "L'ultimo giorno di soggiorno, gli ospiti devono lasciare l'alloggio entro le 9:00, in modo che altri ospiti possano fare il check-in dalle 16:00.",
     "des6": "Nota: Gli animali domestici non sono ammessi nella proprietà.",
-    "title2": "Metodi di Pagamento:"
+    "title2": "Metodi di Pagamento:",
+    "methods": [
+      "Contanti (all'arrivo)",
+      "Bonifico bancario (internet banking)",
+      "Revolut",
+      "PayPal"
+    ]
   },
   "Map_Location": {
     "title": "Posizione sulla Mappa"
@@ -368,7 +374,8 @@
       "message": "Richiesta",
       "des": "Il contenuto di questo modulo sarà inviato direttamente all'indirizzo email del proprietario dell'alloggio e sarà utilizzato esclusivamente per l'invio di richieste di prenotazione per la proprietà indicata.",
       "button": "Invia Richiesta",
-      "sent": "Inviato con Successo"
+      "sent": "Inviato con Successo",
+      "invalid_email": "Inserisci un indirizzo email valido"
     },
     "Contact_Info": {
       "contact_person": "Persona di Contatto",
@@ -431,5 +438,13 @@
       ],
       "price": "€900"
     }
-  ]
+  ],
+  "Breadcrumb": {
+    "villa-luxury-ulika": "Villa Luxury Ulika",
+    "pricelist": "Listino prezzi",
+    "contact": "Contatto",
+    "photogallery": "Galleria fotografica",
+    "surroundings": "Dintorni",
+    "events": "Feste"
+  }
 }

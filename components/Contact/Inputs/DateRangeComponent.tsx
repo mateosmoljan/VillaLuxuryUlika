@@ -126,10 +126,7 @@ function DataRangeComponent() {
           {activateDate ? (
             arrivalDate
           ) : (
-            <span>
-              {/* {ContactData.data[0].arrival} */}
-              Arrival*
-            </span>
+            <span>{ContactData.data[0].arrival}*</span>
           )}
           <FaCalendarAlt />
         </button>
@@ -140,8 +137,7 @@ function DataRangeComponent() {
           <span>
             {activateDate
               ? departureDate
-              : // ContactData.data[0].departure
-                "Departure*"}
+              : `${ContactData.data[0].departure}*`}
           </span>
           <FaCalendarAlt />
         </button>

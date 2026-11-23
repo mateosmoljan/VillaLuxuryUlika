@@ -505,3 +505,40 @@ export function getPricePeriods(): PricePeriod[] {
 
   return periods;
 }
+
+export function pricedYearRange(): { min: number; max: number } {
+  let min = Infinity;
+  let max = -Infinity;
+  for (const [date, price] of Object.entries(dailyPrices)) {
+    if (price == null) continue;
+    const year = Number(date.slice(0, 4));
+    if (year < min) min = year;
+    if (year > max) max = year;
+  }
+  return { min, max };
+}
+
+export function initialCalendarYear(now = new Date()): number {
+  const { min, max } = pricedYearRange();
+  const year = now.getFullYear();
+  if (year < min) return min;
+  if (year > max) return max;
+  return year;
+}
+
+export function firstPricedMonth(year: number): number {
+  for (let month = 1; month <= 12; month += 1) {
+    const prefix = `${year}-${String(month).padStart(2, "0")}`;
+    const found = Object.entries(dailyPrices).some(
+      ([date, price]) => date.startsWith(prefix) && price != null
+    );
+    if (found) return month;
+  }
+  return 1;
+}
+
+export function calendarStartMonth(year: number, now = new Date()): number {
+  const first = firstPricedMonth(year);
+  if (year !== now.getFullYear()) return first;
+  return Math.max(first, now.getMonth() + 1);
+}

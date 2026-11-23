@@ -12,6 +12,13 @@ import deData from "@/messages/de.json";
 import hrData from "@/messages/hr.json";
 import itData from "@/messages/it.json";
 
+const capacity: Record<string, string> = {
+  en: "8 persons",
+  hr: "8 osoba",
+  de: "8 Personen",
+  it: "8 persone",
+};
+
 export const Categorization: categorization[] = [
   { value: "⭐⭐⭐⭐⭐" },
   { value: "8 persons" },
@@ -45,17 +52,17 @@ export const CategorizationDataIT: DataObject = {
 };
 
 export const getCategorizationData = (language: string): DataObject => {
-  switch (language) {
-    case "en":
-      return CategorizationDataEn;
-    case "de":
-      return CategorizationDataDE;
-    case "hr":
-      return CategorizationDataHR;
-    case "it":
-      return CategorizationDataIT;
-    default:
-      // Return default language if specified language is not found
-      return CategorizationDataEn;
-  }
+  const source =
+    language === "de"
+      ? CategorizationDataDE
+      : language === "hr"
+        ? CategorizationDataHR
+        : language === "it"
+          ? CategorizationDataIT
+          : CategorizationDataEn;
+  return {
+    data: source.data.map((item, index) =>
+      index === 1 ? { ...item, value: capacity[language] ?? capacity.en } : item
+    ),
+  };
 };

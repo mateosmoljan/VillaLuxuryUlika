@@ -5,6 +5,8 @@ import { Arbutus_Slab, Poppins } from "next/font/google";
 import Navbar from "@/components/Navigation/Navbar";
 import Footer from "@/components/Footer/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalitics";
+import JsonLd from "@/components/site/JsonLd";
+import { siteUrl } from "@/lib/seo";
 
 const arbutus = Arbutus_Slab({
   subsets: ["latin"],
@@ -19,9 +21,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Villa Luxury Ulika",
   description:
-    "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
+    "Holiday home Villa Luxury Ulika in Vodnjan, Istria. Four bedrooms, a private pool, a Finnish sauna and a jacuzzi.",
   icons: {
     icon: [
       { url: "/favicon.ico", type: "image/x-icon" },
@@ -42,21 +45,21 @@ export const metadata: Metadata = {
     type: "website",
     title: "Accommodation Villa Luxury Ulika - Istria",
     description:
-      "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-    url: "https://villaluxulika.com",
+      "Holiday home Villa Luxury Ulika in Vodnjan, Istria. Four bedrooms, a private pool, a Finnish sauna and a jacuzzi.",
+    url: siteUrl,
+    images: [
+      {
+        url: `${siteUrl}/assets/images/i/105.jpg`,
+        alt: "Villa Luxury Ulika",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    // site: "@YourTwitterHandle",
-    title: "Accommodation Villa Luxury Ulika - Istria",
+    title: "Villa Luxury Ulika – Istria",
     description:
-      "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-    images: [
-      {
-        url: "https://www.villaluxulika.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F105.07eb8276.jpg&w=3840&q=75",
-        alt: "",
-      },
-    ],
+      "Holiday home Villa Luxury Ulika in Vodnjan, Istria. Four bedrooms, a private pool, a Finnish sauna and a jacuzzi.",
+    images: [`${siteUrl}/assets/images/i/105.jpg`],
   },
   authors: [
     { name: "Mateo Smoljan" },
@@ -84,6 +87,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} font-poppins ${arbutus.variable} font-arbutus`}
       >
+        <JsonLd />
         <Navbar />
         {children}
         <Footer />

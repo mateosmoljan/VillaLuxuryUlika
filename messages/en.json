@@ -311,7 +311,13 @@
     "des4": "Free cancellation available within one week of booking (EXCEPT FOR LAST-MINUTE BOOKINGS, THEN THE DEADLINE IS 48 HOURS). Last-minute booking – two weeks before arrival.",
     "des5": "On the last day of stay, guests must leave the accommodation by 9:00 AM so other guests can check in from 4:00 PM.",
     "des6": "Note: Pets are not allowed on the property.",
-    "title2": "Payment Methods:"
+    "title2": "Payment Methods:",
+    "methods": [
+      "Cash (upon arrival)",
+      "Bank transfer (internet banking)",
+      "Revolut",
+      "PayPal"
+    ]
   },
   "Map_Location": {
     "title": "Map Location"
@@ -368,7 +374,8 @@
       "message": "Inquiry",
       "des": "The contents of this form will be sent directly to the accommodation owner's email address and are used exclusively for sending booking inquiries for the listed property.",
       "button": "Send Inquiry",
-      "sent": "Successfully Sent"
+      "sent": "Successfully Sent",
+      "invalid_email": "Please enter a valid email address"
     },
     "Contact_Info": {
       "contact_person": "Contact Person",
@@ -431,5 +438,13 @@
         "price": "€900"
       }
     ]
+  },
+  "Breadcrumb": {
+    "villa-luxury-ulika": "Villa Luxury Ulika",
+    "pricelist": "Price list",
+    "contact": "Contact",
+    "photogallery": "Photo gallery",
+    "surroundings": "Surroundings",
+    "events": "Celebrations"
   }
 }

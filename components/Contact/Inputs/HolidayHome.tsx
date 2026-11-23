@@ -21,7 +21,7 @@ function HolidayHome() {
   return (
     <FormControl fullWidth>
       <InputLabel id="demo-simple-select-label" className="!font-Bold">
-        Holiday Home
+        {ContactData.data[0].home}
       </InputLabel>
       <Select
         required
@@ -31,9 +31,9 @@ function HolidayHome() {
         size="small"
         name="holidayHome"
         value={home}
-        label="Holiday home"
+        label={ContactData.data[0].home}
         onChange={handleChange}
-        placeholder="Holiday home"
+        placeholder={ContactData.data[0].home}
       >
         <MenuItem value={"Villa Luxury Ulika"} className="!pl-4">
           Villa Luxury Ulika
