@@ -87,6 +87,19 @@ export default function RootLayout({
         <Footer
           year={messages.Footer.year}
           rights={messages.Footer.rights}
+          pagesTitle={ui.pagesTitle}
+          pages={[
+            { href: "/villa-luxury-ulika", label: messages.Navigation.navlinks[0] },
+            { href: "/photogallery", label: messages.Navigation.navlinks[2] },
+            { href: "/pricelist", label: messages.Navigation.navlinks[1] },
+            { href: "/surroundings", label: messages.Navigation.navlinks[3] },
+            { href: "/contact", label: messages.Navigation.navlinks[4] },
+          ]}
+          guidesTitle={ui.guidesTitle}
+          guides={[
+            { href: "/guides/pool", label: ui.poolGuideTitle },
+            { href: "/guides/family", label: messages.Villa_Features.title9 },
+          ]}
           discoverTitle={messages.Footer.Discover.title}
           vodnjan={messages.Footer.Discover.list.Pula}
           guide={messages.Footer.Discover.list.Guide}

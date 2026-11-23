@@ -1,5 +1,10 @@
 import IFrameMaps from "@/components/About/iFrameMaps";
+import Crumbs from "@/components/site/Crumbs";
+import FaqList from "@/components/site/FaqList";
+import InquiryBand from "@/components/site/InquiryBand";
 import OwnerDescription from "@/components/site/OwnerDescription";
+import { Link } from "@/navigation";
+import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/seo";
 import hr from "@/messages/hr.json";
@@ -35,11 +40,14 @@ export default function VillaPage({ params }: { params: { locale: string } }) {
     cursor += size;
     return { title: titles[index], items };
   });
+  const ui = getChrome(locale);
   const pay = messages.Payment_conditions;
   const description = `${messages.Villa_Description.des}\n\n${messages.Villa_Description.des2}\n\n**${messages.Villa_Description.subtitle2}**\n\n${messages.Villa_Description.des3}`;
   return (
+    <>
     <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <p className="text-2xl" aria-label={messages.Categorization.title[0]}>⭐⭐⭐⭐⭐</p>
+      <Crumbs locale={locale} home={ui.crumbsHome} items={[{ label: messages.Navigation.navlinks[0] }]} />
+      <p className="mt-4 text-2xl" aria-label={messages.Categorization.title[0]}>⭐⭐⭐⭐⭐</p>
       <h1 className="mt-2 font-display text-5xl text-olive-deep">{messages.Titles.Villa_Panorama}</h1>
       <div className="mt-6 max-w-3xl">
         <OwnerDescription id="villa-description" text={description} moreLabel={messages.Buttons.Show_more} lessLabel={messages.Buttons.Show_less} />
@@ -77,6 +85,14 @@ export default function VillaPage({ params }: { params: { locale: string } }) {
       </div>
       <h2 className="mt-12 font-display text-4xl text-olive-deep">{messages.Map_Location.title}</h2>
       <div className="mt-4 h-[420px] overflow-hidden rounded-3xl"><IFrameMaps className="h-full" /></div>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{ui.faqTitle}</h2>
+      <div className="mt-4"><FaqList items={ui.faqs} /></div>
+      <p className="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-olive">
+        <Link href="/guides/pool">{ui.poolGuideTitle}</Link>
+        <Link href="/guides/family">{features.title9}</Link>
+      </p>
     </article>
+    <InquiryBand title={ui.bandTitle} text={ui.bandText} cta={ui.inquiry} />
+    </>
   );
 }

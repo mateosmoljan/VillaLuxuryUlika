@@ -1,8 +1,14 @@
 import { Link } from "@/navigation";
 
+type Item = { href: string; label: string };
+
 export default function Footer({
   year,
   rights,
+  pagesTitle,
+  pages,
+  guidesTitle,
+  guides,
   discoverTitle,
   vodnjan,
   guide,
@@ -10,6 +16,10 @@ export default function Footer({
 }: {
   year: string;
   rights: string;
+  pagesTitle: string;
+  pages: Item[];
+  guidesTitle: string;
+  guides: Item[];
   discoverTitle: string;
   vodnjan: string;
   guide: string;
@@ -17,7 +27,7 @@ export default function Footer({
 }) {
   return (
     <footer className="border-t border-sand bg-olive-deep text-white">
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <p className="font-display text-2xl">Villa Luxury Ulika</p>
           <p className="mt-2 text-sm text-white/80">
@@ -27,7 +37,21 @@ export default function Footer({
           <p className="text-sm text-white/80">{rights}</p>
         </div>
         <div className="text-sm leading-7">
-          <h2 className="font-display text-xl">{discoverTitle}</h2>
+          <h2 className="font-display text-xl">{pagesTitle}</h2>
+          {pages.map((item) => (
+            <Link key={item.href} href={item.href} className="block hover:underline">
+              {item.label}
+            </Link>
+          ))}
+        </div>
+        <div className="text-sm leading-7">
+          <h2 className="font-display text-xl">{guidesTitle}</h2>
+          {guides.map((item) => (
+            <Link key={item.href} href={item.href} className="block hover:underline">
+              {item.label}
+            </Link>
+          ))}
+          <h2 className="mt-4 font-display text-xl">{discoverTitle}</h2>
           <a className="block hover:underline" href="https://www.vodnjanski.info/" target="_blank" rel="noreferrer">
             {vodnjan}
           </a>

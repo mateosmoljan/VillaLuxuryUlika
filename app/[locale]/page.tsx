@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { Link } from "@/navigation";
 import IFrameMaps from "@/components/About/iFrameMaps";
+import FaqList from "@/components/site/FaqList";
+import InquiryBand from "@/components/site/InquiryBand";
 import OwnerDescription from "@/components/site/OwnerDescription";
 import PhotoGrid from "@/components/site/PhotoGrid";
 import { getChrome } from "@/lib/site/chrome";
@@ -74,26 +76,25 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-6xl grid-cols-3 gap-2 px-4 py-8 sm:px-6">
-        <div className="rounded-2xl bg-paper px-2 py-4 text-center">
-          <b className="block font-display text-3xl text-olive">⭐⭐⭐⭐⭐</b>
-          <span className="text-sm text-ink/70">{messages.Categorization.title[0]}</span>
-        </div>
-        <div className="rounded-2xl bg-paper px-2 py-4 text-center">
-          <b className="block font-display text-3xl text-olive">8</b>
-          <span className="text-sm text-ink/70">{messages.Acommodation.card_des}</span>
-        </div>
-        <div className="rounded-2xl bg-paper px-2 py-4 text-center">
-          <b className="block font-display text-3xl text-olive">{lowest}</b>
-          <span className="text-sm text-ink/70">{messages.Pricelist.subtitle}</span>
-        </div>
+      <section className="mx-auto grid max-w-6xl grid-cols-2 gap-2 px-4 py-8 sm:grid-cols-4 sm:px-6">
+        {[
+          { value: "⭐⭐⭐⭐⭐", label: messages.Categorization.title[0] },
+          { value: "8", label: messages.Acommodation.card_des },
+          { value: "4", label: features.title3 },
+          { value: "8 × 4 m", label: features.card.title[41] },
+        ].map((fact) => (
+          <div key={fact.label} className="rounded-2xl bg-paper px-2 py-4 text-center">
+            <b className="block font-display text-3xl text-olive">{fact.value}</b>
+            <span className="text-sm text-ink/70">{fact.label}</span>
+          </div>
+        ))}
       </section>
 
       <section className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="font-display text-4xl text-olive-deep">{features.title2}</h2>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map((group) => (
-            <li key={group.title} className="rounded-2xl bg-paper p-5">
+            <li key={group.title} className="rounded-2xl bg-paper p-5 transition hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none">
               <h3 className="font-display text-2xl">{group.title}</h3>
               <ul className="mt-2 space-y-1 text-sm text-ink/80">
                 {group.items.slice(0, 2).map((item) => (
@@ -138,6 +139,25 @@ export default function Home({ params }: { params: { locale: string } }) {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+        <h2 className="font-display text-4xl text-olive-deep">{ui.guidesTitle}</h2>
+        <p className="mt-2 max-w-2xl text-ink/70">{ui.guidesLead}</p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          <li>
+            <Link href="/guides/pool" className="block rounded-2xl border border-sand p-5 transition hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none">
+              <h3 className="font-display text-2xl">{ui.poolGuideTitle}</h3>
+              <p className="mt-2 text-sm text-ink/70">{ui.poolGuideText}</p>
+            </Link>
+          </li>
+          <li>
+            <Link href="/guides/family" className="block rounded-2xl border border-sand p-5 transition hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none">
+              <h3 className="font-display text-2xl">{features.title9}</h3>
+              <p className="mt-2 text-sm text-ink/70">{messages.Acommodation.card_des}</p>
+            </Link>
+          </li>
+        </ul>
+      </section>
+
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <h2 className="font-display text-4xl text-olive-deep">{messages.How_Reserve.title}</h2>
         <ol className="mt-6 grid gap-3">
@@ -158,6 +178,11 @@ export default function Home({ params }: { params: { locale: string } }) {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
+        <h2 className="font-display text-4xl text-olive-deep">{ui.faqTitle}</h2>
+        <div className="mt-4"><FaqList items={ui.faqs} /></div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-6 sm:px-6">
         <h2 className="font-display text-4xl text-olive-deep">{messages.Distances.title}</h2>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {Distances.map((item, index) => (
@@ -175,6 +200,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <IFrameMaps className="h-full" />
         </div>
       </section>
+      <InquiryBand title={ui.bandTitle} text={ui.bandText} cta={ui.inquiry} />
     </>
   );
 }

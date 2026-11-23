@@ -1,5 +1,9 @@
 import IFrameMaps from "@/components/About/iFrameMaps";
+import Crumbs from "@/components/site/Crumbs";
+import InquiryBand from "@/components/site/InquiryBand";
 import OwnerDescription from "@/components/site/OwnerDescription";
+import { Link } from "@/navigation";
+import { getChrome } from "@/lib/site/chrome";
 import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/seo";
 import { Distances } from "@/lib/LocationDistance";
@@ -19,10 +23,13 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
 export default function SurroundingsPage({ params }: { params: { locale: string } }) {
   const locale = prepareLocale(params.locale);
   const messages = packs[locale];
+  const ui = getChrome(locale);
   const places = messages.Distances.place;
   return (
+    <>
     <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <h1 className="font-display text-5xl text-olive-deep">{messages.Environs.title}</h1>
+      <Crumbs locale={locale} home={ui.crumbsHome} items={[{ label: messages.Navigation.navlinks[3] }]} />
+      <h1 className="mt-4 font-display text-5xl text-olive-deep">{messages.Environs.title}</h1>
       <div className="mt-6 max-w-3xl">
         <OwnerDescription id="environs" text={messages.Environs.des} moreLabel={messages.Buttons.Show_more} lessLabel={messages.Buttons.Show_less} />
       </div>
@@ -38,13 +45,18 @@ export default function SurroundingsPage({ params }: { params: { locale: string 
         ))}
       </ul>
       <h2 className="mt-10 font-display text-3xl">{messages.Environs.subtitle}</h2>
-      <ul className="mt-3 list-disc space-y-2 pl-5">
+      <ul className="mt-4 grid gap-3 sm:grid-cols-2">
         {messages.About.locations.des.map((item) => (
-          <li key={item}>{item}</li>
+          <li key={item} className="rounded-2xl border border-sand p-4 text-sm leading-relaxed">{item.replace(/^[-\s]+/, "")}</li>
         ))}
       </ul>
+      <p className="mt-8 text-sm font-semibold text-olive">
+        <Link href="/guides/pool">{ui.poolGuideTitle}</Link>
+      </p>
       <h2 className="mt-10 font-display text-3xl">{messages.Map_Location.title}</h2>
       <div className="mt-4 h-[420px] overflow-hidden rounded-3xl"><IFrameMaps className="h-full" /></div>
     </article>
+    <InquiryBand title={ui.bandTitle} text={ui.bandText} cta={ui.inquiry} />
+    </>
   );
 }

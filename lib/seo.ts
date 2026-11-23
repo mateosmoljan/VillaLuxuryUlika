@@ -10,7 +10,9 @@ export type SeoPage =
   | "contact"
   | "photogallery"
   | "surroundings"
-  | "events";
+  | "events"
+  | "pool"
+  | "family";
 
 const paths: Record<SeoPage, string> = {
   home: "",
@@ -20,6 +22,8 @@ const paths: Record<SeoPage, string> = {
   photogallery: "/photogallery",
   surroundings: "/surroundings",
   events: "/events",
+  pool: "/guides/pool",
+  family: "/guides/family",
 };
 
 const ogImage = `${siteUrl}/assets/images/i/105.jpg`;
@@ -61,6 +65,16 @@ const copy: Record<Locale, Record<SeoPage, { title: string; description: string 
       description:
         "Paketi za proslave u vili Luxury Ulika u Vodnjanu.",
     },
+    pool: {
+      title: "Grijani bazen 8 × 4 m – Villa Luxury Ulika",
+      description:
+        "Privatni bazen 8 × 4 m u ograđenom dvorištu vile Luxury Ulika u Vodnjanu.",
+    },
+    family: {
+      title: "Obitelj – Villa Luxury Ulika",
+      description:
+        "Dječji krevetić, igračke, stolica za hranjenje i ostali obiteljski sadržaji vile Luxury Ulika.",
+    },
   },
   en: {
     home: {
@@ -94,6 +108,14 @@ const copy: Record<Locale, Record<SeoPage, { title: string; description: string 
     events: {
       title: "Celebrations – Villa Luxury Ulika",
       description: "Celebration packages at Villa Luxury Ulika in Vodnjan.",
+    },
+    pool: {
+      title: "Heated pool 8 × 4 m – Villa Luxury Ulika",
+      description: "Private 8 × 4 m pool in the fenced courtyard of Villa Luxury Ulika in Vodnjan.",
+    },
+    family: {
+      title: "Family – Villa Luxury Ulika",
+      description: "Cot, toys, high chair and the other family items at Villa Luxury Ulika.",
     },
   },
   de: {
@@ -129,6 +151,14 @@ const copy: Record<Locale, Record<SeoPage, { title: string; description: string 
       title: "Feiern – Villa Luxury Ulika",
       description: "Feierpakete in der Villa Luxury Ulika in Vodnjan.",
     },
+    pool: {
+      title: "Beheizter Pool 8 × 4 m – Villa Luxury Ulika",
+      description: "Privater Pool, 8 × 4 m, im eingezäunten Hof der Villa Luxury Ulika in Vodnjan.",
+    },
+    family: {
+      title: "Familie – Villa Luxury Ulika",
+      description: "Kinderbett, Spielzeug, Hochstuhl und die weitere Familienausstattung der Villa Luxury Ulika.",
+    },
   },
   it: {
     home: {
@@ -162,6 +192,14 @@ const copy: Record<Locale, Record<SeoPage, { title: string; description: string 
     events: {
       title: "Feste – Villa Luxury Ulika",
       description: "Pacchetti per feste a Villa Luxury Ulika a Vodnjan.",
+    },
+    pool: {
+      title: "Piscina riscaldata 8 × 4 m – Villa Luxury Ulika",
+      description: "Piscina privata di 8 × 4 m nel cortile recintato di Villa Luxury Ulika a Vodnjan.",
+    },
+    family: {
+      title: "Famiglia – Villa Luxury Ulika",
+      description: "Culla, giochi, seggiolone e gli altri contenuti per famiglie di Villa Luxury Ulika.",
     },
   },
 };

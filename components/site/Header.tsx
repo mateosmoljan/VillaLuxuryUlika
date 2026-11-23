@@ -50,7 +50,7 @@ export default function Header({
               key={item.href}
               href={item.href}
               aria-current={pathname === item.href ? "page" : undefined}
-              className={`text-sm font-semibold ${pathname === item.href ? "text-clay" : "text-ink hover:text-olive"}`}
+              className={`text-sm font-semibold transition motion-reduce:transition-none ${pathname === item.href ? "text-clay" : "text-ink hover:text-olive"}`}
             >
               {item.label}
             </Link>

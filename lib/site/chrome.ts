@@ -17,6 +17,7 @@ export type Chrome = {
   seePrices: string;
   guidesTitle: string;
   guidesLead: string;
+  pagesTitle: string;
   poolGuideTitle: string;
   poolGuideText: string;
   familyGuideTitle: string;
@@ -94,6 +95,7 @@ export const chrome: Record<Locale, Chrome> = {
     seePrices: "Otvori cjenik",
     guidesTitle: "Iz dokumenata",
     guidesLead: "Dva kratka vodiča iz onoga što je opisano za vilu.",
+    pagesTitle: "Stranice",
     poolGuideTitle: "Grijani bazen 8 × 4 m",
     poolGuideText: "Datumi grijanja, navlaka i ograđeno dvorište.",
     familyGuideTitle: "Kutak za djecu",
@@ -183,6 +185,7 @@ export const chrome: Record<Locale, Chrome> = {
     seePrices: "Open the price list",
     guidesTitle: "From the documents",
     guidesLead: "Two short guides taken from what is described for the villa.",
+    pagesTitle: "Pages",
     poolGuideTitle: "Heated pool, 8 × 4 m",
     poolGuideText: "Heating dates, the cover, and the fenced garden.",
     familyGuideTitle: "A corner for children",
@@ -272,6 +275,7 @@ export const chrome: Record<Locale, Chrome> = {
     seePrices: "Preisliste öffnen",
     guidesTitle: "Aus den Unterlagen",
     guidesLead: "Zwei kurze Hinweise aus dem, was für die Villa beschrieben ist.",
+    pagesTitle: "Seiten",
     poolGuideTitle: "Beheizter Pool, 8 × 4 m",
     poolGuideText: "Heiztage, Abdeckung und der eingezäunte Garten.",
     familyGuideTitle: "Ecke für Kinder",
@@ -361,6 +365,7 @@ export const chrome: Record<Locale, Chrome> = {
     seePrices: "Apri il listino",
     guidesTitle: "Dai documenti",
     guidesLead: "Due guide brevi prese da ciò che è descritto per la villa.",
+    pagesTitle: "Pagine",
     poolGuideTitle: "Piscina riscaldata, 8 × 4 m",
     poolGuideText: "Date di riscaldamento, telo e giardino recintato.",
     familyGuideTitle: "Angolo per i bambini",
