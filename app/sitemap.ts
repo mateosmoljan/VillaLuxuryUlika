@@ -1,16 +1,18 @@
 import type { MetadataRoute } from "next";
-import { locales, pageUrl, publicPages } from "@/lib/seo";
+import { siteUrl } from "@/lib/seo";
+
+const locales = ["hr", "en", "de", "it"] as const;
+const paths = ["", "/villa-luxury-ulika", "/pricelist", "/photogallery", "/surroundings", "/contact", "/events", "/guides/pool", "/guides/family"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
-  return publicPages.flatMap((page) =>
-    locales.map((locale) => ({
-      url: pageUrl(locale, page),
-      lastModified,
+  return locales.flatMap((locale) =>
+    paths.map((path) => ({
+      url: `${siteUrl}/${locale}${path}`,
       alternates: {
-        languages: Object.fromEntries(
-          locales.map((item) => [item, pageUrl(item, page)])
-        ),
+        languages: {
+          ...Object.fromEntries(locales.map((code) => [code, `${siteUrl}/${code}${path}`])),
+          "x-default": `${siteUrl}/en${path}`,
+        },
       },
     }))
   );

@@ -1,209 +1,98 @@
-"use client";
 import IFrameMaps from "@/components/About/iFrameMaps";
-import AvailabilityCalendar from "@/components/AvailabilityCalendar/AvailabilityCalendar";
-import BookYourStayCard from "@/components/BookYourStayCard/BookYourStayCard";
-import FeaturesComponent from "@/components/Features/features";
-import NavPath from "@/components/NavPath/NavPath";
-import PaymentConditions from "@/components/PaymentConditions/PaymentConditions";
-import PriceTable from "@/components/PriceTable/PriceTable";
-import PropertyGallery from "@/components/PropertyGallery/PropertyGallery";
-import { getCategorizationData } from "@/lib/categorization";
-import { getFeaturesData } from "@/lib/features";
-import { getFeaturesTitleData } from "@/lib/features_titles";
-import { getPaymentConditionsData } from "@/lib/paymentConditions";
-import { getPricelistData } from "@/lib/pricelist";
-import { getTitleData } from "@/lib/title";
-import { getVilla_DescriptionData } from "@/lib/Villa_Description";
-import ExpandableDescription from "@/components/About/ExpandableDescription";
-import { useLocale } from "next-intl";
+import Crumbs from "@/components/site/Crumbs";
+import FaqList from "@/components/site/FaqList";
+import InquiryBand from "@/components/site/InquiryBand";
+import OwnerDescription from "@/components/site/OwnerDescription";
+import { Link } from "@/navigation";
+import { getChrome } from "@/lib/site/chrome";
+import { prepareLocale } from "@/lib/site/locale";
+import { pageMetadata } from "@/lib/seo";
 import hr from "@/messages/hr.json";
 import en from "@/messages/en.json";
 import de from "@/messages/de.json";
 import it from "@/messages/it.json";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import type { Metadata } from "next";
 import Markdown from "react-markdown";
 
-function VillaPanorama() {
-  const [showFeatures, setShowFeatures] = useState<boolean>(false);
-  const localeActive = useLocale();
-  const buttons = (
-    { hr, en, de, it }[localeActive] ?? en
-  ).Buttons;
-  const TitleData = getTitleData(localeActive);
-  const CategorizationData = getCategorizationData(localeActive);
-  const Villa_DescriptionData = getVilla_DescriptionData(localeActive);
-  const FeaturesData = getFeaturesData(localeActive);
-  const FeaturesTitleData = getFeaturesTitleData(localeActive);
-  const PricelistData = getPricelistData(localeActive);
-  const PaymentConditionsData = getPaymentConditionsData(localeActive);
+const packs = { hr, en, de, it };
+const groupSizes = [4, 3, 14, 4, 4, 1, 6, 3, 9, 2, 3, 3, 3, 2];
 
-  function handleClose() {
-    setShowFeatures(false);
-  }
-
-  useEffect(() => {
-    if (showFeatures) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto"; // Ensure the overflow is reset when the component unmounts
-    };
-  }, [showFeatures]);
-
-  return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="container">
-        <h1 className="my-12 text-center flex justify-center text-3xl sm:text-4xl font-ExtraBold text-dark_blue_black tracking-wider">
-          {TitleData.data[0].title}
-        </h1>
-        <div className="flex gap-8 flex-col lg:flex-row">
-          <div className="w-full lg:w-2/3 mx-auto">
-            <PropertyGallery />
-            <div className="flex flex-col gap-4">
-              <hr />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {CategorizationData.data.map((item, index) => (
-                  <button
-                    key={index}
-                    className="py-2 rounded-md border-[1px] border-black flex items-center lg:flex-row justify-center gap-2"
-                  >
-                    <span className="tracking-widest uppercase text-xs xl:text-sm ">
-                      {item.title}:
-                    </span>
-                    <span className="font-Bold text-xs xl:text-sm uppercase tracking-widest">
-                      {item.value}
-                    </span>
-                  </button>
-                ))}
-              </div>
-              <hr />
-            </div>
-            <div className="py-10">
-              <ExpandableDescription
-                id="villa-description-more"
-                moreLabel={buttons.Show_more}
-                lessLabel={buttons.Show_less}
-                preview={
-                  <Markdown>
-                    {(Villa_DescriptionData.data[0].des || "").split("\n\n")[0]}
-                  </Markdown>
-                }
-              >
-                <Markdown>
-                  {(Villa_DescriptionData.data[0].des || "")
-                    .split("\n\n")
-                    .slice(1)
-                    .join("\n\n")}
-                </Markdown>
-                <br />
-                <h2 className="text-md font-ExtraBold">
-                  <Markdown>{Villa_DescriptionData.data[0].subtitle}</Markdown>
-                </h2>
-                <Markdown>{Villa_DescriptionData.data[0].des2}</Markdown>
-                <br />
-                <br />
-                <h2 className="font-ExtraBold text-md">
-                  <Markdown>
-                    {Villa_DescriptionData.data[0].subtitle2}
-                  </Markdown>
-                </h2>
-                <Markdown>{Villa_DescriptionData.data[0].des3}</Markdown>
-              </ExpandableDescription>
-            </div>
-            <hr />
-            <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black">
-                {FeaturesTitleData.data[0].title}
-              </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2">
-                {FeaturesData.data.slice(0, 6).map((item, index) => (
-                  <div
-                    key={index}
-                    className={`flex gap-3 items-center ${
-                      index != 4 && index != 5
-                        ? "border-b-[1px] border-[#e5e7eb]"
-                        : ""
-                    }`}
-                  >
-                    {item.icon ? (
-                      <Image src={item.icon} alt={item.icon_alt} />
-                    ) : (
-                      <span
-                        className="inline-block w-6 h-6 shrink-0"
-                        aria-hidden="true"
-                      />
-                    )}
-                    <li className={`py-4 flex flex-col justify-center`}>
-                      {item.titles}
-
-                      <span className="text-sm text-grey">{item.des}</span>
-                    </li>
-                  </div>
-                ))}
-              </ul>
-              <button
-                className="btn-2 mt-3"
-                onClick={() => setShowFeatures(true)}
-              >
-                {FeaturesTitleData.data[0].button}
-              </button>
-              {showFeatures && <FeaturesComponent handleClose={handleClose} />}
-            </div>
-            <hr />
-            {/* <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {PricelistData.data[0].title}
-              </h2>
-              <PriceTable />
-              <p className="text-grey1 text-sm mt-4">
-                {PricelistData.data[0].subtitle}
-              </p>
-              <p className="pt-2 pb-5">{PricelistData.data[0].list?.des}</p>
-              <ul className="list-none gap-2 flex flex-col">
-                <li>✅ {PricelistData.data[0].list?.items.item1}</li>
-                <li>✅ {PricelistData.data[0].list?.items.item2}</li>
-                <li>✅ {PricelistData.data[0].list?.items.item3}</li>
-                <li>✅ {PricelistData.data[0].list?.items.item4}</li>
-              </ul>
-              <p className="pt-5">{PricelistData.data[0].list?.des2}🌿✨</p>
-            </div> */}
-            <hr />
-            <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {PaymentConditionsData.data[0].title}
-              </h2>
-              <PaymentConditions />
-            </div>
-            <hr />
-            <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {TitleData.data[0].title2}
-              </h2>
-              <div className="h-[400px] rounded-md overflow-hidden lg:mb-[40px]">
-                <IFrameMaps />
-              </div>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/3">
-            <div className="mx-auto !sticky top-14 lg:ml-2.5 w-full mb-[40px] lg:mb-auto">
-              <BookYourStayCard />
-            </div>
-          </div>
-        </div>
-        <div className="container py-10 mb-24">
-          <h2 className="block text-center font-bold text-2xl text-dark_blue_black mb-6">
-            {PricelistData.data[0].title}
-          </h2>
-          <AvailabilityCalendar />
-        </div>
-      </div>
-    </section>
-  );
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
+  prepareLocale(params.locale);
+  return pageMetadata(params.locale, "villa");
 }
 
-export default VillaPanorama;
+export default function VillaPage({ params }: { params: { locale: string } }) {
+  const locale = prepareLocale(params.locale);
+  const messages = packs[locale];
+  const features = messages.Villa_Features;
+  const titles = [
+    features.title3, features.title4, features.title5, features.title6, features.title7,
+    features.title8, features.title9, features.title10, features.title11, features.title12,
+    features.title13, features.title14, features.title15, features.title16,
+  ];
+  let cursor = 0;
+  const groups = groupSizes.map((size, index) => {
+    const items = features.card.title.slice(cursor, cursor + size).map((name, offset) => ({
+      name,
+      note: features.card.des[cursor + offset],
+    }));
+    cursor += size;
+    return { title: titles[index], items };
+  });
+  const ui = getChrome(locale);
+  const pay = messages.Payment_conditions;
+  const description = `${messages.Villa_Description.des}\n\n${messages.Villa_Description.des2}\n\n**${messages.Villa_Description.subtitle2}**\n\n${messages.Villa_Description.des3}`;
+  return (
+    <>
+    <article className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <Crumbs locale={locale} home={ui.crumbsHome} items={[{ label: messages.Navigation.navlinks[0] }]} />
+      <p className="mt-4 text-2xl" aria-label={messages.Categorization.title[0]}>⭐⭐⭐⭐⭐</p>
+      <h1 className="mt-2 font-display text-5xl text-olive-deep">{messages.Titles.Villa_Panorama}</h1>
+      <div className="mt-6 max-w-3xl">
+        <OwnerDescription id="villa-description" text={description} moreLabel={messages.Buttons.Show_more} lessLabel={messages.Buttons.Show_less} />
+      </div>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{features.title}</h2>
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        {groups.map((group) => (
+          <section key={group.title} className="rounded-2xl border border-sand p-5">
+            <h3 className="font-display text-2xl">{group.title}</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              {group.items.slice(0, 3).map((item) => (
+                <li key={item.name}><span className="font-medium">{item.name}</span>{item.note ? <span className="block text-ink/65">{item.note}</span> : null}</li>
+              ))}
+            </ul>
+            <details className="mt-2">
+              <summary className="cursor-pointer text-sm font-semibold text-olive">{messages.Buttons.Show_more}</summary>
+              <ul className="mt-2 space-y-2 text-sm">
+                {group.items.map((item) => (
+                  <li key={`${group.title}-${item.name}`}>{item.name}{item.note ? <span className="block text-ink/65">{item.note}</span> : null}</li>
+                ))}
+              </ul>
+            </details>
+          </section>
+        ))}
+      </div>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{pay.title}</h2>
+      <div className="mt-4 max-w-3xl space-y-3 text-ink/85">
+        <Markdown>{pay.des2}</Markdown>
+        <Markdown>{pay.des3}</Markdown>
+        <Markdown>{pay.des4}</Markdown>
+        <Markdown>{pay.des5}</Markdown>
+        <Markdown>{pay.des6}</Markdown>
+        <p className="font-semibold">{pay.title2}</p>
+        <ul className="list-disc pl-5">{pay.methods.map((method) => <li key={method}>{method}</li>)}</ul>
+      </div>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{messages.Map_Location.title}</h2>
+      <div className="mt-4 h-[420px] overflow-hidden rounded-3xl"><IFrameMaps className="h-full" /></div>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{ui.faqTitle}</h2>
+      <div className="mt-4"><FaqList items={ui.faqs} /></div>
+      <p className="mt-8 flex flex-wrap gap-4 text-sm font-semibold text-olive">
+        <Link href="/guides/pool">{ui.poolGuideTitle}</Link>
+        <Link href="/guides/family">{features.title9}</Link>
+      </p>
+    </article>
+    <InquiryBand title={ui.bandTitle} text={ui.bandText} cta={ui.inquiry} />
+    </>
+  );
+}

@@ -32,6 +32,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# host edits when no database is configured
+/data/store.json
+/data/store.json.tmp
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

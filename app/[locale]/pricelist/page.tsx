@@ -1,96 +1,71 @@
-import AvailabilityCalendar from "@/components/AvailabilityCalendar/AvailabilityCalendar";
-import HowToReserve from "@/components/HowToReserve/HowToReserve";
-import NavPath from "@/components/NavPath/NavPath";
-import PaymentConditions from "@/components/PaymentConditions/PaymentConditions";
-import PriceTable from "@/components/PriceTable/PriceTable";
-import SendMessage from "@/components/SendMessage/SendMessage";
-import TouristGuide from "@/components/TouristGuide/TouristGuide";
-import { getPaymentConditionsData } from "@/lib/paymentConditions";
-import { getPricelistData } from "@/lib/pricelist";
-import { getTitleData } from "@/lib/title";
-import { useLocale, useTranslations } from "next-intl";
+import Crumbs from "@/components/site/Crumbs";
+import FaqList from "@/components/site/FaqList";
+import InquiryBand from "@/components/site/InquiryBand";
+import OwnerDescription from "@/components/site/OwnerDescription";
+import PriceCalendar from "@/components/site/PriceCalendar";
+import { getChrome } from "@/lib/site/chrome";
+import { getCopy } from "@/lib/site/copy";
+import { prepareLocale } from "@/lib/site/locale";
 import { pageMetadata } from "@/lib/seo";
+import { getPublished } from "@/lib/store/publish";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
+import type { Metadata } from "next";
+import Markdown from "react-markdown";
 
-export function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}) {
+const packs = { hr, en, de, it };
+
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  prepareLocale(params.locale);
   return pageMetadata(params.locale, "pricelist");
 }
 
-function Pricelist() {
-  const localeActive = useLocale();
-  const TitleData = getTitleData(localeActive);
-  const PricelistData = getPricelistData(localeActive);
-  const PaymentConditionsData = getPaymentConditionsData(localeActive);
-  const p = useTranslations("Pricelist.list");
-  const t = useTranslations("How_Reserve");
+export default async function PricePage({ params }: { params: { locale: string } }) {
+  const locale = prepareLocale(params.locale);
+  const messages = packs[locale];
+  const ui = getChrome(locale);
+  const { prices } = await getPublished(locale);
+  const pay = messages.Payment_conditions;
+  const steps = [messages.How_Reserve.steps.title, messages.How_Reserve.steps.title2, messages.How_Reserve.steps.title3];
+  const stepText = [messages.How_Reserve.steps.des, messages.How_Reserve.steps.des2, messages.How_Reserve.steps.des3];
   return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="">
-        <div className="mt-12 pb-28 container">
-          <h1 className="font-ExtraBold text-center text-4xl text-dark_blue_black mb-12 tracking-wider">
-            {TitleData.data[0].title4}
-          </h1>
-          {/* <PriceTable />
-          <p className="text-grey1 text-sm mt-4">
-            {PricelistData.data[0].subtitle}
-          </p> */}
-          <AvailabilityCalendar />
-
-          {/* <p className="pt-2 pb-5">{p("des")}</p>
-          <ul className="list-none gap-2 flex flex-col">
-            <li>✅ {p("inner_list.item1")}</li>
-            <li>✅ {p("inner_list.item2")}</li>
-            <li>✅ {p("inner_list.item3")}</li>
-            <li>✅ {p("inner_list.item4")}</li>
-          </ul>
-          <p className="pt-5">{p("des2")}🌿✨</p> */}
-        </div>
-        <div className="py-10 bg-gray-100">
-          <div className="container">
-            <h2 className="text-yellow font-semibold uppercase mb-2 tracking-widest">
-              {PaymentConditionsData.data[0].subtitle}
-            </h2>
-            <h2 className="font-bold text-3xl text-dark_blue_black mb-4">
-              {PaymentConditionsData.data[0].title}
-            </h2>
-            <PaymentConditions />
-          </div>
-        </div>
-        {/* <div className="py-10 container">
-          <h2 className="text-pink font-semibold uppercase mb-2 tracking-widest">
-            {TitleData.data[0].subtitle}
-          </h2>
-          <h2 className="block font-bold text-3xl text-dark_blue_black mb-10 ">
-            {TitleData.data[0].title3}
-          </h2>
-          <div className="pt-2">
-            <AvailabilityCalendar />
-          </div>
-        </div> */}
-        <div className="py-10 bg-gray-100">
-          <div className="container">
-            <h2 className="text-yellow font-semibold uppercase mb-2 tracking-widest">
-              {t("subtitle")}
-            </h2>
-            <h2 className="block font-bold text-3xl text-dark_blue_black mb-10 ">
-              {t("title")}
-            </h2>
-            <HowToReserve />
-          </div>
-        </div>
-        <div>
-          <SendMessage />
-        </div>
+    <>
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <Crumbs locale={locale} home={ui.crumbsHome} items={[{ label: messages.Navigation.navlinks[1] }]} />
+      <h1 className="mt-4 font-display text-5xl text-olive-deep">{messages.Titles.Price_list}</h1>
+      <p className="mt-3 max-w-3xl text-ink/75">{messages.Pricelist.subtitle}</p>
+      <div className="mt-8 rounded-3xl border border-sand p-3 sm:p-5">
+        <PriceCalendar copy={getCopy(locale)} locale={locale} days={prices} chrome={ui} />
       </div>
-      <div className="mb-24">
-        <TouristGuide />
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{pay.title}</h2>
+      <div className="mt-4 max-w-3xl space-y-3">
+        <Markdown>{pay.des2}</Markdown>
+        <Markdown>{pay.des3}</Markdown>
+        <Markdown>{pay.des4}</Markdown>
+        <Markdown>{pay.des5}</Markdown>
+        <Markdown>{pay.des6}</Markdown>
+        <p className="font-semibold">{pay.title2}</p>
+        <ul className="flex flex-wrap gap-2">
+          {pay.methods.map((method) => (
+            <li key={method} className="rounded-full border border-sand px-3 py-1 text-sm">{method}</li>
+          ))}
+        </ul>
       </div>
-    </section>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{messages.How_Reserve.title}</h2>
+      <ol className="mt-4 grid gap-3">
+        {steps.map((title, index) => (
+          <li key={title} className="rounded-2xl bg-paper p-4">
+            <h3 className="font-display text-2xl">{index + 1}. {title}</h3>
+            <OwnerDescription id={`price-step-${index}`} text={stepText[index]} moreLabel={messages.Buttons.Show_more} lessLabel={messages.Buttons.Show_less} />
+          </li>
+        ))}
+      </ol>
+      <h2 className="mt-12 font-display text-4xl text-olive-deep">{ui.faqTitle}</h2>
+      <div className="mt-4"><FaqList items={ui.faqs} /></div>
+    </div>
+    <InquiryBand title={ui.bandTitle} text={ui.bandText} cta={ui.inquiry} />
+    </>
   );
 }
-
-export default Pricelist;

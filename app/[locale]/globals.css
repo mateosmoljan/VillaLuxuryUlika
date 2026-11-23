@@ -14,6 +14,33 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .lightbox {
+    animation: none;
+  }
+}
+
+.lightbox {
+  animation: lightbox-in 0.2s ease;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background: #f6f1e8;
+  color: #2c2824;
+}
+
 *,
 ::before,
 ::after {
@@ -28,7 +55,7 @@ ul {
 
 a {
   text-decoration: none;
-  @apply text-yellow;
+  color: inherit;
 }
 
 input,

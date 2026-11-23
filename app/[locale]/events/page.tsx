@@ -2,14 +2,19 @@ import NavPath from "@/components/NavPath/NavPath";
 import { Link } from "@/navigation";
 import React from "react";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
 import { pageMetadata } from "@/lib/seo";
+import { prepareLocale } from "@/lib/site/locale";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 
 export function generateMetadata({
   params,
 }: {
   params: { locale: string };
 }) {
+  prepareLocale(params.locale);
   return pageMetadata(params.locale, "events");
 }
 import Markdown from "react-markdown";
@@ -55,24 +60,26 @@ const eventAlts: Record<string, string[]> = {
   ],
 };
 
-const EventPackages = () => {
-  const a = useTranslations("Events");
-  const locale = useLocale();
+const packs = { hr, en, de, it };
+
+const EventPackages = ({ params }: { params: { locale: string } }) => {
+  const locale = prepareLocale(params.locale);
+  const a = packs[locale].Events;
   const alts = eventAlts[locale] ?? eventAlts.en;
 
   // Use the static packages array defined above
   const packages: { title: string; details: string[]; price: string }[] =
-    a.raw("packages");
+    "packages" in a ? a.packages : [];
 
   return (
     <section className="pt-16 md:pt-14 min-h-screen mb-36 ">
       <NavPath />
       <div className="max-w-6xl mx-auto  mt-12 mb-10 px-4">
         <h1 className=" mb-6 text-center mt-12 font-ExtraBold text-4xl text-dark_blue_black tracking-wider">
-          {a("title")}
+          {a.title}
         </h1>
         <p className="text-gray-600 mb-12 text-center">
-          <Markdown>{a("subtitle")}</Markdown>
+          <Markdown>{a.subtitle}</Markdown>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {packages.map(
@@ -100,7 +107,7 @@ const EventPackages = () => {
                     {pkg.price}
                   </p> */}
                   <Link href="/contact" className="btn justify-center">
-                    {a("button")}
+                    {a.button}
                   </Link>
                 </div>
               </div>
@@ -111,9 +118,9 @@ const EventPackages = () => {
           <div className="flex md:flex-row gap-6 flex-col justify-between border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition duration-300">
             <div>
               <h3 className="text-xl font-bold text-gray-700 mb-4">
-                {a("p4_title")}
+                {a.p4_title}
               </h3>
-              <p className="text-gray-600 space-y-2 mb-6">{a("p4_des")}</p>
+              <p className="text-gray-600 space-y-2 mb-6">{a.p4_des}</p>
               <p className="mt-4">
                 <a
                   href="https://www.facebook.com/share/1BKZu6AJjK/?mibextid=wwXIfr"
@@ -130,7 +137,7 @@ const EventPackages = () => {
                 href="/contact"
                 className="btn justify-center min-w-[220px] mt-4 md:mt-0"
               >
-                {a("button")}
+                {a.button}
               </Link>
             </div>
           </div>
