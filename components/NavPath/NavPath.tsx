@@ -1,7 +1,18 @@
 "use client";
 import { Link, usePathname } from "@/navigation";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { FaHome } from "react-icons/fa";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
+
+const crumbs = {
+  hr: hr.Breadcrumb,
+  en: en.Breadcrumb,
+  de: de.Breadcrumb,
+  it: it.Breadcrumb,
+} as const;
 
 type Props = {
   homePage?: boolean;
@@ -10,9 +21,9 @@ type Props = {
 function NavPath({ homePage = false }: Props) {
   const pathname = usePathname();
   const locale = useLocale();
-  const labels = useTranslations("Breadcrumb");
-  const segment = pathname.split("/").filter(Boolean)[0];
-  const label = segment ? labels(segment) : "";
+  const labels = crumbs[locale as keyof typeof crumbs] ?? crumbs.en;
+  const segment = pathname.split("/").filter(Boolean)[0] as keyof typeof labels;
+  const label = segment ? labels[segment] ?? segment : "";
 
   return (
     <div className="b bg-gray-100 py-3 px-4 sm:px-8">
