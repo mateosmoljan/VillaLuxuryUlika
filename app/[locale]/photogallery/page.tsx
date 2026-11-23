@@ -1,32 +1,37 @@
-import ShowcaseGallery from "@/components/Gallery/ShowcaseGallery";
-import ShowcaseGallery2 from "@/components/Gallery/ShowcaseGallery2";
-import NavPath from "@/components/NavPath/NavPath";
-import SendMessage from "@/components/SendMessage/SendMessage";
-import { useTranslations } from "next-intl";
+import Photo from "@/components/site/Photo";
+import { prepareLocale } from "@/lib/site/locale";
+import { pageMetadata } from "@/lib/site/seo";
+import { getPublished } from "@/lib/store/publish";
+import type { Metadata } from "next";
 
-function Photogallery() {
-  const t = useTranslations("Titles");
-  return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="">
-        <h2 className="mt-12 font-ExtraBold text-center text-4xl text-dark_blue_black tracking-wider">
-          {t("Photogallery")}
-        </h2>
-        <div>
-          <div>
-            <ShowcaseGallery />
-          </div>
-        </div>
-        <div>
-          <ShowcaseGallery2 />
-        </div>
-        <div className="mb-24">
-          <SendMessage />
-        </div>
-      </div>
-    </section>
-  );
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const locale = prepareLocale(params.locale);
+  const { copy } = await getPublished(locale);
+  return pageMetadata(locale, "/photogallery", copy.gallery.title, copy.gallery.intro);
 }
 
-export default Photogallery;
+export default async function GalleryPage({ params }: { params: { locale: string } }) {
+  const locale = prepareLocale(params.locale);
+  const { copy, gallery } = await getPublished(locale);
+  return (
+    <div className="mx-auto max-w-6xl px-5 py-12">
+      <p className="text-xs uppercase tracking-[0.2em] text-olive">{copy.gallery.kicker}</p>
+      <h1 className="mt-2 font-display text-5xl text-ink">{copy.gallery.title}</h1>
+      <p className="mt-4 max-w-2xl text-ink/80">{copy.gallery.intro}</p>
+      <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {gallery.map((image) => (
+          <li key={image.src}>
+            <a href={image.src} className="block">
+              <Photo
+                src={image.src}
+                alt={image.alt[locale] ?? image.alt.en}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="aspect-[3/2] rounded-2xl"
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

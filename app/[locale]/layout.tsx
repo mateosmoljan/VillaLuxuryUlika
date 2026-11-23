@@ -1,85 +1,90 @@
 import React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Arbutus_Slab, Poppins } from "next/font/google";
-import Navbar from "@/components/Navigation/Navbar";
-import Footer from "@/components/Footer/Footer";
+import { Cormorant_Garamond, Source_Sans_3 } from "next/font/google";
+import Header from "@/components/site/Header";
+import Footer from "@/components/site/Footer";
+import JsonLd from "@/components/site/JsonLd";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalitics";
+import { prepareLocale } from "@/lib/site/locale";
+import { pageMetadata, siteUrl } from "@/lib/site/seo";
+import { getPublished } from "@/lib/store/publish";
 
-const arbutus = Arbutus_Slab({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-arbutus",
+const display = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  display: "swap",
+  variable: "--font-display",
+  adjustFontFallback: true,
 });
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
-  variable: "--font-poppins",
+const sans = Source_Sans_3({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-sans",
+  adjustFontFallback: true,
 });
 
-export const metadata: Metadata = {
-  title: "Villa Luxury Ulika",
-  description:
-    "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-  icons: {
-    icon: "/assets/images/logo.png",
-  },
-  generator: "Next.js",
-  applicationName: "Accommodation Villa Luxury Ulika",
-  referrer: "origin-when-cross-origin",
-  keywords: ["Accommodation", "Villa Luxury Ulika", "Istria", "Croatia"],
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1.0",
-  openGraph: {
-    type: "website",
-    title: "Accommodation Villa Luxury Ulika - Istria",
-    description:
-      "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-    url: "https://villaluxulika.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    // site: "@YourTwitterHandle",
-    title: "Accommodation Villa Luxury Ulika - Istria",
-    description:
-      "Welcome to Villa Luxury Ulika, your luxurious accommodation in Istria. Experience breathtaking views, modern amenities, and personalized service. ⭐⭐⭐⭐⭐",
-    images: [
-      {
-        url: "https://www.villaluxulika.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F105.07eb8276.jpg&w=3840&q=75",
-        alt: "",
-      },
-    ],
-  },
-  authors: [
-    { name: "Mateo Smoljan" },
-    { name: "Mateo Smoljan", url: "https://boostweb.io" },
-  ],
-  creator: "Mateo Smoljan",
-  publisher: "Mateo Smoljan",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return ["hr", "en", "de", "it"].map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const locale = prepareLocale(params.locale);
+  const { copy } = await getPublished(locale);
+  return {
+    metadataBase: new URL(siteUrl),
+    ...pageMetadata(locale, "", copy.meta.title, copy.meta.description),
+    title: {
+      default: copy.meta.title,
+      template: "%s · Villa Luxury Ulika",
+    },
+    applicationName: "Villa Luxury Ulika",
+    icons: { icon: "/assets/images/logo_fav.jpg" },
+    authors: [{ name: "Mateo Smoljan" }],
+    creator: "Mateo Smoljan",
+    publisher: "Mateo Smoljan",
+    formatDetection: { email: false, address: false, telephone: false },
+  };
+}
+
+export default async function RootLayout({
   children,
-  params: { locale },
+  params: { locale: localeParam },
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const locale = prepareLocale(localeParam);
+  const { copy } = await getPublished(locale);
+  const measurementId = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
+
   return (
-    <html lang={locale}>
-      <GoogleAnalytics />
-      <body
-        className={`${poppins.variable} font-poppins ${arbutus.variable} font-arbutus`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
+    <html lang={locale} className={`${display.variable} ${sans.variable}`}>
+      <body className="bg-paper font-sans text-ink antialiased">
+        <a
+          href="#content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-olive focus:px-4 focus:py-2 focus:text-paper"
+        >
+          {copy.skip}
+        </a>
+        <Header locale={locale} nav={copy.nav} eyebrow={copy.hero.eyebrow} />
+        <div id="content" className="pt-16">
+          {children}
+        </div>
+        <Footer copy={copy} />
+        <JsonLd locale={locale} copy={copy} />
+        {measurementId ? <GoogleAnalytics /> : null}
       </body>
     </html>
   );

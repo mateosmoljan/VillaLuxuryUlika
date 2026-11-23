@@ -57,7 +57,7 @@ function Footer() {
           </h2>
           <ul className="space-y-4">
             <li>Mihovil Smoljan</li>
-            <li>Antonio Smareglia 50, Vodnjan</li>
+            <li>Vodnjan, Istra</li>
             <li>+(385) 95 582 4729</li>
             <li>+(385) 99 873 4770</li>
             <li>villa-ulika-fivestars@gmail.com</li>
