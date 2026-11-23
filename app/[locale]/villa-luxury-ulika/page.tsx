@@ -14,6 +14,7 @@ import { getPaymentConditionsData } from "@/lib/paymentConditions";
 import { getPricelistData } from "@/lib/pricelist";
 import { getTitleData } from "@/lib/title";
 import { getVilla_DescriptionData } from "@/lib/Villa_Description";
+import ExpandableDescription from "@/components/About/ExpandableDescription";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
@@ -22,6 +23,7 @@ import Markdown from "react-markdown";
 function VillaPanorama() {
   const [showFeatures, setShowFeatures] = useState<boolean>(false);
   const localeActive = useLocale();
+  const buttons = useTranslations("Buttons");
   const TitleData = getTitleData(localeActive);
   const CategorizationData = getCategorizationData(localeActive);
   const Villa_DescriptionData = getVilla_DescriptionData(localeActive);
@@ -76,13 +78,22 @@ function VillaPanorama() {
               <hr />
             </div>
             <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {}
-              </h2>
-              <p>
-                <Markdown>{Villa_DescriptionData.data[0].des}</Markdown>
-              </p>
-              <p>
+              <ExpandableDescription
+                id="villa-description-more"
+                moreLabel={buttons("Show_more")}
+                lessLabel={buttons("Show_less")}
+                preview={
+                  <Markdown>
+                    {(Villa_DescriptionData.data[0].des || "").split("\n\n")[0]}
+                  </Markdown>
+                }
+              >
+                <Markdown>
+                  {(Villa_DescriptionData.data[0].des || "")
+                    .split("\n\n")
+                    .slice(1)
+                    .join("\n\n")}
+                </Markdown>
                 <br />
                 <h2 className="text-md font-ExtraBold">
                   <Markdown>{Villa_DescriptionData.data[0].subtitle}</Markdown>
@@ -91,10 +102,12 @@ function VillaPanorama() {
                 <br />
                 <br />
                 <h2 className="font-ExtraBold text-md">
-                  <Markdown>{Villa_DescriptionData.data[0].subtitle2}</Markdown>
+                  <Markdown>
+                    {Villa_DescriptionData.data[0].subtitle2}
+                  </Markdown>
                 </h2>
                 <Markdown>{Villa_DescriptionData.data[0].des3}</Markdown>
-              </p>
+              </ExpandableDescription>
             </div>
             <hr />
             <div className="py-10">

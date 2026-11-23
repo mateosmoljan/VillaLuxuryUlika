@@ -11,7 +11,9 @@
     "Surrondings_sub": "VODNJAN & ISTRIA"
   },
   "Buttons": {
-    "Show_Gallery": "Show Gallery"
+    "Show_Gallery": "Show Gallery",
+    "Show_more": "Show more",
+    "Show_less": "Show less"
   },
   "Navigation": {
     "navlinks": [
