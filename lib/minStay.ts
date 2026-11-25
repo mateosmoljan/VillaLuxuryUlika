@@ -61,6 +61,19 @@ export function minimumStayMessage(locale: string, nights: number) {
   return `The minimum stay for these dates is ${nights} ${word}.`;
 }
 
+/** Shown for the selected arrival, including when the stay is already long enough. */
+export function minimumStayHint(locale: string, nights: number) {
+  const word = nightWord(locale, nights);
+  if (locale === "hr") return `Minimalni boravak: ${nights} ${word}.`;
+  if (locale === "de") return `Mindestaufenthalt: ${nights} ${word}.`;
+  if (locale === "it") return `Soggiorno minimo: ${nights} ${word}.`;
+  return `Minimum stay: ${nights} ${word}.`;
+}
+
+export function nightsLabel(locale: string, count: number) {
+  return `${count} ${nightWord(locale, count)}`;
+}
+
 function nightWord(locale: string, count: number) {
   if (locale === "hr") return count % 10 === 1 && count % 100 !== 11 ? "noć" : "noći";
   if (locale === "de") return count === 1 ? "Nacht" : "Nächte";
