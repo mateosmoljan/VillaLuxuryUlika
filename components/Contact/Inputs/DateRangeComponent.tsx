@@ -49,6 +49,19 @@ function DataRangeComponent() {
   const [calendarWidth, setCalendarWidth] = useState<string>("vertical");
 
   useEffect(() => {
+    const query = new URLSearchParams(window.location.search);
+    const arrival = query.get("arrival");
+    const departure = query.get("departure");
+    if (!arrival || !departure || !/^\d{4}-\d{2}-\d{2}$/.test(arrival)) return;
+    setState([{
+      startDate: new Date(`${arrival}T00:00:00`),
+      endDate: new Date(`${departure}T00:00:00`),
+      key: "selection",
+    }]);
+    setActivateDate(true);
+  }, []);
+
+  useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
         dateRangeRef.current &&

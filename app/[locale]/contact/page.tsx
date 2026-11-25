@@ -1,42 +1,26 @@
-import IFrameMaps from "@/components/About/iFrameMaps";
 import ContactForm from "@/components/Contact/ContactForm";
 import ContactInfo from "@/components/Contact/ContactInfo";
-import NavPath from "@/components/NavPath/NavPath";
-import { useTranslations } from "next-intl";
+import IFrameMaps from "@/components/About/iFrameMaps";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 import { pageMetadata } from "@/lib/seo";
-
-export function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  return pageMetadata(params.locale, "contact");
-}
-
-function Contact() {
-  const c = useTranslations("Contact");
+import type { Metadata } from "next";
+const packs = { hr, en, de, it };
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata { return pageMetadata(params.locale, "contact"); }
+export default function Inquiry({ params }: { params: { locale: string } }) {
+  const locale = params.locale === "hr" || params.locale === "de" || params.locale === "it" ? params.locale : "en";
+  const messages = packs[locale];
   return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="container">
-        <h1 className="mt-12 font-ExtraBold text-center text-4xl text-dark_blue_black mb-12 tracking-wider">
-          {c("title")}
-        </h1>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <div className="w-full sm:w-2/3">
-            <ContactForm />
-          </div>
-          <div className="w-full sm:w-1/3">
-            <ContactInfo />
-          </div>
-        </div>
+    <main id="main" className="sec wrap">
+      <h1>{messages.Contact.title}</h1>
+      <div className="cards">
+        <article className="card"><ContactForm /></article>
+        <article className="card"><ContactInfo /></article>
       </div>
-
-      <div className="h-[550px] mt-10 rounded-md overflow-hidden">
-        <IFrameMaps />
-      </div>
-    </section>
+      <h2>{messages.How_Reserve.title}</h2>
+      <div style={{ height: 420 }}><IFrameMaps className="h-full" /></div>
+    </main>
   );
 }
-
-export default Contact;

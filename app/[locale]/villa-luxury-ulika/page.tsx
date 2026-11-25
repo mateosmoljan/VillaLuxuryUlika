@@ -1,209 +1,46 @@
-"use client";
+import { Link } from "@/navigation";
+import { AmenityIcon } from "@/components/brochure/AmenityIcon";
 import IFrameMaps from "@/components/About/iFrameMaps";
-import AvailabilityCalendar from "@/components/AvailabilityCalendar/AvailabilityCalendar";
-import BookYourStayCard from "@/components/BookYourStayCard/BookYourStayCard";
-import FeaturesComponent from "@/components/Features/features";
-import NavPath from "@/components/NavPath/NavPath";
-import PaymentConditions from "@/components/PaymentConditions/PaymentConditions";
-import PriceTable from "@/components/PriceTable/PriceTable";
-import PropertyGallery from "@/components/PropertyGallery/PropertyGallery";
-import { getCategorizationData } from "@/lib/categorization";
-import { getFeaturesData } from "@/lib/features";
-import { getFeaturesTitleData } from "@/lib/features_titles";
-import { getPaymentConditionsData } from "@/lib/paymentConditions";
-import { getPricelistData } from "@/lib/pricelist";
-import { getTitleData } from "@/lib/title";
-import { getVilla_DescriptionData } from "@/lib/Villa_Description";
-import ExpandableDescription from "@/components/About/ExpandableDescription";
-import { useLocale } from "next-intl";
 import hr from "@/messages/hr.json";
 import en from "@/messages/en.json";
 import de from "@/messages/de.json";
 import it from "@/messages/it.json";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import Markdown from "react-markdown";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
 
-function VillaPanorama() {
-  const [showFeatures, setShowFeatures] = useState<boolean>(false);
-  const localeActive = useLocale();
-  const buttons = (
-    { hr, en, de, it }[localeActive] ?? en
-  ).Buttons;
-  const TitleData = getTitleData(localeActive);
-  const CategorizationData = getCategorizationData(localeActive);
-  const Villa_DescriptionData = getVilla_DescriptionData(localeActive);
-  const FeaturesData = getFeaturesData(localeActive);
-  const FeaturesTitleData = getFeaturesTitleData(localeActive);
-  const PricelistData = getPricelistData(localeActive);
-  const PaymentConditionsData = getPaymentConditionsData(localeActive);
-
-  function handleClose() {
-    setShowFeatures(false);
-  }
-
-  useEffect(() => {
-    if (showFeatures) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto"; // Ensure the overflow is reset when the component unmounts
-    };
-  }, [showFeatures]);
-
+const packs = { hr, en, de, it };
+const sizes = [4, 3, 14, 4, 4, 1, 6, 3, 9, 2, 3, 3, 3, 2];
+function localeOf(value: string) { return value === "hr" || value === "de" || value === "it" ? value : "en"; }
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata { return pageMetadata(params.locale, "villa"); }
+export default function Villa({ params }: { params: { locale: string } }) {
+  const locale = localeOf(params.locale);
+  const messages = packs[locale];
+  const features = messages.Villa_Features;
+  const titles = [features.title3, features.title4, features.title5, features.title6, features.title7, features.title8, features.title9, features.title10, features.title11, features.title12, features.title13, features.title14, features.title15, features.title16];
+  let cursor = 0;
+  const groups = sizes.map((size, index) => {
+    const start = cursor;
+    const items = features.card.title.slice(cursor, cursor + size).map((name, offset) => ({ name, note: features.card.des[cursor + offset], index: start + offset }));
+    cursor += size;
+    return { title: titles[index], items };
+  });
+  const pay = messages.Payment_conditions;
+  const text = `${messages.Villa_Description.des}\n\n${messages.Villa_Description.des2}`;
   return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="container">
-        <h1 className="my-12 text-center flex justify-center text-3xl sm:text-4xl font-ExtraBold text-dark_blue_black tracking-wider">
-          {TitleData.data[0].title}
-        </h1>
-        <div className="flex gap-8 flex-col lg:flex-row">
-          <div className="w-full lg:w-2/3 mx-auto">
-            <PropertyGallery />
-            <div className="flex flex-col gap-4">
-              <hr />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {CategorizationData.data.map((item, index) => (
-                  <button
-                    key={index}
-                    className="py-2 rounded-md border-[1px] border-black flex items-center lg:flex-row justify-center gap-2"
-                  >
-                    <span className="tracking-widest uppercase text-xs xl:text-sm ">
-                      {item.title}:
-                    </span>
-                    <span className="font-Bold text-xs xl:text-sm uppercase tracking-widest">
-                      {item.value}
-                    </span>
-                  </button>
-                ))}
-              </div>
-              <hr />
-            </div>
-            <div className="py-10">
-              <ExpandableDescription
-                id="villa-description-more"
-                moreLabel={buttons.Show_more}
-                lessLabel={buttons.Show_less}
-                preview={
-                  <Markdown>
-                    {(Villa_DescriptionData.data[0].des || "").split("\n\n")[0]}
-                  </Markdown>
-                }
-              >
-                <Markdown>
-                  {(Villa_DescriptionData.data[0].des || "")
-                    .split("\n\n")
-                    .slice(1)
-                    .join("\n\n")}
-                </Markdown>
-                <br />
-                <h2 className="text-md font-ExtraBold">
-                  <Markdown>{Villa_DescriptionData.data[0].subtitle}</Markdown>
-                </h2>
-                <Markdown>{Villa_DescriptionData.data[0].des2}</Markdown>
-                <br />
-                <br />
-                <h2 className="font-ExtraBold text-md">
-                  <Markdown>
-                    {Villa_DescriptionData.data[0].subtitle2}
-                  </Markdown>
-                </h2>
-                <Markdown>{Villa_DescriptionData.data[0].des3}</Markdown>
-              </ExpandableDescription>
-            </div>
-            <hr />
-            <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black">
-                {FeaturesTitleData.data[0].title}
-              </h2>
-              <ul className="grid grid-cols-1 sm:grid-cols-2">
-                {FeaturesData.data.slice(0, 6).map((item, index) => (
-                  <div
-                    key={index}
-                    className={`flex gap-3 items-center ${
-                      index != 4 && index != 5
-                        ? "border-b-[1px] border-[#e5e7eb]"
-                        : ""
-                    }`}
-                  >
-                    {item.icon ? (
-                      <Image src={item.icon} alt={item.icon_alt} />
-                    ) : (
-                      <span
-                        className="inline-block w-6 h-6 shrink-0"
-                        aria-hidden="true"
-                      />
-                    )}
-                    <li className={`py-4 flex flex-col justify-center`}>
-                      {item.titles}
-
-                      <span className="text-sm text-grey">{item.des}</span>
-                    </li>
-                  </div>
-                ))}
-              </ul>
-              <button
-                className="btn-2 mt-3"
-                onClick={() => setShowFeatures(true)}
-              >
-                {FeaturesTitleData.data[0].button}
-              </button>
-              {showFeatures && <FeaturesComponent handleClose={handleClose} />}
-            </div>
-            <hr />
-            {/* <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {PricelistData.data[0].title}
-              </h2>
-              <PriceTable />
-              <p className="text-grey1 text-sm mt-4">
-                {PricelistData.data[0].subtitle}
-              </p>
-              <p className="pt-2 pb-5">{PricelistData.data[0].list?.des}</p>
-              <ul className="list-none gap-2 flex flex-col">
-                <li>✅ {PricelistData.data[0].list?.items.item1}</li>
-                <li>✅ {PricelistData.data[0].list?.items.item2}</li>
-                <li>✅ {PricelistData.data[0].list?.items.item3}</li>
-                <li>✅ {PricelistData.data[0].list?.items.item4}</li>
-              </ul>
-              <p className="pt-5">{PricelistData.data[0].list?.des2}🌿✨</p>
-            </div> */}
-            <hr />
-            <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {PaymentConditionsData.data[0].title}
-              </h2>
-              <PaymentConditions />
-            </div>
-            <hr />
-            <div className="py-10">
-              <h2 className="font-bold text-2xl text-dark_blue_black mb-4">
-                {TitleData.data[0].title2}
-              </h2>
-              <div className="h-[400px] rounded-md overflow-hidden lg:mb-[40px]">
-                <IFrameMaps />
-              </div>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/3">
-            <div className="mx-auto !sticky top-14 lg:ml-2.5 w-full mb-[40px] lg:mb-auto">
-              <BookYourStayCard />
-            </div>
-          </div>
-        </div>
-        <div className="container py-10 mb-24">
-          <h2 className="block text-center font-bold text-2xl text-dark_blue_black mb-6">
-            {PricelistData.data[0].title}
-          </h2>
-          <AvailabilityCalendar />
-        </div>
-      </div>
-    </section>
+    <main id="main" className="sec wrap">
+      <p aria-label={messages.Categorization.title[0]}>⭐⭐⭐⭐⭐</p>
+      <h1>{messages.Titles.Villa_Panorama}</h1>
+      <p style={{ whiteSpace: "pre-wrap" }}>{text}</p>
+      <h2>{features.title}</h2>
+      <div className="cards">{groups.map((group) => (
+        <article className="card" key={group.title}><h3>{group.title}</h3><ul>{group.items.map((item) => <li key={item.name} className="amenity-row"><AmenityIcon index={item.index} /><span>{item.name}{item.note ? <span className="muted"> — {item.note}</span> : null}</span></li>)}</ul></article>
+      ))}</div>
+      <h2>{pay.title}</h2>
+      {[pay.des2, pay.des3, pay.des4, pay.des5, pay.des6].map((item) => <p key={item.slice(0, 24)}>{item.replace(/\*\*/g, "")}</p>)}
+      <ul>{pay.methods.map((method) => <li key={method}>{method}</li>)}</ul>
+      <h2>{messages.Map_Location.title}</h2>
+      <div style={{ height: 420 }}><IFrameMaps className="h-full" /></div>
+      <p><Link className="more" href="/guides/pool">{features.card.title[41]}</Link></p>
+    </main>
   );
 }
-
-export default VillaPanorama;

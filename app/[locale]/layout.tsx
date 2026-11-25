@@ -1,24 +1,17 @@
 import React from "react";
 import type { Metadata } from "next";
 import "./globals.css";
-import { Arbutus_Slab, Poppins } from "next/font/google";
-import Navbar from "@/components/Navigation/Navbar";
-import Footer from "@/components/Footer/Footer";
+import "../brochure.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalitics";
 import JsonLd from "@/components/site/JsonLd";
+import Shell from "@/components/brochure/Shell";
 import { siteUrl } from "@/lib/seo";
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
 
-const arbutus = Arbutus_Slab({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-arbutus",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
-  variable: "--font-poppins",
-});
+const packs = { hr, en, de, it };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -81,16 +74,29 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const messages = packs[locale === "hr" || locale === "de" || locale === "it" ? locale : "en"];
+  const links = messages.Navigation.navlinks;
   return (
     <html lang={locale}>
-      <GoogleAnalytics />
-      <body
-        className={`${poppins.variable} font-poppins ${arbutus.variable} font-arbutus`}
-      >
+      {process.env.NEXT_PUBLIC_MEASUREMENT_ID ? <GoogleAnalytics /> : null}
+      <body>
         <JsonLd />
-        <Navbar />
-        {children}
-        <Footer />
+        <Shell
+          locale={locale}
+          inquiry={messages.Navigation.navLinksButton}
+          nav={[
+            { href: "/villa-luxury-ulika", label: links[0] },
+            { href: "/photogallery", label: links[2] },
+            { href: "/pricelist", label: links[1] },
+            { href: "/surroundings", label: links[3] },
+          ]}
+          guides={[
+            { href: "/guides/pool", label: messages.Villa_Features.card.title[41] },
+            { href: "/guides/family", label: messages.Villa_Features.title9 },
+          ]}
+        >
+          {children}
+        </Shell>
       </body>
     </html>
   );

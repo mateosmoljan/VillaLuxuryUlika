@@ -1,41 +1,26 @@
-import ShowcaseGallery from "@/components/Gallery/ShowcaseGallery";
-import ShowcaseGallery2 from "@/components/Gallery/ShowcaseGallery2";
-import NavPath from "@/components/NavPath/NavPath";
-import SendMessage from "@/components/SendMessage/SendMessage";
-import { useTranslations } from "next-intl";
+import { villaPhotoAlt } from "@/lib/photoAlt";
 import { pageMetadata } from "@/lib/seo";
-
-export function generateMetadata({
-  params,
-}: {
-  params: { locale: string };
-}) {
-  return pageMetadata(params.locale, "photogallery");
-}
-
-function Photogallery() {
-  const t = useTranslations("Titles");
+import hr from "@/messages/hr.json";
+import en from "@/messages/en.json";
+import de from "@/messages/de.json";
+import it from "@/messages/it.json";
+import type { Metadata } from "next";
+const packs = { hr, en, de, it };
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata { return pageMetadata(params.locale, "photogallery"); }
+export default function Gallery({ params }: { params: { locale: string } }) {
+  const locale = params.locale === "hr" || params.locale === "de" || params.locale === "it" ? params.locale : "en";
+  const messages = packs[locale];
+  const shots = Array.from({ length: 140 }, (_, index) => index + 1).filter((id) => id !== 108 && id !== 109);
   return (
-    <section className="pt-16 md:pt-14">
-      <NavPath />
-      <div className="">
-        <h1 className="mt-12 font-ExtraBold text-center text-4xl text-dark_blue_black tracking-wider">
-          {t("Photogallery")}
-        </h1>
-        <div>
-          <div>
-            <ShowcaseGallery />
-          </div>
-        </div>
-        <div>
-          <ShowcaseGallery2 />
-        </div>
-        <div className="mb-24">
-          <SendMessage />
-        </div>
+    <main id="main" className="sec wrap">
+      <h1>{messages.Titles.Photogallery}</h1>
+      <div className="bento gal">
+        {shots.map((id) => (
+          <a key={id} className="gi" href={`/assets/images/i/${id}.jpg`}>
+            <img src={`/assets/images/i/${id}.jpg`} alt={villaPhotoAlt(locale, id)} width={640} height={427} loading="lazy" />
+          </a>
+        ))}
       </div>
-    </section>
+    </main>
   );
 }
-
-export default Photogallery;
