@@ -12,6 +12,7 @@ import itLocale from "date-fns/locale/it";
 import { FormControl } from "@mui/material";
 import { useLocale } from "next-intl";
 import { getContactData } from "@/lib/contact";
+import { formatStay, readStay, writeStay } from "@/lib/stay";
 
 interface CustomRange {
   startDate: Date | undefined;
@@ -75,6 +76,30 @@ function DataRangeComponent() {
     }
   }, [state]);
 
+  useEffect(() => {
+    function apply(arrivalIso: string, departureIso: string) {
+      if (!arrivalIso) return;
+      const arrivalDateValue = new Date(`${arrivalIso}T00:00:00`);
+      const departureDateValue = departureIso
+        ? new Date(`${departureIso}T00:00:00`)
+        : arrivalDateValue;
+      setState([{ startDate: arrivalDateValue, endDate: departureDateValue, key: "selection" }]);
+      setActivateDate(true);
+      setArrivalDate(formatStay(arrivalIso, localeActive));
+      if (departureIso) setDepartureDate(formatStay(departureIso, localeActive));
+    }
+    const params = new URLSearchParams(window.location.search);
+    const saved = readStay();
+    apply(params.get("arrival") || saved?.arrival || "", params.get("departure") || saved?.departure || "");
+    function onStay() {
+      const next = readStay();
+      if (!next) return;
+      apply(next.arrival, next.departure);
+    }
+    window.addEventListener("ulika-stay", onStay);
+    return () => window.removeEventListener("ulika-stay", onStay);
+  }, [localeActive]);
+
   const formatDate = (date: Date): string =>
     format(date, datePattern, { locale: pickerLocale });
 
@@ -131,6 +156,7 @@ function DataRangeComponent() {
     <div className="w-full px-2">
       <div className="flex flex-row w-full gap-4">
         <button
+          type="button"
           className="text-grey3 border-solid border-2 bg-white font-Bold font-poppins mb-4 rounded-md justify-between items-center flex w-full py-[8.5px] px-[14px]"
           onClick={handleButtonClick}
         >
@@ -142,6 +168,7 @@ function DataRangeComponent() {
           <FaCalendarAlt />
         </button>
         <button
+          type="button"
           className="text-grey3 border-solid border-2  bg-white font-Bold font-poppins mb-4 rounded-md justify-between items-center flex w-full py-[8.5px] px-[14px]"
           onClick={() => setActiveDateRange(!activeDateRange)}
         >
@@ -161,7 +188,23 @@ function DataRangeComponent() {
           <FormControl required>
             <DateRange
               editableDateInputs={true}
-              onChange={(item) => setState([item.selection as CustomRange])}
+              onChange={(item) => {
+                const selection = item.selection as CustomRange;
+                setState([selection]);
+                if (!selection.startDate) return;
+                const toIso = (date: Date) =>
+                  `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+                const arrivalIso = toIso(selection.startDate);
+                const departureIso = selection.endDate ? toIso(selection.endDate) : "";
+                const saved = readStay();
+                if (saved?.arrival === arrivalIso && (saved?.departure || "") === departureIso) return;
+                writeStay({
+                  arrival: arrivalIso,
+                  departure: departureIso,
+                  adults: saved?.adults || 2,
+                  children: saved?.children || 0,
+                });
+              }}
               moveRangeOnFirstSelection={false}
               ranges={state}
               className="relative bg-white z-20 "

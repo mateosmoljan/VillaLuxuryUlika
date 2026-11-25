@@ -24,6 +24,7 @@
     "dayjs": "^1.11.10",
     "framer-motion": "^10.16.16",
     "hamburger-react": "^2.5.0",
+    "lucide-react": "^1.80.0",
     "mui-tel-input": "^5.1.2",
     "next": "^14.1.0",
     "next-intl": "^3.9.5",

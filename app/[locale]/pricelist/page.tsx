@@ -1,4 +1,4 @@
-import AvailabilityCalendar from "@/components/AvailabilityCalendar/AvailabilityCalendar";
+import StayPlanner from "@/components/StayPlanner/StayPlanner";
 import HowToReserve from "@/components/HowToReserve/HowToReserve";
 import NavPath from "@/components/NavPath/NavPath";
 import PaymentConditions from "@/components/PaymentConditions/PaymentConditions";
@@ -38,7 +38,7 @@ function Pricelist() {
           <p className="text-grey1 text-sm mt-4">
             {PricelistData.data[0].subtitle}
           </p> */}
-          <AvailabilityCalendar />
+          <StayPlanner locale={localeActive} />
 
           {/* <p className="pt-2 pb-5">{p("des")}</p>
           <ul className="list-none gap-2 flex flex-col">
