@@ -2,14 +2,9 @@
 
 import Calendar from "./index";
 import "./style.css";
+import { bookings } from "@/lib/bookings";
 
-export const bookings = [
-  // {
-  //   from: new Date("05-01-2024"),
-  //   to: new Date("07-02-2024"),
-  //   middayCheckout: true,
-  // },
-];
+export { bookings };
 
 function AvailabilityCalendar() {
   return (

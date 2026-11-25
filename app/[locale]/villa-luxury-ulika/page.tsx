@@ -1,6 +1,7 @@
 "use client";
 import IFrameMaps from "@/components/About/iFrameMaps";
-import AvailabilityCalendar from "@/components/AvailabilityCalendar/AvailabilityCalendar";
+import StayPlanner from "@/components/StayPlanner/StayPlanner";
+import { AmenityIcon } from "@/components/Amenities/AmenityIcon";
 import BookYourStayCard from "@/components/BookYourStayCard/BookYourStayCard";
 import FeaturesComponent from "@/components/Features/features";
 import NavPath from "@/components/NavPath/NavPath";
@@ -20,7 +21,6 @@ import hr from "@/messages/hr.json";
 import en from "@/messages/en.json";
 import de from "@/messages/de.json";
 import it from "@/messages/it.json";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
@@ -130,14 +130,7 @@ function VillaPanorama() {
                         : ""
                     }`}
                   >
-                    {item.icon ? (
-                      <Image src={item.icon} alt={item.icon_alt} />
-                    ) : (
-                      <span
-                        className="inline-block w-6 h-6 shrink-0"
-                        aria-hidden="true"
-                      />
-                    )}
+                    <AmenityIcon index={index} />
                     <li className={`py-4 flex flex-col justify-center`}>
                       {item.titles}
 
@@ -199,7 +192,7 @@ function VillaPanorama() {
           <h2 className="block text-center font-bold text-2xl text-dark_blue_black mb-6">
             {PricelistData.data[0].title}
           </h2>
-          <AvailabilityCalendar />
+          <StayPlanner locale={localeActive} />
         </div>
       </div>
     </section>
