@@ -3,10 +3,18 @@ import SSL from "@/public/assets/images/ssl.png";
 import "./footer.css";
 import { Link } from "@/navigation";
 import FooterSvg from "./FooterSvg";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+
+const creditPrefix = {
+  hr: "Izradio",
+  en: "Made by",
+  de: "Erstellt von",
+  it: "Realizzato da",
+} as const;
 
 function Footer() {
   const t = useTranslations("Footer");
+  const locale = useLocale() as keyof typeof creditPrefix;
   return (
     <section className="flex relative justify-center bg-dark_blue_black xl:px-20 pb-10 xl:pb-20 ">
       <FooterSvg />
@@ -19,6 +27,17 @@ function Footer() {
               {t("year").replace(/^©\d{4}/, "")}
             </p>
             <p>{t("rights")}</p>
+            <p className="text-xs text-white/60">
+              {creditPrefix[locale] ?? creditPrefix.en}{" "}
+              <a
+                href="https://webotok.com"
+                target="_blank"
+                rel="noopener"
+                className="!text-white/70 hover:!text-yellow"
+              >
+                Webotok
+              </a>
+            </p>
             {/* <p className="">
               <a
                 href="https://www.boostweb.io"
