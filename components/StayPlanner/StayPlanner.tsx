@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { bookings } from "@/lib/bookings";
 import { dailyPrices } from "@/lib/dailyPrices";
+import { minimumNights, minimumStayMessage } from "@/lib/minStay";
 import { formatStay, readStay, writeStay, type StayPick } from "@/lib/stay";
 import { Link } from "@/navigation";
 import hr from "@/messages/hr.json";
@@ -255,7 +256,10 @@ export default function StayPlanner({ locale }: { locale: string }) {
   }, [arrival, departure]);
 
   const priced = nights.map((date) => known.get(date)?.price ?? null);
-  const complete = nights.length > 0 && priced.every((price) => price != null);
+  const requiredNights = arrival ? minimumNights(arrival) : 0;
+  const tooShort = nights.length > 0 && nights.length < requiredNights;
+  const minStayError = tooShort ? minimumStayMessage(locale, requiredNights) : "";
+  const complete = !tooShort && nights.length > 0 && priced.every((price) => price != null);
   const sum = complete ? priced.reduce<number>((total, price) => total + (price ?? 0), 0) : null;
   const advance = sum == null ? null : Math.round(sum * 0.3);
   const rest = sum == null || advance == null ? null : sum - advance;
@@ -308,6 +312,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
         <li><i className="sw selected" /> {text.selected}</li>
       </ul>
       {notice ? <p role="status">{notice}</p> : null}
+      {minStayError ? <p className="min-stay" role="alert">{minStayError}</p> : null}
       <div className="calc">
         <p className="calc-title">{text.in} / {text.out}</p>
         <div className="calc-grid">
@@ -364,22 +369,31 @@ export default function StayPlanner({ locale }: { locale: string }) {
             ))}
           </ul>
         ) : null}
-        <p className="total">
-          <span>{text.total}</span>
-          <strong>{sum == null ? text.ask : `${sum} €`}</strong>
-        </p>
-        {advance != null && rest != null ? (
+        {minStayError ? <p className="min-stay" role="alert">{minStayError}</p> : null}
+        {!tooShort && nights.length > 0 ? (
+          <p className="total">
+            <span>{text.total}</span>
+            <strong>{sum == null ? text.ask : `${sum} €`}</strong>
+          </p>
+        ) : null}
+        {!tooShort && advance != null && rest != null ? (
           <p className="split">
             {text.advance}: {advance} € · {text.rest}: {rest} €
           </p>
         ) : null}
         <p className="note">{depositNote}</p>
-        <Link
-          href={`/contact?arrival=${encodeURIComponent(arrival)}&departure=${encodeURIComponent(departure)}`}
-          className="btn justify-center mt-3"
-        >
-          {pack.Villa_BookStay.button}
-        </Link>
+        {tooShort ? (
+          <button type="button" className="btn justify-center mt-3" disabled>
+            {pack.Villa_BookStay.button}
+          </button>
+        ) : (
+          <Link
+            href={`/contact?arrival=${encodeURIComponent(arrival)}&departure=${encodeURIComponent(departure)}`}
+            className="btn justify-center mt-3"
+          >
+            {pack.Villa_BookStay.button}
+          </Link>
+        )}
       </div>
     </div>
   );
