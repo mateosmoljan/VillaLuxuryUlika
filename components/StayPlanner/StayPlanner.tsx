@@ -176,6 +176,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
   const [adults, setAdults] = useState(2);
   const [children, setChildren] = useState(0);
   const [notice, setNotice] = useState("");
+  const [hover, setHover] = useState("");
 
   useEffect(() => {
     const saved = readStay();
@@ -238,6 +239,14 @@ export default function StayPlanner({ locale }: { locale: string }) {
     publish({ arrival, departure: date, ...guests });
   }
 
+  function rangeIsOpen(from: string, to: string) {
+    if (!from || !to || to <= from) return false;
+    for (let cursorDate = from; cursorDate < to; cursorDate = addDay(cursorDate)) {
+      if (known.get(cursorDate)?.closed) return false;
+    }
+    return true;
+  }
+
   const nights = useMemo(() => {
     if (!arrival || !departure || departure <= arrival) return [];
     const list: string[] = [];
@@ -265,14 +274,14 @@ export default function StayPlanner({ locale }: { locale: string }) {
   return (
     <div className="stay-cal">
       <div className="cal-nav">
-        <button className="btn-2" type="button" onClick={() => shift(-1)} disabled={atStart} aria-label={text.prev}>
+        <button className="cal-arrow" type="button" onClick={() => shift(-1)} disabled={atStart} aria-label={text.prev}>
           ‹
         </button>
-        <button className="btn-2" type="button" onClick={() => shift(1)} disabled={atEnd} aria-label={text.next}>
+        <button className="cal-arrow" type="button" onClick={() => shift(1)} disabled={atEnd} aria-label={text.next}>
           ›
         </button>
       </div>
-      <div className="cal-months">
+      <div className="cal-months" onMouseLeave={() => setHover("")}>
         {months.map((month) => (
           <Month
             key={`${month.year}-${month.month}`}
@@ -282,9 +291,12 @@ export default function StayPlanner({ locale }: { locale: string }) {
             today={today}
             arrival={arrival}
             departure={departure}
+            hover={hover}
+            preview={!departure && rangeIsOpen(arrival, hover)}
             known={known}
             labels={text}
             onChoose={choose}
+            onHover={setHover}
           />
         ))}
       </div>
@@ -297,7 +309,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
       </ul>
       {notice ? <p role="status">{notice}</p> : null}
       <div className="calc">
-        <p className="font-bold mb-3">{text.in} / {text.out}</p>
+        <p className="calc-title">{text.in} / {text.out}</p>
         <div className="calc-grid">
           <label>
             {text.in}
@@ -340,7 +352,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
             </select>
           </label>
         </div>
-        <p className="mt-3 text-sm">
+        <p className="stay-meta">
           {nights.length} {text.nights} · {text.adults} {adults} · {text.children} {children}
         </p>
         {nights.length > 0 ? (
@@ -352,15 +364,16 @@ export default function StayPlanner({ locale }: { locale: string }) {
             ))}
           </ul>
         ) : null}
-        <p>
-          <b>{text.total}:</b> {sum == null ? text.ask : `${sum} €`}
+        <p className="total">
+          <span>{text.total}</span>
+          <strong>{sum == null ? text.ask : `${sum} €`}</strong>
         </p>
         {advance != null && rest != null ? (
-          <p>
+          <p className="split">
             {text.advance}: {advance} € · {text.rest}: {rest} €
           </p>
         ) : null}
-        <p className="text-sm text-grey">{depositNote}</p>
+        <p className="note">{depositNote}</p>
         <Link
           href={`/contact?arrival=${encodeURIComponent(arrival)}&departure=${encodeURIComponent(departure)}`}
           className="btn justify-center mt-3"
@@ -373,7 +386,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
 }
 
 function Month({
-  year, month, locale, today, arrival, departure, known, labels, onChoose,
+  year, month, locale, today, arrival, departure, hover, preview, known, labels, onChoose, onHover,
 }: {
   year: number;
   month: number;
@@ -381,9 +394,12 @@ function Month({
   today: string;
   arrival: string;
   departure: string;
+  hover: string;
+  preview: boolean;
   known: Map<string, Day>;
   labels: (typeof copy)[keyof typeof copy];
   onChoose: (date: string) => void;
+  onHover: (date: string) => void;
 }) {
   const first = new Date(year, month - 1, 1);
   const offset = (first.getDay() + 6) % 7;
@@ -406,6 +422,7 @@ function Month({
           const closed = Boolean(row?.closed);
           const unpriced = !closed && (row ? row.price == null : true);
           const selected = arrival && departure ? date >= arrival && date <= departure : date === arrival;
+          const inPreview = preview && date >= arrival && date <= hover;
           const state = past ? labels.past : closed ? labels.booked : unpriced ? labels.ask : labels.free;
           const className = [
             "day",
@@ -414,6 +431,7 @@ function Month({
             !past && !closed && unpriced ? "ask" : "",
             !past && !closed && !unpriced ? "free" : "",
             date === today ? "today" : "",
+            inPreview ? "preview" : "",
             selected ? "selected" : "",
           ]
             .filter(Boolean)
@@ -428,10 +446,12 @@ function Month({
               aria-label={`${formatStay(date, locale)}, ${date === today ? labels.today : state}${
                 row?.price != null ? `, ${row.price} €` : ""
               }`}
+              onMouseEnter={() => onHover(past || closed ? "" : date)}
+              onFocus={() => onHover(past || closed ? "" : date)}
               onClick={() => onChoose(date)}
             >
-              {day}
-              {row?.price != null && !past && !closed ? <small>{row.price}</small> : null}
+              <span className="num">{day}</span>
+              {row?.price != null && !past && !closed ? <small>{row.price} €</small> : null}
             </button>
           );
         })}
