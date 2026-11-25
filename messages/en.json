@@ -315,8 +315,7 @@
     "methods": [
       "Cash (upon arrival)",
       "Bank transfer (internet banking)",
-      "Revolut",
-      "PayPal"
+      "Revolut"
     ]
   },
   "Map_Location": {
@@ -337,7 +336,7 @@
       "title": "Send an Inquiry",
       "des": "Please send us an inquiry via the contact form, email, or phone with all the necessary information and your preferred vacation period. Expect a quick response and our best offer.",
       "title2": "Reservation Confirmation (Payment)",
-      "des2": "To confirm your booking, a 30% advance payment is required, and the remaining amount upon arrival. After completing the payment, please notify us, and we’ll send you a booking and payment confirmation. There are two advance payment options: bank transfer or PayPal (debit and credit cards).",
+      "des2": "To confirm your booking, a 30% advance payment is required, and the remaining amount upon arrival. After completing the payment, please notify us, and we’ll send you a booking and payment confirmation. Advance payment is made by bank transfer.",
       "subtitle": "Bank Transfer",
       "span": "Account Holder",
       "span2": "Address",
