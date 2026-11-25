@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { bookings } from "@/lib/bookings";
+import type { CalendarPatches } from "@/lib/calendarData";
 import { dailyPrices } from "@/lib/dailyPrices";
 import { minimumNights, minimumStayMessage } from "@/lib/minStay";
 import { formatStay, readStay, writeStay, type StayPick } from "@/lib/stay";
@@ -12,7 +13,7 @@ import de from "@/messages/de.json";
 import it from "@/messages/it.json";
 import "./stay.css";
 
-type Day = { date: string; price: number | null; closed: boolean };
+type Day = { date: string; price: number | null; closed: boolean; minNights: number | null };
 
 const copy = {
   hr: {
@@ -122,7 +123,7 @@ function weekdays(locale: string) {
   return Array.from({ length: 7 }, (_, index) => formatter.format(new Date(2024, 0, 1 + index)));
 }
 
-function stayDays(): Day[] {
+function stayDays(patches: CalendarPatches): Day[] {
   const closed = new Set<string>();
   bookings.forEach((booking) => {
     const start = new Date(booking.from);
@@ -135,11 +136,15 @@ function stayDays(): Day[] {
       cursor.setDate(cursor.getDate() + 1);
     }
   });
-  return Object.entries(dailyPrices).map(([date, price]) => ({
-    date,
-    price,
-    closed: closed.has(date),
-  }));
+  return Object.entries(dailyPrices).map(([date, price]) => {
+    const patch = patches[date];
+    return {
+      date,
+      price: patch && "price" in patch ? patch.price ?? null : price,
+      closed: closed.has(date) || Boolean(patch?.closed),
+      minNights: patch?.minNights ?? null,
+    };
+  });
 }
 
 function lastPricedMonth() {
@@ -161,7 +166,8 @@ export default function StayPlanner({ locale }: { locale: string }) {
   const text = copy[locale as keyof typeof copy] ?? copy.en;
   const pack = messages[locale as keyof typeof messages] ?? en;
   const depositNote = pack.Payment_conditions.des3;
-  const days = useMemo(() => stayDays(), []);
+  const [patches, setPatches] = useState<CalendarPatches>({});
+  const days = useMemo(() => stayDays(patches), [patches]);
   const known = useMemo(() => {
     const map = new Map<string, Day>();
     days.forEach((day) => map.set(day.date, day));
@@ -178,6 +184,20 @@ export default function StayPlanner({ locale }: { locale: string }) {
   const [children, setChildren] = useState(0);
   const [notice, setNotice] = useState("");
   const [hover, setHover] = useState("");
+
+  useEffect(() => {
+    let ignore = false;
+    fetch("/api/calendar", { cache: "no-store" })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { patches?: CalendarPatches } | null) => {
+        if (ignore || !data?.patches || Object.keys(data.patches).length === 0) return;
+        setPatches(data.patches);
+      })
+      .catch(() => undefined);
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   useEffect(() => {
     const saved = readStay();
@@ -256,7 +276,8 @@ export default function StayPlanner({ locale }: { locale: string }) {
   }, [arrival, departure]);
 
   const priced = nights.map((date) => known.get(date)?.price ?? null);
-  const requiredNights = arrival ? minimumNights(arrival) : 0;
+  const arrivalRule = arrival ? known.get(arrival)?.minNights : null;
+  const requiredNights = arrival ? (arrivalRule != null ? arrivalRule : minimumNights(arrival)) : 0;
   const tooShort = nights.length > 0 && nights.length < requiredNights;
   const minStayError = tooShort ? minimumStayMessage(locale, requiredNights) : "";
   const complete = !tooShort && nights.length > 0 && priced.every((price) => price != null);
