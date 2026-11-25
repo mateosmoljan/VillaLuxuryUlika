@@ -421,8 +421,13 @@ function Month({
           const past = date < today;
           const closed = Boolean(row?.closed);
           const unpriced = !closed && (row ? row.price == null : true);
-          const selected = arrival && departure ? date >= arrival && date <= departure : date === arrival;
-          const inPreview = preview && date >= arrival && date <= hover;
+          const hasRange = Boolean(arrival && departure && departure > arrival);
+          const previewing = preview && hover > arrival;
+          const isArrival = date === arrival && Boolean(arrival);
+          const isDepart = (hasRange && date === departure) || (previewing && date === hover);
+          const isBetween =
+            (hasRange && date > arrival && date < departure) ||
+            (previewing && date > arrival && date < hover);
           const state = past ? labels.past : closed ? labels.booked : unpriced ? labels.ask : labels.free;
           const className = [
             "day",
@@ -431,27 +436,28 @@ function Month({
             !past && !closed && unpriced ? "ask" : "",
             !past && !closed && !unpriced ? "free" : "",
             date === today ? "today" : "",
-            inPreview ? "preview" : "",
-            selected ? "selected" : "",
+            isBetween ? "between" : "",
+            isArrival ? "arrive" : "",
+            isDepart ? "depart" : "",
           ]
             .filter(Boolean)
             .join(" ");
+          const priceLabel = row?.price != null && !isDepart ? `, ${row.price} €` : "";
+          const when = isArrival ? labels.in : isDepart ? labels.out : date === today ? labels.today : state;
           return (
             <button
               key={date}
               type="button"
               className={className}
               disabled={past || closed}
-              aria-pressed={Boolean(selected)}
-              aria-label={`${formatStay(date, locale)}, ${date === today ? labels.today : state}${
-                row?.price != null ? `, ${row.price} €` : ""
-              }`}
+              aria-pressed={isArrival || isBetween || (hasRange && isDepart)}
+              aria-label={`${formatStay(date, locale)}, ${when}${priceLabel}`}
               onMouseEnter={() => onHover(past || closed ? "" : date)}
               onFocus={() => onHover(past || closed ? "" : date)}
               onClick={() => onChoose(date)}
             >
               <span className="num">{day}</span>
-              {row?.price != null && !past && !closed ? <small>{row.price} €</small> : null}
+              {row?.price != null && !past && !closed && !isDepart ? <small>{row.price} €</small> : null}
             </button>
           );
         })}
