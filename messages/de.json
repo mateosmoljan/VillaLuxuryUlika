@@ -315,8 +315,7 @@
     "methods": [
       "Barzahlung (bei Ankunft)",
       "Banküberweisung (Internet-Banking)",
-      "Revolut",
-      "PayPal"
+      "Revolut"
     ]
   },
   "Map_Location": {
@@ -337,7 +336,7 @@
       "title": "Anfrage senden",
       "des": "Bitte senden Sie uns eine Anfrage über das Kontaktformular, per E-Mail oder Telefon mit allen notwendigen Informationen und Ihrem gewünschten Urlaubszeitraum. Sie erhalten eine schnelle Antwort und unser bestes Angebot.",
       "title2": "Buchungsbestätigung (Zahlung)",
-      "des2": "Zur Bestätigung der Buchung ist eine Anzahlung von 30 % erforderlich, der Restbetrag wird bei Ankunft bezahlt. Nach erfolgter Zahlung informieren Sie uns bitte, und wir senden Ihnen eine Buchungs- und Zahlungsbestätigung. Zwei Zahlungsoptionen stehen zur Verfügung: Banküberweisung oder PayPal (Debit- und Kreditkarten).",
+      "des2": "Zur Bestätigung der Buchung ist eine Anzahlung von 30 % erforderlich, der Restbetrag wird bei Ankunft bezahlt. Nach erfolgter Zahlung informieren Sie uns bitte, und wir senden Ihnen eine Buchungs- und Zahlungsbestätigung. Die Anzahlung erfolgt per Banküberweisung.",
       "subtitle": "Banküberweisung",
       "span": "Kontoinhaber",
       "span2": "Adresse",

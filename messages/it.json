@@ -315,8 +315,7 @@
     "methods": [
       "Contanti (all'arrivo)",
       "Bonifico bancario (internet banking)",
-      "Revolut",
-      "PayPal"
+      "Revolut"
     ]
   },
   "Map_Location": {
@@ -337,7 +336,7 @@
       "title": "Invia una Richiesta",
       "des": "Per favore inviaci una richiesta tramite il modulo di contatto, email o telefono con tutte le informazioni necessarie e il periodo di vacanza preferito. Riceverai una risposta rapida e la nostra migliore offerta.",
       "title2": "Conferma della Prenotazione (Pagamento)",
-      "des2": "Per confermare la prenotazione, è richiesto un acconto del 30%, mentre il saldo al momento dell'arrivo. Dopo il pagamento, ti preghiamo di informarci e ti invieremo la conferma di prenotazione e pagamento. Sono disponibili due opzioni di pagamento anticipato: bonifico bancario o PayPal (carte di debito e credito).",
+      "des2": "Per confermare la prenotazione, è richiesto un acconto del 30%, mentre il saldo al momento dell'arrivo. Dopo il pagamento, ti preghiamo di informarci e ti invieremo la conferma di prenotazione e pagamento. Il pagamento anticipato si effettua tramite bonifico bancario.",
       "subtitle": "Bonifico Bancario",
       "span": "Intestatario",
       "span2": "Indirizzo",
