@@ -379,6 +379,16 @@
   font-size: 0.9rem;
 }
 
+.stay-cal .min-hint {
+  margin: 0.75rem 0 0;
+  color: #343a40;
+  font-weight: 700;
+}
+
+.stay-cal .calc .min-hint {
+  margin: 0.35rem 0 0.2rem;
+}
+
 .stay-cal .min-stay {
   margin: 0.85rem 0 0;
   padding: 0.75rem 0.9rem;

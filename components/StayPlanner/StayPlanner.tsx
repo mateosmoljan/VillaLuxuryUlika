@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { bookings } from "@/lib/bookings";
 import { dailyPrices } from "@/lib/dailyPrices";
-import { minimumNights, minimumStayMessage } from "@/lib/minStay";
+import { minimumNights, minimumStayHint, minimumStayMessage, nightsLabel } from "@/lib/minStay";
 import { formatStay, readStay, writeStay, type StayPick } from "@/lib/stay";
 import { Link } from "@/navigation";
 import hr from "@/messages/hr.json";
@@ -257,6 +257,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
 
   const priced = nights.map((date) => known.get(date)?.price ?? null);
   const requiredNights = arrival ? minimumNights(arrival) : 0;
+  const minHint = arrival ? minimumStayHint(locale, requiredNights) : "";
   const tooShort = nights.length > 0 && nights.length < requiredNights;
   const minStayError = tooShort ? minimumStayMessage(locale, requiredNights) : "";
   const complete = !tooShort && nights.length > 0 && priced.every((price) => price != null);
@@ -312,6 +313,7 @@ export default function StayPlanner({ locale }: { locale: string }) {
         <li><i className="sw selected" /> {text.selected}</li>
       </ul>
       {notice ? <p role="status">{notice}</p> : null}
+      {minHint ? <p className="min-hint">{minHint}</p> : null}
       {minStayError ? <p className="min-stay" role="alert">{minStayError}</p> : null}
       <div className="calc">
         <p className="calc-title">{text.in} / {text.out}</p>
@@ -358,8 +360,11 @@ export default function StayPlanner({ locale }: { locale: string }) {
           </label>
         </div>
         <p className="stay-meta">
-          {nights.length} {text.nights} · {text.adults} {adults} · {text.children} {children}
+          {nightsLabel(locale, nights.length)}
+          {minHint ? ` · ${minHint}` : ""}
+          {` · ${text.adults} ${adults} · ${text.children} ${children}`}
         </p>
+        {minHint ? <p className="min-hint">{minHint}</p> : null}
         {nights.length > 0 ? (
           <ul className="nights">
             {nights.map((date, index) => (
