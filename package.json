@@ -7,7 +7,8 @@
     "build": "npm run partytown && next build",
     "partytown": "partytown copylib public/~partytown",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --experimental-strip-types --test lib/*.test.ts"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.10.2",
@@ -19,6 +20,8 @@
     "@mui/material": "^5.15.1",
     "@mui/x-date-pickers": "^6.19.5",
     "@mui/x-date-pickers-pro": "^6.19.5",
+    "@vercel/blob": "^2.9.0",
+    "bcryptjs": "^3.0.3",
     "clsx": "^2.0.0",
     "date-fns": "^3.3.1",
     "dayjs": "^1.11.10",
@@ -45,6 +48,7 @@
     "@testing-library/dom": "^9.3.4",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18.2.46",
     "@types/react-date-range": "^1.4.9",
