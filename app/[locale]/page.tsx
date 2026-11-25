@@ -1,5 +1,7 @@
 import { Link } from "@/navigation";
 import Dates from "@/components/brochure/Dates";
+import { AmenityIcon } from "@/components/brochure/AmenityIcon";
+import OpenAmenities from "@/components/brochure/OpenAmenities";
 import { villaPhotoAlt } from "@/lib/photoAlt";
 import { dailyPrices } from "@/lib/dailyPrices";
 import { Distances } from "@/lib/LocationDistance";
@@ -33,9 +35,10 @@ export default function Home({ params }: { params: { locale: string } }) {
   ];
   let cursor = 0;
   const groups = sizes.map((size, index) => {
+    const start = cursor;
     const items = features.card.title.slice(cursor, cursor + size);
     cursor += size;
-    return { title: titles[index], items };
+    return { title: titles[index], start, items };
   });
   const cards = [0, 1, 2, 8, 9, 10].map((index) => groups[index]);
   const shots = [105, 76, 42, 16, 88];
@@ -98,10 +101,18 @@ export default function Home({ params }: { params: { locale: string } }) {
           {cards.map((group) => (
             <article className="card" key={group.title}>
               <h3>{group.title}</h3>
-              <p>{group.items.slice(0, 3).join(" · ")}</p>
+              <ul>
+                {group.items.slice(0, 3).map((name, index) => (
+                  <li key={name} className="amenity-row">
+                    <AmenityIcon index={group.start + index} />
+                    <span>{name}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
+        <OpenAmenities label={features.button} />
       </section>
       <section className="sec wrap">
         <div className="sec-h">

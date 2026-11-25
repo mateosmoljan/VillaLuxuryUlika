@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
-import { Features, getFeaturesData } from "@/lib/features";
+import { getFeaturesData } from "@/lib/features";
+import { AmenityIcon } from "@/components/brochure/AmenityIcon";
 import { useEffect, useRef } from "react";
 import { useLocale } from "next-intl";
 import { getFeaturesTitleData } from "@/lib/features_titles";
@@ -82,14 +82,7 @@ function FeaturesComponent({ handleClose }: Props) {
                     key={index}
                     className="flex gap-3 items-center border-b-[1px] border-[#e5e7eb]"
                   >
-                    {item.icon ? (
-                      <Image src={item.icon} alt={item.icon_alt} />
-                    ) : (
-                      <span
-                        className="inline-block w-6 h-6 shrink-0"
-                        aria-hidden="true"
-                      />
-                    )}
+                    <AmenityIcon index={from + index} />
                     <li className="py-4 flex flex-col justify-center">
                       {item.titles}
                       <span className="text-sm text-grey">{item.des}</span>

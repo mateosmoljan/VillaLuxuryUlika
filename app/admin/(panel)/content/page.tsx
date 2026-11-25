@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { saveContent } from "../../actions";
+import { AmenityIcon } from "@/components/brochure/AmenityIcon";
 import { isLocale, type Locale } from "@/lib/site/copy";
 import { localeCopy, readState } from "@/lib/store";
 
@@ -64,11 +65,12 @@ export default async function ContentPage({
         </section>
         <section className="space-y-6">
           <h2 className="font-display text-2xl">Pogodnosti</h2>
-          {copy.amenities.groups.map((group) => (
+          {copy.amenities.groups.map((group, groupIndex) => (
             <div key={group.id} className="rounded-2xl border border-sand p-4">
               <h3 className="font-display text-xl">{group.title}</h3>
               {group.items.map((item, index) => (
-                <div key={`${group.id}-${index}`} className="mt-3 grid gap-2 md:grid-cols-2">
+                <div key={`${group.id}-${index}`} className="mt-3 grid gap-2 md:grid-cols-[auto_1fr_1fr] items-center">
+                  <AmenityIcon index={copy.amenities.groups.slice(0, groupIndex).reduce((sum, entry) => sum + entry.items.length, 0) + index} />
                   <input name={`a_${group.id}_${index}_name`} defaultValue={item.name} className={field} />
                   <input name={`a_${group.id}_${index}_note`} defaultValue={item.note ?? ""} className={field} />
                 </div>

@@ -1,4 +1,7 @@
-import PriceMonth from "@/components/brochure/PriceBoard";
+import StayPlanner from "@/components/brochure/StayPlanner";
+import { seedPrices } from "@/lib/store";
+import { getPublished } from "@/lib/store/publish";
+import { isLocale } from "@/lib/site/copy";
 import hr from "@/messages/hr.json";
 import en from "@/messages/en.json";
 import de from "@/messages/de.json";
@@ -12,20 +15,29 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
   return pageMetadata(params.locale, "pricelist");
 }
 
-export default function Prices({ params }: { params: { locale: string } }) {
+export default async function Prices({ params }: { params: { locale: string } }) {
   const locale = params.locale === "hr" || params.locale === "de" || params.locale === "it" ? params.locale : "en";
   const messages = packs[locale];
   const pay = messages.Payment_conditions;
+  let days = seedPrices();
+  if (isLocale(locale)) {
+    try {
+      days = (await getPublished(locale)).prices;
+    } catch {
+      days = seedPrices();
+    }
+  }
   return (
     <main id="main" className="sec wrap">
       <h1>{messages.Titles.Price_list}</h1>
       <p>{messages.Pricelist.subtitle}</p>
-      <PriceMonth locale={locale} />
-      <h2>{pay.title}</h2>
-      {[pay.des2, pay.des3, pay.des4, pay.des5, pay.des6].map((item) => (
-        <p key={item.slice(0, 24)}>{item.replace(/\*\*/g, "")}</p>
-      ))}
-      <ul>{pay.methods.map((method) => <li key={method}>{method}</li>)}</ul>
+      <StayPlanner
+        locale={locale}
+        days={days}
+        adultsLabel={messages.Contact.Contact_Form.adults}
+        childrenLabel={messages.Contact.Contact_Form.children}
+        notes={{ advance: pay.des2, deposit: pay.des3, times: pay.des5, pets: pay.des6 }}
+      />
     </main>
   );
 }

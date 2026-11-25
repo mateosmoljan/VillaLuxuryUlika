@@ -1,4 +1,5 @@
 import { Link } from "@/navigation";
+import { AmenityIcon } from "@/components/brochure/AmenityIcon";
 import IFrameMaps from "@/components/About/iFrameMaps";
 import hr from "@/messages/hr.json";
 import en from "@/messages/en.json";
@@ -18,7 +19,8 @@ export default function Villa({ params }: { params: { locale: string } }) {
   const titles = [features.title3, features.title4, features.title5, features.title6, features.title7, features.title8, features.title9, features.title10, features.title11, features.title12, features.title13, features.title14, features.title15, features.title16];
   let cursor = 0;
   const groups = sizes.map((size, index) => {
-    const items = features.card.title.slice(cursor, cursor + size).map((name, offset) => ({ name, note: features.card.des[cursor + offset] }));
+    const start = cursor;
+    const items = features.card.title.slice(cursor, cursor + size).map((name, offset) => ({ name, note: features.card.des[cursor + offset], index: start + offset }));
     cursor += size;
     return { title: titles[index], items };
   });
@@ -31,7 +33,7 @@ export default function Villa({ params }: { params: { locale: string } }) {
       <p style={{ whiteSpace: "pre-wrap" }}>{text}</p>
       <h2>{features.title}</h2>
       <div className="cards">{groups.map((group) => (
-        <article className="card" key={group.title}><h3>{group.title}</h3><ul>{group.items.map((item) => <li key={item.name}>{item.name}{item.note ? <span className="muted"> — {item.note}</span> : null}</li>)}</ul></article>
+        <article className="card" key={group.title}><h3>{group.title}</h3><ul>{group.items.map((item) => <li key={item.name} className="amenity-row"><AmenityIcon index={item.index} /><span>{item.name}{item.note ? <span className="muted"> — {item.note}</span> : null}</span></li>)}</ul></article>
       ))}</div>
       <h2>{pay.title}</h2>
       {[pay.des2, pay.des3, pay.des4, pay.des5, pay.des6].map((item) => <p key={item.slice(0, 24)}>{item.replace(/\*\*/g, "")}</p>)}
