@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 type Cell = {
@@ -15,6 +15,7 @@ type Cell = {
 
 const MONTHS = ["sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "ruj", "lis", "stu", "pro"];
 const WEEKDAYS = ["pon", "uto", "sri", "čet", "pet", "sub", "ned"];
+const DRAG_SLOP = 12;
 
 export default function AdminCalendar() {
   const router = useRouter();
@@ -25,14 +26,16 @@ export default function AdminCalendar() {
   const [anchor, setAnchor] = useState("");
   const [end, setEnd] = useState("");
   const [awaitingEnd, setAwaitingEnd] = useState(false);
-  const [dragFrom, setDragFrom] = useState("");
-  const [dragging, setDragging] = useState(false);
   const [availability, setAvailability] = useState<"open" | "closed" | "">("");
   const [price, setPrice] = useState("");
   const [minNights, setMinNights] = useState("");
   const [note, setNote] = useState("");
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [pending, setPending] = useState(false);
   const [toast, setToast] = useState("");
+  const selectionRef = useRef({ anchor: "", awaitingEnd: false });
+  const gesture = useRef<{ id: number; date: string; x: number; y: number; dragged: boolean } | null>(null);
+  selectionRef.current = { anchor, awaitingEnd };
 
   async function load() {
     const response = await fetch("/api/admin/calendar", { cache: "no-store" });
@@ -84,51 +87,72 @@ export default function AdminCalendar() {
     setAnchor("");
     setEnd("");
     setAwaitingEnd(false);
-    setDragging(false);
-    setDragFrom("");
     setAvailability("");
     setPrice("");
     setMinNights("");
     setNote("");
+    setDetailsOpen(false);
+    gesture.current = null;
   }
 
-  function begin(date: string) {
+  function applyTap(date: string) {
     if (isPast(date)) return;
-    setDragFrom(date);
-    setDragging(false);
+    const current = selectionRef.current;
+    if (current.awaitingEnd && current.anchor && date !== current.anchor) {
+      setEnd(date);
+      setAwaitingEnd(false);
+      return;
+    }
+    const cell = known.get(date);
+    setAnchor(date);
+    setEnd("");
+    setAwaitingEnd(true);
+    setDetailsOpen(false);
+    setNote(cell?.note || "");
+    setAvailability(cell?.closed ? "closed" : "open");
+    setPrice("");
+    setMinNights("");
   }
 
-  function move(date: string) {
-    if (!dragFrom || isPast(date) || date === dragFrom) return;
-    setDragging(true);
-    setAnchor(dragFrom);
-    setEnd(date);
+  function pointerDown(event: React.PointerEvent<HTMLButtonElement>, date: string) {
+    if (event.button !== 0 || isPast(date)) return;
+    event.preventDefault();
+    gesture.current = { id: event.pointerId, date, x: event.clientX, y: event.clientY, dragged: false };
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function pointerMove(event: React.PointerEvent<HTMLButtonElement>) {
+    const active = gesture.current;
+    if (!active || active.id !== event.pointerId) return;
+    if (Math.hypot(event.clientX - active.x, event.clientY - active.y) < DRAG_SLOP) return;
+    const over = dateAtPoint(event.clientX, event.clientY);
+    if (!over || isPast(over)) return;
+    active.dragged = true;
+    if (over === active.date) return;
+    setAnchor(active.date);
+    setEnd(over);
     setAwaitingEnd(false);
   }
 
-  function finish(date: string) {
-    if (isPast(date)) {
-      setDragFrom("");
-      setDragging(false);
+  function pointerUp(event: React.PointerEvent<HTMLButtonElement>, date: string) {
+    const active = gesture.current;
+    if (!active || active.id !== event.pointerId) return;
+    gesture.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
+    if (!active.dragged) {
+      applyTap(date);
       return;
     }
-    if (dragging && dragFrom) {
-      setAnchor(dragFrom);
-      setEnd(date);
-      setAwaitingEnd(false);
-    } else if (awaitingEnd && anchor && date !== anchor) {
-      setEnd(date);
-      setAwaitingEnd(false);
-    } else {
-      setAnchor(date);
-      setEnd("");
-      setAwaitingEnd(true);
-      const cell = known.get(date);
-      setNote(cell?.note || "");
-      setAvailability(cell?.closed ? "closed" : "open");
+    const over = dateAtPoint(event.clientX, event.clientY) || date;
+    if (isPast(over) || over === active.date) {
+      applyTap(active.date);
+      return;
     }
-    setDragFrom("");
-    setDragging(false);
+    setAnchor(active.date);
+    setEnd(over);
+    setAwaitingEnd(false);
   }
 
   async function save() {
@@ -168,7 +192,7 @@ export default function AdminCalendar() {
   }
 
   return (
-    <div className="shell">
+    <div className={`shell${from ? " has-selection" : ""}${detailsOpen ? " details-open" : ""}`}>
       <section className="calendar" aria-label="Kalendar">
         <div className="topbar">
           <div className="month-nav">
@@ -208,6 +232,7 @@ export default function AdminCalendar() {
                 key={day.date}
                 type="button"
                 disabled={past}
+                data-date={day.date}
                 className={[
                   "cell",
                   past ? "past" : "",
@@ -216,9 +241,13 @@ export default function AdminCalendar() {
                   inRange ? "in-range" : "",
                   edge ? "edge" : "",
                 ].filter(Boolean).join(" ")}
-                onPointerDown={() => begin(day.date)}
-                onPointerEnter={() => move(day.date)}
-                onPointerUp={() => finish(day.date)}
+                onPointerDown={(event) => pointerDown(event, day.date)}
+                onPointerMove={pointerMove}
+                onPointerUp={(event) => pointerUp(event, day.date)}
+                onPointerCancel={() => {
+                  gesture.current = null;
+                }}
+                onClick={(event) => event.preventDefault()}
               >
                 <span className="num">{Number(day.date.slice(8))}</span>
                 {day.price != null ? <span className="price">{day.price} €</span> : null}
@@ -228,16 +257,17 @@ export default function AdminCalendar() {
           })}
         </div>
       </section>
-      <aside className={`inspector${from ? " open" : ""}`} aria-label="Odabrani datumi">
+      <aside className={`inspector${from ? " open" : ""}${detailsOpen ? " expanded" : ""}`} aria-label="Odabrani datumi">
         {from ? (
           <>
             <div className="inspector-head">
-              <div>
+              <div className="selection-label">
                 <h2>{rangeTitle(from, to || from)}</h2>
-                <p>{dayCount(from, to || from)}</p>
+                <p className="count">{dayCount(from, to || from)}</p>
               </div>
               <button type="button" className="icon" onClick={clearSelection} aria-label="Poništi odabir">×</button>
             </div>
+            {awaitingEnd ? <p className="hint">Odaberi krajnji datum ili spremi</p> : null}
             {mixed ? <p className="mixed">Raspon je mješovit. Odaberi stanje za sve dane.</p> : null}
             <div className="segment" role="group" aria-label="Dostupnost">
               <button type="button" className={availability === "open" ? "on" : ""} onClick={() => setAvailability("open")}>
@@ -247,21 +277,32 @@ export default function AdminCalendar() {
                 {availability === "closed" ? "✓ " : ""}Zatvoreno
               </button>
             </div>
-            <label>
-              Bilješka (opcionalno)
-              <input value={note} onChange={(event) => setNote(event.target.value)} />
-            </label>
-            <label>
-              Cijena € (opcionalno)
-              <input inputMode="decimal" value={price} onChange={(event) => setPrice(event.target.value)} />
-            </label>
-            <label>
-              Min. noći (opcionalno)
-              <input value={minNights} placeholder="zadano" onChange={(event) => setMinNights(event.target.value)} />
-            </label>
             <button type="button" className="save" disabled={!writable || !availability || pending} onClick={save}>
               {pending ? "Spremam…" : "Spremi"}
             </button>
+            <button
+              type="button"
+              className="expand-toggle"
+              aria-expanded={detailsOpen}
+              aria-label={detailsOpen ? "Sakrij detalje" : "Cijena, min. noći, bilješka"}
+              onClick={() => setDetailsOpen((open) => !open)}
+            >
+              {detailsOpen ? "▾" : "Cijena, min. noći, bilješka ▴"}
+            </button>
+            <div className="details">
+              <label>
+                Bilješka
+                <input value={note} onChange={(event) => setNote(event.target.value)} />
+              </label>
+              <label>
+                Cijena €
+                <input inputMode="decimal" value={price} onChange={(event) => setPrice(event.target.value)} />
+              </label>
+              <label>
+                Min. noći
+                <input value={minNights} placeholder="zadano" onChange={(event) => setMinNights(event.target.value)} />
+              </label>
+            </div>
             <button type="button" className="cancel" onClick={clearSelection}>Odustani</button>
           </>
         ) : (
@@ -274,6 +315,11 @@ export default function AdminCalendar() {
       {toast ? <div className="toast" role="status">{toast}</div> : null}
     </div>
   );
+}
+
+function dateAtPoint(x: number, y: number) {
+  const element = document.elementFromPoint(x, y);
+  return element?.closest<HTMLElement>("[data-date]")?.dataset.date || "";
 }
 
 function currentMonth() {
