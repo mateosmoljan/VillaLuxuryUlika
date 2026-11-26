@@ -1,6 +1,6 @@
 import { promises as fs } from "fs";
 import path from "path";
-import { head, put } from "@vercel/blob";
+import { BlobNotFoundError, head, put } from "@vercel/blob";
 import { clearRange, patchRange, type CalendarPatches, type DayPatch } from "@/lib/calendarData";
 
 const BLOB_PATH = "ulika-calendar.json";
@@ -37,12 +37,23 @@ export async function loadStore(): Promise<StoreState> {
         patches: parsed.patches || {},
         notice: "",
       };
-    } catch {
+    } catch (error) {
+      const missing =
+        error instanceof BlobNotFoundError ||
+        (error instanceof Error && /does not exist/i.test(error.message));
+      if (missing) {
+        return {
+          source: "blob",
+          writable: true,
+          patches: {},
+          notice: "",
+        };
+      }
       return {
         source: "blob",
-        writable: true,
+        writable: false,
         patches: {},
-        notice: "Blob store is connected. No overrides saved yet, so the live prices are the built-in ones.",
+        notice: "Calendar storage could not be read. Try again in a moment.",
       };
     }
   }

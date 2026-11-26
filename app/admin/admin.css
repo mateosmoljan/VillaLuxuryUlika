@@ -103,6 +103,10 @@
   text-transform: uppercase;
 }
 
+.admin button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .admin .cell {
   position: relative;
   min-height: 84px;
@@ -113,6 +117,8 @@
   text-align: left;
   padding: 8px;
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
 }
 
 .admin .cell:hover:not(:disabled) {
@@ -206,6 +212,8 @@
 }
 
 .admin .inspector {
+  display: flex;
+  flex-direction: column;
   border-left: 1px solid #ebebeb;
   padding: 28px 22px;
   background: #fff;
@@ -230,6 +238,61 @@
   justify-content: space-between;
   gap: 12px;
   align-items: flex-start;
+}
+
+.admin .selection-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 8px;
+}
+
+.admin .selection-label .count {
+  margin: 0;
+  color: #717171;
+  font-size: 14px;
+}
+
+.admin .hint {
+  margin: 8px 0 0;
+  color: #717171;
+  font-size: 14px;
+}
+
+.admin .details {
+  order: 2;
+}
+
+.admin .save {
+  order: 3;
+}
+
+.admin .cancel {
+  order: 4;
+}
+
+.admin .expand-toggle {
+  display: none;
+  order: 5;
+  border: 0;
+  background: transparent;
+  color: #222;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  padding: 2px 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.admin .expand-toggle:hover,
+.admin .expand-toggle:focus,
+.admin .expand-toggle:active {
+  background: transparent;
+  color: #222;
+  outline: none;
 }
 
 .admin .mixed {
@@ -362,24 +425,44 @@
   font-weight: 600;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 767px) {
   .admin .shell {
     display: block;
   }
 
   .admin .calendar {
-    padding: 16px 12px 120px;
+    padding: 12px 10px 16px;
+  }
+
+  .admin .shell.has-selection .calendar {
+    padding-bottom: 176px;
   }
 
   .admin .topbar,
   .admin .top-actions {
     align-items: flex-start;
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin .topbar {
+    margin-bottom: 10px;
+  }
+
+  .admin h1 {
+    min-width: 0;
+    font-size: 18px;
   }
 
   .admin .cell {
-    min-height: 58px;
-    padding: 6px;
+    min-height: 44px;
+    padding: 4px 2px 2px;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  .admin .cell .num {
+    font-size: 15px;
   }
 
   .admin .cell .price {
@@ -392,16 +475,95 @@
     bottom: 0;
     left: 0;
     z-index: 20;
-    max-height: 78vh;
-    overflow: auto;
     border: 0;
-    border-radius: 20px 20px 0 0;
-    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.16);
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.14);
+    padding: 10px 12px calc(8px + env(safe-area-inset-bottom));
     transform: translateY(110%);
-    transition: transform 0.22s ease;
+    transition: transform 0.2s ease;
   }
 
   .admin .inspector.open {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    column-gap: 8px;
+    row-gap: 6px;
+    align-items: center;
     transform: translateY(0);
+  }
+
+  .admin .inspector.open > * {
+    order: 0;
+  }
+
+  .admin .inspector-head,
+  .admin .hint,
+  .admin .mixed,
+  .admin .expand-toggle,
+  .admin .details,
+  .admin .cancel {
+    grid-column: 1 / -1;
+  }
+
+  .admin .inspector h2 {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .admin .hint,
+  .admin .mixed {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .admin .segment {
+    grid-column: 1 / 3;
+    margin: 0;
+    gap: 6px;
+  }
+
+  .admin .segment button,
+  .admin .save {
+    height: 36px;
+  }
+
+  .admin .save {
+    grid-column: 3;
+    width: auto;
+    min-width: 84px;
+    margin-top: 0;
+    padding: 0 14px;
+  }
+
+  .admin .expand-toggle {
+    display: block;
+    min-height: 28px;
+  }
+
+  .admin .details,
+  .admin .cancel {
+    display: none;
+  }
+
+  .admin .inspector.expanded {
+    max-height: 70vh;
+    overflow: auto;
+  }
+
+  .admin .inspector.expanded .details,
+  .admin .inspector.expanded .cancel {
+    display: block;
+  }
+
+  .admin .details label {
+    margin-top: 10px;
+  }
+
+  .admin .details input {
+    height: 44px;
+  }
+
+  .admin .toast {
+    bottom: 184px;
   }
 }
