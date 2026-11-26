@@ -1,136 +1,407 @@
 .admin {
   min-height: 100vh;
   margin: 0;
-  background: #f6f4f0;
-  color: #343a40;
-  font-family: Poppins, sans-serif;
+  background: #fff;
+  color: #222222;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 .admin main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.admin .shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  min-height: 100vh;
+}
+
+.admin .calendar {
+  padding: 28px 32px 48px;
+}
+
+.admin .topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.admin .month-nav,
+.admin .top-actions,
+.admin .legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin .legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: #717171;
+  font-size: 13px;
 }
 
 .admin h1 {
-  margin: 0;
-  font-size: 1.6rem;
+  margin: 0 4px;
+  min-width: 180px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.admin header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.admin .notice {
-  margin: 0 0 1rem;
-  padding: 0.75rem 0.9rem;
-  border-radius: 0.7rem;
-  background: #fff6e8;
-  border: 1px solid #c2984c;
-}
-
-.admin .panel,
-.admin .login {
-  background: #fff;
-  border: 1px solid #e6e1d8;
-  border-radius: 0.9rem;
-  padding: 1rem;
-}
-
-.admin label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-.admin input,
-.admin button {
+.admin .icon,
+.admin .today,
+.admin .logout,
+.admin .save,
+.admin .cancel,
+.admin .segment button {
   font: inherit;
-}
-
-.admin input {
-  min-height: 44px;
-  border: 1px solid #d5d9de;
-  border-radius: 0.6rem;
-  padding: 0.4rem 0.7rem;
-}
-
-.admin button,
-.admin .linkish {
-  min-height: 44px;
-  border: 0;
-  border-radius: 0.6rem;
-  padding: 0.45rem 0.8rem;
-  background: #343a40;
-  color: #fff;
   cursor: pointer;
 }
 
-.admin button.gold {
-  background: #c2984c;
+.admin .icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #dddddd;
+  border-radius: 999px;
+  background: #fff;
+  color: #222;
+  font-size: 22px;
+  line-height: 1;
 }
 
-.admin button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
-.admin .row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  align-items: flex-end;
-}
-
-.admin .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 0;
+.admin .today,
+.admin .logout {
+  height: 36px;
+  border: 1px solid #dddddd;
+  border-radius: 999px;
+  background: #fff;
+  color: #222;
+  padding: 0 14px;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .admin .grid {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 0.35rem;
+  gap: 6px;
 }
 
 .admin .dow {
+  padding-bottom: 8px;
   text-align: center;
-  font-size: 0.75rem;
-  font-weight: 700;
+  color: #717171;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .admin .cell {
-  min-height: 52px;
-  border: 1px solid #d5d9de;
-  border-radius: 0.6rem;
+  position: relative;
+  min-height: 84px;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
   background: #fff;
-  color: #343a40;
-  padding: 0.2rem;
+  color: #222;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
 }
 
-.admin .cell small {
+.admin .cell:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 1.5px #222;
+}
+
+.admin .cell .num {
   display: block;
-  font-size: 0.68rem;
+  font-size: 14px;
+  font-weight: 600;
 }
 
-.admin .cell.closed {
-  background: #eceff1;
+.admin .cell .price {
+  display: block;
+  margin-top: 18px;
+  color: #717171;
+  font-size: 12px;
+}
+
+.admin .cell.blocked {
+  background: repeating-linear-gradient(-45deg, #f7f7f7, #f7f7f7 6px, #ededed 6px, #ededed 7px);
+}
+
+.admin .cell.blocked .num {
+  color: #717171;
   text-decoration: line-through;
 }
 
-.admin .cell.selected {
-  border-color: #c2984c;
-  background: #f6ead3;
+.admin .cell.past {
+  color: #b0b0b0;
+  background: #fff;
+  cursor: default;
+}
+
+.admin .cell.past .num,
+.admin .cell.past .price {
+  color: #b0b0b0;
+}
+
+.admin .cell.today .num::after {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-left: 5px;
+  border-radius: 999px;
+  background: #222;
+  vertical-align: middle;
+}
+
+.admin .cell.in-range {
+  background: #f7f7f7;
+  box-shadow: inset 0 0 0 1px #222;
+}
+
+.admin .cell.edge {
+  background: #222;
+  color: #fff;
+  box-shadow: none;
+}
+
+.admin .cell.edge .num,
+.admin .cell.edge .price {
+  color: #fff;
+  text-decoration: none;
+}
+
+.admin .note-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #222;
+}
+
+.admin .sw {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+
+.admin .sw.free { background: #fff; }
+.admin .sw.blocked {
+  background: repeating-linear-gradient(-45deg, #f7f7f7, #f7f7f7 3px, #ddd 3px, #ddd 4px);
+}
+
+.admin .inspector {
+  border-left: 1px solid #ebebeb;
+  padding: 28px 22px;
+  background: #fff;
+}
+
+.admin .inspector h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.admin .inspector p,
+.admin .empty p {
+  margin: 6px 0 0;
+  color: #717171;
+  font-size: 14px;
+}
+
+.admin .inspector-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.admin .mixed {
+  margin: 16px 0 0;
+  color: #222;
+  font-size: 14px;
+}
+
+.admin .segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 22px 0 18px;
+}
+
+.admin .segment button {
+  height: 48px;
+  border: 1px solid #dddddd;
+  border-radius: 999px;
+  background: #fff;
+  color: #222;
+  font-weight: 600;
+}
+
+.admin .segment button.on {
+  border-color: #222;
+  background: #222;
+  color: #fff;
+}
+
+.admin label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 14px;
+  color: #222;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin input {
+  height: 48px;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+  padding: 0 14px;
+  color: #222;
+  font: inherit;
+  font-weight: 400;
+}
+
+.admin .save {
+  width: 100%;
+  height: 48px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 12px;
+  background: #222;
+  color: #fff;
+  font-weight: 600;
+}
+
+.admin .save:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.admin .cancel {
+  width: 100%;
+  margin-top: 8px;
+  border: 0;
+  background: transparent;
+  color: #222;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.admin .empty {
+  padding-top: 12px;
+}
+
+.admin .notice {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  background: #f7f7f7;
+  color: #222;
+  font-size: 13px;
+}
+
+.admin .toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #222;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin .login {
+  max-width: 420px;
+  margin: 12vh auto;
+  padding: 28px;
+  border: 1px solid #ebebeb;
+  border-radius: 16px;
+}
+
+.admin .login h1 {
+  margin-bottom: 12px;
+  text-align: left;
 }
 
 .admin .error {
-  color: #8a2b2b;
+  color: #c13515;
+  font-size: 14px;
+}
+
+.admin .login button {
+  margin-top: 16px;
+  height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: #222;
+  color: #fff;
+  font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .admin .shell {
+    display: block;
+  }
+
+  .admin .calendar {
+    padding: 16px 12px 120px;
+  }
+
+  .admin .topbar,
+  .admin .top-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin .cell {
+    min-height: 58px;
+    padding: 6px;
+  }
+
+  .admin .cell .price {
+    display: none;
+  }
+
+  .admin .inspector {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    max-height: 78vh;
+    overflow: auto;
+    border: 0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.16);
+    transform: translateY(110%);
+    transition: transform 0.22s ease;
+  }
+
+  .admin .inspector.open {
+    transform: translateY(0);
+  }
 }
